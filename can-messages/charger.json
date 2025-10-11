@@ -6,7 +6,7 @@
       {
         "size": 16,
         "formatter": {
-          "key": "divide",
+          "key":  "divide",
           "arg": 10
         },
         "sim": {

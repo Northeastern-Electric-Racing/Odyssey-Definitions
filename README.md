@@ -150,7 +150,7 @@ Calypso contains helpful CLI utilities for interacting with the JSON:
 
 ### Formatting
 
-The VSCode 
+The script format.sh will format the files in place.  It requires moreutils and jq in addition to normal posix applications. 
 
 
 ## Changing the specification

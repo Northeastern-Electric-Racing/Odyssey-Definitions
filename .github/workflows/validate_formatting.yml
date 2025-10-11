@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run format check
-        run: ./format.sh check
+        run: sh -c "./format.sh check"
