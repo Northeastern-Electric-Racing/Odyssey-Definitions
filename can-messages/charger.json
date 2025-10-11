@@ -6,9 +6,9 @@
       {
         "size": 16,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 400,
           "max": 505,
@@ -19,9 +19,9 @@
       {
         "size": 16,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 0,
           "max": 12,
@@ -88,9 +88,9 @@
       {
         "size": 16,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 400,
           "max": 505,
@@ -102,9 +102,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 0,
           "max": 12,

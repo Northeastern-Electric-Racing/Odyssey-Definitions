@@ -148,6 +148,10 @@ Calypso contains helpful CLI utilities for interacting with the JSON:
 - `nerdbc` - Converts most of the DBC format to a JSON file
 - `to_json_schema` - Prints a JSON schema definition file from the defined types
 
+### Formatting
+
+The VSCode 
+
 
 ## Changing the specification
 

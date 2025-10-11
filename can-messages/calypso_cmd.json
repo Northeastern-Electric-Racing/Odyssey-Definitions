@@ -6,9 +6,9 @@
       {
         "size": 32,
         "formatter": {
- 				"key": "divide",
-				"arg": 10000
-				},
+          "key": "divide",
+          "arg": 10000
+        },
         "default": 18.443,
         "sim": {
           "min": 1,
@@ -43,9 +43,9 @@
         "signed": true,
         "endianness": "little",
         "formatter": {
- 				"key": "divide",
-				"arg": 100
-				},
+          "key": "divide",
+          "arg": 100
+        },
         "default": -21.8,
         "sim": {
           "min": 1,

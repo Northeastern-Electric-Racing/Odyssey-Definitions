@@ -17,9 +17,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": -4000,
           "max": 4000,
@@ -71,9 +71,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": -125,
           "max": 250,
@@ -85,9 +85,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": -300,
           "max": 300,
@@ -133,9 +133,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 5,
           "max": 80,
@@ -147,9 +147,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 5,
           "max": 80,
@@ -253,9 +253,9 @@
         "size": 32,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 100
-				},
+          "key": "divide",
+          "arg": 100
+        },
         "sim": {
           "min": -1000000,
           "max": 1000000,
@@ -267,9 +267,9 @@
         "size": 32,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 100
-				},
+          "key": "divide",
+          "arg": 100
+        },
         "sim": {
           "min": -1000000,
           "max": 1000000,
@@ -843,9 +843,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 0,
           "max": 380,
@@ -873,9 +873,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 0,
           "max": 150,
@@ -951,9 +951,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 0,
           "max": 360,
@@ -992,9 +992,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": -100,
           "max": 100,
@@ -1033,9 +1033,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": -100,
           "max": 100,
@@ -1182,9 +1182,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 0,
           "max": 250,
@@ -1223,9 +1223,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": -250,
           "max": 0,
@@ -1264,9 +1264,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 0,
           "max": 505,
@@ -1294,9 +1294,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": -250,
           "max": 0,

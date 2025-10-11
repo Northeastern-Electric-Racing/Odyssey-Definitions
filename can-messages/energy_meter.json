@@ -83,9 +83,9 @@
       {
         "size": 3,
         "formatter": {
- 				"key": "multiply",
-				"arg": 5
-				}
+          "key": "multiply",
+          "arg": 5
+        }
       },
       {
         "size": 5
@@ -93,51 +93,51 @@
       {
         "size": 8,
         "formatter": {
- 				"key": "temperature",
-				"arg": 0
-				}
+          "key": "temperature",
+          "arg": 0
+        }
       },
       {
         "size": 8,
         "formatter": {
- 				"key": "temperature",
-				"arg": 0
-				}
+          "key": "temperature",
+          "arg": 0
+        }
       },
       {
         "size": 8,
         "formatter": {
- 				"key": "temperature",
-				"arg": 0
-				}
+          "key": "temperature",
+          "arg": 0
+        }
       },
       {
         "size": 8,
         "formatter": {
- 				"key": "temperature",
-				"arg": 0
-				}
+          "key": "temperature",
+          "arg": 0
+        }
       },
       {
         "size": 8,
         "formatter": {
- 				"key": "temperature",
-				"arg": 0
-				}
+          "key": "temperature",
+          "arg": 0
+        }
       },
       {
         "size": 8,
         "formatter": {
- 				"key": "temperature",
-				"arg": 0
-				}
+          "key": "temperature",
+          "arg": 0
+        }
       },
       {
         "size": 8,
         "formatter": {
- 				"key": "temperature",
-				"arg": 0
-				}
+          "key": "temperature",
+          "arg": 0
+        }
       }
     ],
     "fields": [

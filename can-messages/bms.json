@@ -6,9 +6,9 @@
       {
         "size": 16,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 400,
           "max": 505,
@@ -20,9 +20,9 @@
         "size": 16,
         "signed": true,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 0,
           "max": 50,
@@ -197,9 +197,9 @@
       {
         "size": 16,
         "formatter": {
- 				"key": "divide",
-				"arg": 10000
-				},
+          "key": "divide",
+          "arg": 10000
+        },
         "sim": {
           "min": 2.5,
           "max": 4.25,
@@ -230,9 +230,9 @@
       {
         "size": 16,
         "formatter": {
- 				"key": "divide",
-				"arg": 10000
-				},
+          "key": "divide",
+          "arg": 10000
+        },
         "sim": {
           "min": 2.5,
           "max": 4.25,
@@ -263,9 +263,9 @@
       {
         "size": 16,
         "formatter": {
- 				"key": "divide",
-				"arg": 10000
-				},
+          "key": "divide",
+          "arg": 10000
+        },
         "sim": {
           "min": 2.5,
           "max": 4.25,
@@ -334,9 +334,9 @@
       {
         "size": 16,
         "formatter": {
- 				"key": "divide",
-				"arg": 100
-				},
+          "key": "divide",
+          "arg": 100
+        },
         "sim": {
           "min": 10,
           "max": 50,
@@ -367,9 +367,9 @@
       {
         "size": 16,
         "formatter": {
- 				"key": "divide",
-				"arg": 100
-				},
+          "key": "divide",
+          "arg": 100
+        },
         "sim": {
           "min": 10,
           "max": 50,
@@ -400,9 +400,9 @@
       {
         "size": 16,
         "formatter": {
- 				"key": "divide",
-				"arg": 100
-				},
+          "key": "divide",
+          "arg": 100
+        },
         "sim": {
           "min": 10,
           "max": 50,
@@ -992,9 +992,9 @@
       {
         "size": 12,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 2.5,
           "max": 4.2,
@@ -1005,9 +1005,9 @@
       {
         "size": 12,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 2.5,
           "max": 4.2,
@@ -1018,9 +1018,9 @@
       {
         "size": 12,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 2.5,
           "max": 4.2,
@@ -1031,9 +1031,9 @@
       {
         "size": 12,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 2.5,
           "max": 4.2,
@@ -1044,9 +1044,9 @@
       {
         "size": 12,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 2.5,
           "max": 4.2,
@@ -1112,9 +1112,9 @@
       {
         "size": 12,
         "formatter": {
- 				"key": "divide",
-				"arg": 39
-				},
+          "key": "divide",
+          "arg": 39
+        },
         "sim": {
           "min": 60,
           "max": 105,
@@ -1125,9 +1125,9 @@
       {
         "size": 12,
         "formatter": {
- 				"key": "divide",
-				"arg": 39
-				},
+          "key": "divide",
+          "arg": 39
+        },
         "sim": {
           "min": 60,
           "max": 105,
@@ -1138,9 +1138,9 @@
       {
         "size": 12,
         "formatter": {
- 				"key": "divide",
-				"arg": 39
-				},
+          "key": "divide",
+          "arg": 39
+        },
         "sim": {
           "min": 60,
           "max": 105,
@@ -1151,9 +1151,9 @@
       {
         "size": 12,
         "formatter": {
- 				"key": "divide",
-				"arg": 39
-				},
+          "key": "divide",
+          "arg": 39
+        },
         "sim": {
           "min": 60,
           "max": 105,
@@ -1164,9 +1164,9 @@
       {
         "size": 12,
         "formatter": {
- 				"key": "divide",
-				"arg": 39
-				},
+          "key": "divide",
+          "arg": 39
+        },
         "sim": {
           "min": 60,
           "max": 105,
@@ -1541,9 +1541,9 @@
       {
         "size": 10,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 20,
           "max": 80,
@@ -1554,9 +1554,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 2.5,
           "max": 4.25,
@@ -1567,9 +1567,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 2.5,
           "max": 4.25,
@@ -1732,9 +1732,9 @@
       {
         "size": 10,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 20,
           "max": 80,
@@ -1745,9 +1745,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 2.5,
           "max": 4.25,
@@ -1758,9 +1758,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 2.5,
           "max": 4.25,
@@ -1923,9 +1923,9 @@
       {
         "size": 10,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 20,
           "max": 80,
@@ -1936,9 +1936,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 2.5,
           "max": 4.25,
@@ -1974,9 +1974,9 @@
       {
         "size": 10,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 20,
           "max": 80,
@@ -1987,9 +1987,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 100
-				},
+          "key": "divide",
+          "arg": 100
+        },
         "sim": {
           "min": 20,
           "max": 80,
@@ -2000,9 +2000,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 100
-				},
+          "key": "divide",
+          "arg": 100
+        },
         "sim": {
           "min": 45,
           "max": 52.5,
@@ -2064,9 +2064,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 2.998,
           "max": 3.002,
@@ -2077,9 +2077,9 @@
       {
         "size": 10,
         "formatter": {
- 				"key": "divide",
-				"arg": 100
-				},
+          "key": "divide",
+          "arg": 100
+        },
         "sim": {
           "min": 4.75,
           "max": 5.25,
@@ -2090,9 +2090,9 @@
       {
         "size": 10,
         "formatter": {
- 				"key": "divide",
-				"arg": 100
-				},
+          "key": "divide",
+          "arg": 100
+        },
         "sim": {
           "min": 2.75,
           "max": 3.25,
@@ -2113,9 +2113,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 2.998,
           "max": 3.002,
@@ -2126,9 +2126,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": -0.05,
           "max": 0.05,
@@ -2514,9 +2514,9 @@
       {
         "size": 10,
         "formatter": {
- 				"key": "divide",
-				"arg": 10
-				},
+          "key": "divide",
+          "arg": 10
+        },
         "sim": {
           "min": 20,
           "max": 80,
@@ -2537,9 +2537,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 100
-				},
+          "key": "divide",
+          "arg": 100
+        },
         "sim": {
           "min": 20,
           "max": 80,
@@ -2550,9 +2550,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 100
-				},
+          "key": "divide",
+          "arg": 100
+        },
         "sim": {
           "min": 45,
           "max": 52.5,
@@ -2563,9 +2563,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": -0.05,
           "max": 0.05,
@@ -2855,9 +2855,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 2.998,
           "max": 3.002,
@@ -2878,9 +2878,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 2.998,
           "max": 3.002,
@@ -2891,9 +2891,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 4.75,
           "max": 5.25,
@@ -2904,9 +2904,9 @@
       {
         "size": 13,
         "formatter": {
- 				"key": "divide",
-				"arg": 1000
-				},
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 2.75,
           "max": 3.25,
