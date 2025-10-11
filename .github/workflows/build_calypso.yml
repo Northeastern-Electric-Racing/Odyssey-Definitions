@@ -1,0 +1,22 @@
+name: Check CAN, build Calypso
+on:
+  push:
+    paths:
+        - 'can-messages/**'
+
+jobs:
+  run-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Calypso
+        uses: actions/checkout@v4
+        with:
+          repository: Northeastern-Electric-Racing/Calypso
+
+      - name: Clone Odyssey-Definitions
+        uses: actions/checkout@v4
+        with:
+          path: "./Odyssey-Definitions"
+
+      - name: Build Calypso
+        run: cargo build --locked
