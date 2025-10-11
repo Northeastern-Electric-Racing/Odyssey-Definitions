@@ -9,7 +9,7 @@
           "key": "divide",
           "arg": 10000
         },
-        "default": 18.443,
+        "default" : 18.443,
         "sim": {
           "min": 1,
           "max": 100,
