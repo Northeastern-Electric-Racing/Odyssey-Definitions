@@ -1,0 +1,12 @@
+name: Check formatting of JSON
+on:
+  push:
+    paths:
+        - 'can-messages/**'
+
+jobs:
+  run-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run format check
+        run: ./format.sh check
