@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       steps:
-      - uses: actions/checkout@v4
-      
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
       - name: Run format check
         run: sh -c "./format.sh check"
