@@ -4,7 +4,7 @@
     "desc": "Example Enc Msg",
     "points": [
       {
-        "size":  32,
+        "size":   32,
         "formatter": {
           "key": "divide",
           "arg": 10000
