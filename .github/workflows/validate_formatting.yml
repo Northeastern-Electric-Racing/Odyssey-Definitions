@@ -8,5 +8,7 @@ jobs:
   run-build:
     runs-on: ubuntu-latest
     steps:
+      - name: Run format fix file
+        run: chmod +x ./format.sh
       - name: Run format check
         run: sh -c "./format.sh check"
