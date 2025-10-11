@@ -7,7 +7,7 @@ then
     echo "Checking files"
     for file in `find ./can-messages -type f`;
     do
-    if ! diff -q <(jq . "$file") "$file" > /dev/null;
+    if ! jq . "$file" | diff -q - "$file" > /dev/null;
     then
 	echo "FILE FAILED FORMAT CHECK: $file"
         failed=1

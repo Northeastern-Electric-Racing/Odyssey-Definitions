@@ -4,17 +4,17 @@
     "desc": "Example Enc Msg",
     "points": [
       {
-        "size":   32,
+        "size": 32,
         "formatter": {
           "key": "divide",
           "arg": 10000
         },
-        "default" : 18.443,
+        "default": 18.443,
         "sim": {
           "min": 1,
           "max": 100,
-          "inc_min": 1,
-          "inc-max":  2
+          "inc_min":   1,
+          "inc-max": 2
         }
       },
       {
