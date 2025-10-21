@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone Calypso
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: Northeastern-Electric-Racing/Calypso
 
       - name: Clone Odyssey-Definitions
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: "./Odyssey-Definitions"
 
