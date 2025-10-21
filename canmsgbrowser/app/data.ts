@@ -57,7 +57,7 @@ export const fetchGitHubContentV3 = async (branch: string) => {
         if (!branch) {
             branch = "main";
         }
-        const response = await fetch(`https://api.github.com/repos/Northeastern-Electric-Racing/Embedded-Base/contents/cangen/can-messages?ref=${branch}`);
+        const response = await fetch(`https://api.github.com/repos/Northeastern-Electric-Racing/Odyssey-Definitions/contents/can-messages?ref=${branch}`);
         if (!response.ok) {
             throw new Error(`GitHub API error: ${response.statusText}`);
         }
