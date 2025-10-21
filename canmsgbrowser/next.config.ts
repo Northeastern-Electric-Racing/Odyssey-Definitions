@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
   // Optional: Change the output directory `out` -> `dist`
   // distDir: 'dist',
 }
+
+module.exports = {
+  basePath: '/Odyssey-Definitions',
+}
  
 
 export default nextConfig;
