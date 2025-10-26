@@ -2336,7 +2336,23 @@
     "desc": "Cerberus to Lightning Board Light Status Message",
     "points": [
       {
-        "size": 16
+        "size": 16,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.33
+            ],
+            [
+              1,
+              0.33
+            ],
+            [
+              2,
+              0.34
+            ]
+          ]
+        }
       }
     ],
     "fields": [
