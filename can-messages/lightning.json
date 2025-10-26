@@ -1,5 +1,53 @@
 [
     {
-        
+        "id": "0xAA",
+        "desc": "Lightning Board IMU Information",
+        "points": [
+          {
+            "size": 128
+          }
+        ],
+        "fields": [
+          {
+            "name": "Lightning/Sensors/IMU",
+            "unit": "?",
+            "values": [1]
+          }
+        ],
+        "sim_freq": 1000
+    },
+    {
+        "id": "0xAB",
+        "desc": "Lightning Board Lightning Sensor Information",
+        "points": [
+          {
+            "size": 128
+          }
+        ],
+        "fields": [
+          {
+            "name": "Lightning/Sensors/Lightning",
+            "unit": "?",
+            "values": [1]
+          }
+        ],
+        "sim_freq": 1000
+    },
+    {
+        "id": "0xAC",
+        "desc": "Lightning Board Magnometer Sensor Information",
+        "points": [
+          {
+            "size": 16
+          }
+        ],
+        "fields": [
+          {
+            "name": "MPU/LightningBoard/Magnometer",
+            "unit": "?",
+            "values": [1]
+          }
+        ],
+        "sim_freq": 1000
     }
 ]
