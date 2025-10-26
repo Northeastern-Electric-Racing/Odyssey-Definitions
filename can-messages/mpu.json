@@ -2330,5 +2330,22 @@
       }
     ],
     "sim_freq": 1000
+  },
+  {
+    "id": "0xCA",
+    "desc": "Cerberus to Lightning Board Light Status Message",
+    "points": [
+      {
+        "size": 16
+      }
+    ],
+    "fields": [
+      {
+        "name": "MPU/LightningBoard/LightMessage",
+        "unit": "status",
+        "values": [1]
+      }
+    ],
+    "sim_freq": 1000
   }
 ]
