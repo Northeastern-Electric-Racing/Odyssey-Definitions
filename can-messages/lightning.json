@@ -1,8 +1,8 @@
 [
-    {
-      "id": "0xAA",
-      "desc": "Lightning Board IMU Acceleration Data",
-      "points": [
+  {
+    "id": "0xAA",
+    "desc": "Lightning Board IMU Acceleration Data",
+    "points": [
       {
         "size": 16,
         "signed": true,
