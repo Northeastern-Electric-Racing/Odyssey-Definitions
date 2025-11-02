@@ -104,9 +104,18 @@
         "signed": false,
         "sim": {
           "options": [
-            [1, 0.95],
-            [4, 0.03],
-            [8, 0.02]
+            [
+              1,
+              0.95
+            ],
+            [
+              4,
+              0.03
+            ],
+            [
+              8,
+              0.02
+            ]
           ]
         }
       },
@@ -136,8 +145,8 @@
         "name": "Lightning/LightningSensor/Data",
         "unit": "",
         "values": [
-          1, 
-          2, 
+          1,
+          2,
           3
         ]
       }
@@ -184,8 +193,8 @@
         "name": "Lightning/Magnometer/Data",
         "unit": "milligauss",
         "values": [
-          1, 
-          2, 
+          1,
+          2,
           3
         ]
       }

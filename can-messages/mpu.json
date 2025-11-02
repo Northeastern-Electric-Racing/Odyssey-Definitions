@@ -2359,7 +2359,9 @@
       {
         "name": "MPU/LightningBoard/LightMessage",
         "unit": "status",
-        "values": [1]
+        "values": [
+          1
+        ]
       }
     ],
     "sim_freq": 1000
