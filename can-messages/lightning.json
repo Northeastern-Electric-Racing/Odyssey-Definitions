@@ -130,7 +130,7 @@
         }
       },
       {
-        "size": 64,
+        "size": 32,
         "signed": false,
         "sim": {
           "min": 0,
