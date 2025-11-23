@@ -6,6 +6,10 @@
       {
         "size": 16,
         "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": -2000,
           "max": 2000,
@@ -16,6 +20,10 @@
       {
         "size": 16,
         "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": -2000,
           "max": 2000,
@@ -26,6 +34,10 @@
       {
         "size": 16,
         "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": -2000,
           "max": 2000,
@@ -54,6 +66,10 @@
       {
         "size": 16,
         "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": -500000,
           "max": 500000,
@@ -64,6 +80,10 @@
       {
         "size": 16,
         "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": -500000,
           "max": 500000,
@@ -74,6 +94,10 @@
       {
         "size": 16,
         "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": -500000,
           "max": 500000,
