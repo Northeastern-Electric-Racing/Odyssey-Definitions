@@ -80,6 +80,8 @@ Within the `fields` member of a Message object, there is a list of NetField obje
 - `name`, string of the message topic name, e.g. `The/Topic/Name`. Going 3 levels of slashes is usually preferred, don't put trailing slashes.
   - To embed live Point values in `name`, include point indices (from 1) in the name. Ex. `"Hello/{1}/World/{2}/Status"`
 - `unit`, string of the unit of the data, e.g. `mph`
+- `doc`, a short string with a human readable info about the topic
+- `desc` (optional), longer warnings and notes about a topic
 - `values`, a list of correlated Points to be sent with the Field. **Note that Points are indexed by 1, and out-of-bounds indices will cause build failure**
 
 
@@ -87,6 +89,8 @@ Within the `fields` member of a Message object, there is a list of NetField obje
 
 Within the `points` member of a NetField object, there is a list of Point objects. A Point object represents one set of bits in a CAN message. This separates CAN decoding logic from MQTT encoding information. Each Point has the following members:
 - `size`, an integer representing the size to be read in bits
+- `name` (optional), a one word name for the datapoint, used in generation 
+- `c_type` (optional), the c type for the datapoint, used in generation
 - `parse` (optional), boolean representing whether or not this field should be parsed (if `false`, it is literally skipped). Best used for byte-alignment padding
 - `signed` (optional), boolean representing whether or not the number is signed in two's complement form (`false` by default) 
 - `endianness` (optional), string representing the byte endianness of the bits being read, either `"big"` or `"little"` (`"big"` by default)

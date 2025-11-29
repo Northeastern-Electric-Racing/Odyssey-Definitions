@@ -1,148 +1,5 @@
 [
   {
-    "id": "0x450",
-    "desc": "Example Enc Msg",
-    "points": [
-      {
-        "size": 32,
-        "formatter": {
-          "key": "divide",
-          "arg": 10000
-        },
-        "default": 18.443,
-        "sim": {
-          "min": 1,
-          "max": 100,
-          "inc_min": 1,
-          "inc_max": 2
-        }
-      },
-      {
-        "size": 8,
-        "signed": true,
-        "default": 35.4,
-        "sim": {
-          "min": 1,
-          "max": 100,
-          "inc_min": 1,
-          "inc_max": 2
-        }
-      },
-      {
-        "size": 8,
-        "default": 19,
-        "sim": {
-          "min": 1,
-          "max": 100,
-          "inc_min": 1,
-          "inc_max": 2
-        }
-      },
-      {
-        "size": 16,
-        "signed": true,
-        "endianness": "little",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "default": -21.8,
-        "sim": {
-          "min": 1,
-          "max": 100,
-          "inc_min": 1,
-          "inc_max": 2
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "Calypso/Bidir/State/FirstOff/A",
-        "unit": "Z",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "Calypso/Bidir/State/FirstOff/B",
-        "unit": "G",
-        "values": [
-          2
-        ]
-      },
-      {
-        "name": "Calypso/Bidir/State/FirstOff/C",
-        "unit": "G",
-        "values": [
-          3
-        ]
-      },
-      {
-        "name": "Calypso/Bidir/State/FirstOff/D",
-        "unit": "G",
-        "values": [
-          4
-        ]
-      }
-    ],
-    "key": "FirstOff",
-    "sim_freq": 750
-  },
-  {
-    "id": "0xFFFFF",
-    "desc": "Example Enc Msg Ext",
-    "bidir_mode": "oneshot",
-    "points": [
-      {
-        "size": 32,
-        "endianness": "little",
-        "sim": {
-          "min": 1,
-          "max": 100,
-          "inc_min": 1,
-          "inc_max": 2
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "Calypso/Bidir/State/SecondOff/A",
-        "unit": "GG",
-        "values": [
-          1
-        ]
-      }
-    ],
-    "key": "SecondOff",
-    "is_ext": true,
-    "sim_freq": 750
-  },
-  {
-    "id": "0x7FF",
-    "desc": "Calypso bidir unknown key",
-    "points": [
-      {
-        "size": 8,
-        "sim": {
-          "min": 1,
-          "max": 100,
-          "inc_min": 1,
-          "inc_max": 2
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "Calypso/Bidir/Unknown",
-        "unit": "pts",
-        "values": [
-          1
-        ]
-      }
-    ],
-    "sim_freq": 750
-  },
-  {
     "id": "0x4A1",
     "desc": "Cerberus Fan Batt Box State",
     "points": [
@@ -167,6 +24,7 @@
       {
         "name": "Calypso/Bidir/State/FanBattBoxStatus/A",
         "unit": "bool",
+        "doc": "Enable battery box fan",
         "values": [
           1
         ]
@@ -216,6 +74,7 @@
       {
         "name": "Calypso/Bidir/State/PumpStatus/A",
         "unit": "bool",
+        "doc": "Enable MC pump",
         "values": [
           1
         ]
@@ -223,6 +82,7 @@
       {
         "name": "Calypso/Bidir/State/PumpStatus/B",
         "unit": "bool",
+        "doc": "Enable motor pump",
         "values": [
           2
         ]
@@ -272,6 +132,7 @@
       {
         "name": "Calypso/Bidir/State/RadFanStatus/A",
         "unit": "bool",
+        "doc": "Enable MC radiator fan",
         "values": [
           1
         ]
@@ -279,6 +140,7 @@
       {
         "name": "Calypso/Bidir/State/RadFanStatus/B",
         "unit": "bool",
+        "doc": "Enable motor radiator fan",
         "values": [
           2
         ]
@@ -312,6 +174,7 @@
       {
         "name": "Calypso/Bidir/State/RTDSOverride/A",
         "unit": "bool",
+        "doc": "Override RTDS on",
         "values": [
           1
         ]
