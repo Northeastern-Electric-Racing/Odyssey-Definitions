@@ -127,6 +127,7 @@
       {
         "name": "DTI/Unused/Reserved",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           3
         ]
@@ -251,6 +252,7 @@
       {
         "name": "DTI/Unused/Reserved",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           4
         ]
@@ -854,6 +856,7 @@
       {
         "name": "DTI/Unused/Reserved",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           23
         ]
@@ -861,6 +864,7 @@
       {
         "name": "DTI/Unused/Reserved",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           24
         ]
