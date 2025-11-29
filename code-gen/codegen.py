@@ -66,11 +66,11 @@ def main(device_type: str, output_path: str, ):
     #     decoders.write(output)
 
     output = encoder_src_template.render(can_msgs=json_filtered_2)
-    with open(f'cgen/can_messages_tx.c', 'w') as encoders:
+    with open(f'{output_path}/can_messages_tx.c', 'w') as encoders:
         encoders.write(output)
 
     output = encoder_inc_template.render(can_msgs=json_filtered_2)
-    with open(f'cgen/can_messages_tx.h', 'w') as encoders:
+    with open(f'{output_path}/can_messages_tx.h', 'w') as encoders:
         encoders.write(output)
 
     #     output = router_template.render(can_msgs=json_filtered_2)
