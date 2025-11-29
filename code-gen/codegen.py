@@ -11,11 +11,11 @@ app = typer.Typer()
 def main(device_type: str, output_path: str, ):
     # we need to open all of the files and combine the json, then filter out depending on the node name in the topic name
     json_f = []
-    for f in os.listdir('../can-messages'):
+    for f in os.listdir(f'{os.path.dirname(os.path.abspath(__file__))}/../can-messages'):
         # ensure just files ending with json
-        if not os.path.isfile(f'../can-messages/{f}') or not f.endswith('.json'):
+        if not os.path.isfile(f'{os.path.dirname(os.path.abspath(__file__))}/../can-messages/{f}') or not f.endswith('.json'):
             continue
-        with open(f'../can-messages/{f}', 'r') as json_file:
+        with open(f'{os.path.dirname(os.path.abspath(__file__))}/../can-messages/{f}', 'r') as json_file:
             print('Loading ', f)
             json_f.extend(json.loads(json_file.read()))
             json_file.close()
@@ -45,13 +45,13 @@ def main(device_type: str, output_path: str, ):
     print(f'Found {len(json_filtered_2)} eligible messages to generate code for of {len(json_filtered)} existing messages!')
 
     # Jinja2 environment
-    env = Environment(loader=FileSystemLoader("."))
+    env = Environment(loader=FileSystemLoader(f'{os.path.dirname(os.path.abspath(__file__))}'))
 
-    decoder_src_template = env.get_template("templates/decoders.c.j2")
-    decoder_inc_template = env.get_template("templates/decoders.h.j2")
-    encoder_src_template = env.get_template("templates/encoders.c.j2")
-    encoder_inc_template = env.get_template("templates/encoders.h.j2")
-    router_template = env.get_template("templates/router.c.j2")
+    # decoder_src_template = env.get_template(f"{os.path.dirname(os.path.abspath(__file__))}/templates/decoders.c.j2")
+    # decoder_inc_template = env.get_template(f"{os.path.dirname(os.path.abspath(__file__))}/templates/decoders.h.j2")
+    encoder_src_template = env.get_template(f"templates/encoders.c.j2")
+    encoder_inc_template = env.get_template(f"templates/encoders.h.j2")
+    # router_template = env.get_template(f"{os.path.dirname(os.path.abspath(__file__))}/templates/router.c.j2")
 
     directory_path = Path("cgen")
     if not directory_path.exists():
