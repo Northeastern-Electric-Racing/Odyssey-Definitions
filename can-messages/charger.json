@@ -84,6 +84,7 @@
       {
         "name": "BMS/Charging/UnimplementedData",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           4
         ]
@@ -262,6 +263,7 @@
       {
         "name": "Charger/Box/UnimplementedData",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           8
         ]
