@@ -2489,7 +2489,8 @@
       },
       {
         "name": "BMS/PerCell/Beta/{4}/Vdigital",
-        "unit": "Digital in voltage of ADBMS",
+        "unit": "",
+        "doc": "Digital in voltage of ADBMS",
         "values": [
           3
         ]
