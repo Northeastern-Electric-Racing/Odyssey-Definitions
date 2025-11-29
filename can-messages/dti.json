@@ -42,6 +42,8 @@
       {
         "name": "DTI/RPM/ERPM",
         "unit": "ERPM",
+        "doc": "Electrical RPM",
+        "desc": "Equation: ERPM = Motor RPM * number of the motor pole pairs",
         "values": [
           1
         ]
@@ -49,6 +51,8 @@
       {
         "name": "DTI/Power/Duty_Cycle",
         "unit": "%",
+        "doc": "The controller duty cycle",
+        "desc": "The sign of this value will represent whether the motor is running(positive) current or regenerating (negative) current",
         "values": [
           2
         ]
@@ -56,6 +60,7 @@
       {
         "name": "DTI/Power/Input_Voltage",
         "unit": "V",
+        "doc": "the DC voltage",
         "values": [
           3
         ]
@@ -104,6 +109,8 @@
       {
         "name": "DTI/Power/AC_Current",
         "unit": "A",
+        "doc": "The motor current",
+        "desc": "The sign of this value represents whether the motor is running(positive) current or regenerating (negative) current",
         "values": [
           1
         ]
@@ -111,6 +118,8 @@
       {
         "name": "DTI/Power/DC_Current",
         "unit": "A",
+        "doc": "Current on the DC side",
+        "desc": "The sign of this value represents whether the motor is running(positive) current or regenerating (negative) current. ",
         "values": [
           2
         ]
@@ -217,6 +226,7 @@
       {
         "name": "DTI/Temps/Controller_Temperature",
         "unit": "C",
+        "doc": "Temperature of the inverter semiconductors",
         "values": [
           1
         ]
@@ -224,6 +234,7 @@
       {
         "name": "DTI/Temps/Motor_Temperature",
         "unit": "C",
+        "doc": "Temperature of the motor measured by the inverter",
         "values": [
           2
         ]
@@ -231,6 +242,8 @@
       {
         "name": "DTI/Fault/Fault_Code",
         "unit": "",
+        "doc": "Fault code",
+        "desc": "0x00 : NO FAULTS\n0x01 : Overvoltage - The input voltage is higher than the set maximum.\n0x02 : Undervoltage - The input voltage is lower than the set minimum.\n0x03 : DRV - Transistor or transistor drive error\n0x04 : ABS. Overcurrent - The AC current is higher than the set absolute maximum current. \n0x05 : CTLR Overtemp. - The controller temperature is higher than the set maximum.\n0x06 : Motor Overtemp. - The motor temperature is higher than the set maximum.\n0x07 : Sensor wire fault - Something went wrong with the sensor differential signals.\n0x08 : Sensor general fault - An error occurred while processing the sensor signals\n0x09 : CAN Command error - CAN message received contains parameter out of boundaries\n0x0A : Analog input error – Redundant output out of range",
         "values": [
           3
         ]
@@ -282,6 +295,7 @@
       {
         "name": "DTI/FOC/Component_Id",
         "unit": "A",
+        "doc": "FOC algorithm component Id",
         "values": [
           1
         ]
@@ -289,6 +303,7 @@
       {
         "name": "DTI/FOC/Component_Iq",
         "unit": "A",
+        "doc": "FOC algorithm component Iq",
         "values": [
           2
         ]
@@ -660,6 +675,7 @@
       {
         "name": "DTI/General/Throttle_Signal",
         "unit": "%",
+        "doc": "Throttle signal derived from analog inputs or CAN2",
         "values": [
           1
         ]
@@ -667,6 +683,7 @@
       {
         "name": "DTI/General/Brake_Signal",
         "unit": "%",
+        "doc": "Brake signal derived from analog inputs or CAN2",
         "values": [
           2
         ]
@@ -674,6 +691,7 @@
       {
         "name": "DTI/General/Digital_Out_4",
         "unit": "",
+        "doc": "Digital output is active",
         "values": [
           3
         ]
@@ -681,6 +699,7 @@
       {
         "name": "DTI/General/Digital_Out_3",
         "unit": "",
+        "doc": "Digital output is active",
         "values": [
           4
         ]
@@ -688,6 +707,7 @@
       {
         "name": "DTI/General/Digital_Out_2",
         "unit": "",
+        "doc": "Digital output is active",
         "values": [
           5
         ]
@@ -695,6 +715,7 @@
       {
         "name": "DTI/General/Digital_Out_1",
         "unit": "",
+        "doc": "Digital output is active",
         "values": [
           6
         ]
@@ -702,6 +723,7 @@
       {
         "name": "DTI/General/Digital_In_4",
         "unit": "",
+        "doc": "Digital input is active",
         "values": [
           7
         ]
@@ -709,6 +731,7 @@
       {
         "name": "DTI/General/Digital_In_3",
         "unit": "",
+        "doc": "Digital input is active",
         "values": [
           8
         ]
@@ -716,6 +739,7 @@
       {
         "name": "DTI/General/Digital_In_2",
         "unit": "",
+        "doc": "Digital input is active",
         "values": [
           9
         ]
@@ -723,6 +747,7 @@
       {
         "name": "DTI/General/Digital_In_1",
         "unit": "",
+        "doc": "Digital input is active",
         "values": [
           10
         ]
@@ -730,6 +755,8 @@
       {
         "name": "DTI/General/Drive_Enable",
         "unit": "",
+        "doc": "Drive enabled",
+        "desc": "Drive can be enabled/disbled by the digital input or/and via CAN2 interface",
         "values": [
           11
         ]
@@ -737,6 +764,7 @@
       {
         "name": "DTI/Limit/Motor_Temp_Limit",
         "unit": "",
+        "doc": "Motor temperature limit active",
         "values": [
           12
         ]
@@ -744,6 +772,7 @@
       {
         "name": "DTI/Limit/Motor_Acc_Temp_Limit",
         "unit": "",
+        "doc": "Motor acceleration temperature limit active",
         "values": [
           13
         ]
@@ -751,6 +780,7 @@
       {
         "name": "DTI/Limit/Input_Voltage_Limit",
         "unit": "",
+        "doc": "Input voltage limit active",
         "values": [
           14
         ]
@@ -758,6 +788,7 @@
       {
         "name": "DTI/Limit/IGBT_Temp_Limit",
         "unit": "",
+        "doc": "IGBT temperature limit active",
         "values": [
           15
         ]
@@ -765,6 +796,7 @@
       {
         "name": "DTI/Limit/IGBT_Acc_Temp_Limit",
         "unit": "",
+        "doc": "IGBT acceleration temperature limit active",
         "values": [
           16
         ]
@@ -772,6 +804,8 @@
       {
         "name": "DTI/Limit/Drive_Enable_Limit",
         "unit": "",
+        "doc": "Drive enable limit active",
+        "desc": "Indicates whether the drive enable limitation is active or inactive.\nUsed for software development purposes. For true indication of the drive state please use byte 3, bit 24 of this message",
         "values": [
           17
         ]
@@ -779,6 +813,7 @@
       {
         "name": "DTI/Limit/DC_Current_Limit",
         "unit": "",
+        "doc": "DC current limit active",
         "values": [
           18
         ]
@@ -786,6 +821,8 @@
       {
         "name": "DTI/Limit/Cap_Temp_Limit",
         "unit": "",
+        "doc": "Capacitor temperature limit active",
+        "desc": "The inverter can limit the output power to not to overheat the internal capacitors. (only valid HW version 3.6 or newer) ",
         "values": [
           19
         ]
@@ -793,6 +830,7 @@
       {
         "name": "DTI/Limit/Power_Limit",
         "unit": "",
+        "doc": "Power limit by configuration active",
         "values": [
           20
         ]
@@ -800,6 +838,7 @@
       {
         "name": "DTI/Limit/RPM_Max_Limit",
         "unit": "",
+        "doc": "RPM max limit active",
         "values": [
           21
         ]
@@ -807,6 +846,7 @@
       {
         "name": "DTI/Limit/RPM_Min_Limit",
         "unit": "",
+        "doc": "RPM min limit active",
         "values": [
           22
         ]
@@ -828,6 +868,8 @@
       {
         "name": "DTI/General/CAN_Map_Version",
         "unit": "",
+        "doc": "Indicates the CAN map version",
+        "desc": "For ex: 23 -> 2,3 (V2,3)",
         "values": [
           25
         ]
@@ -841,6 +883,8 @@
     "points": [
       {
         "size": 16,
+        "name": "current_target_ac",
+        "c_type": "float",
         "signed": true,
         "formatter": {
           "key": "divide",
@@ -858,6 +902,8 @@
       {
         "name": "MPU/Commands/AC_Current_Target",
         "unit": "A",
+        "doc": "This command sets the target motor AC current (peak, not RMS)",
+        "desc": "When the controller receives this message, it automatically switches to current control mode.\nThis value must not be above the limits of the inverter and must be multiplied by 10 before sending. This is a signed parameter, and the sign represents the direction of the torque which correlates with the motor AC current. (For the correlation, please refer to the motor parameters) ",
         "values": [
           1
         ]
@@ -871,6 +917,8 @@
     "points": [
       {
         "size": 16,
+        "name": "brake_ac_current",
+        "c_type": "float",
         "signed": true,
         "formatter": {
           "key": "divide",
@@ -892,6 +940,8 @@
       {
         "name": "MPU/Commands/Brake_Current_Target",
         "unit": "A",
+        "doc": "Targets the brake current of the motor",
+        "desc": "It will result negative torque relatively to the forward direction of the motor.\nThis value must be multiplied by 10 before sending, only positive currents are accepted.",
         "values": [
           1
         ]
@@ -929,6 +979,8 @@
       {
         "name": "DTI/Commands/ERPM_Target",
         "unit": "A",
+        "doc": "This command enables the speed control of the motor with a target ERPM",
+        "desc": "This is a signed parameter, and the sign represents the direction of the spinning. For better operation you need to tune the PID of speed control.\nEquation: ERPM = Motor RPM * number of the motor pole pairs. ",
         "values": [
           1
         ]
@@ -970,6 +1022,8 @@
       {
         "name": "DTI/Commands/Position_Target",
         "unit": "degree",
+        "doc": "This value targets the desired position of the motor in degrees.",
+        "desc": "This command is used to hold a position of the motor.\nThis feature is enabled only if encoder is used as position sensor. The value has to be multiplied by 10 before sending. ",
         "values": [
           1
         ]
@@ -1011,6 +1065,8 @@
       {
         "name": "DTI/Commands/Relative_Current_Target",
         "unit": "A",
+        "doc": "This command sets a relative AC current to the minimum and maximum limits set by configuration. ",
+        "desc": "This achieves the same function as the “Set AC current” command. Gives you a freedom to send values between -100,0% and 100,0%. You do not need to know the motor limit parameters. This value must be between -100 and 100 and must be multiplied by 10 before sending. ",
         "values": [
           1
         ]
@@ -1052,6 +1108,8 @@
       {
         "name": "DTI/Commands/Relative_Brake_Current_Target",
         "unit": "A",
+        "doc": "Targets the relative brake current of the motor",
+        "desc": "It will result negative torque relatively to the forward direction of the motor. This value must be between 0 and 100 and must be multiplied by 10 before sending Gives you a freedom to send values between 0% and 100,0%. You do not need to know the motor limit parameters. This value must be between 0 and 100 and has to be multiplied by 10 before sending ",
         "values": [
           1
         ]
@@ -1139,6 +1197,7 @@
       {
         "name": "DTI/Commands/Digital_Output_1_Target",
         "unit": "",
+        "doc": "Sets the digital output 1 to HIGH (1) or LOW (0) state ",
         "values": [
           1
         ]
@@ -1146,6 +1205,7 @@
       {
         "name": "DTI/Commands/Digital_Output_2_Target",
         "unit": "",
+        "doc": "Sets the digital output 1 to HIGH (1) or LOW (0) state ",
         "values": [
           2
         ]
@@ -1153,6 +1213,7 @@
       {
         "name": "DTI/Commands/Digital_Output_3_Target",
         "unit": "",
+        "doc": "Sets the digital output 1 to HIGH (1) or LOW (0) state ",
         "values": [
           3
         ]
@@ -1160,6 +1221,7 @@
       {
         "name": "DTI/Commands/Digital_Output_4_Target",
         "unit": "",
+        "doc": "Sets the digital output 1 to HIGH (1) or LOW (0) state ",
         "values": [
           4
         ]
@@ -1180,6 +1242,8 @@
     "points": [
       {
         "size": 16,
+        "name": "max_current_ac_target",
+        "c_type": "float",
         "signed": true,
         "formatter": {
           "key": "divide",
@@ -1201,6 +1265,8 @@
       {
         "name": "BMS/Commands/Max_AC_Current_Target",
         "unit": "A",
+        "doc": "This value determines the maximum allowable drive current on the AC side",
+        "desc": "With this function you are able maximize the maximum torque on the motor. The value must be multiplied by 10 before sending",
         "values": [
           1
         ]
@@ -1221,6 +1287,8 @@
     "points": [
       {
         "size": 16,
+        "name": "max_ac_brake_current_target",
+        "c_type": "float",
         "signed": true,
         "formatter": {
           "key": "divide",
@@ -1242,6 +1310,8 @@
       {
         "name": "BMS/Commands/Max_AC_Brake_Current_Target",
         "unit": "A",
+        "doc": "This value sets the maximum allowable brake current on the AC side",
+        "desc": "This value must be multiplied by 10 before sending, only negative currents are accepted.",
         "values": [
           1
         ]
@@ -1262,6 +1332,8 @@
     "points": [
       {
         "size": 16,
+        "name": "max_dc_current_target",
+        "c_type": "float",
         "signed": true,
         "formatter": {
           "key": "divide",
@@ -1279,6 +1351,8 @@
       {
         "name": "BMS/Commands/Max_DC_Current_Target",
         "unit": "A",
+        "doc": "This value determines the maximum allowable drive current on the DC side",
+        "desc": "With this command the BMS can limit the maximum allowable battery discharge current. The value has to be multiplied by 10 before sending. ",
         "values": [
           1
         ]
@@ -1292,6 +1366,8 @@
     "points": [
       {
         "size": 16,
+        "name": "max_dc_brake_current_target",
+        "c_type": "float",
         "signed": true,
         "formatter": {
           "key": "divide",
@@ -1309,6 +1385,8 @@
       {
         "name": "BMS/Commands/Max_DC_Brake_Current_Target",
         "unit": "A",
+        "doc": "This value determines the maximum allowable brake current on the DC side",
+        "desc": "With this command the BMS can limit the maximum allowable battery charge current. The value has to be multiplied by 10 before sending. Only negative currents are accepted",
         "values": [
           1
         ]
@@ -1322,6 +1400,8 @@
     "points": [
       {
         "size": 8,
+        "name": "drive_enable",
+        "c_type": "uint8_t",
         "sim": {
           "options": [
             [
@@ -1340,6 +1420,8 @@
       {
         "name": "MPU/Commands/Drive_Enable_Target",
         "unit": "",
+        "doc": "Drive allowed",
+        "desc": "Only 0 and 1 values are accepted. Must be sent periodically to be enabled. Refer to chapter 4.3",
         "values": [
           1
         ]

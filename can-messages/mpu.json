@@ -5,6 +5,8 @@
     "points": [
       {
         "size": 4,
+        "name": "home_mode",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -14,24 +16,14 @@
             [
               1,
               0.78
-            ],
-            [
-              2,
-              0.1
-            ],
-            [
-              3,
-              0.1
-            ],
-            [
-              4,
-              0.01
             ]
           ]
         }
       },
       {
         "size": 4,
+        "name": "nero_index",
+        "c_type": "uint8_t",
         "sim": {
           "options": [
             [
@@ -67,6 +59,8 @@
       },
       {
         "size": 16,
+        "name": "speed",
+        "c_type": "float",
         "signed": true,
         "formatter": {
           "key": "divide",
@@ -81,6 +75,8 @@
       },
       {
         "size": 1,
+        "name": "tsms",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -96,6 +92,8 @@
       },
       {
         "size": 7,
+        "name": "torque_lim",
+        "c_type": "float",
         "sim": {
           "min": 0,
           "max": 100,
@@ -105,6 +103,8 @@
       },
       {
         "size": 1,
+        "name": "not_reversing",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -120,6 +120,8 @@
       },
       {
         "size": 10,
+        "name": "regen_lim",
+        "c_type": "uint16_t",
         "sim": {
           "min": 0,
           "max": 50,
@@ -129,6 +131,8 @@
       },
       {
         "size": 1,
+        "name": "launch_control_en",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -151,6 +155,7 @@
       {
         "name": "MPU/State/Mode",
         "unit": "",
+        "doc": "Whether at home or not",
         "values": [
           1
         ]
@@ -158,6 +163,7 @@
       {
         "name": "MPU/State/ModeIndex",
         "unit": "",
+        "doc": "The index of the selected screen",
         "values": [
           2
         ]
@@ -165,6 +171,7 @@
       {
         "name": "MPU/State/Speed",
         "unit": "mph",
+        "doc": "The car speed measured via RPM",
         "values": [
           3
         ]
@@ -172,6 +179,7 @@
       {
         "name": "MPU/State/TSMS",
         "unit": "",
+        "doc": "Whether shutdown is closed",
         "values": [
           4
         ]
@@ -179,6 +187,7 @@
       {
         "name": "MPU/State/TorqueLimit",
         "unit": "percentage",
+        "doc": "The torque limit selected by driver",
         "values": [
           5
         ]
@@ -186,6 +195,7 @@
       {
         "name": "MPU/State/Direction",
         "unit": "",
+        "doc": "Whether the car is reversing",
         "values": [
           6
         ]
@@ -193,6 +203,7 @@
       {
         "name": "MPU/State/RegenLimit",
         "unit": "A",
+        "doc": "The regeneration limit selected by the driver",
         "values": [
           7
         ]
@@ -200,6 +211,7 @@
       {
         "name": "MPU/State/LaunchControl",
         "unit": "",
+        "doc": "Whether launch control is enabled",
         "values": [
           8
         ]
@@ -216,6 +228,8 @@
     "points": [
       {
         "size": 16,
+        "name": "x_force",
+        "c_type": "float",
         "sim": {
           "min": 0,
           "max": 2,
@@ -225,6 +239,8 @@
       },
       {
         "size": 16,
+        "name": "y_force",
+        "c_type": "float",
         "sim": {
           "min": 0,
           "max": 2,
@@ -234,6 +250,8 @@
       },
       {
         "size": 16,
+        "name": "y_force",
+        "c_type": "float",
         "sim": {
           "min": 0,
           "max": 2,
@@ -246,6 +264,7 @@
       {
         "name": "MPU/Sense/Accel",
         "unit": "g",
+        "doc": "The IMU acceleration values (x,y,z)",
         "values": [
           1,
           2,
@@ -261,6 +280,8 @@
     "points": [
       {
         "size": 16,
+        "name": "x_deg",
+        "c_type": "float",
         "sim": {
           "min": 0,
           "max": 7,
@@ -270,6 +291,8 @@
       },
       {
         "size": 16,
+        "name": "y_deg",
+        "c_type": "float",
         "sim": {
           "min": 0,
           "max": 7,
@@ -279,6 +302,8 @@
       },
       {
         "size": 16,
+        "name": "z_deg",
+        "c_type": "float",
         "sim": {
           "min": 0,
           "max": 7,
@@ -291,6 +316,7 @@
       {
         "name": "MPU/Sense/Gyro",
         "unit": "",
+        "doc": "The IMU gyroscope reading",
         "values": [
           1,
           2,
@@ -306,6 +332,8 @@
     "points": [
       {
         "size": 16,
+        "name": "temp",
+        "c_type": "float",
         "signed": true,
         "sim": {
           "min": 0,
@@ -319,6 +347,7 @@
       {
         "name": "MPU/Sense/Temp_IMU",
         "unit": "C",
+        "doc": "The measured temperature of the LV box from the board",
         "values": [
           1
         ]
@@ -332,6 +361,8 @@
     "points": [
       {
         "size": 1,
+        "name": "pedal_open_circuit",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -347,6 +378,8 @@
       },
       {
         "size": 1,
+        "name": "pedal_short_circuit",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -362,6 +395,8 @@
       },
       {
         "size": 1,
+        "name": "pedal_difference",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -377,6 +412,8 @@
       },
       {
         "size": 1,
+        "name": "can_dispatch",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -392,6 +429,8 @@
       },
       {
         "size": 1,
+        "name": "can_routing",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -407,6 +446,8 @@
       },
       {
         "size": 1,
+        "name": "can_monitor",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -426,6 +467,8 @@
       },
       {
         "size": 1,
+        "name": "onboard_temp",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -441,6 +484,8 @@
       },
       {
         "size": 1,
+        "name": "imu",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -456,6 +501,8 @@
       },
       {
         "size": 1,
+        "name": "fuse_monitor",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -471,6 +518,8 @@
       },
       {
         "size": 1,
+        "name": "shutdown_monitor",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -486,6 +535,8 @@
       },
       {
         "size": 1,
+        "name": "lv_monitor",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -501,6 +552,8 @@
       },
       {
         "size": 1,
+        "name": "bspd_prefault",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -516,6 +569,8 @@
       },
       {
         "size": 1,
+        "name": "rtds",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -531,6 +586,8 @@
       },
       {
         "size": 1,
+        "name": "pump_sensors",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -546,6 +603,8 @@
       },
       {
         "size": 1,
+        "name": "pdu_current",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -568,6 +627,7 @@
       {
         "name": "MPU/Fault/Critical/ONBOARD_PEDAL_OPEN_CIRCUIT",
         "unit": "",
+        "doc": "Open circuit (0V) of APPS detected",
         "values": [
           1
         ]
@@ -575,6 +635,7 @@
       {
         "name": "MPU/Fault/Critical/ONBOARD_PEDAL_SHORT_CIRCUIT",
         "unit": "",
+        "doc": "Short circuit (5V) of APPS detected",
         "values": [
           2
         ]
@@ -582,6 +643,7 @@
       {
         "name": "MPU/Fault/Critical/ONBOARD_PEDAL_DIFFERENCE",
         "unit": "",
+        "doc": "Short to other (APPS=APPS) of APPS detected",
         "values": [
           3
         ]
@@ -589,6 +651,7 @@
       {
         "name": "MPU/Fault/Critical/CAN_DISPATCH",
         "unit": "",
+        "doc": "Cannot send CAN messages",
         "values": [
           4
         ]
@@ -596,6 +659,7 @@
       {
         "name": "MPU/Fault/Critical/CAN_ROUTING",
         "unit": "",
+        "doc": "Cannot store CAN messages",
         "values": [
           5
         ]
@@ -603,6 +667,7 @@
       {
         "name": "MPU/Fault/Critical/BMS_CAN_MONITOR",
         "unit": "",
+        "doc": "Lost CAN communication to BMS",
         "values": [
           6
         ]
@@ -610,6 +675,7 @@
       {
         "name": "MPU/Fault/Non-Critical/rONBOARD_TEMP",
         "unit": "",
+        "doc": "Lost comms to onboard temperature sensor",
         "values": [
           8
         ]
@@ -617,6 +683,7 @@
       {
         "name": "MPU/Fault/Non-Critical/IMU",
         "unit": "",
+        "doc": "Lost comms to onboard IMU",
         "values": [
           9
         ]
@@ -624,6 +691,7 @@
       {
         "name": "MPU/Fault/Non-Critical/FUSE_MONITOR",
         "unit": "",
+        "doc": "Fuse blown",
         "values": [
           10
         ]
@@ -631,6 +699,7 @@
       {
         "name": "MPU/Fault/Non-Critical/SHUTDOWN_MONITOR",
         "unit": "",
+        "doc": "Shutdown anomoly",
         "values": [
           11
         ]
@@ -638,6 +707,7 @@
       {
         "name": "MPU/Fault/Non-Critical/LV_MONITOR",
         "unit": "",
+        "doc": "LV reading broken",
         "values": [
           12
         ]
@@ -645,6 +715,7 @@
       {
         "name": "MPU/Fault/Non-Critical/BSPD_PREFAULT",
         "unit": "",
+        "doc": "BSPD prefault triggered",
         "values": [
           13
         ]
@@ -652,6 +723,7 @@
       {
         "name": "MPU/Fault/Non-Critical/RTDS",
         "unit": "",
+        "doc": "RTDS broken",
         "values": [
           14
         ]
@@ -659,6 +731,7 @@
       {
         "name": "MPU/Fault/Non-Critical/PUMP_SENSORS",
         "unit": "",
+        "doc": "Pump sensors broken",
         "values": [
           15
         ]
@@ -666,6 +739,7 @@
       {
         "name": "MPU/Fault/Non-Critical/PDU_CURRENT",
         "unit": "",
+        "doc": "PDU current sense broken",
         "values": [
           16
         ]
@@ -679,6 +753,8 @@
     "points": [
       {
         "size": 16,
+        "name": "lv_volts",
+        "c_type": "float",
         "endianness": "little",
         "formatter": {
           "key": "divide",
@@ -693,6 +769,8 @@
       },
       {
         "size": 8,
+        "name": "lv_soc",
+        "c_type": "float",
         "sim": {
           "min": 5,
           "max": 99,
@@ -705,6 +783,7 @@
       {
         "name": "MPU/Sense/Voltage",
         "unit": "V",
+        "doc": "The LV battery voltage",
         "values": [
           1
         ]
@@ -712,6 +791,7 @@
       {
         "name": "MPU/Sense/SOC",
         "unit": "%",
+        "doc": "The LV battery SOC",
         "values": [
           2
         ]
@@ -725,6 +805,8 @@
     "points": [
       {
         "size": 16,
+        "name": "accel1_volts",
+        "c_type": "float",
         "formatter": {
           "key": "divide",
           "arg": 100
@@ -738,6 +820,8 @@
       },
       {
         "size": 16,
+        "name": "accel2_volts",
+        "c_type": "float",
         "formatter": {
           "key": "divide",
           "arg": 100
@@ -751,6 +835,8 @@
       },
       {
         "size": 16,
+        "name": "brake1_volts",
+        "c_type": "float",
         "formatter": {
           "key": "divide",
           "arg": 100
@@ -764,6 +850,8 @@
       },
       {
         "size": 16,
+        "name": "brake2_volts",
+        "c_type": "float",
         "formatter": {
           "key": "divide",
           "arg": 100
@@ -780,6 +868,7 @@
       {
         "name": "MPU/Pedals/Accelerator_1",
         "unit": "volts",
+        "doc": "Accelerator 1 voltage",
         "values": [
           1
         ]
@@ -787,6 +876,7 @@
       {
         "name": "MPU/Pedals/Accelerator_2",
         "unit": "volts",
+        "doc": "Accelerator 2 voltage",
         "values": [
           2
         ]
@@ -794,6 +884,7 @@
       {
         "name": "MPU/Pedals/Brake_1",
         "unit": "volts",
+        "doc": "Brake 1 voltage",
         "values": [
           3
         ]
@@ -801,6 +892,7 @@
       {
         "name": "MPU/Pedals/Brake_2",
         "unit": "volts",
+        "doc": "Brake 2 voltage",
         "values": [
           4
         ]
@@ -814,6 +906,8 @@
     "points": [
       {
         "size": 16,
+        "name": "accel_norm",
+        "c_type": "float",
         "formatter": {
           "key": "divide",
           "arg": 100
@@ -827,6 +921,8 @@
       },
       {
         "size": 16,
+        "name": "brake_norm",
+        "c_type": "float",
         "formatter": {
           "key": "divide",
           "arg": 100
@@ -843,6 +939,7 @@
       {
         "name": "MPU/Pedals/Accelerator_Norm",
         "unit": "%",
+        "doc": "Percent pedal pressed",
         "values": [
           1
         ]
@@ -850,6 +947,7 @@
       {
         "name": "MPU/Pedals/Brake_Norm",
         "unit": "%",
+        "doc": "Percent pressure (to sensor max)",
         "values": [
           2
         ]
@@ -863,6 +961,8 @@
     "points": [
       {
         "size": 8,
+        "name": "spare0",
+        "c_type": "uint8_t",
         "sim": {
           "min": 580,
           "max": 990,
@@ -872,6 +972,8 @@
       },
       {
         "size": 8,
+        "name": "spare1",
+        "c_type": "int8_t",
         "signed": true,
         "sim": {
           "min": 580,
@@ -882,6 +984,8 @@
       },
       {
         "size": 16,
+        "name": "spare2",
+        "c_type": "uint16_t",
         "endianness": "little",
         "sim": {
           "min": 580,
@@ -892,6 +996,8 @@
       },
       {
         "size": 32,
+        "name": "spare3",
+        "c_type": "int32_t",
         "signed": true,
         "endianness": "little",
         "sim": {
@@ -906,6 +1012,7 @@
       {
         "name": "MPU/Debug/Spare0",
         "unit": "",
+        "doc": "Internal",
         "values": [
           1
         ]
@@ -913,6 +1020,7 @@
       {
         "name": "MPU/Debug/Spare1",
         "unit": "",
+        "doc": "Internal",
         "values": [
           2
         ]
@@ -920,6 +1028,7 @@
       {
         "name": "MPU/Debug/Spare2",
         "unit": "",
+        "doc": "Internal",
         "values": [
           3
         ]
@@ -927,6 +1036,7 @@
       {
         "name": "MPU/Debug/Spare3",
         "unit": "",
+        "doc": "Internal",
         "values": [
           4
         ]
@@ -940,6 +1050,8 @@
     "points": [
       {
         "size": 1,
+        "name": "bms",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -955,6 +1067,8 @@
       },
       {
         "size": 1,
+        "name": "inertia_sw",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -970,6 +1084,8 @@
       },
       {
         "size": 1,
+        "name": "imd",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -985,6 +1101,8 @@
       },
       {
         "size": 1,
+        "name": "bspd",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -1000,6 +1118,8 @@
       },
       {
         "size": 1,
+        "name": "mc",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -1015,6 +1135,8 @@
       },
       {
         "size": 1,
+        "name": "bots",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -1030,6 +1152,8 @@
       },
       {
         "size": 1,
+        "name": "hvd_intl",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -1045,6 +1169,8 @@
       },
       {
         "size": 1,
+        "name": "hvc_intl",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -1063,6 +1189,7 @@
       {
         "name": "MPU/Shutdown/BMS_GOOD",
         "unit": "",
+        "doc": "BMS Shutdown Relay",
         "values": [
           1
         ]
@@ -1070,6 +1197,7 @@
       {
         "name": "MPU/Shutdown/INERTIA_SW_GOOD",
         "unit": "",
+        "doc": "Inertia switch status",
         "values": [
           2
         ]
@@ -1077,6 +1205,7 @@
       {
         "name": "MPU/Shutdown/IMD_GOOD",
         "unit": "",
+        "doc": "IMD Shutdown relay",
         "values": [
           3
         ]
@@ -1084,6 +1213,7 @@
       {
         "name": "MPU/Shutdown/BSPD_GOOD",
         "unit": "",
+        "doc": "BSPD Shutdown relay",
         "values": [
           4
         ]
@@ -1091,6 +1221,7 @@
       {
         "name": "MPU/Shutdown/MC_STAT",
         "unit": "",
+        "doc": "MC interlock status",
         "values": [
           5
         ]
@@ -1098,6 +1229,7 @@
       {
         "name": "MPU/Shutdown/BOTS_GOOD",
         "unit": "",
+        "doc": "Brake Overtravel Switch status",
         "values": [
           6
         ]
@@ -1105,6 +1237,7 @@
       {
         "name": "MPU/Shutdown/HVD_INTLK_GOOD",
         "unit": "",
+        "doc": "High voltage disconnect status",
         "values": [
           7
         ]
@@ -1112,1083 +1245,9 @@
       {
         "name": "MPU/Shutdown/HVC_INTLK_GOOD",
         "unit": "",
+        "doc": "High voltage connector status",
         "values": [
           8
-        ]
-      }
-    ],
-    "sim_freq": 1000
-  },
-  {
-    "id": "0x111",
-    "desc": "MPU Fuses",
-    "points": [
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 7,
-        "parse": false
-      }
-    ],
-    "fields": [
-      {
-        "name": "MPU/Fuses/BATTBOX_FUSE_STAT",
-        "unit": "",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "MPU/Fuses/LV_BOARDS_FUSE_STAT",
-        "unit": "",
-        "values": [
-          2
-        ]
-      },
-      {
-        "name": "MPU/Fuses/RADFAN_FUSE_STAT",
-        "unit": "",
-        "values": [
-          3
-        ]
-      },
-      {
-        "name": "MPU/Fuses/FANBATTBOX_FUSE_STAT",
-        "unit": "",
-        "values": [
-          4
-        ]
-      },
-      {
-        "name": "MPU/Fuses/DASHBOARD_FUSE_STAT",
-        "unit": "",
-        "values": [
-          5
-        ]
-      },
-      {
-        "name": "MPU/Fuses/BRKLIGHT_FUSE_STAT",
-        "unit": "",
-        "values": [
-          6
-        ]
-      },
-      {
-        "name": "MPU/Fuses/SD_TO_BRB_FUSE_STAT",
-        "unit": "",
-        "values": [
-          7
-        ]
-      },
-      {
-        "name": "MPU/Fuses/PUMP_FUSE_STAT1",
-        "unit": "",
-        "values": [
-          8
-        ]
-      },
-      {
-        "name": "MPU/Fuses/PUMP_FUSE_STAT2",
-        "unit": "",
-        "values": [
-          9
-        ]
-      },
-      {
-        "name": "MPU/Fuses/Reserved",
-        "unit": "",
-        "values": [
-          10
-        ]
-      }
-    ],
-    "sim_freq": 1000
-  },
-  {
-    "id": "0x50A",
-    "desc": "MPU GPIO Expander Debug",
-    "points": [
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/PUMP_CTRL_1",
-        "unit": "",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/PUMP_CTRL_2",
-        "unit": "",
-        "values": [
-          2
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/BRKLIGHT_CTRL",
-        "unit": "",
-        "values": [
-          3
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/FANBATTBOX_CTRL",
-        "unit": "",
-        "values": [
-          4
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/RTDS_CTRL",
-        "unit": "",
-        "values": [
-          5
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/RADFAN_CTRL_1",
-        "unit": "",
-        "values": [
-          6
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/RADFAN_CTRL_2",
-        "unit": "",
-        "values": [
-          7
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/BATTBOX_FUSE_STAT",
-        "unit": "",
-        "values": [
-          8
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/LV_BOARDS_FUSE_STAT",
-        "unit": "",
-        "values": [
-          9
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/RADFAN_FUSE_STAT",
-        "unit": "",
-        "values": [
-          10
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/FANBATTBOX_FUSE_STAT",
-        "unit": "",
-        "values": [
-          11
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/DASHBOARD_FUSE_STAT",
-        "unit": "",
-        "values": [
-          12
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/BRKLIGHT_FUSE_STAT",
-        "unit": "",
-        "values": [
-          13
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/SD_TO_BRB_FUSE_STAT",
-        "unit": "",
-        "values": [
-          14
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/PUMP_FUSE_STAT1",
-        "unit": "",
-        "values": [
-          15
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/CTRL/PUMP_FUSE_STAT2",
-        "unit": "",
-        "values": [
-          16
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/CKPT_BRB_CLR",
-        "unit": "",
-        "values": [
-          17
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/BMS_GOOD",
-        "unit": "",
-        "values": [
-          18
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/INERTIA_SW_GOOD",
-        "unit": "",
-        "values": [
-          19
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/SPARE_GPIO1",
-        "unit": "",
-        "values": [
-          20
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/IMD_GOOD",
-        "unit": "",
-        "values": [
-          21
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/BSPD_GOOD",
-        "unit": "",
-        "values": [
-          22
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/SHUTDOWN_06",
-        "unit": "",
-        "values": [
-          23
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/SHUTDOWN_07",
-        "unit": "",
-        "values": [
-          24
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/SHUTDOWN_10",
-        "unit": "",
-        "values": [
-          25
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/MC_STAT",
-        "unit": "",
-        "values": [
-          26
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/SPARE_IN",
-        "unit": "",
-        "values": [
-          27
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/SHUTDOWN_13",
-        "unit": "",
-        "values": [
-          28
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/TSMS_SENSE",
-        "unit": "",
-        "values": [
-          29
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/BOTS_GOOD",
-        "unit": "",
-        "values": [
-          30
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/HVD_INTLK_GOOD",
-        "unit": "",
-        "values": [
-          31
-        ]
-      },
-      {
-        "name": "MPU/GPIO_EXPANDER_DEBUG/SHUTDOWN/HVC_INTLK_GOOD",
-        "unit": "",
-        "values": [
-          32
-        ]
-      }
-    ],
-    "sim_freq": 1000
-  },
-  {
-    "id": "0x508",
-    "desc": "PDU Current",
-    "points": [
-      {
-        "size": 16,
-        "endianness": "little",
-        "formatter": {
-          "key": "divide",
-          "arg": 1000
-        },
-        "sim": {
-          "min": 0,
-          "max": 3,
-          "inc_min": 0.01,
-          "inc_max": 3
-        }
-      },
-      {
-        "size": 16,
-        "endianness": "little",
-        "formatter": {
-          "key": "divide",
-          "arg": 1000
-        },
-        "sim": {
-          "min": 0,
-          "max": 5,
-          "inc_min": 0.01,
-          "inc_max": 5
-        }
-      },
-      {
-        "size": 16,
-        "endianness": "little",
-        "formatter": {
-          "key": "divide",
-          "arg": 1000
-        },
-        "sim": {
-          "min": 0,
-          "max": 2,
-          "inc_min": 0.01,
-          "inc_max": 2
-        }
-      },
-      {
-        "size": 16,
-        "endianness": "little",
-        "formatter": {
-          "key": "divide",
-          "arg": 1000
-        },
-        "sim": {
-          "min": 0,
-          "max": 1.25,
-          "inc_min": 0.01,
-          "inc_max": 1.25
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "MPU/Current/Motor_Controller",
-        "unit": "A",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "MPU/Current/Battbox_Fans",
-        "unit": "A",
-        "values": [
-          2
-        ]
-      },
-      {
-        "name": "MPU/Current/Pumps",
-        "unit": "A",
-        "values": [
-          3
-        ]
-      },
-      {
-        "name": "MPU/Current/LV_Boards",
-        "unit": "A",
-        "values": [
-          4
-        ]
-      }
-    ],
-    "sim_freq": 1000
-  },
-  {
-    "id": "0x509",
-    "desc": "Pump Sensors Voltage",
-    "points": [
-      {
-        "size": 32,
-        "endianness": "little",
-        "formatter": {
-          "key": "divide",
-          "arg": 10000
-        },
-        "sim": {
-          "min": 0,
-          "max": 3.3,
-          "inc_min": 0.01,
-          "inc_max": 1
-        }
-      },
-      {
-        "size": 32,
-        "endianness": "little",
-        "formatter": {
-          "key": "divide",
-          "arg": 10000
-        },
-        "sim": {
-          "min": 0,
-          "max": 3.3,
-          "inc_min": 0.01,
-          "inc_max": 1
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "MPU/Pump_Sensors/Sensor0",
-        "unit": "V",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "MPU/Pump_Sensors/Sensor1",
-        "unit": "V",
-        "values": [
-          2
         ]
       }
     ],
@@ -2200,6 +1259,8 @@
     "points": [
       {
         "size": 8,
+        "name": "major",
+        "c_type": "uint8_t",
         "sim": {
           "min": 0,
           "max": 3,
@@ -2210,6 +1271,8 @@
       },
       {
         "size": 8,
+        "name": "minor",
+        "c_type": "uint8_t",
         "sim": {
           "min": 0,
           "max": 3,
@@ -2220,6 +1283,8 @@
       },
       {
         "size": 8,
+        "name": "tag",
+        "c_type": "uint8_t",
         "sim": {
           "min": 0,
           "max": 3,
@@ -2230,6 +1295,8 @@
       },
       {
         "size": 8,
+        "name": "dirty",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -2245,6 +1312,8 @@
       },
       {
         "size": 8,
+        "name": "local_commit",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -2263,6 +1332,7 @@
       {
         "name": "MPU/Version/Tag",
         "unit": "major.minor.patch",
+        "doc": "The version tag deployed",
         "values": [
           1,
           2,
@@ -2272,6 +1342,7 @@
       {
         "name": "MPU/Version/Dirty",
         "unit": "bool",
+        "doc": "Whether the working tree was dirty",
         "values": [
           4
         ]
@@ -2279,6 +1350,7 @@
       {
         "name": "MPU/Version/LocalCommit",
         "unit": "bool",
+        "doc": "Whether local-only commits were deployed",
         "values": [
           5
         ]
@@ -2292,6 +1364,8 @@
     "points": [
       {
         "size": 32,
+        "name": "short_hash",
+        "c_type": "uint32_t",
         "endianness": "little",
         "sim": {
           "min": 0,
@@ -2303,6 +1377,8 @@
       },
       {
         "size": 32,
+        "name": "author_hash",
+        "c_type": "uint32_t",
         "endianness": "little",
         "sim": {
           "min": 0,
@@ -2317,6 +1393,7 @@
       {
         "name": "MPU/Version/ShortHash",
         "unit": "hash",
+        "doc": "Hash of the deployed code",
         "values": [
           1
         ]
@@ -2324,6 +1401,8 @@
       {
         "name": "MPU/Version/AuthorHash",
         "unit": "hash",
+        "doc": "Hash of the authors most recent commit",
+        "desc": "Used to see who deployed the code",
         "values": [
           2
         ]
