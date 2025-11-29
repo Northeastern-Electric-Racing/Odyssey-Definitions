@@ -953,6 +953,7 @@
       {
         "name": "DTI/Unused/Unused",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           2
         ]
@@ -992,6 +993,7 @@
       {
         "name": "DTI/Unused/Unused",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           2
         ]
@@ -1035,6 +1037,7 @@
       {
         "name": "DTI/Unused/Unused",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           2
         ]
@@ -1078,6 +1081,7 @@
       {
         "name": "DTI/Unused/Unused",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           2
         ]
@@ -1121,6 +1125,7 @@
       {
         "name": "DTI/Unused/Unused",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           2
         ]
@@ -1233,6 +1238,7 @@
       {
         "name": "DTI/Unused/Unused",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           5
         ]
@@ -1278,6 +1284,7 @@
       {
         "name": "DTI/Unused/Unused",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           2
         ]
@@ -1323,6 +1330,7 @@
       {
         "name": "DTI/Unused/Unused",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           2
         ]
