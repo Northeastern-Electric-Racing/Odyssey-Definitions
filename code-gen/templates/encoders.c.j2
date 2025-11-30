@@ -2,7 +2,7 @@
     This is a Jinja template, everything in {{ }} or {% %} brackets is replaced with C code.
     Code inside brackets are Python snippets.
 
-    Note: dont use tabs in C code, replace them with four spaces (tabs cause weird formatting issues). 
+    Note: dont use tabs in C code, replace them with four spaces (tabs cause weird formatting issues).
 
     This file creates the encoder functions given a list of CANMsg obejcts.
 -#}
@@ -12,34 +12,15 @@
 #include "can_messages_tx.h"
 {{- macros.imports() }}
 
-/// @brief A helper which sends appropriate error to stdout and CAN if a bistream overflows
-/// @param bitstream_res The bitstream to check for overflow
-/// @param can_id The CAN ID this bistream data is intended for
-/// @return 0 if success
 static const bool handle_bitstream_overflow(bitstream_t *bitstream_res,
-					    uint32_t can_id)
-{
-	if (!bitstream_res->overflow) {
-		return 0;
-	}
-
-    static uint16_t overflow_cnt = 0;
-	overflow_cnt++;
-
-    {% for msg in can_msgs -%}
-    {%- if 'overflow' in msg.desc.lower() -%} 
-	return {{ macros.function_name(msg) -}}(can_id, overflow_cnt);
-    {%- endif -%}
-    {%- endfor %}
-}
+					    uint32_t can_id);
 
 {% for msg in can_msgs -%}
 uint8_t send_{{ macros.function_name(msg) }}
 (
-    {% for point in msg.points -%}
-    {%- if point.name is defined -%}
-    {{ point.c_type }} {{ point.name }},
-    {% endif %}
+    {%- for point in msg.points if point.name is defined -%}
+    {{ point.c_type }} {{ point.name -}}
+    {{- "," if not loop.last -}}
     {%- endfor -%}
 )
 {
@@ -70,3 +51,24 @@ uint8_t send_{{ macros.function_name(msg) }}
 }
 
 {% endfor %}
+
+/// @brief A helper which sends appropriate error to stdout and CAN if a bistream overflows
+/// @param bitstream_res The bitstream to check for overflow
+/// @param can_id The CAN ID this bistream data is intended for
+/// @return 0 if success
+static const bool handle_bitstream_overflow(bitstream_t *bitstream_res,
+					    uint32_t can_id)
+{
+	if (!bitstream_res->overflow) {
+		return 0;
+	}
+
+    static uint16_t overflow_cnt = 0;
+	overflow_cnt++;
+
+    {% for msg in can_msgs -%}
+    {%- if 'overflow' in msg.desc.lower() -%}
+	return send_{{ macros.function_name(msg) -}}(can_id, overflow_cnt);
+    {%- endif -%}
+    {%- endfor %}
+}
