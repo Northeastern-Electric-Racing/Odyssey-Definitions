@@ -305,7 +305,7 @@
         "size": 16,
         "formatter": {
           "key": "multiply",
-          "arg": "10"
+          "arg": 10
         }
       },
       {
