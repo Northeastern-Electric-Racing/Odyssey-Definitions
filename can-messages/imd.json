@@ -1,0 +1,421 @@
+[
+  {
+    "id": "0x37",
+    "desc": "IMD General Information",
+    "points": [
+      {
+        "size": 16,
+        "endianness": "little"
+      },
+      {
+        "size": 8
+      },
+      {
+        "size": 8
+      },
+      {
+        "size": 1
+      },
+      {
+        "size": 1
+      },
+      {
+        "size": 1
+      },
+      {
+        "size": 1
+      },
+      {
+        "size": 1
+      },
+      {
+        "size": 1
+      },
+      {
+        "size": 1
+      },
+      {
+        "size": 1
+      },
+      {
+        "size": 1
+      },
+      {
+        "size": 1
+      },
+      {
+        "size": 6,
+        "parse": false
+      },
+      {
+        "size": 8
+      },
+      {
+        "size": 8,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "IMD/Info/General/R_Iso_corrected",
+        "unit": "kΩ",
+        "doc": "0…40500: corrected isolation value",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "IMD/Info/General/R_Iso_status",
+        "unit": "",
+        "doc": "ISO Status",
+        "desc": "0xFC: estimated isolation value during startup\n0xFD: first measured isolation value during startup\n0xFE: Isolation value in normal operation",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "IMD/Info/General/Measurement_Counter",
+        "unit": "",
+        "doc": "0...255 Counter will be incremented with each new measured isolation resistance value",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "IMD/Info/General/Warnings_and_Alarms/Device_error",
+        "unit": "",
+        "doc": "Device error active",
+        "values": [
+          4
+        ]
+      },
+      {
+        "name": "IMD/Info/General/Warnings_and_Alarms/HV_pos_conn_fail",
+        "unit": "",
+        "doc": "HV positive connection failure",
+        "values": [
+          5
+        ]
+      },
+      {
+        "name": "IMD/Info/General/Warnings_and_Alarms/HV_neg_conn_fail",
+        "unit": "",
+        "doc": "HV negative connection failure",
+        "values": [
+          6
+        ]
+      },
+      {
+        "name": "IMD/Info/General/Warnings_and_Alarms/Earth_conn_fail",
+        "unit": "",
+        "doc": "Earth connection failure",
+        "values": [
+          7
+        ]
+      },
+      {
+        "name": "IMD/Info/General/Warnings_and_Alarms/Iso_alarm",
+        "unit": "",
+        "doc": "iso value below threshold error",
+        "values": [
+          8
+        ]
+      },
+      {
+        "name": "IMD/Info/General/Warnings_and_Alarms/Iso_outdated",
+        "unit": "",
+        "doc": "value time elapsed since last measurement >= measurement timeout",
+        "values": [
+          9
+        ]
+      },
+      {
+        "name": "IMD/Info/General/Warnings_and_Alarms/Unbalance_alarm",
+        "unit": "",
+        "doc": "Unbalance value below threshold",
+        "values": [
+          10
+        ]
+      },
+      {
+        "name": "IMD/Info/General/Warnings_and_Alarms/Undervoltage_alarm",
+        "unit": "",
+        "doc": "Undervoltage alarm",
+        "values": [
+          11
+        ]
+      },
+      {
+        "name": "IMD/Info/General/Warnings_and_Alarms/Unsafe_to_start",
+        "unit": "",
+        "doc": "Unsafe to start",
+        "values": [
+          12
+        ]
+      },
+      {
+        "name": "IMD/Info/General/Warnings_and_Alarms/Earthlift_open",
+        "unit": "",
+        "doc": "Earthlift Open",
+        "values": [
+          14
+        ]
+      },
+      {
+        "name": "IMD/Info/General/Device_Activity",
+        "unit": "",
+        "doc": "Status",
+        "desc": "0: Initialization\n1: Normal operation\n2: Self test",
+        "values": [
+          15
+        ]
+      }
+    ]
+  },
+  {
+    "id": "0x38",
+    "desc": "IMD Isolation Detail Information",
+    "points": [
+      {
+        "size": 16,
+        "endianness": "little"
+      },
+      {
+        "size": 16,
+        "endianness": "little"
+      },
+      {
+        "size": 16,
+        "endianness": "little"
+      },
+      {
+        "size": 8
+      },
+      {
+        "size": 8
+      }
+    ],
+    "fields": [
+      {
+        "name": "IMD/Info/Isolation-Detail/R_iso_neg",
+        "unit": "kΩ",
+        "doc": "0…50000: Isolation resistance on HV_neg",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "IMD/Info/Isolation-Detail/R_iso_pos",
+        "unit": "kΩ",
+        "doc": "0…50000: Isolation resistance on HV_pos",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "IMD/Info/Isolation-Detail/R_iso_original",
+        "unit": "kΩ",
+        "doc": "0…50000: original isolation value",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "IMD/Info/Isolation-Detail/Measurement-Counter",
+        "unit": "",
+        "doc": "0...255 Counter will be incremented with each new measured isolation resistance value",
+        "values": [
+          4
+        ]
+      },
+      {
+        "name": "IMD/Info/Isolation-Detail/Quality",
+        "unit": "%",
+        "doc": "0…100: Quality",
+        "values": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "0x39",
+    "desc": "IMD Voltage Information",
+    "points": [
+      {
+        "size": 16
+      },
+      {
+        "size": 16
+      },
+      {
+        "size": 16
+      },
+      {
+        "size": 8
+      },
+      {
+        "size": 8,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "IMD/Info/Voltage/HV_system",
+        "unit": "V",
+        "doc": "0… 64255: HV system voltage",
+        "desc": "Temporarily scale with: (X-32128)*0.05",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "IMD/Info/Voltage/HV_neg_to_earth",
+        "unit": "V",
+        "doc": "0… 64255: HV_neg to Earth voltage",
+        "desc": "Temporarily scale with: (X-32128)*0.05",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "IMD/Info/Voltage/HV_pos_to_earth",
+        "unit": "V",
+        "doc": "0… 64255: HV_pos to MarinaEarth",
+        "desc": "Temporarily scale with: (X-32128)*0.05",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "IMD/Info/Voltage/Measurement-Counter",
+        "unit": "",
+        "doc": "Counter will be incremented with each new measured voltage value",
+        "values": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "0x3A",
+    "desc": "IMD IT-System Info",
+    "points": [
+      {
+        "size": 16
+      },
+      {
+        "size": 8
+      },
+      {
+        "size": 8
+      },
+      {
+        "size": 8
+      },
+      {
+        "size": 24,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "IMD/Info/IT-System/Capacity_Measured_Value",
+        "unit": "μF",
+        "doc": "1…200: Capacity value",
+        "formatter": {
+          "key": "multiply",
+          "arg": "10"
+        },
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "IMD/Info/IT-System/Capacity_Measurement_Counter",
+        "unit": "",
+        "doc": "0...255 Counter will be incremented with each new measured capacity value",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "IMD/Info/IT-System/Unbalance_Measured_Value",
+        "unit": "%",
+        "doc": "0…100: Measured value",
+        "desc": "0% = HV+\n50% = HV/2\n100% = HV",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "IMD/Info/IT-System/Unbalance_Measurement_Counter",
+        "unit": "",
+        "doc": "0...255 Counter will be incremented with each new measured unbalance value",
+        "values": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "0x22",
+    "desc": "IMD Request",
+    "points": [
+      {
+        "size": 8
+      },
+      {
+        "size": 56
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/IMDRequest/Index",
+        "unit": "",
+        "doc": "Reserved",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "Calypso/IMDRequest/Request",
+        "unit": "",
+        "doc": "Reserved",
+        "values": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "0x23",
+    "desc": "IMD Response",
+    "points": [
+      {
+        "size": 8
+      },
+      {
+        "size": 56
+      }
+    ],
+    "fields": [
+      {
+        "name": "IMD/Response/Index",
+        "unit": "",
+        "doc": "Reserved",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "IMD/Response/Response",
+        "unit": "",
+        "doc": "Reserved",
+        "values": [
+          2
+        ]
+      }
+    ]
+  }
+]
