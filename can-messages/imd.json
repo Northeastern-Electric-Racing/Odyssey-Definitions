@@ -302,7 +302,11 @@
     "desc": "IMD IT-System Info",
     "points": [
       {
-        "size": 16
+        "size": 16,
+        "formatter": {
+          "key": "multiply",
+          "arg": "10"
+        }
       },
       {
         "size": 8
@@ -323,10 +327,6 @@
         "name": "IMD/Info/IT-System/Capacity_Measured_Value",
         "unit": "μF",
         "doc": "1…200: Capacity value",
-        "formatter": {
-          "key": "multiply",
-          "arg": "10"
-        },
         "values": [
           1
         ]
