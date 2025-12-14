@@ -1,5 +1,420 @@
 [
   {
+    "id": "0xEF0",
+    "desc": "Dashboard eFuse",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 0,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "ADC"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "voltage"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "c_type": "uint16_t",
+        "name": "current",
+        "sim": {
+          "min": 0,
+          "max": 3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "name": "faulted?",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        },
+        "name": "enabled?"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/eFuses/Dashboard/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Value.",
+        "desc": "Ranges from 0 to 4095."
+      },
+      {
+        "name": "VCU/eFuses/Dashboard/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "Dashboard eFuse Voltage",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Dashboard/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Dashboard eFuse Current.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Dashboard/Faulted?",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "The state of the Dashboard eFuse's fault pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Dashboard/Enabled?",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "The state of the Dashboard eFuse's Enable pin.",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0x123",
+    "desc": "Shutdown Pins",
+    "points": [
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool"
+      },
+      {
+        "size": 6,
+        "signed": false,
+        "parse": false,
+        "name": "UNUSED"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Shutdown/BMS_GPIO",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Shutdown/BOTS_GPIO",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Shutdown/SPARE_GPIO",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Shutdown/BSPD_GPIO",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Shutdown/HV_C_GPIO",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Shutdown/HVD_GPIO",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Shutdown/IMD_GPIO",
+        "unit": "",
+        "values": [
+          7
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Shutdown/CKPT_GPIO",
+        "unit": "",
+        "values": [
+          8
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Shutdown/INERTIA_SW_GPIO",
+        "unit": "",
+        "values": [
+          9
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Shutdown/TSMS_GPIO",
+        "unit": "",
+        "values": [
+          10
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
     "id": "0x502",
     "desc": "Faults",
     "points": [
