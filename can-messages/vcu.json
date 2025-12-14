@@ -841,7 +841,7 @@
   },
   {
     "id": "0xEF6",
-    "desc": "Pump1 eFuse",
+    "desc": "PumpOne eFuse",
     "points": [
       {
         "size": 16,
@@ -932,7 +932,7 @@
     ],
     "fields": [
       {
-        "name": "VCU/eFuses/Pump1/ADC",
+        "name": "VCU/eFuses/PumpOne/ADC",
         "unit": "",
         "values": [
           1
@@ -941,39 +941,39 @@
         "desc": "Ranges from 0 to 4095."
       },
       {
-        "name": "VCU/eFuses/Pump1/Voltage",
+        "name": "VCU/eFuses/PumpOne/Voltage",
         "unit": "V",
         "values": [
           2
         ],
-        "doc": "Pump1 eFuse Voltage",
+        "doc": "PumpOne eFuse Voltage",
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Pump1/Current",
+        "name": "VCU/eFuses/PumpOne/Current",
         "unit": "A",
         "values": [
           3
         ],
-        "doc": "Pump1 eFuse Current.",
+        "doc": "PumpOne eFuse Current.",
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Pump1/Faulted?",
+        "name": "VCU/eFuses/PumpOne/Faulted?",
         "unit": "",
         "values": [
           4
         ],
-        "doc": "The state of the Pump1 eFuse's fault pin.",
+        "doc": "The state of the PumpOne eFuse's fault pin.",
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Pump1/Enabled?",
+        "name": "VCU/eFuses/PumpOne/Enabled?",
         "unit": "",
         "values": [
           5
         ],
-        "doc": "The state of the Pump1 eFuse's Enable pin.",
+        "doc": "The state of the PumpOne eFuse's Enable pin.",
         "desc": ""
       }
     ],
@@ -981,7 +981,7 @@
   },
   {
     "id": "0xEF7",
-    "desc": "Pump2 eFuse",
+    "desc": "PumpTwo eFuse",
     "points": [
       {
         "size": 16,
@@ -1072,7 +1072,7 @@
     ],
     "fields": [
       {
-        "name": "VCU/eFuses/Pump2/ADC",
+        "name": "VCU/eFuses/PumpTwo/ADC",
         "unit": "",
         "values": [
           1
@@ -1081,39 +1081,39 @@
         "desc": "Ranges from 0 to 4095."
       },
       {
-        "name": "VCU/eFuses/Pump2/Voltage",
+        "name": "VCU/eFuses/PumpTwo/Voltage",
         "unit": "V",
         "values": [
           2
         ],
-        "doc": "Pump2 eFuse Voltage",
+        "doc": "PumpTwo eFuse Voltage",
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Pump2/Current",
+        "name": "VCU/eFuses/PumpTwo/Current",
         "unit": "A",
         "values": [
           3
         ],
-        "doc": "Pump2 eFuse Current.",
+        "doc": "PumpTwo eFuse Current.",
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Pump2/Faulted?",
+        "name": "VCU/eFuses/PumpTwo/Faulted?",
         "unit": "",
         "values": [
           4
         ],
-        "doc": "The state of the Pump2 eFuse's fault pin.",
+        "doc": "The state of the PumpTwo eFuse's fault pin.",
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Pump2/Enabled?",
+        "name": "VCU/eFuses/PumpTwo/Enabled?",
         "unit": "",
         "values": [
           5
         ],
-        "doc": "The state of the Pump2 eFuse's Enable pin.",
+        "doc": "The state of the PumpTwo eFuse's Enable pin.",
         "desc": ""
       }
     ],
