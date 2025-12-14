@@ -1053,7 +1053,7 @@
   },
   {
     "id": "0x505",
-    "desc": "Pedal \"Percent Pressed\" Values",
+    "desc": "Pedal Percent Pressed Values",
     "points": [
       {
         "size": 16,
