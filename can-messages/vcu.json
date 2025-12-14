@@ -687,13 +687,6 @@
         },
         "c_type": "bool",
         "name": "PDU_CURRENT_FAULT"
-      },
-      {
-        "size": 49,
-        "signed": false,
-        "endianness": "little",
-        "parse": false,
-        "name": "UNUSED"
       }
     ],
     "fields": [
