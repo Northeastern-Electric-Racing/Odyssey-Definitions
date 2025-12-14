@@ -140,6 +140,1266 @@
     "sim_freq": 250
   },
   {
+    "id": "0xEF1",
+    "desc": "Brake eFuse",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 0,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "ADC"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "voltage"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "c_type": "uint16_t",
+        "name": "current",
+        "sim": {
+          "min": 0,
+          "max": 3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "name": "faulted?",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        },
+        "name": "enabled?"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/eFuses/Brake/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Value.",
+        "desc": "Ranges from 0 to 4095."
+      },
+      {
+        "name": "VCU/eFuses/Brake/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "Brake eFuse Voltage",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Brake/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Brake eFuse Current.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Brake/Faulted?",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "The state of the Brake eFuse's fault pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Brake/Enabled?",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "The state of the Brake eFuse's Enable pin.",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xEF2",
+    "desc": "Shutdown eFuse",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 0,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "ADC"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "voltage"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "c_type": "uint16_t",
+        "name": "current",
+        "sim": {
+          "min": 0,
+          "max": 3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "name": "faulted?",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        },
+        "name": "enabled?"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/eFuses/Shutdown/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Value.",
+        "desc": "Ranges from 0 to 4095."
+      },
+      {
+        "name": "VCU/eFuses/Shutdown/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "Shutdown eFuse Voltage",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Shutdown/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Shutdown eFuse Current.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Shutdown/Faulted?",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "The state of the Shutdown eFuse's fault pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Shutdown/Enabled?",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "The state of the Shutdown eFuse's Enable pin.",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xEF3",
+    "desc": "LV eFuse",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 0,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "ADC"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "voltage"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "c_type": "uint16_t",
+        "name": "current",
+        "sim": {
+          "min": 0,
+          "max": 3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "name": "faulted?",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        },
+        "name": "enabled?"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/eFuses/LV/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Value.",
+        "desc": "Ranges from 0 to 4095."
+      },
+      {
+        "name": "VCU/eFuses/LV/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "LV eFuse Voltage",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/LV/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "LV eFuse Current.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/LV/Faulted?",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "The state of the LV eFuse's fault pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/LV/Enabled?",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "The state of the LV eFuse's Enable pin.",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xEF4",
+    "desc": "Radfan eFuse",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 0,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "ADC"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "voltage"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "c_type": "uint16_t",
+        "name": "current",
+        "sim": {
+          "min": 0,
+          "max": 3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "name": "faulted?",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        },
+        "name": "enabled?"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/eFuses/Radfan/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Value.",
+        "desc": "Ranges from 0 to 4095."
+      },
+      {
+        "name": "VCU/eFuses/Radfan/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "Radfan eFuse Voltage",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Radfan/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Radfan eFuse Current.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Radfan/Faulted?",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "The state of the Radfan eFuse's fault pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Radfan/Enabled?",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "The state of the Radfan eFuse's Enable pin.",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xEF5",
+    "desc": "Fanbatt eFuse",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 0,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "ADC"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "voltage"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "c_type": "uint16_t",
+        "name": "current",
+        "sim": {
+          "min": 0,
+          "max": 3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "name": "faulted?",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        },
+        "name": "enabled?"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/eFuses/Fanbatt/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Value.",
+        "desc": "Ranges from 0 to 4095."
+      },
+      {
+        "name": "VCU/eFuses/Fanbatt/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "Fanbatt eFuse Voltage",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Fanbatt/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Fanbatt eFuse Current.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Fanbatt/Faulted?",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "The state of the Fanbatt eFuse's fault pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Fanbatt/Enabled?",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "The state of the Fanbatt eFuse's Enable pin.",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xEF6",
+    "desc": "Pump1 eFuse",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 0,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "ADC"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "voltage"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "c_type": "uint16_t",
+        "name": "current",
+        "sim": {
+          "min": 0,
+          "max": 3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "name": "faulted?",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        },
+        "name": "enabled?"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/eFuses/Pump1/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Value.",
+        "desc": "Ranges from 0 to 4095."
+      },
+      {
+        "name": "VCU/eFuses/Pump1/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "Pump1 eFuse Voltage",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Pump1/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Pump1 eFuse Current.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Pump1/Faulted?",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "The state of the Pump1 eFuse's fault pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Pump1/Enabled?",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "The state of the Pump1 eFuse's Enable pin.",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xEF7",
+    "desc": "Pump2 eFuse",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 0,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "ADC"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "voltage"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "c_type": "uint16_t",
+        "name": "current",
+        "sim": {
+          "min": 0,
+          "max": 3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "name": "faulted?",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        },
+        "name": "enabled?"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/eFuses/Pump2/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Value.",
+        "desc": "Ranges from 0 to 4095."
+      },
+      {
+        "name": "VCU/eFuses/Pump2/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "Pump2 eFuse Voltage",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Pump2/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Pump2 eFuse Current.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Pump2/Faulted?",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "The state of the Pump2 eFuse's fault pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Pump2/Enabled?",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "The state of the Pump2 eFuse's Enable pin.",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xEF8",
+    "desc": "Battbox eFuse",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 0,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "ADC"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "voltage"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "c_type": "uint16_t",
+        "name": "current",
+        "sim": {
+          "min": 0,
+          "max": 3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "name": "faulted?",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        },
+        "name": "enabled?"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/eFuses/Battbox/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Value.",
+        "desc": "Ranges from 0 to 4095."
+      },
+      {
+        "name": "VCU/eFuses/Battbox/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "Battbox eFuse Voltage",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Battbox/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Battbox eFuse Current.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Battbox/Faulted?",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "The state of the Battbox eFuse's fault pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Battbox/Enabled?",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "The state of the Battbox eFuse's Enable pin.",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xEF9",
+    "desc": "MC eFuse",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 0,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "ADC"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "voltage"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "c_type": "uint16_t",
+        "name": "current",
+        "sim": {
+          "min": 0,
+          "max": 3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "name": "faulted?",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        },
+        "name": "enabled?"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/eFuses/MC/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Value.",
+        "desc": "Ranges from 0 to 4095."
+      },
+      {
+        "name": "VCU/eFuses/MC/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "MC eFuse Voltage",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/MC/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "MC eFuse Current.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/MC/Faulted?",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "The state of the MC eFuse's fault pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/MC/Enabled?",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "The state of the MC eFuse's Enable pin.",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
     "id": "0x123",
     "desc": "Shutdown Pins",
     "points": [
