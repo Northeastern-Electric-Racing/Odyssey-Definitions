@@ -1,0 +1,160 @@
+[
+  {
+    "id": "0x504",
+    "desc": "Pedal Sensor Voltages",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "sim": {
+          "min": 50,
+          "max": 150,
+          "inc_min": 1,
+          "inc_max": 10,
+          "round": false
+        },
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "c_type": "uint16_t",
+        "name": "accel1_volts"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 50,
+          "max": 150,
+          "inc_min": 1,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "accel2_volts"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 10,
+          "max": 150,
+          "inc_min": 1,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "brake1_volts"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 50,
+          "max": 150,
+          "inc_min": 1,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "brake2_volts"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Pedals/Voltages/accel_1",
+        "unit": "V",
+        "values": [
+          1
+        ],
+        "doc": "Voltage reading from Acceleration Pedal Sensor 1",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/Voltages/accel_2",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "Voltage reading from Acceleration Pedal Sensor 2",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/Voltages/brake_1",
+        "unit": "V",
+        "values": [
+          3
+        ],
+        "doc": "Voltage reading from Brake Pedal Sensor 1",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/Voltages/brake_2",
+        "unit": "V",
+        "values": [
+          4
+        ],
+        "doc": "Voltage reading from Brake Pedal Sensor 2",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xCA",
+    "desc": "Lightning Board Light Status",
+    "points": [
+      {
+        "size": 2,
+        "signed": false,
+        "endianness": "little",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.25
+            ],
+            [
+              2,
+              0.25
+            ]
+          ]
+        },
+        "c_type": "Lightning_Board_Light_Status",
+        "name": "status"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Lightning/Status",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Lightning Board Light Status.",
+        "desc": "0=LIGHT_OFF, 1=LIGHT_GREEN, 2=LIGHT_RED"
+      }
+    ],
+    "sim_freq": 250
+  }
+]
