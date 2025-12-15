@@ -2279,7 +2279,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/CarState/reverse",
+        "name": "VCU/CarState/not_in_reverse",
         "unit": "",
         "values": [
           6
