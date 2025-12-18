@@ -11,6 +11,7 @@
       {
         "name": "Wheel/Buttons/button_id",
         "unit": "",
+        "doc": "The ID of the pushed button",
         "values": [
           1
         ]
@@ -56,6 +57,7 @@
       {
         "name": "Wheel/Dial/switch_id",
         "unit": "",
+        "doc": "The ID the dial is currently on",
         "values": [
           1
         ]

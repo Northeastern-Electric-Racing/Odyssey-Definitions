@@ -16,6 +16,7 @@
       {
         "name": "EM/Measurement/Current",
         "unit": "A",
+        "doc": "Current measured",
         "values": [
           1
         ]
@@ -23,6 +24,7 @@
       {
         "name": "EM/Measurement/Voltage",
         "unit": "V",
+        "doc": "Voltage measured",
         "values": [
           2
         ]
@@ -56,6 +58,7 @@
       {
         "name": "EM/Status/Violation",
         "unit": "",
+        "doc": "Whether a rules violation has been detected",
         "values": [
           1
         ]
@@ -63,6 +66,7 @@
       {
         "name": "EM/Status/Logging",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           2
         ]
@@ -70,6 +74,7 @@
       {
         "name": "EM/Status/Energy",
         "unit": "Whr",
+        "doc": "The energy used since TS was last on",
         "values": [
           4
         ]
@@ -144,6 +149,7 @@
       {
         "name": "EM/Temperature/NumSensors",
         "unit": "",
+        "doc": "The number of connected temperature sensors",
         "values": [
           2
         ]
@@ -151,6 +157,7 @@
       {
         "name": "EM/Temperature/MinTemp",
         "unit": "C",
+        "doc": "The min temp of connected temperature sensors",
         "values": [
           3
         ]
@@ -158,6 +165,7 @@
       {
         "name": "EM/Temperature/MaxTemp",
         "unit": "C",
+        "doc": "The max temp of connected temperature sensors",
         "values": [
           4
         ]
@@ -165,6 +173,7 @@
       {
         "name": "EM/Temperature/Temp/{1}/0",
         "unit": "C",
+        "doc": "Temperature",
         "values": [
           5
         ]
@@ -172,6 +181,7 @@
       {
         "name": "EM/Temperature/Temp/{1}/1",
         "unit": "C",
+        "doc": "Temperature",
         "values": [
           6
         ]
@@ -179,6 +189,7 @@
       {
         "name": "EM/Temperature/Temp/{1}/2",
         "unit": "C",
+        "doc": "Temperature",
         "values": [
           7
         ]
@@ -186,6 +197,7 @@
       {
         "name": "EM/Temperature/Temp/{1}/3",
         "unit": "C",
+        "doc": "Temperature",
         "values": [
           8
         ]
@@ -193,6 +205,7 @@
       {
         "name": "EM/Temperature/Temp/{1}/4",
         "unit": "C",
+        "doc": "Temperature",
         "values": [
           9
         ]
@@ -216,6 +229,7 @@
       {
         "name": "EM/Team/Signal/1",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           1
         ]
@@ -223,6 +237,7 @@
       {
         "name": "EM/Team/Signal/2",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           2
         ]
@@ -246,6 +261,7 @@
       {
         "name": "EM/Team/Signal/3",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           1
         ]
@@ -253,6 +269,7 @@
       {
         "name": "EM/Team/Signal/4",
         "unit": "",
+        "doc": "Reserved",
         "values": [
           2
         ]
