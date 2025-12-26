@@ -54,7 +54,9 @@
           1,
           2,
           3
-        ]
+        ],
+        "doc": "Lightning Board IMU Acceleration Data.",
+        "desc": "The IMU Acceleration Data on the Lightning Board."
       }
     ],
     "sim_freq": 500
@@ -114,7 +116,9 @@
           1,
           2,
           3
-        ]
+        ],
+        "doc": "Lightning Board IMU Gyroscope Data.",
+        "desc": "The IMU Gyroscope Data on the Lightning Board."
       }
     ],
     "sim_freq": 500
@@ -172,7 +176,9 @@
           1,
           2,
           3
-        ]
+        ],
+        "doc": "Lightning Board Lightning Sensor Information.",
+        "desc": "The Lightning Board Lightning Sensor Data."
       }
     ],
     "sim_freq": 1000
@@ -232,7 +238,9 @@
           1,
           2,
           3
-        ]
+        ],
+        "doc": "Lightning Board Magnometer Sensor Information.",
+        "desc": "The Lightning Board Magnometer Sensor Data."
       }
     ],
     "sim_freq": 1000
