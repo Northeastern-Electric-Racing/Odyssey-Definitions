@@ -1,6 +1,6 @@
 [
   {
-    "id": "0xAA",
+    "id": "0xAAA",
     "desc": "Lightning Board IMU Acceleration Data",
     "points": [
       {
@@ -60,7 +60,7 @@
     "sim_freq": 500
   },
   {
-    "id": "0xAB",
+    "id": "0xAAB",
     "desc": "Lightning Board IMU Gyro Data",
     "points": [
       {
@@ -120,7 +120,7 @@
     "sim_freq": 500
   },
   {
-    "id": "0xAC",
+    "id": "0xAAC",
     "desc": "Lightning Board Lightning Sensor Information",
     "points": [
       {
@@ -178,7 +178,7 @@
     "sim_freq": 1000
   },
   {
-    "id": "0xAD",
+    "id": "0xAAD",
     "desc": "Lightning Board Magnometer Sensor Information",
     "points": [
       {
