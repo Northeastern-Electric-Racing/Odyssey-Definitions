@@ -2577,7 +2577,7 @@
       },
       {
         "name": "VCU/Temp/Humidity",
-        "unit": "",
+        "unit": "%",
         "values": [
           2
         ],
