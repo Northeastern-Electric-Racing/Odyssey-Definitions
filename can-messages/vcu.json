@@ -2555,7 +2555,7 @@
       },
       {
         "size": 16,
-        "signed": true,
+        "signed": false,
         "endianness": "little",
         "formatter": {
           "key": "divide",
