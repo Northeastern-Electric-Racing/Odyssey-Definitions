@@ -2533,7 +2533,7 @@
   },
   {
     "id": "0x004",
-    "desc": "Temperature Sensor (SHT30)",
+    "desc": "Temperature Sensor",
     "points": [
       {
         "size": 16,
