@@ -2530,5 +2530,209 @@
       }
     ],
     "sim_freq": 250
+  },
+  {
+    "id": "0x004",
+    "desc": "Temperature Sensor (SHT30)",
+    "points": [
+      {
+        "size": 16,
+        "signed": true,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 70,
+          "inc_min": 1,
+          "inc_max": 2,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "vcu_temperature"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "c_type": "float",
+        "name": "vcu_humidity"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Temp/Temperature",
+        "unit": "C",
+        "values": [
+          1
+        ],
+        "doc": "VCU Temperature",
+        "desc": "Reported by the SHT30."
+      },
+      {
+        "name": "VCU/Temp/Humidity",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "VCU Humidity",
+        "desc": "Reported by the SHT30."
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0x506",
+    "desc": "IMU Accelerometer",
+    "points": [
+      {
+        "size": 16,
+        "signed": true,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 2,
+          "inc_min": 0.01,
+          "inc_max": 0.25,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "imu_accelerometer_x"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 2,
+          "inc_min": 0.01,
+          "inc_max": 0.25,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "imu_accelerometer_y"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 2,
+          "inc_min": 0.01,
+          "inc_max": 0.25,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "imu_accelerometer_z"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/IMU/Accelerometer",
+        "unit": "mg",
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "doc": "IMU acceleration values (x,y,z).",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0x507",
+    "desc": "IMU Gyro",
+    "points": [
+      {
+        "size": 16,
+        "signed": true,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 7,
+          "inc_min": 0.01,
+          "inc_max": 0.5,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "imu_gyro_x"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 7,
+          "inc_min": 0.01,
+          "inc_max": 0.5,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "imu_gyro_y"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "endianness": "little",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 7,
+          "inc_min": 0.01,
+          "inc_max": 0.5,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "imu_gyro_z"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/IMU/Gyro",
+        "unit": "mdps",
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "doc": "IMU Gyroscope Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
   }
 ]
