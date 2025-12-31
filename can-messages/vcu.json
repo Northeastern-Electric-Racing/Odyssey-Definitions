@@ -2516,6 +2516,10 @@
         },
         "c_type": "uint8_t",
         "name": "status"
+      },
+      {
+        "size": 6,
+        "parse": false
       }
     ],
     "fields": [
