@@ -165,3 +165,8 @@ Work must be done in both Calypso and here.
 2. In here, migrate the JSON files to suite your needs.
 3. Optionally, migrate the code-gen files appropriately
 
+## Code gen
+
+This generates C code for CAN bus nodes.
+
+To generate code, use the NER environment from Embedded-Base.  The Jinja2 templates allow us to create .c and .h files by reading in the JSON specification files.  In each compliant repository, there is a cangen.sh file which triggers this repository script under the submodule.
