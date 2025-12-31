@@ -281,6 +281,8 @@
       },
       {
         "size": 4,
+        "name": "low_chip",
+        "c_type": "uint8_t",
         "sim": {
           "min": 1,
           "max": 12,
