@@ -12,7 +12,7 @@
 #include "can_messages_tx.h"
 {{- macros.imports() }}
 
-static const bool handle_bitstream_overflow(bitstream_t *bitstream_res,
+static void handle_bitstream_overflow(bitstream_t *bitstream_res,
 					    uint32_t can_id);
 
 {% for msg in can_msgs -%}
@@ -29,6 +29,13 @@ uint8_t send_{{ macros.function_name(msg) }}
 	uint8_t bitstream_data[{{ macros.msg_size(msg) }}];
 	bitstream_init(&{{ macros.function_name(msg) }}_msg, bitstream_data, {{ macros.msg_size(msg) }});
 
+	{% for point in msg.points -%}
+    {% if point.name is defined and point.formatter is defined %}
+    {{ point.name }} = {{ point.name -}}{{macros.point_scalar(point) -}};
+    {%- endif %}
+    {%- endfor %}
+
+
     {% for point in msg.points -%}
     {% if point.endianness is defined and point.endianness == 'little' -%}
     endian_swap(&{{ point.name -}}, sizeof({{ point.name -}}));
@@ -36,7 +43,7 @@ uint8_t send_{{ macros.function_name(msg) }}
     {% endfor %}
 	{% for point in msg.points -%}
     {% if point.name is defined -%}
-        bitstream_add(&{{ macros.function_name(msg) -}}_msg, {{ point.name -}} {{macros.point_scalar(point) -}}, {{ point.size -}});
+        bitstream_add(&{{ macros.function_name(msg) -}}_msg, {{ point.name -}}, {{ point.size -}});
     {% endif -%}
     {%- endfor %}
     can_msg_t msg;
@@ -47,7 +54,7 @@ uint8_t send_{{ macros.function_name(msg) }}
     {% if not 'overflow' in msg.desc.lower() %}
     handle_bitstream_overflow(&{{ macros.function_name(msg) -}}_msg, msg.id);
     {% endif %}
-    return queue_can_msg(msg);
+    return queue_send(&can_outgoing, &msg, TX_NO_WAIT);
 }
 
 {% endfor %}
@@ -56,19 +63,18 @@ uint8_t send_{{ macros.function_name(msg) }}
 /// @param bitstream_res The bitstream to check for overflow
 /// @param can_id The CAN ID this bistream data is intended for
 /// @return 0 if success
-static const bool handle_bitstream_overflow(bitstream_t *bitstream_res,
+static void handle_bitstream_overflow(bitstream_t *bitstream_res,
 					    uint32_t can_id)
 {
 	if (!bitstream_res->overflow) {
-		return 0;
+		return;
 	}
-
-    static uint16_t overflow_cnt = 0;
-	overflow_cnt++;
 
     {% for msg in can_msgs -%}
     {%- if 'overflow' in msg.desc.lower() -%}
-	return send_{{ macros.function_name(msg) -}}(can_id, overflow_cnt);
+    static uint16_t overflow_cnt = 0;
+	overflow_cnt++;
+	send_{{ macros.function_name(msg) -}}(can_id, overflow_cnt);
     {%- endif -%}
     {%- endfor %}
 }

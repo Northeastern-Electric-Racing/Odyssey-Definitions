@@ -14,8 +14,11 @@
 
 {% macro imports() %}
 #include <stdbool.h>
+
+#include "u_queues.h"
+
 #include "c_utils.h"
-#include "can_handler.h"
+#include "fdcan.h"
 #include "bitstream.h"
 {% endmacro -%}
 
@@ -25,7 +28,7 @@
 {% macro function_name(msg) -%}
 
     {{- msg.desc.replace(' ', '_').lower() -}}
-    
+
 {% endmacro -%}
 
 {%- macro c_int_type(size, signed) -%}
@@ -40,7 +43,7 @@
     {%- endif -%}
 {%- endmacro -%}
 
-{# 
+{#
     get the C type of each field variable (ex. uint16_t)
 -#}
 {% macro field_type(points, field) -%}
@@ -56,7 +59,7 @@
 
     {% set units = field.unit.split(".") -%}
     {% set extension = units[idx - 1] -%}
-    
+
     {% if units | length <= 1 -%}
         {{- '_'.join(field.name.split('/')[-2:]).replace('-', '_').lower() -}}
     {% else -%}
