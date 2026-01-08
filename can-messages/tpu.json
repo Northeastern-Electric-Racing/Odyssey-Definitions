@@ -1,0 +1,67 @@
+[
+  {
+    "desc": "TPU HaLow",
+    "fields": [
+      {
+        "name": "TPU/HaLow/DataRate",
+        "unit": "kb/s",
+        "doc": "The data rate of HaLow"
+      },
+      {
+        "name": "TPU/HaLow/ApMCS",
+        "unit": "int",
+        "doc": "The MCS of the AP station"
+      },
+      {
+        "name": "TPU/HaLow/StaMCS",
+        "unit": "int",
+        "doc": "The MCS of the TPU"
+      },
+      {
+        "name": "TPU/HaLow/RSSI",
+        "unit": "int",
+        "doc": "The signal strength of HaLow"
+      }
+    ]
+  },
+  {
+    "desc": "TPU CAN",
+    "fields": [
+      {
+        "name": "TPU/CAN/BitsUsed",
+        "unit": "bits",
+        "doc": "The current bit utilization of the CAN bus"
+      },
+      {
+        "name": "TPU/CAN/BusUtil",
+        "unit": "%",
+        "doc": "The current bus utilization"
+      }
+    ]
+  },
+  {
+    "desc": "TPU On Board",
+    "fields": [
+      {
+        "name": "TPU/OnBoard/CpuTemp",
+        "unit": "celsius",
+        "doc": "The bus CPU temp of the TPU"
+      },
+      {
+        "name": "TPU/OnBoard/CpuUsage",
+        "unit": "percent",
+        "doc": "The current total CPU usage (x cores)"
+      },
+      {
+        "name": "TPU/OnBoard/BrokerCpuUsage",
+        "unit": "percent",
+        "doc": "The current total CPU usage (x cores) of the MQTT broker"
+      },
+      {
+        "name": "TPU/OnBoard/MemAvailable",
+        "unit": "MB",
+        "doc": "The current total memory available for use"
+      }
+    ]
+  }
+]
