@@ -43,10 +43,16 @@ def main(
     json_filtered_2 = []
     for msg in json_filtered:
         good = False
+        msg["use_struct"] = False
         for pt in msg["points"]:
             if "name" in pt and "c_type" in pt:
                 good = True
+            else:
+                print(f"Warning: cannot generate message{msg["desc"]}")
                 break
+            # if we detect little endian points, tell jinja to use the struct mode
+            if pt["endianness"] == "little":
+                msg["use_struct"] = True
         if good:
             json_filtered_2.append(msg)
 
