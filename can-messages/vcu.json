@@ -2550,7 +2550,7 @@
       {
         "size": 16,
         "signed": true,
-        "endianness": "big",
+        "endianness": "little",
         "formatter": {
           "key": "divide",
           "arg": 100

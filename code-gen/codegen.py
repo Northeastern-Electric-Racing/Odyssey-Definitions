@@ -47,14 +47,15 @@ def main(
         for pt in msg["points"]:
             if "name" in pt and "c_type" in pt:
                 good = True
-            else:
-                print(f"Warning: cannot generate message{msg["desc"]}")
-                break
+
             # if we detect little endian points, tell jinja to use the struct mode
             if "endianness" in pt and pt["endianness"] == "little":
                 msg["use_struct"] = True
+                print(f"Warning: using struct generation for message {msg["desc"]}")
         if good:
             json_filtered_2.append(msg)
+        else:
+            print(f"Warning: cannot generate message {msg["desc"]}")
 
     print(
         f"Found {len(json_filtered_2)} eligible messages to generate code for of {len(json_filtered)} existing messages!"
