@@ -133,8 +133,9 @@ Fields should follow these rules:
 Points should follow these rules:
 - Most significant bit should be the leftmost bit in each byte of data
 - Points of less than 8 bits' endianness should not be specified and will not do anything
+- Little endian points should be byte aligned.
 - **Signed integer CANPoints (not IEEE floats) must be 8,16,or 32 bits and byte aligned!**
-- **Messages containing any little endian points must be completely byte aligned!**
+- **Messages containing any little endian points must be completely byte aligned for C GEN!**
 - Maximum size of a sent message (default, aka `"parse": true`), is 32 bits
 - Unsent points (`"parse": false`) should only contain the `size` parameter
 - Sim enum frequencies must add up to 1 or they will not be respected.
