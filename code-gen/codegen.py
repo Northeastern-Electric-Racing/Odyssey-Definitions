@@ -51,7 +51,7 @@ def main(
                 print(f"Warning: cannot generate message{msg["desc"]}")
                 break
             # if we detect little endian points, tell jinja to use the struct mode
-            if pt["endianness"] == "little":
+            if "endianness" in pt and pt["endianness"] == "little":
                 msg["use_struct"] = True
         if good:
             json_filtered_2.append(msg)
