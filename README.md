@@ -120,7 +120,7 @@ Within the `sim` member of a CANPoint object, there is a single sim object.  Thi
 
 Messages should follow these rules:
 - Descriptions should contain only letters and whitespace (`_` is allowed)
-- Message totals should be byte aligned, meaning that the total number of bits in a Message should be a power of 2. If your message doesn't add up to this as you've written it, use a padding CANPoint, and specify the `parse` field as `false` 
+- Message totals should be byte aligned, meaning that the total number of bits in a Message should be a power of 2. If your message doesn't add up to this as you've written it, use a padding CANPoint, and specify the `parse` field as `false`.  Then no NetField is needed
 - Wherever possible, bit-wise decoding and byte-wise decoding should happen in seperate bytes to avoid confusion. Ex. If there are 5 messages of size one (booleans), add a 3 bit filler before adding a 16 bit number
 - Make the topic of an Encodable CAN Message be `"Calypso/Bidir/State/{key}/{field_name}"`
 
@@ -133,10 +133,10 @@ Fields should follow these rules:
 Points should follow these rules:
 - Most significant bit should be the leftmost bit in each byte of data
 - Points of less than 8 bits' endianness should not be specified and will not do anything
-- **Signed CANPoints must be 8,16,or 32 bits and byte aligned!**
-- **Little endian messages must be 8,16, or 32 bits and byte aligned!**
+- **Signed integer CANPoints (not IEEE floats) must be 8,16,or 32 bits and byte aligned!**
+- **Messages containing any little endian points must be completely byte aligned!**
 - Maximum size of a sent message (default, aka `"parse": true`), is 32 bits
-- Unsent points should only contain the `size` parameter
+- Unsent points (`"parse": false`) should only contain the `size` parameter
 - Sim enum frequencies must add up to 1 or they will not be respected.
 - IEEE754 Float Points must be 32 bits 
 
@@ -170,3 +170,7 @@ Work must be done in both Calypso and here.
 This generates C code for CAN bus nodes.
 
 To generate code, use the NER environment from Embedded-Base.  The Jinja2 templates allow us to create .c and .h files by reading in the JSON specification files.  In each compliant repository, there is a cangen.sh file which triggers this repository script under the submodule.
+
+### Generation modes
+
+There are two generation modes.  If a message contains all big endian numerics that may or may not be byte aligned, bitstream.h from Embedded-Base is used.  If ANY little endian points are present, then the typedef struct paradigm is utilized. The overflow detection code is not implemented in the struct format.  The function arguments should be identical for both generation modes.  Generation modes are choosen per CAN message.
