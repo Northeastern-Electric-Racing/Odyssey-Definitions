@@ -31,17 +31,19 @@ uint8_t send_{{ macros.function_name(msg) }}
     bitstream_t {{ macros.function_name(msg) }}_msg;
 	uint8_t bitstream_data[{{ macros.msg_size(msg) }}];
 	bitstream_init(&{{ macros.function_name(msg) }}_msg, bitstream_data, {{ macros.msg_size(msg) }});
-
-	    {%- for point in msg.points -%}
-            {% if point.name is defined -%}
+	{% for point in msg.points -%}
+    {% if point.name is defined -%}
+    {% if point.signed is true %}
+    bitstream_add_signed(&{{ macros.function_name(msg) -}}_msg, {{ point.name -}} {{macros.point_scalar(point) -}}, {{ point.size -}});
+    {%- else -%}
     bitstream_add(&{{ macros.function_name(msg) -}}_msg, {{ point.name -}} {{macros.point_scalar(point) -}}, {{ point.size -}});
     {% endif -%}
-        {%- endfor -%}
+    {% endif -%}
+    {%- endfor %}
 
-
-        {% if not 'overflow' in msg.desc.lower() %}
+    {% if not 'overflow' in msg.desc.lower() -%}
     handle_bitstream_overflow(&{{ macros.function_name(msg) -}}_msg, msg.id);
-        {% endif %}
+    {% endif %}
     {%- else %}
     struct __attribute__((__packed__)) {
         {% for point in msg.points -%}
@@ -49,9 +51,9 @@ uint8_t send_{{ macros.function_name(msg) }}
         {% endfor %}
     } bitstream_data;
 
-        {% for point in msg.points -%}
-        bitstream_data.{{ point.name -}} = ({{ macros.c_int_type(point.size, point.signed) -}}) {{ point.name -}}{{macros.point_scalar(point) -}};
-        {% endfor %}
+    {% for point in msg.points -%}
+    bitstream_data.{{ point.name -}} = ({{ macros.c_int_type(point.size, point.signed) -}}) {{ point.name -}}{{macros.point_scalar(point) -}};
+    {% endfor %}
     {% endif %}
     msg.len = sizeof(bitstream_data);
     memcpy(msg.data, &bitstream_data, sizeof(bitstream_data));
