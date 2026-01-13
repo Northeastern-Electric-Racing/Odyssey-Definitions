@@ -123,14 +123,6 @@
         "values": [
           2
         ]
-      },
-      {
-        "name": "DTI/Unused/Reserved",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          3
-        ]
       }
     ],
     "sim_freq": 25
@@ -247,14 +239,6 @@
         "desc": "0x00 : NO FAULTS\n0x01 : Overvoltage - The input voltage is higher than the set maximum.\n0x02 : Undervoltage - The input voltage is lower than the set minimum.\n0x03 : DRV - Transistor or transistor drive error\n0x04 : ABS. Overcurrent - The AC current is higher than the set absolute maximum current. \n0x05 : CTLR Overtemp. - The controller temperature is higher than the set maximum.\n0x06 : Motor Overtemp. - The motor temperature is higher than the set maximum.\n0x07 : Sensor wire fault - Something went wrong with the sensor differential signals.\n0x08 : Sensor general fault - An error occurred while processing the sensor signals\n0x09 : CAN Command error - CAN message received contains parameter out of boundaries\n0x0A : Analog input error – Redundant output out of range",
         "values": [
           3
-        ]
-      },
-      {
-        "name": "DTI/Unused/Reserved",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          4
         ]
       }
     ],
@@ -854,22 +838,6 @@
         ]
       },
       {
-        "name": "DTI/Unused/Reserved",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          23
-        ]
-      },
-      {
-        "name": "DTI/Unused/Reserved",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          24
-        ]
-      },
-      {
         "name": "DTI/General/CAN_Map_Version",
         "unit": "",
         "doc": "Indicates the CAN map version",
@@ -949,14 +917,6 @@
         "values": [
           1
         ]
-      },
-      {
-        "name": "DTI/Unused/Unused",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          2
-        ]
       }
     ],
     "sim_freq": 25
@@ -988,14 +948,6 @@
         "desc": "This is a signed parameter, and the sign represents the direction of the spinning. For better operation you need to tune the PID of speed control.\nEquation: ERPM = Motor RPM * number of the motor pole pairs. ",
         "values": [
           1
-        ]
-      },
-      {
-        "name": "DTI/Unused/Unused",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          2
         ]
       }
     ],
@@ -1033,14 +985,6 @@
         "values": [
           1
         ]
-      },
-      {
-        "name": "DTI/Unused/Unused",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          2
-        ]
       }
     ],
     "sim_freq": 25
@@ -1077,14 +1021,6 @@
         "values": [
           1
         ]
-      },
-      {
-        "name": "DTI/Unused/Unused",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          2
-        ]
       }
     ],
     "sim_freq": 25
@@ -1120,14 +1056,6 @@
         "desc": "It will result negative torque relatively to the forward direction of the motor. This value must be between 0 and 100 and must be multiplied by 10 before sending Gives you a freedom to send values between 0% and 100,0%. You do not need to know the motor limit parameters. This value must be between 0 and 100 and has to be multiplied by 10 before sending ",
         "values": [
           1
-        ]
-      },
-      {
-        "name": "DTI/Unused/Unused",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          2
         ]
       }
     ],
@@ -1234,14 +1162,6 @@
         "values": [
           4
         ]
-      },
-      {
-        "name": "DTI/Unused/Unused",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          5
-        ]
       }
     ],
     "sim_freq": 25
@@ -1280,14 +1200,6 @@
         "values": [
           1
         ]
-      },
-      {
-        "name": "DTI/Unused/Unused",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          2
-        ]
       }
     ],
     "sim_freq": 25
@@ -1325,14 +1237,6 @@
         "desc": "This value must be multiplied by 10 before sending, only negative currents are accepted.",
         "values": [
           1
-        ]
-      },
-      {
-        "name": "DTI/Unused/Unused",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          2
         ]
       }
     ],
