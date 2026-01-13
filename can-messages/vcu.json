@@ -1418,7 +1418,8 @@
             ]
           ]
         },
-        "c_type": "bool"
+        "c_type": "bool",
+        "name": "bms_gpio"
       },
       {
         "size": 1,
@@ -1435,7 +1436,8 @@
             ]
           ]
         },
-        "c_type": "bool"
+        "c_type": "bool",
+        "name": "bots_gpio"
       },
       {
         "size": 1,
@@ -1452,7 +1454,8 @@
             ]
           ]
         },
-        "c_type": "bool"
+        "c_type": "bool",
+        "name": "spare_gpio"
       },
       {
         "size": 1,
@@ -1469,7 +1472,8 @@
             ]
           ]
         },
-        "c_type": "bool"
+        "c_type": "bool",
+        "name": "bspd_gpio"
       },
       {
         "size": 1,
@@ -1486,7 +1490,8 @@
             ]
           ]
         },
-        "c_type": "bool"
+        "c_type": "bool",
+        "name": "hv_c"
       },
       {
         "size": 1,
@@ -1503,7 +1508,8 @@
             ]
           ]
         },
-        "c_type": "bool"
+        "c_type": "bool",
+        "name": "hvd_gpio"
       },
       {
         "size": 1,
@@ -1520,7 +1526,8 @@
             ]
           ]
         },
-        "c_type": "bool"
+        "c_type": "bool",
+        "name": "imd_gpio"
       },
       {
         "size": 1,
@@ -1537,7 +1544,8 @@
             ]
           ]
         },
-        "c_type": "bool"
+        "c_type": "bool",
+        "name": "ckpt_gpio"
       },
       {
         "size": 1,
@@ -1554,7 +1562,8 @@
             ]
           ]
         },
-        "c_type": "bool"
+        "c_type": "bool",
+        "name": "inertia_sw_gpio"
       },
       {
         "size": 1,
@@ -1571,13 +1580,15 @@
             ]
           ]
         },
-        "c_type": "bool"
+        "c_type": "bool",
+        "name": "tsms_gpio"
       },
       {
         "size": 6,
         "signed": false,
         "parse": false,
-        "name": "UNUSED"
+        "name": "UNUSED",
+        "c_type": "uint8_t"
       }
     ],
     "fields": [
