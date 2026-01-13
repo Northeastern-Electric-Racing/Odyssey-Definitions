@@ -1,0 +1,248 @@
+[
+  {
+    "id": "0xAAA",
+    "desc": "Lightning Board IMU Acceleration Data",
+    "points": [
+      {
+        "size": 16,
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": -2000,
+          "max": 2000,
+          "inc_min": 0.1,
+          "inc_max": 2.5
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": -2000,
+          "max": 2000,
+          "inc_min": 0.1,
+          "inc_max": 2.5
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": -2000,
+          "max": 2000,
+          "inc_min": 0.1,
+          "inc_max": 2.5
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Lightning/IMU/Acceleration",
+        "unit": "mg",
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "doc": "Lightning Board IMU Acceleration Data.",
+        "desc": "The IMU Acceleration Data on the Lightning Board."
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0xAAB",
+    "desc": "Lightning Board IMU Gyro Data",
+    "points": [
+      {
+        "size": 16,
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": -500000,
+          "max": 500000,
+          "inc_min": 10,
+          "inc_max": 1000
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": -500000,
+          "max": 500000,
+          "inc_min": 10,
+          "inc_max": 1000
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": -500000,
+          "max": 500000,
+          "inc_min": 10,
+          "inc_max": 1000
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Lightning/IMU/Gyro",
+        "unit": "mdps",
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "doc": "Lightning Board IMU Gyroscope Data.",
+        "desc": "The IMU Gyroscope Data on the Lightning Board."
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0xAAC",
+    "desc": "Lightning Board Lightning Sensor Information",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              1,
+              0.95
+            ],
+            [
+              4,
+              0.03
+            ],
+            [
+              8,
+              0.02
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "sim": {
+          "min": 0,
+          "max": 40,
+          "inc_min": 1,
+          "inc_max": 4
+        }
+      },
+      {
+        "size": 32,
+        "signed": false,
+        "sim": {
+          "min": 0,
+          "max": 10000,
+          "inc_min": 1,
+          "inc_max": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Lightning/LightningSensor/Data",
+        "unit": "",
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "doc": "Lightning Board Lightning Sensor Information.",
+        "desc": "The Lightning Board Lightning Sensor Data."
+      }
+    ],
+    "sim_freq": 1000
+  },
+  {
+    "id": "0xAAD",
+    "desc": "Lightning Board Magnometer Sensor Information",
+    "points": [
+      {
+        "size": 16,
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 10,
+          "max": 40,
+          "inc_min": 1,
+          "inc_max": 4
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 10,
+          "max": 40,
+          "inc_min": 1,
+          "inc_max": 4
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 10,
+          "max": 40,
+          "inc_min": 1,
+          "inc_max": 4
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Lightning/Magnometer/Data",
+        "unit": "milligauss",
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "doc": "Lightning Board Magnometer Sensor Information.",
+        "desc": "The Lightning Board Magnometer Sensor Data."
+      }
+    ],
+    "sim_freq": 1000
+  }
+]
