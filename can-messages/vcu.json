@@ -2561,7 +2561,7 @@
       {
         "size": 16,
         "signed": true,
-        "endianness": "little",
+        "endianness": "big",
         "formatter": {
           "key": "divide",
           "arg": 100
