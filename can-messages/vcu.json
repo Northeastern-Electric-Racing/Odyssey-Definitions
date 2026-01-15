@@ -2565,6 +2565,12 @@
         "signed": false,
         "c_type": "bool",
         "name": "RTDS_FAULT"
+      },
+      {
+        "size": 3,
+        "signed": false,
+        "parse": false,
+        "name": "EXTRA"
       }
     ],
     "fields": [
