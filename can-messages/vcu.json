@@ -2582,7 +2582,8 @@
         "size": 3,
         "signed": false,
         "parse": false,
-        "name": "EXTRA"
+        "name": "EXTRA",
+        "c_type": "int"
       }
     ],
     "fields": [
