@@ -1931,7 +1931,7 @@
           "inc_max": 0.1,
           "round": false
         },
-        "c_type": "uint16_t",
+        "c_type": "float",
         "name": "accel_norm"
       },
       {
@@ -1949,7 +1949,7 @@
           "inc_max": 0.1,
           "round": false
         },
-        "c_type": "uint16_t",
+        "c_type": "float",
         "name": "brake_norm"
       }
     ],
@@ -1994,7 +1994,7 @@
           "key": "divide",
           "arg": 100
         },
-        "c_type": "uint16_t",
+        "c_type": "float",
         "name": "accel1_volts"
       },
       {
@@ -2012,7 +2012,7 @@
           "inc_max": 10,
           "round": false
         },
-        "c_type": "uint16_t",
+        "c_type": "float",
         "name": "accel2_volts"
       },
       {
@@ -2030,7 +2030,7 @@
           "inc_max": 10,
           "round": false
         },
-        "c_type": "uint16_t",
+        "c_type": "float",
         "name": "brake1_volts"
       },
       {
@@ -2048,7 +2048,7 @@
           "inc_max": 10,
           "round": false
         },
-        "c_type": "uint16_t",
+        "c_type": "float",
         "name": "brake2_volts"
       }
     ],
