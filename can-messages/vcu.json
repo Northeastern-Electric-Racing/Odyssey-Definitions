@@ -1686,424 +1686,6 @@
     "sim_freq": 250
   },
   {
-    "id": "0x502",
-    "desc": "Faults",
-    "points": [
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
-        "name": "ONBOARD_PEDAL_OPEN_CIRCUIT_FAULT"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "name": "ONBOARD_PEDAL_SHORT_CIRCUIT_FAULT"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
-        "name": "ONBOARD_PEDAL_DIFFERENCE_FAULT"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
-        "name": "CAN_DISPATCH_FAULT"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
-        "name": "CAN_ROUTING_FAULT"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
-        "name": "BMS_CAN_MONITOR_FAULT"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
-        "name": "ONBOARD_TEMP_FAULT"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
-        "name": "IMU_FAULT"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
-        "name": "FUSE_MONITOR_FAULT"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
-        "name": "SHUTDOWN_MONITOR_FAULT"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
-        "name": "LV_MONITOR_FAULT"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
-        "name": "BSPD_PREFAULT"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
-        "name": "RTDS_FAULT"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
-        "name": "PUMP_SENSORS_FAULT"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
-        "name": "PDU_CURRENT_FAULT"
-      },
-      {
-        "size": 1,
-        "parse": false
-      }
-    ],
-    "fields": [
-      {
-        "name": "VCU/Faults/ONBOARD_PEDAL_OPEN_CIRCUIT_FAULT",
-        "unit": "",
-        "values": [
-          1
-        ],
-        "doc": "Onboard Pedal Open Circuit Fault.",
-        "desc": "'1' means this fault is active. '0' means this fault is inactive."
-      },
-      {
-        "name": "VCU/Faults/ONBOARD_PEDAL_SHORT_CIRCUIT_FAULT",
-        "unit": "",
-        "values": [
-          2
-        ],
-        "doc": "Onboard Pedal Short Circuit Fault.",
-        "desc": "'1' means this fault is active. '0' means this fault is inactive."
-      },
-      {
-        "name": "VCU/Faults/ONBOARD_PEDAL_DIFFERENCE_FAULT",
-        "unit": "",
-        "values": [
-          3
-        ],
-        "doc": "Onboard Pedal Difference Fault.",
-        "desc": "'1' means this fault is active. '0' means this fault is inactive."
-      },
-      {
-        "name": "VCU/Faults/CAN_DISPATCH_FAULT",
-        "unit": "",
-        "values": [
-          4
-        ],
-        "doc": "CAN Dispatch Fault",
-        "desc": "'1' means this fault is active. '0' means this fault is inactive."
-      },
-      {
-        "name": "VCU/Faults/CAN_ROUTING_FAULT",
-        "unit": "",
-        "values": [
-          5
-        ],
-        "doc": "CAN Routing Fault.",
-        "desc": "'1' means this fault is active. '0' means this fault is inactive."
-      },
-      {
-        "name": "VCU/Faults/BMS_CAN_MONITOR_FAULT",
-        "unit": "",
-        "values": [
-          6
-        ],
-        "doc": "BMS CAN Monitor Fault.",
-        "desc": "'1' means this fault is active. '0' means this fault is inactive."
-      },
-      {
-        "name": "VCU/Faults/ONBOARD_TEMP_FAULT",
-        "unit": "",
-        "values": [
-          7
-        ],
-        "doc": "Onboard Temperature Fault.",
-        "desc": "'1' means this fault is active. '0' means this fault is inactive."
-      },
-      {
-        "name": "VCU/Faults/IMU_FAULT",
-        "unit": "",
-        "values": [
-          8
-        ],
-        "doc": "IMU Fault.",
-        "desc": "'1' means this fault is active. '0' means this fault is inactive."
-      },
-      {
-        "name": "VCU/Faults/FUSE_MONITOR_FAULT",
-        "unit": "",
-        "values": [
-          9
-        ],
-        "doc": "Fuse Monitor Fault",
-        "desc": "'1' means this fault is active. '0' means this fault is inactive."
-      },
-      {
-        "name": "VCU/Faults/SHUTDOWN_MONITOR_FAULT",
-        "unit": "",
-        "values": [
-          10
-        ],
-        "doc": "Shutdown Monitor Fault.",
-        "desc": "'1' means this fault is active. '0' means this fault is inactive."
-      },
-      {
-        "name": "VCU/Faults/LV_MONITOR_FAULT",
-        "unit": "",
-        "values": [
-          11
-        ],
-        "doc": "LV Monitor Fault",
-        "desc": "'1' means this fault is active. '0' means this fault is inactive."
-      },
-      {
-        "name": "VCU/Faults/BSPD_PREFAULT",
-        "unit": "",
-        "values": [
-          12
-        ],
-        "doc": "BSPD Prefault.",
-        "desc": "'1' means this fault is active. '0' means this fault is inactive."
-      },
-      {
-        "name": "VCU/Faults/RTDS_FAULT",
-        "unit": "",
-        "values": [
-          13
-        ],
-        "doc": "RTDS Fault.",
-        "desc": "'1' means this fault is active. '0' means this fault is inactive."
-      },
-      {
-        "name": "VCU/Faults/PUMP_SENSORS_FAULT",
-        "unit": "",
-        "values": [
-          14
-        ],
-        "doc": "Pump Sensors Fault.",
-        "desc": "'1' means this fault is active. '0' means this fault is inactive."
-      },
-      {
-        "name": "VCU/Faults/PDU_CURRENT_FAULT",
-        "unit": "",
-        "values": [
-          15
-        ],
-        "doc": "PDU Current Fault.",
-        "desc": "'1' means this fault is active. '0' means this fault is inactive."
-      }
-    ],
-    "sim_freq": 250
-  },
-  {
     "id": "0x501",
     "desc": "Car State",
     "points": [
@@ -2753,6 +2335,354 @@
           3
         ],
         "doc": "IMU Gyroscope Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0x502",
+    "desc": "Faults",
+    "points": [
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
+        "name": "CAN_OUTGOING_FAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
+        "name": "CAN_INCOMING_FAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
+        "name": "BMS_CAN_MONITOR_FAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
+        "name": "ONBOARD_TEMP_FAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
+        "name": "IMU_ACCEL_FAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
+        "name": "IMU_GYRO_FAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
+        "name": "BSPD_PREFAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
+        "name": "ONBOARD_BRAKE_OPEN_CIRCUIT_FAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
+        "name": "ONBOARD_ACCEL_OPEN_CIRCUIT_FAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
+        "name": "ONBOARD_BRAKE_SHORT_CIRCUIT_FAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
+        "name": "ONBOARD_ACCEL_SHORT_CIRCUIT_FAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
+        "name": "ONBOARD_PEDAL_DIFFERENCE_FAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "c_type": "bool",
+        "name": "RTDS_FAULT"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Faults/CAN_OUTGOING_FAULT",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/CAN_INCOMING_FAULT",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/BMS_CAN_MONITOR_FAULT",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/ONBOARD_TEMP_FAULT",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/IMU_ACCEL_FAULT",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/IMU_GYRO_FAULT",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/BSPD_PREFAULT",
+        "unit": "",
+        "values": [
+          7
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/ONBOARD_BRAKE_OPEN_CIRCUIT_FAULT",
+        "unit": "",
+        "values": [
+          8
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/ONBOARD_ACCEL_OPEN_CIRCUIT_FAULT",
+        "unit": "",
+        "values": [
+          9
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/ONBOARD_BRAKE_SHORT_CIRCUIT_FAULT",
+        "unit": "",
+        "values": [
+          10
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/ONBOARD_ACCEL_SHORT_CIRCUIT_FAULT",
+        "unit": "",
+        "values": [
+          11
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/ONBOARD_PEDAL_DIFFERENCE_FAULT",
+        "unit": "",
+        "values": [
+          12
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/RTDS_FAULT",
+        "unit": "",
+        "values": [
+          13
+        ],
+        "doc": "",
         "desc": ""
       }
     ],
