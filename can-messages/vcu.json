@@ -2564,7 +2564,19 @@
         "size": 1,
         "signed": false,
         "c_type": "bool",
-        "name": "RTDS_FAULT"
+        "name": "RTDS_FAULT",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        }
       },
       {
         "size": 3,
