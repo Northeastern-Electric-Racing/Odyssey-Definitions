@@ -2,6 +2,7 @@
   {
     "id": "0xEF0",
     "desc": "Dashboard eFuse",
+    "is_ext": true,
     "points": [
       {
         "size": 16,
