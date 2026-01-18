@@ -62,10 +62,10 @@ At the root of any spec-compliant JSON file is a list of Message objects. Each M
 - `desc`, string representing a quick descroption of the CAN message.  Note that if it contains the word "overflow", it will be used as the overflow detection broadcast for said node.  See the code-gen folder for details.
 - `points`, a list of CAN Points being sent from the Message
 - `fields`, a list of MQTT messages being sent from the Message
+- `is_ext`, boolean representing whether the CAN ID is extended or standard (`false` by default).  This is required to be correct for encodable CAN messages no matter the ID size.  For decode-only CAN messages this can be omitted.  In the case of CGEN, any messages greater than 2^11 will be sent as extended IDs, and lower than 2^11 as standard IDs.
 
 Occassionally you may want Calypso to also send a message on the CAN network. Use the above fields, with these modifications/additions to treat the Message as an Encodable Message:
 - `key`, string representing the key to index the Encodable Message to, e.g. it would be sent to Calypso on `"Calypso/Bidir/Command/{key}"` 
-- `is_ext`, boolean representing whether the CAN ID is extended or standard (`false` by default)
 It is recommended that the decoding of the message be done to the topic `"Calypso/Bidir/State/{key}/{field_name}"`. Note decoding works exactly the same with these messages, so serves as an accurate representation of what Calypso is current sending out to the car.
 - `bidir_mode`, string specifying which bidirectionality functional profile the message uses (`broadcast` by default). Options:
   - `broadcast`: The message is sent on a loop of about one second with the most recent value, or the default value (see below).  Default value is required.

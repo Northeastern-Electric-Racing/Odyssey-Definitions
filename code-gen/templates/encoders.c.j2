@@ -26,6 +26,9 @@ uint8_t send_{{ macros.function_name(msg) }}
 {
     can_msg_t msg;
     msg.id = {{ msg.id }};
+    {% if msg.ext_id is defined and msg.ext_id is true or msg.id > 0x7FF -%}
+    msg.is_extended_id = true;
+    {% endif %}
 
     {% if msg.use_struct is false -%}
     bitstream_t {{ macros.function_name(msg) }}_msg;
