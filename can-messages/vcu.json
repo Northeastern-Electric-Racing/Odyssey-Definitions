@@ -2735,7 +2735,7 @@
         }
       },
       {
-        "size": 48,
+        "size": 32,
         "signed": false,
         "name": "voltage",
         "c_type": "float",
@@ -2748,7 +2748,8 @@
           "min": 0,
           "max": 25,
           "inc_min": 0.1,
-          "inc_max": 10
+          "inc_max": 10,
+          "round": false
         }
       }
     ],
