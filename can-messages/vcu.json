@@ -2724,20 +2724,21 @@
       {
         "size": 16,
         "signed": false,
-        "name": "raw",
+        "name": "ADC",
         "c_type": "uint16_t",
         "endianness": "big",
         "sim": {
           "min": 0,
           "max": 4095,
           "inc_min": 1,
-          "inc_max": 10
+          "inc_max": 10,
+          "round": false
         }
       },
       {
         "size": 32,
         "signed": false,
-        "name": "voltage",
+        "name": "Voltage",
         "c_type": "float",
         "endianness": "big",
         "formatter": {
