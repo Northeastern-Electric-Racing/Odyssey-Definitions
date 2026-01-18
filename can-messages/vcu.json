@@ -2716,5 +2716,64 @@
       }
     ],
     "sim_freq": 250
+  },
+  {
+    "id": "0x509",
+    "desc": "LV Voltage",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "ADC",
+        "c_type": "uint16_t",
+        "endianness": "big",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 1,
+          "inc_max": 10,
+          "round": false
+        }
+      },
+      {
+        "size": 32,
+        "signed": false,
+        "name": "Voltage",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 25,
+          "inc_min": 0.1,
+          "inc_max": 10,
+          "round": false
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/LV/raw",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/LV/voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
   }
 ]
