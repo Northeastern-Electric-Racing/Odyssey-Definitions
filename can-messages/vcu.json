@@ -278,7 +278,8 @@
         "desc": ""
       }
     ],
-    "sim_freq": 250
+    "sim_freq": 250,
+    "is_ext": true
   },
   {
     "id": "0xEF2",
@@ -418,7 +419,8 @@
         "desc": ""
       }
     ],
-    "sim_freq": 250
+    "sim_freq": 250,
+    "is_ext": true
   },
   {
     "id": "0xEF3",
@@ -558,7 +560,8 @@
         "desc": ""
       }
     ],
-    "sim_freq": 250
+    "sim_freq": 250,
+    "is_ext": true
   },
   {
     "id": "0xEF4",
@@ -698,7 +701,8 @@
         "desc": ""
       }
     ],
-    "sim_freq": 250
+    "sim_freq": 250,
+    "is_ext": true
   },
   {
     "id": "0xEF5",
@@ -838,7 +842,8 @@
         "desc": ""
       }
     ],
-    "sim_freq": 250
+    "sim_freq": 250,
+    "is_ext": true
   },
   {
     "id": "0xEF6",
@@ -978,7 +983,8 @@
         "desc": ""
       }
     ],
-    "sim_freq": 250
+    "sim_freq": 250,
+    "is_ext": true
   },
   {
     "id": "0xEF7",
@@ -1118,7 +1124,8 @@
         "desc": ""
       }
     ],
-    "sim_freq": 250
+    "sim_freq": 250,
+    "is_ext": true
   },
   {
     "id": "0xEF8",
@@ -1258,7 +1265,8 @@
         "desc": ""
       }
     ],
-    "sim_freq": 250
+    "sim_freq": 250,
+    "is_ext": true
   },
   {
     "id": "0xEF9",
@@ -1398,7 +1406,8 @@
         "desc": ""
       }
     ],
-    "sim_freq": 250
+    "sim_freq": 250,
+    "is_ext": true
   },
   {
     "id": "0x123",
