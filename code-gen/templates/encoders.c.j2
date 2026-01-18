@@ -28,6 +28,8 @@ uint8_t send_{{ macros.function_name(msg) }}
     msg.id = {{ msg.id }};
     {% if (msg.is_ext is defined and msg.is_ext is true) or (msg.id | int(base=16) > 0x7FF) -%}
     msg.id_is_extended = true;
+    {%- else %}
+    msg.id_is_extended = false;
     {%- endif %}
 
     {% if msg.use_struct is false -%}
