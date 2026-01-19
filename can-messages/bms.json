@@ -648,6 +648,66 @@
     "sim_freq": 700
   },
   {
+    "id": "0x86",
+    "desc": "IsoSPI Communication Status",
+    "points": [
+      {
+        "size": 8,
+        "name": "state",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 8,
+        "name": "break_location",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 8,
+        "name": "verification_attempts",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 8,
+        "name": "recovery_successful",
+        "c_type": "uint8_t"
+      }
+    ],
+      "fields": [
+            {
+        "name": "BMS/Segment_Comms/State",
+        "unit": "",
+        "doc": "Current IsoSPI state",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "BMS/Segment_Comms/Break_Location",
+        "unit": "",
+        "doc": "Detected break location",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "BMS/Segment_Comms/Verification_Attempts",
+        "unit": "",
+        "doc": "Number of required recovery verification attempts",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "BMS/Segment_Comms/Recovery_Successful",
+        "unit": "",
+        "doc": "IsoSPI recovery completed successfully",
+        "values": [
+          4
+        ]
+      }
+    ]
+  },
+  {
     "id": "0x89",
     "desc": "Fault Status",
     "points": [
