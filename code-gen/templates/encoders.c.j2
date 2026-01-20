@@ -58,25 +58,25 @@ uint8_t send_{{ macros.function_name(msg) }}
                     {%- set max_value = (2 ** (point.size - 1)) - 1 %}
                     {%- set min_value = -(2 ** (point.size - 1)) %}
                     /* Check signed point for overflow/underflow. If value exceeds bounds, cap it and print a warning message. */
-                    {{ macros.c_int_type(point.size, true) }} {{ point.name }}_i = ({{ macros.c_int_type(point.size, true) }})({{ point.name }}{{ macros.point_scalar(point) }}); {#- Convert point to a signed int datatype -#}
-                    if({{ point.name }}_i > {{ max_value }}) {
+                    int64_t {{ point.name }}_temp = (int64_t)({{ point.name }}{{ macros.point_scalar(point) }}); {#- Convert point to a large signed int first -#}
+                    if({{ point.name }}_temp > {{ max_value }}) {
                         PRINTLN_WARNING("Overflow occured for point {{ point.name }}! Capping point to its max value (point is {{ point.size }} bits signed, so max_value={{ max_value }}).");
-                        {{ point.name }}_i = {{ max_value }};
-                    } else if({{ point.name }}_i < {{ min_value }}) {
+                        {{ point.name }}_temp = {{ max_value }};
+                    } else if({{ point.name }}_temp < {{ min_value }}) {
                         PRINTLN_WARNING("Underflow occured for point {{ point.name }}! Capping point to its min value (point is {{ point.size }} bits signed, so min_value={{ min_value }}).");
-                        {{ point.name }}_i = {{ min_value }};
+                        {{ point.name }}_temp = {{ min_value }};
                     }
-                    data |= (({{ macros.c_int_type(point.size, false) }})({{ point.name }}_i) & 0x{{ '%X' | format((2 ** point.size) - 1) }}ULL) << {{ shift }};
+                    data |= ((uint64_t)({{ point.name }}_temp) & 0x{{ '%X' | format((2 ** point.size) - 1) }}ULL) << {{ shift }};
                 {%- else %}
                     {#- Handle unsigned points! -#}
                     {%- set max_value = (2 ** point.size) - 1 %}
                     /* Check unsigned point for overflow. If value exceeds bounds, cap it and print a warning message. */
-                    {{ macros.c_int_type(point.size, false) }} {{ point.name }}_i = ({{ macros.c_int_type(point.size, false) }})({{ point.name }}{{ macros.point_scalar(point) }}); {#- Convert point to an unsigned int datatype -#}
-                    if({{ point.name }}_i > {{ max_value }}) {
+                    uint64_t {{ point.name }}_temp = (uint64_t)({{ point.name }}{{ macros.point_scalar(point) }}); {#- Convert point to a large unsigned int first -#}
+                    if({{ point.name }}_temp > {{ max_value }}ULL) {
                         PRINTLN_WARNING("Overflow occured for point {{ point.name }}! Capping point to its max value (point is {{ point.size }} bits, so max_value={{ max_value }}).");
-                        {{ point.name }}_i = {{ max_value }};
+                        {{ point.name }}_temp = {{ max_value }};
                     }
-                    data |= (({{ point.name }}_i) & 0x{{ '%X' | format((2 ** point.size) - 1) }}ULL) << {{ shift }};
+                    data |= (({{ point.name }}_temp) & 0x{{ '%X' | format((2 ** point.size) - 1) }}ULL) << {{ shift }};
                 {%- endif %}
             {%- set bit_pos.value = bit_pos.value + point.size %}
         {% endif %}
