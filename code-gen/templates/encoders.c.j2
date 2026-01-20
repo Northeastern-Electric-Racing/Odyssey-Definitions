@@ -51,15 +51,25 @@ uint8_t send_{{ macros.function_name(msg) }}
     {%- set bit_pos = namespace(value=0) %}
 
     {%- for point in msg.points %}
-    {%- if point.name is defined %}
-    {%- set shift = total_bits - bit_pos.value - point.size %}
-    {%- if point.signed is defined and point.signed %}
-    data |= (({{ macros.c_int_type(point.size, false) }})({{ macros.c_int_type(point.size, true) }})({{ point.name }}{{ macros.point_scalar(point) }}) & 0x{{ '%X' | format((2 ** point.size) - 1) }}ULL) << {{ shift }};
-    {%- else %}
-    data |= (({{ macros.c_int_type(point.size, false) }})({{ point.name }}{{ macros.point_scalar(point) }}) & 0x{{ '%X' | format((2 ** point.size) - 1) }}ULL) << {{ shift }};
-    {%- endif %}
-    {%- set bit_pos.value = bit_pos.value + point.size %}
-    {%- endif %}
+        {%- if point.name is defined %}
+            {%- set shift = total_bits - bit_pos.value - point.size %}
+                {%- if point.signed is defined and point.signed %}
+                    {#- Handle signed points! -#}
+                    {{ macros.c_int_type(point.size, true) }} {{ point.name }}_i = ({{ macros.c_int_type(point.size, false) }})({{ point.name }}{{ macros.point_scalar(point) }}); {#- Convert point to an int datatype -#}
+                    data |= (({{ macros.c_int_type(point.size, false) }})({{ macros.c_int_type(point.size, true) }})({{ point.name }}{{ macros.point_scalar(point) }}) & 0x{{ '%X' | format((2 ** point.size) - 1) }}ULL) << {{ shift }};
+                {%- else %}
+                    {#- Handle unsigned points! -#}
+                    {%- set max_value = (2 ** point.size) - 1 %}
+                    {{ macros.c_int_type(point.size, false) }} {{ point.name }}_i = ({{ point.name }}{{ macros.point_scalar(point) }}); {#- Convert point to an int datatype -#}
+                    {#- Check for overflow. If value exceeds the max value that can fit in the point's number of bits, cap the value and print a warning message. -#}
+                    if({{ point.name }}_i > max_value) {
+                        PRINTLN_WARNING("Overflow occured for point {{ point.name}}! Capping point to its max value (point is {{ point.size }} bits, so max_value={{ max_value }}).");
+                        {{ point.name }} = max_value;
+                    }
+                    data |= (({{ point.name }}_i) & 0x{{ '%X' | format((2 ** point.size) - 1) }}ULL) << {{ shift }};
+                {%- endif %}
+            {%- set bit_pos.value = bit_pos.value + point.size %}
+        {%- endif %}
     {%- endfor %}
 
     {# Copy to message buffer with endian conversion -#}
