@@ -58,7 +58,7 @@ uint8_t send_{{ macros.function_name(msg) }}
     {%- endif %}
     {%- endfor %}
 
-    {# Copy to message buffer with endian conversion -#}
+    {#- Copy to message buffer with endian conversion -#}
     {%- if macros.msg_size_bits(msg)|int <= 8 %}
     msg.data[0] = data;
     {%- elif macros.msg_size_bits(msg)|int <= 16 %}
