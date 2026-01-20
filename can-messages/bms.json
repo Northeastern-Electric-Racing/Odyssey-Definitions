@@ -3447,14 +3447,14 @@
       }
     ],
     "fields": [
-     {
-       "name": "BMS/Control/Fan/DutyCycle",
-       "unit": "%",
-       "doc": "Duty Cycle of Fan",
-       "values": [
-         1
-       ]
-     }
+      {
+        "name": "BMS/Control/Fan/DutyCycle",
+        "unit": "%",
+        "doc": "Duty Cycle of Fan",
+        "values": [
+          1
+        ]
+      }
     ]
   }
 ]
