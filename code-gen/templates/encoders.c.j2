@@ -58,7 +58,7 @@ uint8_t send_{{ macros.function_name(msg) }}
                     {%- set max_value = (2 ** (point.size - 1)) - 1 %}
                     {%- set min_value = -(2 ** (point.size - 1)) %}
                     {{ macros.c_int_type(point.size, true) }} {{ point.name }}_i = ({{ macros.c_int_type(point.size, true) }})({{ point.name }}{{ macros.point_scalar(point) }}); {#- Convert point to a signed int datatype -#}
-                    {#- Check for overflow/underflow. If value exceeds bounds, cap the value and print a warning message. -#}
+                    {#- Check for overflow/underflow. If value exceeds bounds, cap the value and print a warning message. #}
                     /* Check signed point for overflow/underflow. If value exceeds bounds, cap it and print a warning message. */
                     if({{ point.name }}_i > {{ max_value }}) {
                         PRINTLN_WARNING("Overflow occured for point {{ point.name }}! Capping point to its max value (point is {{ point.size }} bits signed, so max_value={{ max_value }}).");
@@ -72,7 +72,7 @@ uint8_t send_{{ macros.function_name(msg) }}
                     {#- Handle unsigned points! -#}
                     {%- set max_value = (2 ** point.size) - 1 %}
                     {{ macros.c_int_type(point.size, false) }} {{ point.name }}_i = ({{ macros.c_int_type(point.size, false) }})({{ point.name }}{{ macros.point_scalar(point) }}); {#- Convert point to an unsigned int datatype -#}
-                    {#- Check for overflow. If value exceeds the max value that can fit in the point's number of bits, cap the value and print a warning message. -#}
+                    {#- Check for overflow. If value exceeds the max value that can fit in the point's number of bits, cap the value and print a warning message. #}
                     /* Check unsigned point for overflow. If value exceeds bounds, cap it and print a warning message. */
                     if({{ point.name }}_i > {{ max_value }}) {
                         PRINTLN_WARNING("Overflow occured for point {{ point.name }}! Capping point to its max value (point is {{ point.size }} bits, so max_value={{ max_value }}).");
