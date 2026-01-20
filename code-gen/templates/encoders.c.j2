@@ -34,7 +34,7 @@ uint8_t send_{{ macros.function_name(msg) }}
     msg.len = {{ macros.msg_size(msg) }};
 
     {# Find size of data, either uint8_t, uint16_t, uint32_t, or uint64_t. -#}
-    {% if macros.msg_size_bits(msg)|int <= 8 %}
+    {%- if macros.msg_size_bits(msg)|int <= 8 %}
     uint8_t data = 0;
     {%- elif macros.msg_size_bits(msg)|int <= 16 %}
     uint16_t data = 0;
