@@ -71,13 +71,13 @@ uint8_t send_{{ macros.function_name(msg) }}
     uint64_t data_bigendian = __builtin_bswap64(data);
     memcpy(msg.data, &data_bigendian, 8);
     {%- endif %}
-    {#-
+    {#
     Note: 
     Message sizes that aren't 1, 2, 4, or 8 bytes can still exist here.
     For example, if a message is 6 bytes, it will be constructed in a uint64_t buffer (which is 8 bytes in total).
     But, since msg.len is still set to the actual size of the message (6 bytes), the CAN controller will only send the 6 bytes.
     This works because the last two bytes in the uint64_t are just zeros and can be chopped off without messing with anything.
-    -#}
+    #}
 
     return queue_send(&can_outgoing, &msg, TX_NO_WAIT);
 }
