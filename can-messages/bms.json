@@ -3431,7 +3431,7 @@
   },
   {
     "id": "0x700",
-    "desc": "Fan duty cycle %",
+    "desc": "Fan duty cycle percentage",
     "points": [
       {
         "size": 8,
