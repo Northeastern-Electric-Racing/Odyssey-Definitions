@@ -81,17 +81,31 @@ uint8_t send_{{ macros.function_name(msg) }}
     {%- endfor %}
 
     {# Copy to message buffer with endian conversion -#}
-    {%- if macros.msg_size_bits(msg)|int <= 8 %}
-    msg.data[0] = data;
-    {%- elif macros.msg_size_bits(msg)|int <= 16 %}
-    uint16_t data_bigendian = __builtin_bswap16(data);
-    memcpy(msg.data, &data_bigendian, 2);
-    {%- elif macros.msg_size_bits(msg)|int <= 32 %}
-    uint32_t data_bigendian = __builtin_bswap32(data);
-    memcpy(msg.data, &data_bigendian, 4);
+    {% if point.endianness is defined and point.endianness == "little" %}
+        {#- Use little endian (default for STM32, so no swapping) -#}
+        {%- if macros.msg_size_bits(msg)|int <= 8 %}
+            msg.data[0] = data;
+        {%- elif macros.msg_size_bits(msg)|int <= 16 %}
+            memcpy(msg.data, &data, 2);
+        {%- elif macros.msg_size_bits(msg)|int <= 32 %}
+            memcpy(msg.data, &data, 4);
+        {%- else %}
+            memcpy(msg.data, &data, 8);
+        {%- endif %}
     {%- else %}
-    uint64_t data_bigendian = __builtin_bswap64(data);
-    memcpy(msg.data, &data_bigendian, 8);
+        {#- Use big endian (requires swapping) -#}
+        {%- if macros.msg_size_bits(msg)|int <= 8 %}
+            msg.data[0] = data;
+        {%- elif macros.msg_size_bits(msg)|int <= 16 %}
+            uint16_t data_bigendian = __builtin_bswap16(data);
+            memcpy(msg.data, &data_bigendian, 2);
+        {%- elif macros.msg_size_bits(msg)|int <= 32 %}
+            uint32_t data_bigendian = __builtin_bswap32(data);
+            memcpy(msg.data, &data_bigendian, 4);
+        {%- else %}
+            uint64_t data_bigendian = __builtin_bswap64(data);
+            memcpy(msg.data, &data_bigendian, 8);
+        {%- endif %}
     {%- endif %}
     {#
     Note: 
