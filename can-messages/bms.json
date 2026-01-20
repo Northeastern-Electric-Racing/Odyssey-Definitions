@@ -648,6 +648,66 @@
     "sim_freq": 700
   },
   {
+    "id": "0x86",
+    "desc": "Segment IsoSPI Communication Status",
+    "points": [
+      {
+        "size": 8,
+        "name": "state",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 8,
+        "name": "break_location",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 8,
+        "name": "verification_attempts",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 8,
+        "name": "recovery_successful",
+        "c_type": "uint8_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Segment_Comms/State",
+        "unit": "",
+        "doc": "Current IsoSPI state",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "BMS/Segment_Comms/Break_Location",
+        "unit": "",
+        "doc": "Detected break location",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "BMS/Segment_Comms/Verification_Attempts",
+        "unit": "",
+        "doc": "Number of required recovery verification attempts",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "BMS/Segment_Comms/Recovery_Successful",
+        "unit": "",
+        "doc": "IsoSPI recovery completed successfully",
+        "values": [
+          4
+        ]
+      }
+    ]
+  },
+  {
     "id": "0x89",
     "desc": "Fault Status",
     "points": [
@@ -1393,6 +1453,142 @@
       },
       {
         "name": "BMS/Segment_Total_Volt/Extra",
+        "unit": "",
+        "doc": "Reserved",
+        "values": [
+          6
+        ]
+      }
+    ],
+    "sim_freq": 700
+  },
+  {
+    "id": "0x92",
+    "desc": "Segment Delta Voltages",
+    "points": [
+      {
+        "size": 12,
+        "name": "seg1",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 1.7,
+          "inc_min": 0.005,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 12,
+        "name": "seg2",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 1.7,
+          "inc_min": 0.005,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 12,
+        "name": "seg3",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 1.7,
+          "inc_min": 0.005,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 12,
+        "name": "seg4",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 1.7,
+          "inc_min": 0.005,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 12,
+        "name": "seg5",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 1.7,
+          "inc_min": 0.005,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 4,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Segment_Delta_Volt/0",
+        "unit": "V",
+        "doc": "Delta voltage of first segment",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "BMS/Segment_Delta_Volt/1",
+        "unit": "V",
+        "doc": "Delta voltage of second segment",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "BMS/Segment_Delta_Volt/2",
+        "unit": "V",
+        "doc": "Delta voltage of third segment",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "BMS/Segment_Delta_Volt/3",
+        "unit": "V",
+        "doc": "Delta voltage of fourth segment",
+        "values": [
+          4
+        ]
+      },
+      {
+        "name": "BMS/Segment_Delta_Volt/4",
+        "unit": "V",
+        "doc": "Delta voltage of fifth segment",
+        "values": [
+          5
+        ]
+      },
+      {
+        "name": "BMS/Segment_Delta_Volt/Extra",
         "unit": "",
         "doc": "Reserved",
         "values": [
