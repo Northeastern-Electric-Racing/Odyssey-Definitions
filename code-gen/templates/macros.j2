@@ -78,6 +78,15 @@
 
 {% endmacro -%}
 
+{# Macro that finds the total message size, in bits. #}
+{% macro msg_size_bits(msg) -%}
+    {% set size = namespace(value=0) -%}
+    {% for point in msg.points -%}
+    {% set size.value = size.value + point.size -%}
+    {% endfor -%}
+    {{ size.value -}}
+{% endmacro -%}
+
 {% macro point_scalar(point) -%}
 
     {%- if point.formatter is defined -%}
