@@ -59,13 +59,13 @@ JSON files should be structured according to a strict hierarchy of:
 
 At the root of any spec-compliant JSON file is a list of Message objects. Each Message object has the following members:
 - `id`, a hexadecimal string of the CAN ID (extended CAN supported and default)
-- `desc`, string representing a quick descroption of the CAN message
+- `desc`, string representing a quick descroption of the CAN message.  Note that if it contains the word "overflow", it will be used as the overflow detection broadcast for said node.  See the code-gen folder for details.
 - `points`, a list of CAN Points being sent from the Message
 - `fields`, a list of MQTT messages being sent from the Message
+- `is_ext`, boolean representing whether the CAN ID is extended or standard (`false` by default).  This is required to be correct for encodable CAN messages no matter the ID size.  For decode-only CAN messages this can be omitted.  In the case of CGEN, any messages greater than 2^11 will be sent as extended IDs, and lower than 2^11 as standard IDs.
 
 Occassionally you may want Calypso to also send a message on the CAN network. Use the above fields, with these modifications/additions to treat the Message as an Encodable Message:
 - `key`, string representing the key to index the Encodable Message to, e.g. it would be sent to Calypso on `"Calypso/Bidir/Command/{key}"` 
-- `is_ext`, boolean representing whether the CAN ID is extended or standard (`false` by default)
 It is recommended that the decoding of the message be done to the topic `"Calypso/Bidir/State/{key}/{field_name}"`. Note decoding works exactly the same with these messages, so serves as an accurate representation of what Calypso is current sending out to the car.
 - `bidir_mode`, string specifying which bidirectionality functional profile the message uses (`broadcast` by default). Options:
   - `broadcast`: The message is sent on a loop of about one second with the most recent value, or the default value (see below).  Default value is required.
@@ -77,7 +77,7 @@ You may want to publish the fields of a message to additional MQTT clients. Add 
 #### NetField
 
 Within the `fields` member of a Message object, there is a list of NetField objects. Think 1 MQTT Topic per NetField. Each NetField has the following members:
-- `name`, string of the message topic name, e.g. `The/Topic/Name`. Going 3 levels of slashes is usually preferred, don't put trailing slashes.
+- `name`, string of the message topic name, e.g. `The/Topic/Name`. Going 3 levels of slashes is usually preferred, don't put trailing slashes.  The first level (in the above case `The`, is the name of the node sending the can message).
   - To embed live Point values in `name`, include point indices (from 1) in the name. Ex. `"Hello/{1}/World/{2}/Status"`
 - `unit`, string of the unit of the data, e.g. `mph`
 - `doc`, a short string with a human readable info about the topic
@@ -120,7 +120,7 @@ Within the `sim` member of a CANPoint object, there is a single sim object.  Thi
 
 Messages should follow these rules:
 - Descriptions should contain only letters and whitespace (`_` is allowed)
-- Message totals should be byte aligned, meaning that the total number of bits in a Message should be a power of 2. If your message doesn't add up to this as you've written it, use a padding CANPoint, and specify the `parse` field as `false` 
+- Message totals should be byte aligned, meaning that the total number of bits in a Message should be a power of 2. If your message doesn't add up to this as you've written it, use a padding CANPoint, and specify the `parse` field as `false`.  Then no NetField is needed
 - Wherever possible, bit-wise decoding and byte-wise decoding should happen in seperate bytes to avoid confusion. Ex. If there are 5 messages of size one (booleans), add a 3 bit filler before adding a 16 bit number
 - Make the topic of an Encodable CAN Message be `"Calypso/Bidir/State/{key}/{field_name}"`
 
@@ -133,10 +133,11 @@ Fields should follow these rules:
 Points should follow these rules:
 - Most significant bit should be the leftmost bit in each byte of data
 - Points of less than 8 bits' endianness should not be specified and will not do anything
-- **Signed CANPoints must be 8,16,or 32 bits and byte aligned!**
-- **Little endian messages must be 8,16, or 32 bits and byte aligned!**
+- Little endian points should be byte aligned.
+- **Signed integer CANPoints (not IEEE floats) must be 8,16,or 32 bits and byte aligned!**
+- **Messages containing any little endian points must be completely byte aligned for C GEN!**
 - Maximum size of a sent message (default, aka `"parse": true`), is 32 bits
-- Unsent points should only contain the `size` parameter
+- Unsent points (`"parse": false`) should only contain the `size` parameter
 - Sim enum frequencies must add up to 1 or they will not be respected.
 - IEEE754 Float Points must be 32 bits 
 
@@ -161,5 +162,16 @@ The script format.sh will format the files in place.  It requires moreutils and 
 
 Work must be done in both Calypso and here.
 
-1. In Calypso, edit the can_types.rs file to reflect your change
+1. In Calypso, edit the can_types.rs and nerdbc.rs file to reflect your change
 2. In here, migrate the JSON files to suite your needs.
+3. Optionally, migrate the code-gen files appropriately
+
+## Code gen
+
+This generates C code for CAN bus nodes.
+
+To generate code, use the NER environment from Embedded-Base.  The Jinja2 templates allow us to create .c and .h files by reading in the JSON specification files.  In each compliant repository, there is a cangen.sh file which triggers this repository script under the submodule.
+
+### Generation modes
+
+There are two generation modes.  If a message contains all big endian numerics that may or may not be byte aligned, bitstream.h from Embedded-Base is used.  If ANY little endian points are present, then the typedef struct paradigm is utilized. The overflow detection code is not implemented in the struct format.  The function arguments should be identical for both generation modes.  Generation modes are choosen per CAN message.
