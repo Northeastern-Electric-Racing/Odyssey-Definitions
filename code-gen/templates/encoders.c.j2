@@ -107,19 +107,9 @@ uint8_t send_{{ macros.function_name(msg) }}
         {% endfor %}
     } bitstream_data;
     {% for point in msg.points -%}
+    bitstream_data.{{ point.name }} = ({{ macros.c_int_type(point.size, point.signed) }})({{ point.name }}{{ macros.point_scalar(point) }});
         {% if point.endianness is defined and point.endianness == "big" %}
-            {#- Determine which endian swapping to use -#}
-            {%- if point.size <= 8 %}
-                bitstream_data.{{ point.name }} = ({{ macros.c_int_type(point.size, point.signed) }})({{ point.name }}{{ macros.point_scalar(point) }});
-            {%- elif point.size <= 16 %}
-                bitstream_data.{{ point.name }} = __builtin_bswap16(({{ macros.c_int_type(point.size, point.signed) }})({{ point.name }}{{ macros.point_scalar(point) }}));
-            {%- elif point.size <= 32 %}
-                bitstream_data.{{ point.name }} = __builtin_bswap32(({{ macros.c_int_type(point.size, point.signed) }})({{ point.name }}{{ macros.point_scalar(point) }}));
-            {%- else %}
-                bitstream_data.{{ point.name }} = __builtin_bswap64(({{ macros.c_int_type(point.size, point.signed) }})({{ point.name }}{{ macros.point_scalar(point) }}));
-            {%- endif %}
-        {%- else %}
-            bitstream_data.{{ point.name }} = ({{ macros.c_int_type(point.size, point.signed) }})({{ point.name }}{{ macros.point_scalar(point) }});
+    endian_swap(&bitstream_data.{{ point.name -}}, sizeof(bitstream_data.{{ point.name -}}));
         {%- endif %}
     {%- endfor %}
     memcpy(msg.data, &bitstream_data, sizeof(bitstream_data));
