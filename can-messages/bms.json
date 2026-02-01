@@ -2620,6 +2620,10 @@
             ]
           ]
         }
+      }, 
+      {
+        "size": 10,
+        "parse": false
       }
     ],
     "fields": [
