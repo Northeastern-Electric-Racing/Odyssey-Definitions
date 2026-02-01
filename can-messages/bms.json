@@ -2955,6 +2955,10 @@
           "inc_max": 1,
           "round": true
         }
+      },
+      {
+        "size": 1,
+        "parse": false
       }
     ],
     "fields": [
