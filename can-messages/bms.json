@@ -1600,7 +1600,7 @@
   },
   {
     "id": "0x100",
-    "desc": "HV Plate Diagnostics (1)",
+    "desc": "HV Plate Diagnostics",
     "points": [
       {
         "size": 12,
@@ -1655,11 +1655,7 @@
       {
         "size": 16,
         "name": "osccnt",
-        "c_type": "uint16_t",
-        "sim": {
-          "min": 0,
-          "max": 65535
-        }
+        "c_type": "uint16_t"
       }
     ],
     "fields": [
@@ -1708,7 +1704,7 @@
   },
   {
     "id": "0x101",
-    "desc": "HV Plate Diagnostics (2)",
+    "desc": "HV Plate Diagnostics second",
     "points": [
       {
         "size": 12,
@@ -1784,6 +1780,10 @@
           "inc_min": 0.01,
           "inc_max": 1
         }
+      },
+      {
+        "size": 4,
+        "parse": false
       }
     ],
     "fields": [
@@ -1825,6 +1825,14 @@
         "doc": "",
         "values": [
           5
+        ]
+      },
+      {
+        "name": "BMS/Plate/Diagnostics/Extra",
+        "unit": "",
+        "doc": "Reserved",
+        "values": [
+          6
         ]
       }
     ],
