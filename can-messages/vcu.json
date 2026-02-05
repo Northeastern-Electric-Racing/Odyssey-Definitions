@@ -2589,7 +2589,25 @@
         }
       },
       {
-        "size": 3,
+        "size": 1,
+        "signed": false,
+        "c_type": "bool",
+        "name": "LV_LOW_VOLTAGE_FAULT",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        }
+      },
+      {
+        "size": 2,
         "signed": false,
         "parse": false,
         "name": "EXTRA",
@@ -2710,6 +2728,15 @@
         "unit": "",
         "values": [
           13
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/LV_LOW_VOLTAGE_FAULT",
+        "unit": "",
+        "values": [
+          14
         ],
         "doc": "",
         "desc": ""
