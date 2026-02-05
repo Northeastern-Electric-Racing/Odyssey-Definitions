@@ -2592,7 +2592,7 @@
         "size": 1,
         "signed": false,
         "c_type": "bool",
-        "name": "LOW_LV_BATTERY_VOLTS",
+        "name": "LV_LOW_VOLTAGE_FAULT",
         "sim": {
           "options": [
             [
@@ -2733,7 +2733,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/LV_LOW_LV_BATTERY_VOLTS",
+        "name": "VCU/Faults/LV_LOW_VOLTAGE_FAULT",
         "unit": "",
         "values": [
           14
