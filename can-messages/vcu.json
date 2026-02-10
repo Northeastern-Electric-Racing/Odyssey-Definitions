@@ -2625,7 +2625,7 @@
         }
       },
       {
-        "size": 2,
+        "size": 1,
         "signed": false,
         "parse": false,
         "name": "EXTRA",
