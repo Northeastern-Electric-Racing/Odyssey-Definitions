@@ -2424,6 +2424,24 @@
           ]
         },
         "c_type": "bool",
+        "name": "LIGHTNING_CAN_MONITOR_FAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
         "name": "ONBOARD_TEMP_FAULT"
       },
       {
@@ -2607,7 +2625,7 @@
         }
       },
       {
-        "size": 2,
+        "size": 1,
         "signed": false,
         "parse": false,
         "name": "EXTRA",
@@ -2643,7 +2661,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/ONBOARD_TEMP_FAULT",
+        "name": "VCU/Faults/LIGHTNING_CAN_MONITOR_FAULT",
         "unit": "",
         "values": [
           4
@@ -2652,7 +2670,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/IMU_ACCEL_FAULT",
+        "name": "VCU/Faults/ONBOARD_TEMP_FAULT",
         "unit": "",
         "values": [
           5
@@ -2661,7 +2679,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/IMU_GYRO_FAULT",
+        "name": "VCU/Faults/IMU_ACCEL_FAULT",
         "unit": "",
         "values": [
           6
@@ -2670,7 +2688,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/BSPD_PREFAULT",
+        "name": "VCU/Faults/IMU_GYRO_FAULT",
         "unit": "",
         "values": [
           7
@@ -2679,7 +2697,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/ONBOARD_BRAKE_OPEN_CIRCUIT_FAULT",
+        "name": "VCU/Faults/BSPD_PREFAULT",
         "unit": "",
         "values": [
           8
@@ -2688,7 +2706,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/ONBOARD_ACCEL_OPEN_CIRCUIT_FAULT",
+        "name": "VCU/Faults/ONBOARD_BRAKE_OPEN_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           9
@@ -2697,7 +2715,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/ONBOARD_BRAKE_SHORT_CIRCUIT_FAULT",
+        "name": "VCU/Faults/ONBOARD_ACCEL_OPEN_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           10
@@ -2706,7 +2724,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/ONBOARD_ACCEL_SHORT_CIRCUIT_FAULT",
+        "name": "VCU/Faults/ONBOARD_BRAKE_SHORT_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           11
@@ -2715,7 +2733,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/ONBOARD_PEDAL_DIFFERENCE_FAULT",
+        "name": "VCU/Faults/ONBOARD_ACCEL_SHORT_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           12
@@ -2724,7 +2742,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/RTDS_FAULT",
+        "name": "VCU/Faults/ONBOARD_PEDAL_DIFFERENCE_FAULT",
         "unit": "",
         "values": [
           13
@@ -2733,10 +2751,19 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/LV_LOW_VOLTAGE_FAULT",
+        "name": "VCU/Faults/RTDS_FAULT",
         "unit": "",
         "values": [
           14
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/LV_LOW_VOLTAGE_FAULT",
+        "unit": "",
+        "values": [
+          15
         ],
         "doc": "",
         "desc": ""
