@@ -2207,7 +2207,7 @@
     "desc": "IMU Accelerometer",
     "points": [
       {
-        "size": 21,
+        "size": 16,
         "signed": true,
         "endianness": "big",
         "formatter": {
@@ -2225,7 +2225,7 @@
         "name": "imu_accelerometer_x"
       },
       {
-        "size": 21,
+        "size": 16,
         "signed": true,
         "endianness": "big",
         "formatter": {
@@ -2243,7 +2243,7 @@
         "name": "imu_accelerometer_y"
       },
       {
-        "size": 22,
+        "size": 32,
         "signed": true,
         "endianness": "big",
         "formatter": {
