@@ -2243,7 +2243,7 @@
         "name": "imu_accelerometer_y"
       },
       {
-        "size": 21,
+        "size": 22,
         "signed": true,
         "endianness": "big",
         "formatter": {
