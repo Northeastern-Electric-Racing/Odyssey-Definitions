@@ -2207,12 +2207,12 @@
     "desc": "IMU Accelerometer",
     "points": [
       {
-        "size": 16,
+        "size": 21,
         "signed": true,
         "endianness": "big",
         "formatter": {
           "key": "divide",
-          "arg": 100
+          "arg": 20
         },
         "sim": {
           "min": 0,
@@ -2225,12 +2225,12 @@
         "name": "imu_accelerometer_x"
       },
       {
-        "size": 16,
+        "size": 21,
         "signed": true,
         "endianness": "big",
         "formatter": {
           "key": "divide",
-          "arg": 100
+          "arg": 20
         },
         "sim": {
           "min": 0,
@@ -2243,12 +2243,12 @@
         "name": "imu_accelerometer_y"
       },
       {
-        "size": 16,
+        "size": 21,
         "signed": true,
         "endianness": "big",
         "formatter": {
           "key": "divide",
-          "arg": 100
+          "arg": 20
         },
         "sim": {
           "min": 0,
