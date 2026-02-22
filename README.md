@@ -175,3 +175,13 @@ To generate code, use the NER environment from Embedded-Base.  The Jinja2 templa
 ### Generation modes
 
 There are two generation modes.  If a message contains all big endian numerics that may or may not be byte aligned, bitstream.h from Embedded-Base is used.  If ANY little endian points are present, then the typedef struct paradigm is utilized. The overflow detection code is not implemented in the struct format.  The function arguments should be identical for both generation modes.  Generation modes are choosen per CAN message.
+
+## Ethernet Messaging
+
+Right now, you just need to include the nanoPB API to create protobuf messages.
+
+CMakeLists.txt (at end)  
+```
++# NER: Add protobuf
++add_subdirectory(Drivers/Odyssey-Definitions/nanopb)
+```

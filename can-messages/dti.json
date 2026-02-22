@@ -872,7 +872,7 @@
     ],
     "fields": [
       {
-        "name": "MPU/Commands/AC_Current_Target",
+        "name": "VCU/Commands/AC_Current_Target",
         "unit": "A",
         "doc": "This command sets the target motor AC current (peak, not RMS)",
         "desc": "When the controller receives this message, it automatically switches to current control mode.\nThis value must not be above the limits of the inverter and must be multiplied by 10 before sending. This is a signed parameter, and the sign represents the direction of the torque which correlates with the motor AC current. (For the correlation, please refer to the motor parameters) ",
@@ -910,7 +910,7 @@
     ],
     "fields": [
       {
-        "name": "MPU/Commands/Brake_Current_Target",
+        "name": "VCU/Commands/Brake_Current_Target",
         "unit": "A",
         "doc": "Targets the brake current of the motor",
         "desc": "It will result negative torque relatively to the forward direction of the motor.\nThis value must be multiplied by 10 before sending, only positive currents are accepted.",
@@ -1334,7 +1334,7 @@
     ],
     "fields": [
       {
-        "name": "MPU/Commands/Drive_Enable_Target",
+        "name": "VCU/Commands/Drive_Enable_Target",
         "unit": "",
         "doc": "Drive allowed",
         "desc": "Only 0 and 1 values are accepted. Must be sent periodically to be enabled. Refer to chapter 4.3",
