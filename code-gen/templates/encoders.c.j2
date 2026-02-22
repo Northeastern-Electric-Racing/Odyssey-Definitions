@@ -60,10 +60,10 @@ uint8_t send_{{ macros.function_name(msg) }}
                         {%- set min_value = -(2 ** (point.size - 1)) %}
                         int32_t {{ point.name }}_i = (int32_t)({{ point.name }}{{ macros.point_scalar(point) }});
                         if({{ point.name }}_i > {{ max_value }}) {
-                            PRINTLN_WARNING("Overflow occured for point {{ point.name }}! Capping point to its max value (point is {{ point.size }} bits signed, so max_value={{ max_value }}).");
+                            {#- Handle overflow -#}
                             {{ point.name }}_i = {{ max_value }};
                         } else if({{ point.name }}_i < {{ min_value }}) {
-                            PRINTLN_WARNING("Underflow occured for point {{ point.name }}! Capping point to its min value (point is {{ point.size }} bits signed, so min_value={{ min_value }}).");
+                            {#- Handle underflow -#}
                             {{ point.name }}_i = {{ min_value }};
                         }
                         data |= ((uint32_t)({{ point.name }}_i) & 0x{{ '%X' | format((2 ** point.size) - 1) }}ULL) << {{ shift }};
@@ -72,7 +72,7 @@ uint8_t send_{{ macros.function_name(msg) }}
                         {%- set max_value = (2 ** point.size) - 1 %}
                         uint32_t {{ point.name }}_i = (uint32_t)({{ point.name }}{{ macros.point_scalar(point) }});
                         if({{ point.name }}_i > {{ max_value }}ULL) {
-                            PRINTLN_WARNING("Overflow occured for point {{ point.name }}! Capping point to its max value (point is {{ point.size }} bits, so max_value={{ max_value }}).");
+                            {#- Handle overflow -#}
                             {{ point.name }}_i = {{ max_value }};
                         }
                         data |= (({{ point.name }}_i) & 0x{{ '%X' | format((2 ** point.size) - 1) }}ULL) << {{ shift }};
