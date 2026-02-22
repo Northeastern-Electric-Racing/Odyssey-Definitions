@@ -2873,7 +2873,7 @@
     ],
     "fields": [
       {
-        "name": "three_bits",
+        "name": "VCU/Test/three_bits",
         "unit": "",
         "values": [
           1
@@ -2882,7 +2882,7 @@
         "desc": ""
       },
       {
-        "name": "float_value",
+        "name": "VCU/Test/float_value",
         "unit": "",
         "values": [
           2
@@ -2891,7 +2891,7 @@
         "desc": ""
       },
       {
-        "name": "five_bits",
+        "name": "VCU/Test/five_bits",
         "unit": "",
         "values": [
           3
@@ -2900,7 +2900,7 @@
         "desc": ""
       },
       {
-        "name": "sixteen_bits",
+        "name": "VCU/Test/sixteen_bits",
         "unit": "",
         "values": [
           4
@@ -2909,7 +2909,7 @@
         "desc": ""
       },
       {
-        "name": "signed_8_bits",
+        "name": "VCU/Test/signed_8_bits",
         "unit": "",
         "values": [
           5
