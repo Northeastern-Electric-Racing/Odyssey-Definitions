@@ -55,7 +55,7 @@
     "sim_freq": 500
   },
   {
-    "id": "0x603",
+    "id": "0xBAB",
     "desc": "Front MSB Accel",
     "points": [
       {
@@ -110,7 +110,7 @@
     "sim_freq": 500
   },
   {
-    "id": "0x604",
+    "id": "0xBAC",
     "desc": "Front MSB Gyro",
     "points": [
       {
@@ -254,7 +254,7 @@
     "sim_freq": 500
   },
   {
-    "id": "0x607",
+    "id": "0xBAF",
     "desc": "Front Ride Height",
     "points": [
       {
@@ -311,7 +311,7 @@
     "sim_freq": 500
   },
   {
-    "id": "0x609",
+    "id": "0xBAE",
     "desc": "Front MSB Orientation",
     "points": [
       {
@@ -421,7 +421,7 @@
     "sim_freq": 500
   },
   {
-    "id": "0x623",
+    "id": "0xBBF",
     "desc": "Back MSB Accel",
     "points": [
       {
@@ -476,7 +476,7 @@
     "sim_freq": 500
   },
   {
-    "id": "0x624",
+    "id": "0xBC0",
     "desc": "Back MSB Gyro",
     "points": [
       {
@@ -620,7 +620,7 @@
     "sim_freq": 500
   },
   {
-    "id": "0x627",
+    "id": "0xBC3",
     "desc": "Back Ride Height",
     "points": [
       {
@@ -677,7 +677,7 @@
     "sim_freq": 500
   },
   {
-    "id": "0x629",
+    "id": "0xBC2",
     "desc": "Back MSB Orientation",
     "points": [
       {
