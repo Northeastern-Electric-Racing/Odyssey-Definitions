@@ -110,7 +110,7 @@
     "sim_freq": 500
   },
   {
-    "id": "0xBAD",
+    "id": "0xBB0",
     "desc": "Front MSB Mag",
     "points": [
       {
@@ -446,7 +446,7 @@
     "sim_freq": 500
   },
   {
-    "id": "0xBC1",
+    "id": "0xBC4",
     "desc": "Back MSB Mag",
     "points": [
       {
