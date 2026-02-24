@@ -203,7 +203,7 @@
   },
   {
     "id": "0xDAA",
-    "desc": "Front MSB Strain 1 and 2",
+    "desc": "Front MSB Strain One and Two",
     "points": [
       {
         "size": 32,
@@ -231,7 +231,7 @@
   },
   {
     "id": "0xDAB",
-    "desc": "Front MSB Strain 3 and 4",
+    "desc": "Front MSB Strain Three and Four",
     "points": [
       {
         "size": 32,
@@ -378,7 +378,7 @@
     ],
     "fields": [
       {
-        "name": "MSB/F/Accel",
+        "name": "MSB/B/Accel",
         "unit": "mg",
         "doc": "IMU readings from the board",
         "values": [
@@ -433,7 +433,7 @@
     ],
     "fields": [
       {
-        "name": "MSB/F/Gyro",
+        "name": "MSB/B/Gyro",
         "unit": "mdps",
         "doc": "Gyro readings from the board",
         "values": [
@@ -470,7 +470,7 @@
     ],
     "fields": [
       {
-        "name": "MSB/F/Mag",
+        "name": "MSB/B/Mag",
         "unit": "mgauss",
         "doc": "Magnetometer readings from the board",
         "values": [
@@ -525,7 +525,7 @@
     ],
     "fields": [
       {
-        "name": "MSB/F/Orientation",
+        "name": "MSB/B/Orientation",
         "unit": "Deg",
         "doc": "MSB orientation as a result of sensor fusion",
         "values": [
@@ -539,7 +539,7 @@
   },
   {
     "id": "0xDBE",
-    "desc": "Back MSB Strain 1 and 2",
+    "desc": "Back MSB Strain One and Two",
     "points": [
       {
         "size": 32,
@@ -554,7 +554,7 @@
     ],
     "fields": [
       {
-        "name": "MSB/F/Strain1",
+        "name": "MSB/B/Strain1",
         "unit": "",
         "doc": "Strain 1 and 2 readings",
         "values": [
@@ -567,7 +567,7 @@
   },
   {
     "id": "0xDBF",
-    "desc": "Back MSB Strain 3 and 4",
+    "desc": "Back MSB Strain Three and Four",
     "points": [
       {
         "size": 32,
@@ -582,7 +582,7 @@
     ],
     "fields": [
       {
-        "name": "MSB/F/Strain2",
+        "name": "MSB/B/Strain2",
         "unit": "",
         "doc": "Strain 3 and 4 readings",
         "values": [
@@ -610,7 +610,7 @@
     ],
     "fields": [
       {
-        "name": "MSB/F/Shock",
+        "name": "MSB/B/Shock",
         "unit": "",
         "doc": "Shock Pot readings",
         "values": [
@@ -638,7 +638,7 @@
     ],
     "fields": [
       {
-        "name": "MSB/F/Cells",
+        "name": "MSB/B/Cells",
         "unit": "",
         "doc": "Load Cell readings",
         "values": [
@@ -661,7 +661,7 @@
     ],
     "fields": [
       {
-        "name": "MSB/F/Thermo",
+        "name": "MSB/B/Thermo",
         "unit": "",
         "doc": "Thermocouple readings",
         "values": [
@@ -698,7 +698,7 @@
     ],
     "fields": [
       {
-        "name": "MSB/F/TOF",
+        "name": "MSB/B/TOF",
         "unit": "",
         "doc": "Time of flight readings",
         "values": [
