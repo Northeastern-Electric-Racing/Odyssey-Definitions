@@ -182,5 +182,34 @@
     ],
     "key": "RTDSOverride",
     "sim_freq": 750
+  },
+  {
+    "id": "0x500",
+    "desc": "Shepherd BMS Fan Percent",
+    "points": [
+      {
+        "size": 8,
+        "default": 0,
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 1,
+          "inc_max": 30,
+          "round": true
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/FanBMSPercent/A",
+        "unit": "uint8_t",
+        "doc": "Control duty cycle (%) of BMS fan",
+        "values": [
+          1
+        ]
+      }
+    ],
+    "key": "FanBMSPercent",
+    "sim_freq": 750
   }
 ]

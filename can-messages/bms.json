@@ -3624,5 +3624,33 @@
       }
     ],
     "sim_freq": 200
+  },
+  {
+    "id": "0x700",
+    "desc": "Fan duty cycle percentage",
+    "points": [
+      {
+        "size": 8,
+        "name": "fan_duty_cycle",
+        "c_type": "uint8_t",
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 1,
+          "inc_max": 50,
+          "round": true
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Control/Fan/DutyCycle",
+        "unit": "%",
+        "doc": "Duty Cycle of Fan",
+        "values": [
+          1
+        ]
+      }
+    ]
   }
 ]
