@@ -705,7 +705,7 @@
       },
       {
         "size": 1,
-        "name": "ccdl_enforce",
+        "name": "ccl_enforce",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -848,7 +848,7 @@
       {
         "name": "BMS/Faults/Critical/DCL_Enforce",
         "unit": "",
-        "doc": "Reserved",
+        "doc": "DCL not being obeyed",
         "values": [
           1
         ]
@@ -864,7 +864,7 @@
       {
         "name": "BMS/Faults/Critical/Cell_Voltage_Low",
         "unit": "",
-        "doc": "Reserved",
+        "doc": "Cell voltage is low",
         "values": [
           4
         ]
@@ -872,7 +872,7 @@
       {
         "name": "BMS/Faults/Critical/Cell_Voltage_High",
         "unit": "",
-        "doc": "Reserved",
+        "doc": "Cell voltage is high",
         "values": [
           5
         ]
@@ -880,7 +880,7 @@
       {
         "name": "BMS/Faults/Critical/Charging_Voltage_High",
         "unit": "",
-        "doc": "DCL is not being obeyed",
+        "doc": "Voltage when charging is high",
         "values": [
           6
         ]
@@ -888,25 +888,17 @@
       {
         "name": "BMS/Faults/Critical/Pack_too_hot",
         "unit": "",
-        "doc": "Reserved",
+        "doc": "Pack is too hot",
         "values": [
-          8
+          7
         ]
       },
       {
         "name": "BMS/Faults/Critical/High_die_temp",
         "unit": "",
-        "doc": "Cell voltage is below datasheet minimum",
+        "doc": "Die temp ts too high",
         "values": [
-          9
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Cell_Undervoltage",
-        "unit": "",
-        "doc": "A cell has gone below datasheet minimum",
-        "values": [
-          17
+          8
         ]
       },
       {
@@ -914,7 +906,7 @@
         "unit": "",
         "doc": "Lost communications with segments",
         "values": [
-          18
+          9
         ]
       },
       {
@@ -922,7 +914,7 @@
         "unit": "",
         "doc": "Lost communications with HV Plate",
         "values": [
-          19
+          10
         ]
       },
       {
@@ -930,7 +922,7 @@
         "unit": "",
         "doc": "Reserved",
         "values": [
-          20
+          11
         ]
       }
     ],
