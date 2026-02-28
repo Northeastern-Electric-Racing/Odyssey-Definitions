@@ -866,7 +866,7 @@
         "unit": "",
         "doc": "Cell voltage is low",
         "values": [
-          4
+          3
         ]
       },
       {
@@ -874,7 +874,7 @@
         "unit": "",
         "doc": "Cell voltage is high",
         "values": [
-          5
+          4
         ]
       },
       {
@@ -882,7 +882,7 @@
         "unit": "",
         "doc": "Voltage when charging is high",
         "values": [
-          6
+          5
         ]
       },
       {
@@ -890,7 +890,7 @@
         "unit": "",
         "doc": "Pack is too hot",
         "values": [
-          7
+          6
         ]
       },
       {
@@ -898,7 +898,7 @@
         "unit": "",
         "doc": "Die temp ts too high",
         "values": [
-          8
+          7
         ]
       },
       {
@@ -906,7 +906,7 @@
         "unit": "",
         "doc": "Lost communications with segments",
         "values": [
-          9
+          8
         ]
       },
       {
@@ -914,7 +914,7 @@
         "unit": "",
         "doc": "Lost communications with HV Plate",
         "values": [
-          10
+          9
         ]
       },
       {
@@ -922,7 +922,7 @@
         "unit": "",
         "doc": "Reserved",
         "values": [
-          11
+          10
         ]
       }
     ],
