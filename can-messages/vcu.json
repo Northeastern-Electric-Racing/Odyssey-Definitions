@@ -2212,7 +2212,7 @@
         "endianness": "big",
         "formatter": {
           "key": "divide",
-          "arg": 100
+          "arg": 4
         },
         "sim": {
           "min": 0,
@@ -2230,7 +2230,7 @@
         "endianness": "big",
         "formatter": {
           "key": "divide",
-          "arg": 100
+          "arg": 4
         },
         "sim": {
           "min": 0,
@@ -2248,7 +2248,7 @@
         "endianness": "big",
         "formatter": {
           "key": "divide",
-          "arg": 100
+          "arg": 4
         },
         "sim": {
           "min": 0,
@@ -2829,5 +2829,95 @@
       }
     ],
     "sim_freq": 250
+  },
+  {
+    "id": "0xBAD",
+    "desc": "VCU Test Message",
+    "points": [
+      {
+        "size": 3,
+        "signed": false,
+        "name": "three_bits",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 32,
+        "signed": true,
+        "c_type": "float",
+        "name": "float_value",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      },
+      {
+        "size": 5,
+        "signed": false,
+        "name": "five_bits",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "sixteen_bits",
+        "c_type": "uint16_t",
+        "endianness": "big"
+      },
+      {
+        "size": 8,
+        "signed": true,
+        "name": "signed_8_bits",
+        "c_type": "int8_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Test/three_bits",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Test/float_value",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Test/five_bits",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Test/sixteen_bits",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Test/signed_8_bits",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ],
+    "is_ext": true
   }
 ]
