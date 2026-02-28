@@ -692,74 +692,6 @@
       },
       {
         "size": 1,
-        "name": "ccl_enforce",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "charger_can",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "battery_therm",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "charger_safety",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
         "name": "dcl_enforce",
         "c_type": "bool",
         "sim": {
@@ -777,7 +709,7 @@
       },
       {
         "size": 1,
-        "name": "external_can",
+        "name": "ccdl_enforce",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -794,7 +726,7 @@
       },
       {
         "size": 1,
-        "name": "weak_pack",
+        "name": "low_cell_volt",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -811,7 +743,7 @@
       },
       {
         "size": 1,
-        "name": "low_cell_volts",
+        "name": "high_cell_volt",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -828,7 +760,7 @@
       },
       {
         "size": 1,
-        "name": "charge_reading",
+        "name": "high_charge_volt",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -845,7 +777,7 @@
       },
       {
         "size": 1,
-        "name": "current_sense",
+        "name": "pack_hot",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -862,7 +794,7 @@
       },
       {
         "size": 1,
-        "name": "ic_comm",
+        "name": "die_temp_max",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -879,7 +811,7 @@
       },
       {
         "size": 1,
-        "name": "thermal_err",
+        "name": "segment_comms",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -896,92 +828,7 @@
       },
       {
         "size": 1,
-        "name": "sw_err",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "open_wire",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "pack_overheat",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "cell_uv",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "cell_ov",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "cell_not_balancing",
+        "name": "hv_plate_comms",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -1003,7 +850,7 @@
     ],
     "fields": [
       {
-        "name": "BMS/Faults/Critical/Extra",
+        "name": "BMS/Faults/Critical/DCL_Enforce",
         "unit": "",
         "doc": "Reserved",
         "values": [
@@ -1019,15 +866,7 @@
         ]
       },
       {
-        "name": "BMS/Faults/Critical/Charger_Can",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          3
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Battery_Therm",
+        "name": "BMS/Faults/Critical/Cell_Voltage_Low",
         "unit": "",
         "doc": "Reserved",
         "values": [
@@ -1035,7 +874,7 @@
         ]
       },
       {
-        "name": "BMS/Faults/Critical/Charger_Safety",
+        "name": "BMS/Faults/Critical/Cell_Voltage_High",
         "unit": "",
         "doc": "Reserved",
         "values": [
@@ -1043,7 +882,7 @@
         ]
       },
       {
-        "name": "BMS/Faults/Critical/DCL_Enforce",
+        "name": "BMS/Faults/Critical/Charging_Voltage_High",
         "unit": "",
         "doc": "DCL is not being obeyed",
         "values": [
@@ -1051,15 +890,7 @@
         ]
       },
       {
-        "name": "BMS/Faults/Critical/External_Can",
-        "unit": "",
-        "doc": "Critical failure in CAN system",
-        "values": [
-          7
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Weak_Pack",
+        "name": "BMS/Faults/Critical/Pack_too_hot",
         "unit": "",
         "doc": "Reserved",
         "values": [
@@ -1067,67 +898,11 @@
         ]
       },
       {
-        "name": "BMS/Faults/Critical/Low_Cell_Volts",
+        "name": "BMS/Faults/Critical/High_die_temp",
         "unit": "",
         "doc": "Cell voltage is below datasheet minimum",
         "values": [
           9
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Charge_Reading",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          10
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Current_Sense",
-        "unit": "",
-        "doc": "Failure to read current sensor from sensor or CAN",
-        "values": [
-          11
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/IC_Comm",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          12
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Thermal_Err",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          13
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Software",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          14
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Open_Wire",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          15
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Pack_Overheat",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          16
         ]
       },
       {
@@ -1139,17 +914,17 @@
         ]
       },
       {
-        "name": "BMS/Faults/Critical/Cell_Overvoltage",
+        "name": "BMS/Faults/Non-Critical/Segment_Comms_fault",
         "unit": "",
-        "doc": "A cell has gone above datasheet maximum",
+        "doc": "Lost communications with segments",
         "values": [
           18
         ]
       },
       {
-        "name": "BMS/Faults/Critical/Cells_Not_Balancing",
+        "name": "BMS/Faults/Non-Critical/HV_Plate_Comms_Fault",
         "unit": "",
-        "doc": "Reserved",
+        "doc": "Lost communications with HV Plate",
         "values": [
           19
         ]
