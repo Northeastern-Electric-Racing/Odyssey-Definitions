@@ -687,10 +687,6 @@
     "desc": "Fault Status",
     "points": [
       {
-        "size": 14,
-        "parse": false
-      },
-      {
         "size": 1,
         "name": "dcl_enforce",
         "c_type": "bool",
@@ -844,7 +840,7 @@
         }
       },
       {
-        "size": 32,
+        "size": 7,
         "parse": false
       }
     ],
