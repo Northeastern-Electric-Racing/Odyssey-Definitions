@@ -1929,7 +1929,7 @@
   },
   {
     "id": "0x6F2",
-    "desc": "PEC error count notification per segment chip",
+    "desc": "PEC Error Count Notification per Chip",
     "points": [
       {
         "size": 8,
@@ -1938,21 +1938,21 @@
       },
       {
         "size": 16,
-        "name": "pec_error_count",
+        "name": "pec_error_cnt",
         "c_type": "uint16_t"
       }
     ],
     "fields": [
       {
-        "name": "BMS/Segment_PEC/PECErrorChip",
-        "unit": "",
+        "name": "BMS/PerChip/PECErrorChip",
+        "unit": "chip_id",
         "doc": "The chip that has experienced PEC errors",
         "values": [
           1
         ]
       },
       {
-        "name": "BMS/Segment_PEC/PECErrorCount",
+        "name": "BMS/PerChip/PECErrorCount",
         "unit": "",
         "doc": "The number of times errors have occured",
         "desc": "Broken on 24A",
