@@ -1963,6 +1963,27 @@
     ]
   },
   {
+    "id": "0x6F3",
+    "desc": "PEC error count notification for hv plate",
+    "points": [
+      {
+        "size": 8,
+        "name": "pec_error_count",
+        "c_type": "uint8_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/HV_Plate_PEC/PECErrorCount",
+        "unit": "",
+        "doc": "The number of times errors have occured",
+        "values": [
+          1
+        ]
+      }
+    ]
+  },
+  {
     "id": "0x6FA",
     "desc": "Alpha Cell Data Debug",
     "points": [
