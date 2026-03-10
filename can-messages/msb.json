@@ -710,5 +710,90 @@
       }
     ],
     "sim_freq": 500
+  },
+  {
+    "id": "0xDB0",
+    "desc": "Wheel RPM",
+    "points": [
+      {
+        "size": 16,
+        "name": "Front Right",
+        "c_type": "uint16_t",
+        "sim": {
+          "min": 0,
+          "max": 10000,
+          "inc_min": 50,
+          "inc_max": 1500
+        }
+      },
+      {
+        "size": 16,
+        "name": "Front Left",
+        "c_type": "uint16_t",
+        "sim": {
+          "min": 0,
+          "max": 10000,
+          "inc_min": 50,
+          "inc_max": 1500
+        }
+      },
+      {
+        "size": 16,
+        "name": "Rear Right",
+        "c_type": "uint16_t",
+        "sim": {
+          "min": 0,
+          "max": 10000,
+          "inc_min": 50,
+          "inc_max": 1500
+        }
+      },
+      {
+        "size": 16,
+        "name": "Rear Left",
+        "c_type": "uint16_t",
+        "sim": {
+          "min": 0,
+          "max": 10000,
+          "inc_min": 50,
+          "inc_max": 1500
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/FR_RPM",
+        "unit": "RPM",
+        "doc": "RPM value of front right wheel",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "MSB/F/FL_RPM",
+        "unit": "RPM",
+        "doc": "RPM value of front left wheel",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "MSB/B/RR_RPM",
+        "unit": "RPM",
+        "doc": "RPM value of rear right wheel",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "MSB/B/RL_RPM",
+        "unit": "RPM",
+        "doc": "RPM value of rear left wheel",
+        "values": [
+          4
+        ]
+      }
+    ],
+    "sim_freq": 500
   }
 ]
