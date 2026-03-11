@@ -2008,7 +2008,7 @@
         "c_type": "bool"
       },
       {
-        "size": 40,
+        "size": 8,
         "parse": false
       }
     ],
@@ -2211,7 +2211,7 @@
         "c_type": "bool"
       },
       {
-        "size": 48,
+        "size": 16,
         "parse": false
       }
     ],
