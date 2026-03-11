@@ -2006,6 +2006,10 @@
         "size": 1,
         "desc": "cell_pec",
         "c_type": "bool"
+      },
+      {
+        "size": 40,
+        "parse": false
       }
     ],
     "fields": [
@@ -2112,7 +2116,15 @@
         "values": [
           13
         ]
-      }
+      },
+      {
+        "name": "BMS/Segment_PEC/Extra",
+        "unit": "",
+        "doc": "Reserved",
+        "values": [
+          14
+        ]
+      },
     ]
   },
   {
@@ -2197,6 +2209,10 @@
         "size": 1,
         "desc": "vr_pec",
         "c_type": "bool"
+      },
+      {
+        "size": 48,
+        "parse": false
       }
     ],
     "fields": [
@@ -2326,6 +2342,14 @@
         "doc": "VR PEC error",
         "values": [
           16
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/Extra",
+        "unit": "",
+        "doc": "Reserved",
+        "values": [
+          17
         ]
       }
     ]
