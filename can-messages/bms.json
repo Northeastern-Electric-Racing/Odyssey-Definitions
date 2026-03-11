@@ -1945,7 +1945,7 @@
     "points": [
       {
         "size": 8,
-        "desc": "chip",
+        "name": "chip",
         "c_type": "uint8_t"
       },
       {
@@ -1954,57 +1954,57 @@
       },
       {
         "size": 1,
-        "desc": "sid_pec",
+        "name": "sid_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "comm_pec",
+        "name": "comm_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "cfgr_pec",
+        "name": "cfgr_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "fcell_pec",
+        "name": "fcell_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "scell_pec",
+        "name": "scell_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "acell_pec",
+        "name": "acell_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "pwm_pec",
+        "name": "pwm_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "stat_pec",
+        "name": "stat_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "raux_pec",
+        "name": "raux_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "aux_pec",
+        "name": "aux_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "cell_pec",
+        "name": "cell_pec",
         "c_type": "bool"
       },
       {
@@ -2137,82 +2137,78 @@
       },
       {
         "size": 1,
-        "desc": "sid_pec",
+        "name": "sid_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "comm_pec",
+        "name": "comm_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "stat_pec",
+        "name": "stat_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "flag_pec",
+        "name": "flag_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "aux_pec",
+        "name": "aux_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "avgivbat_pec",
+        "name": "avgivbat_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "avgvbat_pec",
+        "name": "avgvbat_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "avgcr_pec",
+        "name": "avgcr_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "oc_pec",
+        "name": "oc_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "ivbat_pec",
+        "name": "ivbat_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "vbat_pec",
+        "name": "vbat_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "cr_pec",
+        "name": "cr_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "cfgr_pec",
+        "name": "cfgr_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "rvr_pec",
+        "name": "rvr_pec",
         "c_type": "bool"
       },
       {
         "size": 1,
-        "desc": "vr_pec",
+        "name": "vr_pec",
         "c_type": "bool"
-      },
-      {
-        "size": 16,
-        "parse": false
       }
     ],
     "fields": [
@@ -2342,14 +2338,6 @@
         "doc": "VR PEC error",
         "values": [
           16
-        ]
-      },
-      {
-        "name": "BMS/HV_Plate_PEC/Extra",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          17
         ]
       }
     ]
