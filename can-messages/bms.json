@@ -2006,10 +2006,6 @@
         "size": 1,
         "name": "cell_pec",
         "c_type": "bool"
-      },
-      {
-        "size": 8,
-        "parse": false
       }
     ],
     "fields": [
@@ -2022,7 +2018,7 @@
         ]
       },
       {
-        "name": "BMS/Segment_PEC/Extra_1",
+        "name": "BMS/Segment_PEC/Extra",
         "unit": "",
         "doc": "Reserved",
         "values": [
@@ -2115,14 +2111,6 @@
         "doc": "CELL PEC error",
         "values": [
           13
-        ]
-      },
-      {
-        "name": "BMS/Segment_PEC/Extra_2",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          14
         ]
       }
     ]
