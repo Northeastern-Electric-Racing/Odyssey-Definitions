@@ -2022,7 +2022,7 @@
         ]
       },
       {
-        "name": "BMS/Segment_PEC/Extra",
+        "name": "BMS/Segment_PEC/Extra_1",
         "unit": "",
         "doc": "Reserved",
         "values": [
@@ -2118,7 +2118,7 @@
         ]
       },
       {
-        "name": "BMS/Segment_PEC/Extra",
+        "name": "BMS/Segment_PEC/Extra_2",
         "unit": "",
         "doc": "Reserved",
         "values": [
