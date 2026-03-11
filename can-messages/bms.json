@@ -667,7 +667,11 @@
         "c_type": "uint8_t"
       },
       {
-        "size": 8,
+        "size": 7,
+        "parse": false
+      },
+      {
+        "size": 1,
         "name": "recovery_successful",
         "c_type": "uint8_t"
       }
@@ -698,11 +702,19 @@
         ]
       },
       {
+        "name": "BMS/Segment_Comms/Extra",
+        "unit": "",
+        "doc": "Reserved",
+        "values": [
+          4
+        ]
+      },
+      {
         "name": "BMS/Segment_Comms/Recovery_Successful",
         "unit": "",
         "doc": "IsoSPI recovery completed successfully",
         "values": [
-          4
+          5
         ]
       }
     ]
@@ -1929,55 +1941,391 @@
   },
   {
     "id": "0x6F2",
-    "desc": "PEC error count notification per segment chip",
+    "desc": "Segment Chip PEC Errors",
     "points": [
       {
         "size": 8,
-        "name": "pec_error_chip",
+        "desc": "chip",
         "c_type": "uint8_t"
       },
       {
-        "size": 8,
-        "name": "pec_error_count",
-        "c_type": "uint8_t"
+        "size": 5,
+        "parse": false
+      },
+      {
+        "size": 1,
+        "desc": "sid_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "comm_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "cfgr_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "fcell_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "scell_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "acell_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "pwm_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "stat_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "raux_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "aux_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "cell_pec",
+        "c_type": "bool"
       }
     ],
     "fields": [
       {
-        "name": "BMS/Segment_PEC/PECErrorChip",
+        "name": "BMS/Segment_PEC/Chip",
         "unit": "",
-        "doc": "The chip that has experienced PEC errors",
+        "doc": "Segment chip with PEC error",
         "values": [
           1
         ]
       },
       {
-        "name": "BMS/Segment_PEC/PECErrorCount",
+        "name": "BMS/Segment_PEC/Extra",
         "unit": "",
-        "doc": "The number of times errors have occured",
+        "doc": "Reserved",
         "values": [
           2
+        ]
+      },
+      {
+        "name": "BMS/Segment_PEC/SID",
+        "unit": "",
+        "doc": "SID PEC error",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "BMS/Segment_PEC/COMM",
+        "unit": "",
+        "doc": "COMM PEC error",
+        "values": [
+          4
+        ]
+      },
+      {
+        "name": "BMS/Segment_PEC/CFGR",
+        "unit": "",
+        "doc": "CFGR PEC error",
+        "values": [
+          5
+        ]
+      },
+      {
+        "name": "BMS/Segment_PEC/FCELL",
+        "unit": "",
+        "doc": "FCELL PEC error",
+        "values": [
+          6
+        ]
+      },
+      {
+        "name": "BMS/Segment_PEC/SCELL",
+        "unit": "",
+        "doc": "SCELL PEC error",
+        "values": [
+          7
+        ]
+      },
+      {
+        "name": "BMS/Segment_PEC/ACELL",
+        "unit": "",
+        "doc": "ACELL PEC error",
+        "values": [
+          8
+        ]
+      },
+      {
+        "name": "BMS/Segment_PEC/PWM",
+        "unit": "",
+        "doc": "PWM PEC error",
+        "values": [
+          9
+        ]
+      },
+      {
+        "name": "BMS/Segment_PEC/STAT",
+        "unit": "",
+        "doc": "STAT PEC error",
+        "values": [
+          10
+        ]
+      },
+      {
+        "name": "BMS/Segment_PEC/RAUX",
+        "unit": "",
+        "doc": "RAUX PEC error",
+        "values": [
+          11
+        ]
+      },
+      {
+        "name": "BMS/Segment_PEC/AUX",
+        "unit": "",
+        "doc": "AUX PEC error",
+        "values": [
+          12
+        ]
+      },
+      {
+        "name": "BMS/Segment_PEC/CELL",
+        "unit": "",
+        "doc": "CELL PEC error",
+        "values": [
+          13
         ]
       }
     ]
   },
   {
     "id": "0x6F3",
-    "desc": "PEC error count notification for hv plate",
+    "desc": "HV Plate PEC Errors",
     "points": [
       {
-        "size": 8,
-        "name": "pec_error_count",
-        "c_type": "uint8_t"
+        "size": 1,
+        "parse": false
+      },
+      {
+        "size": 1,
+        "desc": "sid_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "comm_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "stat_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "flag_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "aux_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "avgivbat_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "avgvbat_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "avgcr_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "oc_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "ivbat_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "vbat_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "cr_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "cfgr_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "rvr_pec",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "desc": "vr_pec",
+        "c_type": "bool"
       }
     ],
     "fields": [
       {
-        "name": "BMS/HV_Plate_PEC/PECErrorCount",
+        "name": "BMS/HV_Plate_PEC/Extra",
         "unit": "",
-        "doc": "The number of times errors have occured",
+        "doc": "Reserved",
         "values": [
           1
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/SID",
+        "unit": "",
+        "doc": "SID PEC error",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/COMM",
+        "unit": "",
+        "doc": "COMM PEC error",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/STAT",
+        "unit": "",
+        "doc": "STAT PEC error",
+        "values": [
+          4
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/FLAG",
+        "unit": "",
+        "doc": "FLAG PEC error",
+        "values": [
+          5
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/AUX",
+        "unit": "",
+        "doc": "AUX PEC error",
+        "values": [
+          6
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/AVGIVBAT",
+        "unit": "",
+        "doc": "AVGIVBAT PEC error",
+        "values": [
+          7
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/AVGVBAT",
+        "unit": "",
+        "doc": "AVGVBAT PEC error",
+        "values": [
+          8
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/AVGCR",
+        "unit": "",
+        "doc": "AVGCR PEC error",
+        "values": [
+          9
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/OC",
+        "unit": "",
+        "doc": "OC PEC error",
+        "values": [
+          10
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/IVBAT",
+        "unit": "",
+        "doc": "IVBAT",
+        "values": [
+          11
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/VBAT",
+        "unit": "",
+        "doc": "VBAT PEC error",
+        "values": [
+          12
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/CR",
+        "unit": "",
+        "doc": "CR PEC error",
+        "values": [
+          13
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/CFGR",
+        "unit": "",
+        "doc": "CFGR PEC error",
+        "values": [
+          14
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/RVR",
+        "unit": "",
+        "doc": "RVR PEC error",
+        "values": [
+          15
+        ]
+      },
+      {
+        "name": "BMS/HV_Plate_PEC/VR",
+        "unit": "",
+        "doc": "VR PEC error",
+        "values": [
+          16
         ]
       }
     ]
