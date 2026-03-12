@@ -211,5 +211,46 @@
     ],
     "key": "FanBMSPercent",
     "sim_freq": 750
+  },
+  {
+    "id": "0xCAEF0",
+    "desc": "Dashboard eFuse State - Command to VCU",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.3
+            ],
+            [
+              1,
+              0.3
+            ],
+            [
+              2,
+              0.3
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/eFuses/Dashboard",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Dashboard eFuse state.",
+        "desc": "0=ON, 1=AUTO, 2=OFF."
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 750
   }
 ]
