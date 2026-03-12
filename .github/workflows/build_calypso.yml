@@ -19,4 +19,4 @@ jobs:
           path: "./Odyssey-Definitions"
 
       - name: Build Calypso
-        run: cargo build --locked
+        run: cargo build
