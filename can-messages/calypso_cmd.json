@@ -247,7 +247,7 @@
           1
         ],
         "doc": "Dashboard eFuse state.",
-        "desc": "0=ON, 1=AUTO, 2=OFF."
+        "desc": "0=ON, 1=AUTO, 2=OFF"
       }
     ],
     "is_ext": true,
