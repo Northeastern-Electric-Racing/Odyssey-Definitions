@@ -3297,16 +3297,17 @@
     "desc": "BMS Battbox Temp as reported by VCU",
     "points": [
       {
-        "size": 16,
-        "signed": false,
+        "size": 32,
+        "signed": true,
         "endianness": "big",
-        "c_type": "uint16_t",
+        "c_type": "float",
         "name": "temp",
         "sim": {
           "min": 0,
           "max": 100,
           "inc_min": 0.1,
-          "inc_max": 1
+          "inc_max": 1,
+          "round": false
         }
       }
     ],
