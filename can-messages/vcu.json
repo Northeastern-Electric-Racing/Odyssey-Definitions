@@ -2940,13 +2940,75 @@
     ],
     "fields": [
       {
-        "name": "VCU/DTI/Motor_Temp",
+        "name": "VCU/Echo/Motor_Temp",
         "unit": "C",
         "values": [
           1
         ],
         "doc": "DTI Motor Temp",
         "desc": "This value is echoed by VCU from the DTI's temperature/faults message."
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xD1",
+    "desc": "DTI Controller Temp as reported by VCU",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "c_type": "uint16_t",
+        "name": "temp",
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 0.1,
+          "inc_max": 1
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Echo/Controller_Temp",
+        "unit": "C",
+        "values": [
+          1
+        ],
+        "doc": "DTI Controller Temp",
+        "desc": "This value is echoed by VCU from the DTI's temperature/faults message."
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xD2",
+    "desc": "BMS Battbox Temp as reported by VCU",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "c_type": "uint16_t",
+        "name": "temp",
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 0.1,
+          "inc_max": 1
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Echo/Battbox_Temp",
+        "unit": "C",
+        "values": [
+          1
+        ],
+        "doc": "BMS Battbox Temp",
+        "desc": "This value is echoed by VCU from the BMS's cell temps message."
       }
     ],
     "sim_freq": 250
