@@ -66,19 +66,23 @@ def main(
         loader=FileSystemLoader(f"{os.path.dirname(os.path.abspath(__file__))}")
     )
 
-    # decoder_src_template = env.get_template(f"{os.path.dirname(os.path.abspath(__file__))}/templates/decoders.c.j2")
-    # decoder_inc_template = env.get_template(f"{os.path.dirname(os.path.abspath(__file__))}/templates/decoders.h.j2")
+    decoder_src_template = env.get_template("templates/decoders.c.j2")
+    decoder_inc_template = env.get_template("templates/decoders.h.j2")
     encoder_src_template = env.get_template("templates/encoders.c.j2")
     encoder_inc_template = env.get_template("templates/encoders.h.j2")
-    # router_template = env.get_template(f"{os.path.dirname(os.path.abspath(__file__))}/templates/router.c.j2")
+    router_template = env.get_template("templates/router.c.j2")
 
-    # output = decoder_inc_template.render(can_msgs=json_filtered_2)
-    # with open(f'cgen/decoders.h', 'w') as decoders:
-    #     decoders.write(output)
+    path_out = Path(f"{output_path}/Inc")
+    path_out.mkdir(parents=True, exist_ok=True)
+    output = decoder_inc_template.render(can_msgs=json_filtered_2)
+    with open(f"{output_path}/Inc/can_messages_rx.h", "w") as decoders:
+        decoders.write(output)
 
-    # output = decoder_src_template.render(can_msgs=json_filtered_2)
-    # with open(f'cgen/decoders.c', 'w') as decoders:
-    #     decoders.write(output)
+    path_out = Path(f"{output_path}/Src")
+    path_out.mkdir(parents=True, exist_ok=True)
+    output = decoder_src_template.render(can_msgs=json_filtered_2)
+    with open(f"{output_path}/Src/can_messages_rx.c", "w") as decoders:
+        decoders.write(output)
 
     output = encoder_src_template.render(can_msgs=json_filtered_2)
     path_out = Path(f"{output_path}/Src")
@@ -92,9 +96,9 @@ def main(
     with open(f"{output_path}/Inc/can_messages_tx.h", "w") as encoders:
         encoders.write(output)
 
-    #     output = router_template.render(can_msgs=json_filtered_2)
-    # with open(f'cgen/router.c', 'w') as encoders:
-    #     encoders.write(output)
+    output = router_template.render(can_msgs=json_filtered_2)
+    with open(f"{output_path}/Src/can_messages_router.c", "w") as encoders:
+        encoders.write(output)
 
 
 if __name__ == "__main__":

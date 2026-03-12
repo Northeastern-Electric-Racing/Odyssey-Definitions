@@ -9,22 +9,95 @@
 
 
 {% import "templates/macros.j2" as macros -%}
-#include "decoders.h"
+#include "can_messages_rx.h"
 
 {% for msg in can_msgs -%}
 void receive_{{ macros.function_name(msg) }}(can_msg_t message, {{macros.function_name(msg) }}_t *{{macros.function_name(msg) }}) {
-    uint8_t data[8] = message.data;
-    endian_swap(&data, {{ macros.msg_size(msg) }});
-    
-    bitstream_t bitstream;
-	uint8_t bitstream_data[{{ macros.msg_size(msg) }}];
-	bitstream_init(&bitstream, bitstream_data, {{ macros.msg_size(msg) }});
-    bitstream_add(&bitstream, data, {{ macros.msg_size(msg) }} * 8);
+    {% if msg.use_struct is false -%}
+        {%- if macros.msg_size_bits(msg)|int <= 8 %}
+    uint8_t data = message.data[0];
+        {%- elif macros.msg_size_bits(msg)|int <= 16 %}
+    uint16_t data_bigendian;
+    memcpy(&data_bigendian, message.data, 2);
+    uint16_t data = __builtin_bswap16(data_bigendian);
+        {%- elif macros.msg_size_bits(msg)|int <= 32 %}
+    uint32_t data_bigendian;
+    memcpy(&data_bigendian, message.data, 4);
+    uint32_t data = __builtin_bswap32(data_bigendian);
+        {%- else %}
+    uint64_t data_bigendian;
+    memcpy(&data_bigendian, message.data, 8);
+    uint64_t data = __builtin_bswap64(data_bigendian);
+        {%- endif %}
+
+        {%- set total_bits = macros.msg_size_bits(msg)|int %}
+        {%- set bit_pos = namespace(value=0) %}
+        {%- for point in msg.points %}
+            {%- if point.name is defined %}
+                {%- set shift = total_bits - bit_pos.value - point.size %}
+                {%- if point.signed is defined and point.signed %}
+                    {%- if point.size >= 64 %}
+    int64_t {{ point.name }}_raw = (int64_t)(data >> {{ shift }});
+                    {%- else %}
+    uint64_t {{ point.name }}_mask = (1ULL << {{ point.size }}) - 1ULL;
+    uint64_t {{ point.name }}_bits = (data >> {{ shift }}) & {{ point.name }}_mask;
+    int64_t {{ point.name }}_raw = ({{ point.name }}_bits & (1ULL << ({{ point.size }} - 1)))
+        ? (int64_t)({{ point.name }}_bits | ~{{ point.name }}_mask)
+        : (int64_t){{ point.name }}_bits;
+                    {%- endif %}
+                    {%- if point.formatter is defined %}
+                        {%- if point.formatter.key == 'divide' %}
+    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})((double){{ point.name }}_raw / {{ point.formatter.arg }});
+                        {%- elif point.formatter.key == 'multiply' %}
+    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})((double){{ point.name }}_raw * {{ point.formatter.arg }});
+                        {%- endif %}
+                    {%- else %}
+    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }}){{ point.name }}_raw;
+                    {%- endif %}
+                {%- else %}
+                    {%- if point.size >= 64 %}
+    uint64_t {{ point.name }}_raw = (uint64_t)(data >> {{ shift }});
+                    {%- else %}
+    uint64_t {{ point.name }}_mask = (1ULL << {{ point.size }}) - 1ULL;
+    uint64_t {{ point.name }}_raw = (data >> {{ shift }}) & {{ point.name }}_mask;
+                    {%- endif %}
+                    {%- if point.formatter is defined %}
+                        {%- if point.formatter.key == 'divide' %}
+    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})((double){{ point.name }}_raw / {{ point.formatter.arg }});
+                        {%- elif point.formatter.key == 'multiply' %}
+    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})((double){{ point.name }}_raw * {{ point.formatter.arg }});
+                        {%- endif %}
+                    {%- else %}
+    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }}){{ point.name }}_raw;
+                    {%- endif %}
+                {%- endif %}
+                {%- set bit_pos.value = bit_pos.value + point.size %}
+            {%- endif %}
+        {%- endfor %}
+    {%- else %}
+    struct __attribute__((__packed__)) {
+        {% for point in msg.points -%}
+        {{ macros.c_int_type(point.size, point.signed) }} {{ point.name }};
+        {% endfor %}
+    } bitstream_data;
+
+    memcpy(&bitstream_data, message.data, sizeof(bitstream_data));
+
     {% for point in msg.points -%}
-    {% if point.name is defined -%}
-    {{macros.function_name(msg) -}}->{{ point.name }} = bitstream_remove(&bitstream, {{ point.size }});
+    {% if point.endianness is defined and point.endianness == "big" %}
+    endian_swap(&bitstream_data.{{ point.name }}, sizeof(bitstream_data.{{ point.name }}));
     {% endif %}
-    {%- endfor -%}
+    {% if point.formatter is defined %}
+        {% if point.formatter.key == 'divide' %}
+    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})((double)bitstream_data.{{ point.name }} / {{ point.formatter.arg }});
+        {% elif point.formatter.key == 'multiply' %}
+    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})((double)bitstream_data.{{ point.name }} * {{ point.formatter.arg }});
+        {% endif %}
+    {% else %}
+    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})bitstream_data.{{ point.name }};
+    {% endif %}
+    {% endfor %}
+    {%- endif %}
 }
 
 {% endfor %}
