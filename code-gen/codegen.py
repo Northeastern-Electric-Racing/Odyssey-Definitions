@@ -70,7 +70,7 @@ def main(
     decoder_inc_template = env.get_template("templates/decoders.h.j2")
     encoder_src_template = env.get_template("templates/encoders.c.j2")
     encoder_inc_template = env.get_template("templates/encoders.h.j2")
-    router_template = env.get_template("templates/router.c.j2")
+    # router_template = env.get_template("templates/router.c.j2")
 
     path_out = Path(f"{output_path}/Inc")
     path_out.mkdir(parents=True, exist_ok=True)
@@ -96,9 +96,9 @@ def main(
     with open(f"{output_path}/Inc/can_messages_tx.h", "w") as encoders:
         encoders.write(output)
 
-    output = router_template.render(can_msgs=json_filtered_2)
-    with open(f"{output_path}/Src/can_messages_router.c", "w") as encoders:
-        encoders.write(output)
+    # output = router_template.render(can_msgs=json_filtered_2)
+    # with open(f"{output_path}/Src/can_messages_router.c", "w") as encoders:
+    #     encoders.write(output)
 
 
 if __name__ == "__main__":
