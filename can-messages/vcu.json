@@ -2919,5 +2919,36 @@
       }
     ],
     "is_ext": true
+  },
+  {
+    "id": "0xD0",
+    "desc": "DTI Motor Temp as reported by VCU",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "c_type": "uint16_t",
+        "name": "temp",
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 0.1,
+          "inc_max": 1
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/DTI/Motor_Temp",
+        "unit": "C",
+        "values": [
+          1
+        ],
+        "doc": "DTI Motor Temp",
+        "desc": "This value is echoed by VCU from the DTI's temperature/faults message."
+      }
+    ],
+    "sim_freq": 250
   }
 ]
