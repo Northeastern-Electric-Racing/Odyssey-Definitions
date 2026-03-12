@@ -45,13 +45,15 @@ def main(
         else:
             json_filtered_rx.append(msg)
 
-    def eligible_messages(messages):
+    def eligible_messages(messages, label):
         filtered = []
         for msg in messages:
             good = False
             msg["use_struct"] = False
             if "points" not in msg:
-                print(f"Warning: cannot generate message {msg.get('desc', 'Unknown')} (missing points)")
+                print(
+                    f"Warning: cannot generate {label} message {msg.get('desc', 'Unknown')} (missing points)"
+                )
                 continue
             for pt in msg["points"]:
                 if "name" in pt and "c_type" in pt:
@@ -60,15 +62,17 @@ def main(
                 # if we detect little endian points, tell jinja to use the struct mode
                 if "endianness" in pt and pt["endianness"] == "little":
                     msg["use_struct"] = True
-                    print(f"Warning: using struct generation for message {msg['desc']}")
+                    print(
+                        f"Warning: using struct generation for {label} message {msg['desc']}"
+                    )
             if good:
                 filtered.append(msg)
             else:
-                print(f"Warning: cannot generate message {msg['desc']}")
+                print(f"Warning: cannot generate {label} message {msg['desc']}")
         return filtered
 
-    json_filtered_tx_eligible = eligible_messages(json_filtered_tx)
-    json_filtered_rx_eligible = eligible_messages(json_filtered_rx)
+    json_filtered_tx_eligible = eligible_messages(json_filtered_tx, "TX")
+    json_filtered_rx_eligible = eligible_messages(json_filtered_rx, "RX")
 
     print(
         "Found "
