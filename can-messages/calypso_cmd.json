@@ -214,7 +214,7 @@
   },
   {
     "id": "0xCAEF0",
-    "desc": "Dashboard eFuse State - Command to VCU",
+    "desc": "Dashboard eFuse State",
     "points": [
       {
         "size": 8,
