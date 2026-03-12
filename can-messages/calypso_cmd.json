@@ -221,6 +221,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
+        "default": 1,
         "sim": {
           "options": [
             [
@@ -262,6 +263,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
+        "default": 1,
         "sim": {
           "options": [
             [
@@ -303,6 +305,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
+        "default": 1,
         "sim": {
           "options": [
             [
@@ -344,6 +347,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
+        "default": 1,
         "sim": {
           "options": [
             [
@@ -385,6 +389,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
+        "default": 1,
         "sim": {
           "options": [
             [
@@ -426,6 +431,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
+        "default": 1,
         "sim": {
           "options": [
             [
@@ -467,6 +473,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
+        "default": 1,
         "sim": {
           "options": [
             [
@@ -508,6 +515,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
+        "default": 1,
         "sim": {
           "options": [
             [
@@ -549,6 +557,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
+        "default": 1,
         "sim": {
           "options": [
             [
@@ -590,6 +599,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
+        "default": 1,
         "sim": {
           "options": [
             [
