@@ -1,799 +1,735 @@
 [
-  {
-    "id": "0xBAB",
-    "desc": "Front MSB Accel",
-    "points": [
-      {
-        "size": 16,
-        "name": "x_force",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -2000,
-          "max": 2000,
-          "inc_min": 0.1,
-          "inc_max": 2.5
-        }
-      },
-      {
-        "size": 16,
-        "name": "y_force",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -2000,
-          "max": 2000,
-          "inc_min": 0.1,
-          "inc_max": 2.5
-        }
-      },
-      {
-        "size": 16,
-        "name": "z_force",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -2000,
-          "max": 2000,
-          "inc_min": 0.1,
-          "inc_max": 2.5
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/F/Accel",
-        "unit": "mg",
-        "doc": "IMU readings from the board",
-        "values": [
-          1,
-          2,
-          3
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xBAC",
-    "desc": "Front MSB Gyro",
-    "points": [
-      {
-        "size": 16,
-        "name": "x_deg",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -500000,
-          "max": 500000,
-          "inc_min": 10,
-          "inc_max": 1000
-        }
-      },
-      {
-        "size": 16,
-        "name": "y_deg",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -500000,
-          "max": 500000,
-          "inc_min": 10,
-          "inc_max": 1000
-        }
-      },
-      {
-        "size": 16,
-        "name": "z_deg",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -500000,
-          "max": 500000,
-          "inc_min": 10,
-          "inc_max": 1000
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/F/Gyro",
-        "unit": "mdps",
-        "doc": "Gyro readings from the board",
-        "values": [
-          1,
-          2,
-          3
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xBB0",
-    "desc": "Front MSB Mag",
-    "points": [
-      {
-        "size": 16,
-        "name": "x_mag",
-        "c_type": "float",
-        "signed": true
-      },
-      {
-        "size": 16,
-        "name": "y_mag",
-        "c_type": "float",
-        "signed": true
-      },
-      {
-        "size": 16,
-        "name": "z_mag",
-        "c_type": "float",
-        "signed": true
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/F/Mag",
-        "unit": "mgauss",
-        "doc": "Magnetometer readings from the board",
-        "values": [
-          1,
-          2,
-          3
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xBAE",
-    "desc": "Front MSB Orientation",
-    "points": [
-      {
-        "size": 16,
-        "name": "x_fdeg",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -180,
-          "max": 180,
-          "inc_min": 1,
-          "inc_max": 30
-        }
-      },
-      {
-        "size": 16,
-        "name": "y_fdeg",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -180,
-          "max": 180,
-          "inc_min": 1,
-          "inc_max": 30
-        }
-      },
-      {
-        "size": 16,
-        "name": "z_fdeg",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -180,
-          "max": 180,
-          "inc_min": 1,
-          "inc_max": 30
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/F/Orientation",
-        "unit": "Deg",
-        "doc": "MSB orientation as a result of sensor fusion",
-        "values": [
-          1,
-          2,
-          3
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xDAA",
-    "desc": "Front MSB Strain One and Two",
-    "points": [
-      {
-        "size": 32,
-        "name": "strain1",
-        "c_type": "uint32_t"
-      },
-      {
-        "size": 32,
-        "name": "strain2",
-        "c_type": "uint32_t"
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/F/Strain1",
-        "unit": "",
-        "doc": "Strain 1 and 2 readings",
-        "values": [
-          1,
-          2
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xDAB",
-    "desc": "Front MSB Strain Three and Four",
-    "points": [
-      {
-        "size": 32,
-        "name": "strain3",
-        "c_type": "uint32_t"
-      },
-      {
-        "size": 32,
-        "name": "strain4",
-        "c_type": "uint32_t"
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/F/Strain2",
-        "unit": "",
-        "doc": "Strain 3 and 4 readings",
-        "values": [
-          1,
-          2
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xDAE",
-    "desc": "Front Shockpot",
-    "points": [
-      {
-        "size": 32,
-        "name": "shock1",
-        "c_type": "uint32_t"
-      },
-      {
-        "size": 32,
-        "name": "shock2",
-        "c_type": "uint32_t"
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/F/Shock",
-        "unit": "",
-        "doc": "Shock Pot readings",
-        "values": [
-          1,
-          2
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xDAF",
-    "desc": "Front MSB Load Cells",
-    "points": [
-      {
-        "size": 32,
-        "name": "cell1",
-        "c_type": "uint32_t"
-      },
-      {
-        "size": 32,
-        "name": "cell2",
-        "c_type": "uint32_t"
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/F/Cells",
-        "unit": "",
-        "doc": "Load Cell readings",
-        "values": [
-          1,
-          2
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xDAD",
-    "desc": "Front MSB Wheel Angle",
-    "points": [
-      {
-        "size": 32,
-        "name": "angle1",
-        "c_type": "uint32_t"
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/F/Angle",
-        "unit": "",
-        "doc": "Wheel Angle readings",
-        "values": [
-          1
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xBBF",
-    "desc": "Back MSB Accel",
-    "points": [
-      {
-        "size": 16,
-        "name": "x_force",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -2000,
-          "max": 2000,
-          "inc_min": 0.1,
-          "inc_max": 2.5
-        }
-      },
-      {
-        "size": 16,
-        "name": "y_force",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -2000,
-          "max": 2000,
-          "inc_min": 0.1,
-          "inc_max": 2.5
-        }
-      },
-      {
-        "size": 16,
-        "name": "z_force",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -2000,
-          "max": 2000,
-          "inc_min": 0.1,
-          "inc_max": 2.5
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/B/Accel",
-        "unit": "mg",
-        "doc": "IMU readings from the board",
-        "values": [
-          1,
-          2,
-          3
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xBC0",
-    "desc": "Back MSB Gyro",
-    "points": [
-      {
-        "size": 16,
-        "name": "x_deg",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -500000,
-          "max": 500000,
-          "inc_min": 10,
-          "inc_max": 1000
-        }
-      },
-      {
-        "size": 16,
-        "name": "y_deg",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -500000,
-          "max": 500000,
-          "inc_min": 10,
-          "inc_max": 1000
-        }
-      },
-      {
-        "size": 16,
-        "name": "z_deg",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -500000,
-          "max": 500000,
-          "inc_min": 10,
-          "inc_max": 1000
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/B/Gyro",
-        "unit": "mdps",
-        "doc": "Gyro readings from the board",
-        "values": [
-          1,
-          2,
-          3
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xBC4",
-    "desc": "Back MSB Mag",
-    "points": [
-      {
-        "size": 16,
-        "name": "x_mag",
-        "c_type": "float",
-        "signed": true
-      },
-      {
-        "size": 16,
-        "name": "y_mag",
-        "c_type": "float",
-        "signed": true
-      },
-      {
-        "size": 16,
-        "name": "z_mag",
-        "c_type": "float",
-        "signed": true
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/B/Mag",
-        "unit": "mgauss",
-        "doc": "Magnetometer readings from the board",
-        "values": [
-          1,
-          2,
-          3
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xBC2",
-    "desc": "Back MSB Orientation",
-    "points": [
-      {
-        "size": 16,
-        "name": "x_fdeg",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -180,
-          "max": 180,
-          "inc_min": 1,
-          "inc_max": 30
-        }
-      },
-      {
-        "size": 16,
-        "name": "y_fdeg",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -180,
-          "max": 180,
-          "inc_min": 1,
-          "inc_max": 30
-        }
-      },
-      {
-        "size": 16,
-        "name": "z_fdeg",
-        "c_type": "float",
-        "signed": true,
-        "sim": {
-          "min": -180,
-          "max": 180,
-          "inc_min": 1,
-          "inc_max": 30
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/B/Orientation",
-        "unit": "Deg",
-        "doc": "MSB orientation as a result of sensor fusion",
-        "values": [
-          1,
-          2,
-          3
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xDBE",
-    "desc": "Back MSB Strain One and Two",
-    "points": [
-      {
-        "size": 32,
-        "name": "strain1",
-        "c_type": "uint32_t"
-      },
-      {
-        "size": 32,
-        "name": "strain2",
-        "c_type": "uint32_t"
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/B/Strain1",
-        "unit": "",
-        "doc": "Strain 1 and 2 readings",
-        "values": [
-          1,
-          2
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xDBF",
-    "desc": "Back MSB Strain Three and Four",
-    "points": [
-      {
-        "size": 32,
-        "name": "strain3",
-        "c_type": "uint32_t"
-      },
-      {
-        "size": 32,
-        "name": "strain4",
-        "c_type": "uint32_t"
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/B/Strain2",
-        "unit": "",
-        "doc": "Strain 3 and 4 readings",
-        "values": [
-          1,
-          2
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xDC2",
-    "desc": "Back Shockpot",
-    "points": [
-      {
-        "size": 32,
-        "name": "shock1",
-        "c_type": "uint32_t"
-      },
-      {
-        "size": 32,
-        "name": "shock2",
-        "c_type": "uint32_t"
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/B/Shock",
-        "unit": "",
-        "doc": "Shock Pot readings",
-        "values": [
-          1,
-          2
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xDC3",
-    "desc": "Back MSB Load Cells",
-    "points": [
-      {
-        "size": 32,
-        "name": "cell1",
-        "c_type": "uint32_t"
-      },
-      {
-        "size": 32,
-        "name": "cell2",
-        "c_type": "uint32_t"
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/B/Cells",
-        "unit": "",
-        "doc": "Load Cell readings",
-        "values": [
-          1,
-          2
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xDAC",
-    "desc": "Back MSB Thermocouple",
-    "points": [
-      {
-        "size": 32,
-        "name": "thermo1",
-        "c_type": "uint32_t"
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/B/Thermo",
-        "unit": "",
-        "doc": "Thermocouple readings",
-        "values": [
-          1
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xBAF",
-    "desc": "Back MSB TOF",
-    "points": [
-      {
-        "size": 16,
-        "name": "quadrant1",
-        "c_type": "uint16_t"
-      },
-      {
-        "size": 16,
-        "name": "quadrant2",
-        "c_type": "uint16_t"
-      },
-      {
-        "size": 16,
-        "name": "quadrant3",
-        "c_type": "uint16_t"
-      },
-      {
-        "size": 16,
-        "name": "quadrant4",
-        "c_type": "uint16_t"
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/B/TOF",
-        "unit": "",
-        "doc": "Time of flight readings",
-        "values": [
-          1,
-          2,
-          3,
-          4
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xDB0",
-    "desc": "Wheel RPM",
-    "points": [
-      {
-        "size": 16,
-        "name": "Front Right",
-        "c_type": "uint16_t",
-        "sim": {
-          "min": 0,
-          "max": 10000,
-          "inc_min": 50,
-          "inc_max": 1500
-        }
-      },
-      {
-        "size": 16,
-        "name": "Front Left",
-        "c_type": "uint16_t",
-        "sim": {
-          "min": 0,
-          "max": 10000,
-          "inc_min": 50,
-          "inc_max": 1500
-        }
-      },
-      {
-        "size": 16,
-        "name": "Rear Right",
-        "c_type": "uint16_t",
-        "sim": {
-          "min": 0,
-          "max": 10000,
-          "inc_min": 50,
-          "inc_max": 1500
-        }
-      },
-      {
-        "size": 16,
-        "name": "Rear Left",
-        "c_type": "uint16_t",
-        "sim": {
-          "min": 0,
-          "max": 10000,
-          "inc_min": 50,
-          "inc_max": 1500
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/F/FR_RPM",
-        "unit": "RPM",
-        "doc": "RPM value of front right wheel",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "MSB/F/FL_RPM",
-        "unit": "RPM",
-        "doc": "RPM value of front left wheel",
-        "values": [
-          2
-        ]
-      },
-      {
-        "name": "MSB/B/RR_RPM",
-        "unit": "RPM",
-        "doc": "RPM value of rear right wheel",
-        "values": [
-          3
-        ]
-      },
-      {
-        "name": "MSB/B/RL_RPM",
-        "unit": "RPM",
-        "doc": "RPM value of rear left wheel",
-        "values": [
-          4
-        ]
-      }
-    ],
-    "sim_freq": 500
-  }
+	{
+		"id": "0xBAB",
+		"desc": "Front MSB Accel",
+		"points": [
+			{
+				"size": 16,
+				"name": "x_force",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -2000,
+					"max": 2000,
+					"inc_min": 0.1,
+					"inc_max": 2.5
+				}
+			},
+			{
+				"size": 16,
+				"name": "y_force",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -2000,
+					"max": 2000,
+					"inc_min": 0.1,
+					"inc_max": 2.5
+				}
+			},
+			{
+				"size": 16,
+				"name": "z_force",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -2000,
+					"max": 2000,
+					"inc_min": 0.1,
+					"inc_max": 2.5
+				}
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/F/Accel",
+				"unit": "mg",
+				"doc": "IMU readings from the board",
+				"values": [1, 2, 3]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xBAC",
+		"desc": "Front MSB Gyro",
+		"points": [
+			{
+				"size": 16,
+				"name": "x_deg",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -500000,
+					"max": 500000,
+					"inc_min": 10,
+					"inc_max": 1000
+				}
+			},
+			{
+				"size": 16,
+				"name": "y_deg",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -500000,
+					"max": 500000,
+					"inc_min": 10,
+					"inc_max": 1000
+				}
+			},
+			{
+				"size": 16,
+				"name": "z_deg",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -500000,
+					"max": 500000,
+					"inc_min": 10,
+					"inc_max": 1000
+				}
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/F/Gyro",
+				"unit": "mdps",
+				"doc": "Gyro readings from the board",
+				"values": [1, 2, 3]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xBB0",
+		"desc": "Front MSB Mag",
+		"points": [
+			{
+				"size": 16,
+				"name": "x_mag",
+				"c_type": "float",
+				"signed": true
+			},
+			{
+				"size": 16,
+				"name": "y_mag",
+				"c_type": "float",
+				"signed": true
+			},
+			{
+				"size": 16,
+				"name": "z_mag",
+				"c_type": "float",
+				"signed": true
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/F/Mag",
+				"unit": "mgauss",
+				"doc": "Magnetometer readings from the board",
+				"values": [1, 2, 3]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xBAE",
+		"desc": "Front MSB Orientation",
+		"points": [
+			{
+				"size": 16,
+				"name": "x_fdeg",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -180,
+					"max": 180,
+					"inc_min": 1,
+					"inc_max": 30
+				}
+			},
+			{
+				"size": 16,
+				"name": "y_fdeg",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -180,
+					"max": 180,
+					"inc_min": 1,
+					"inc_max": 30
+				}
+			},
+			{
+				"size": 16,
+				"name": "z_fdeg",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -180,
+					"max": 180,
+					"inc_min": 1,
+					"inc_max": 30
+				}
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/F/Orientation",
+				"unit": "Deg",
+				"doc": "MSB orientation as a result of sensor fusion",
+				"values": [1, 2, 3]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xDAA",
+		"desc": "Front MSB Strain One and Two",
+		"points": [
+			{
+				"size": 32,
+				"name": "strain1",
+				"c_type": "uint32_t"
+			},
+			{
+				"size": 32,
+				"name": "strain2",
+				"c_type": "uint32_t"
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/F/Strain1",
+				"unit": "",
+				"doc": "Strain 1 and 2 readings",
+				"values": [1, 2]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xDAB",
+		"desc": "Front MSB Strain Three and Four",
+		"points": [
+			{
+				"size": 32,
+				"name": "strain3",
+				"c_type": "uint32_t"
+			},
+			{
+				"size": 32,
+				"name": "strain4",
+				"c_type": "uint32_t"
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/F/Strain2",
+				"unit": "",
+				"doc": "Strain 3 and 4 readings",
+				"values": [1, 2]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xDAE",
+		"desc": "Front Shockpot",
+		"points": [
+			{
+				"size": 32,
+				"name": "shock1",
+				"c_type": "uint32_t"
+			},
+			{
+				"size": 32,
+				"name": "shock2",
+				"c_type": "uint32_t"
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/F/Shock",
+				"unit": "",
+				"doc": "Shock Pot readings",
+				"values": [1, 2]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xDAF",
+		"desc": "Front MSB Load Cells",
+		"points": [
+			{
+				"size": 32,
+				"name": "cell1",
+				"c_type": "uint32_t"
+			},
+			{
+				"size": 32,
+				"name": "cell2",
+				"c_type": "uint32_t"
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/F/Cells",
+				"unit": "",
+				"doc": "Load Cell readings",
+				"values": [1, 2]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xDAD",
+		"desc": "Front MSB Wheel Angle",
+		"points": [
+			{
+				"size": 32,
+				"name": "angle1",
+				"c_type": "uint32_t"
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/F/Angle",
+				"unit": "",
+				"doc": "Wheel Angle readings",
+				"values": [1]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xBBF",
+		"desc": "Back MSB Accel",
+		"points": [
+			{
+				"size": 16,
+				"name": "x_force",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -2000,
+					"max": 2000,
+					"inc_min": 0.1,
+					"inc_max": 2.5
+				}
+			},
+			{
+				"size": 16,
+				"name": "y_force",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -2000,
+					"max": 2000,
+					"inc_min": 0.1,
+					"inc_max": 2.5
+				}
+			},
+			{
+				"size": 16,
+				"name": "z_force",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -2000,
+					"max": 2000,
+					"inc_min": 0.1,
+					"inc_max": 2.5
+				}
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/B/Accel",
+				"unit": "mg",
+				"doc": "IMU readings from the board",
+				"values": [1, 2, 3]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xBC0",
+		"desc": "Back MSB Gyro",
+		"points": [
+			{
+				"size": 16,
+				"name": "x_deg",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -500000,
+					"max": 500000,
+					"inc_min": 10,
+					"inc_max": 1000
+				}
+			},
+			{
+				"size": 16,
+				"name": "y_deg",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -500000,
+					"max": 500000,
+					"inc_min": 10,
+					"inc_max": 1000
+				}
+			},
+			{
+				"size": 16,
+				"name": "z_deg",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -500000,
+					"max": 500000,
+					"inc_min": 10,
+					"inc_max": 1000
+				}
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/B/Gyro",
+				"unit": "mdps",
+				"doc": "Gyro readings from the board",
+				"values": [1, 2, 3]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xBC4",
+		"desc": "Back MSB Mag",
+		"points": [
+			{
+				"size": 16,
+				"name": "x_mag",
+				"c_type": "float",
+				"signed": true
+			},
+			{
+				"size": 16,
+				"name": "y_mag",
+				"c_type": "float",
+				"signed": true
+			},
+			{
+				"size": 16,
+				"name": "z_mag",
+				"c_type": "float",
+				"signed": true
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/B/Mag",
+				"unit": "mgauss",
+				"doc": "Magnetometer readings from the board",
+				"values": [1, 2, 3]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xBC2",
+		"desc": "Back MSB Orientation",
+		"points": [
+			{
+				"size": 16,
+				"name": "x_fdeg",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -180,
+					"max": 180,
+					"inc_min": 1,
+					"inc_max": 30
+				}
+			},
+			{
+				"size": 16,
+				"name": "y_fdeg",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -180,
+					"max": 180,
+					"inc_min": 1,
+					"inc_max": 30
+				}
+			},
+			{
+				"size": 16,
+				"name": "z_fdeg",
+				"c_type": "float",
+				"signed": true,
+				"sim": {
+					"min": -180,
+					"max": 180,
+					"inc_min": 1,
+					"inc_max": 30
+				}
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/B/Orientation",
+				"unit": "Deg",
+				"doc": "MSB orientation as a result of sensor fusion",
+				"values": [1, 2, 3]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xDBE",
+		"desc": "Back MSB Strain One and Two",
+		"points": [
+			{
+				"size": 32,
+				"name": "strain1",
+				"c_type": "uint32_t"
+			},
+			{
+				"size": 32,
+				"name": "strain2",
+				"c_type": "uint32_t"
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/B/Strain1",
+				"unit": "",
+				"doc": "Strain 1 and 2 readings",
+				"values": [1, 2]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xDBF",
+		"desc": "Back MSB Strain Three and Four",
+		"points": [
+			{
+				"size": 32,
+				"name": "strain3",
+				"c_type": "uint32_t"
+			},
+			{
+				"size": 32,
+				"name": "strain4",
+				"c_type": "uint32_t"
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/B/Strain2",
+				"unit": "",
+				"doc": "Strain 3 and 4 readings",
+				"values": [1, 2]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xDC2",
+		"desc": "Back Shockpot",
+		"points": [
+			{
+				"size": 32,
+				"name": "shock1",
+				"c_type": "uint32_t"
+			},
+			{
+				"size": 32,
+				"name": "shock2",
+				"c_type": "uint32_t"
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/B/Shock",
+				"unit": "",
+				"doc": "Shock Pot readings",
+				"values": [1, 2]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xDC3",
+		"desc": "Back MSB Load Cells",
+		"points": [
+			{
+				"size": 32,
+				"name": "cell1",
+				"c_type": "uint32_t"
+			},
+			{
+				"size": 32,
+				"name": "cell2",
+				"c_type": "uint32_t"
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/B/Cells",
+				"unit": "",
+				"doc": "Load Cell readings",
+				"values": [1, 2]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xDAC",
+		"desc": "Back MSB Thermocouple",
+		"points": [
+			{
+				"size": 32,
+				"name": "thermo1",
+				"c_type": "uint32_t"
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/B/Thermo",
+				"unit": "",
+				"doc": "Thermocouple readings",
+				"values": [1]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xBAF",
+		"desc": "Back MSB TOF",
+		"points": [
+			{
+				"size": 16,
+				"name": "quadrant1",
+				"c_type": "uint16_t"
+			},
+			{
+				"size": 16,
+				"name": "quadrant2",
+				"c_type": "uint16_t"
+			},
+			{
+				"size": 16,
+				"name": "quadrant3",
+				"c_type": "uint16_t"
+			},
+			{
+				"size": 16,
+				"name": "quadrant4",
+				"c_type": "uint16_t"
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/B/TOF",
+				"unit": "",
+				"doc": "Time of flight readings",
+				"values": [1, 2, 3, 4]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xDB0",
+		"desc": "Front Wheel RPM",
+		"points": [
+			{
+				"size": 16,
+				"name": "Front Right",
+				"c_type": "uint16_t",
+				"sim": {
+					"min": 0,
+					"max": 10000,
+					"inc_min": 50,
+					"inc_max": 1500
+				}
+			},
+			{
+				"size": 16,
+				"name": "Front Left",
+				"c_type": "uint16_t",
+				"sim": {
+					"min": 0,
+					"max": 10000,
+					"inc_min": 50,
+					"inc_max": 1500
+				}
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/F/FR_RPM",
+				"unit": "RPM",
+				"doc": "RPM value of front right wheel",
+				"values": [1]
+			},
+			{
+				"name": "MSB/F/FL_RPM",
+				"unit": "RPM",
+				"doc": "RPM value of front left wheel",
+				"values": [2]
+			}
+		],
+		"sim_freq": 500
+	},
+	{
+		"id": "0xDB1",
+		"desc": "Rear Wheel RPM",
+		"points": [
+			{
+				"size": 16,
+				"name": "Rear Right",
+				"c_type": "uint16_t",
+				"sim": {
+					"min": 0,
+					"max": 10000,
+					"inc_min": 50,
+					"inc_max": 1500
+				}
+			},
+			{
+				"size": 16,
+				"name": "Rear Left",
+				"c_type": "uint16_t",
+				"sim": {
+					"min": 0,
+					"max": 10000,
+					"inc_min": 50,
+					"inc_max": 1500
+				}
+			}
+		],
+		"fields": [
+			{
+				"name": "MSB/F/RR_RPM",
+				"unit": "RPM",
+				"doc": "RPM value of rear right wheel",
+				"values": [1]
+			},
+			{
+				"name": "MSB/F/RL_RPM",
+				"unit": "RPM",
+				"doc": "RPM value of rear left wheel",
+				"values": [2]
+			}
+		],
+		"sim_freq": 500
+	}
 ]
