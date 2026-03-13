@@ -264,7 +264,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 0,
+        "default": 1,
         "sim": {
           "options": [
             [
