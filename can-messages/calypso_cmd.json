@@ -252,7 +252,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 7500
+    "sim_freq": 7500,
+    "key": "Dashboard"
   },
   {
     "id": "0xCAEF1",
@@ -294,7 +295,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 7500
+    "sim_freq": 7500,
+    "key": "Brake"
   },
   {
     "id": "0xCAEF2",
@@ -336,7 +338,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 7500
+    "sim_freq": 7500,
+    "key": "Shutdown"
   },
   {
     "id": "0xCAEF3",
@@ -378,7 +381,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 7500
+    "sim_freq": 7500,
+    "key": "LV"
   },
   {
     "id": "0xCAEF4",
@@ -420,7 +424,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 7500
+    "sim_freq": 7500,
+    "key": "Radfan"
   },
   {
     "id": "0xCAEF5",
@@ -462,7 +467,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 7500
+    "sim_freq": 7500,
+    "key": "Fanbatt"
   },
   {
     "id": "0xCAEF6",
@@ -504,7 +510,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 7500
+    "sim_freq": 7500,
+    "key": "PumpOne"
   },
   {
     "id": "0xCAEF7",
@@ -546,7 +553,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 7500
+    "sim_freq": 7500,
+    "key": "PumpTwo"
   },
   {
     "id": "0xCAEF8",
@@ -588,7 +596,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 7500
+    "sim_freq": 7500,
+    "key": "Battbox"
   },
   {
     "id": "0xCAEF9",
@@ -630,6 +639,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 7500
+    "sim_freq": 7500,
+    "key": "MC"
   }
 ]
