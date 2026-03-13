@@ -1720,6 +1720,178 @@
     "is_ext": true
   },
   {
+    "id": "0xEFA",
+    "desc": "Spare eFuse",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 0,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "ADC"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "voltage"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "c_type": "float",
+        "name": "current",
+        "sim": {
+          "min": 0,
+          "max": 3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      },
+      {
+        "size": 4,
+        "signed": false,
+        "c_type": "bool",
+        "name": "is_faulted",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        }
+      },
+      {
+        "size": 4,
+        "signed": false,
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        },
+        "name": "is_enabled"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "control_state",
+        "c_type": "uint8_t",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/eFuses/Spare/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Value.",
+        "desc": "Ranges from 0 to 4095."
+      },
+      {
+        "name": "VCU/eFuses/Spare/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "Spare eFuse Voltage",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Spare/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Spare eFuse Current.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Spare/Faulted?",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "The state of the Spare eFuse's fault pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Spare/Enabled?",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "The state of the Spare eFuse's Enable pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Spare/Control_State",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "The eFuse's control state.",
+        "desc": "This is a car command originating from Calypso, but tracked by VCU. 0=ON, 1=AUTO, 2=OFF."
+      }
+    ],
+    "sim_freq": 250,
+    "is_ext": true
+  },
+  {
     "id": "0x123",
     "desc": "Shutdown Pins",
     "points": [

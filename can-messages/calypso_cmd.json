@@ -641,5 +641,91 @@
     "is_ext": true,
     "sim_freq": 7500,
     "key": "MC"
+  },
+  {
+    "id": "0xCAEF8",
+    "desc": "Battbox eFuse State",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t",
+        "default": 0,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/eFuses/Battbox",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Battbox eFuse state.",
+        "desc": "0=ON, 1=AUTO, 2=OFF"
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 7500,
+    "key": "Battbox"
+  },
+  {
+    "id": "0xCAEFA",
+    "desc": "Spare eFuse State",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t",
+        "default": 0,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/eFuses/Spare",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Spare eFuse state.",
+        "desc": "0=ON, 1=AUTO, 2=OFF"
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 7500,
+    "key": "MC"
   }
 ]
