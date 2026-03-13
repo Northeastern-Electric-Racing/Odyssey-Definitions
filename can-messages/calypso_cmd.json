@@ -221,7 +221,23 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 0
+        "default": 0,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -236,7 +252,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": null
+    "sim_freq": 7500
   },
   {
     "id": "0xCAEF1",
@@ -247,7 +263,23 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 0
+        "default": 0,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -262,7 +294,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": null
+    "sim_freq": 7500
   },
   {
     "id": "0xCAEF2",
@@ -273,7 +305,23 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 0
+        "default": 0,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -288,7 +336,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": null
+    "sim_freq": 7500
   },
   {
     "id": "0xCAEF3",
@@ -299,7 +347,23 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 0
+        "default": 0,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -314,7 +378,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": null
+    "sim_freq": 7500
   },
   {
     "id": "0xCAEF4",
@@ -325,7 +389,23 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 1
+        "default": 1,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -340,7 +420,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": null
+    "sim_freq": 7500
   },
   {
     "id": "0xCAEF5",
@@ -351,7 +431,23 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 1
+        "default": 1,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -366,7 +462,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": null
+    "sim_freq": 7500
   },
   {
     "id": "0xCAEF6",
@@ -377,7 +473,23 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 1
+        "default": 1,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -392,7 +504,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": null
+    "sim_freq": 7500
   },
   {
     "id": "0xCAEF7",
@@ -403,7 +515,23 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 1
+        "default": 1,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -418,7 +546,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": null
+    "sim_freq": 7500
   },
   {
     "id": "0xCAEF8",
@@ -429,7 +557,23 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 0
+        "default": 0,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -444,7 +588,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": null
+    "sim_freq": 7500
   },
   {
     "id": "0xCAEF9",
@@ -455,7 +599,23 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 0
+        "default": 0,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -470,6 +630,6 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": null
+    "sim_freq": 7500
   }
 ]
