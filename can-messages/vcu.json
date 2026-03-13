@@ -3499,5 +3499,41 @@
       }
     ],
     "sim_freq": 250
+  },
+  {
+    "id": "0xD3",
+    "desc": "Brake State as reported by VCU",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "endianness": "big",
+        "c_type": "float",
+        "name": "temp",
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        },
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Echo/Brake_State",
+        "unit": "C",
+        "values": [
+          1
+        ],
+        "doc": "Brake State",
+        "desc": "This value isn't really an echo. It's directly calculated and reported by VCU. But it's used by Argos for the eFuse page."
+      }
+    ],
+    "sim_freq": 250
   }
 ]
