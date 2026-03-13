@@ -3505,11 +3505,11 @@
     "desc": "Brake State as reported by VCU",
     "points": [
       {
-        "size": 32,
+        "size": 8,
         "signed": true,
         "endianness": "big",
-        "c_type": "float",
-        "name": "temp",
+        "c_type": "bool",
+        "name": "brake_state",
         "sim": {
           "min": 0,
           "max": 100,
