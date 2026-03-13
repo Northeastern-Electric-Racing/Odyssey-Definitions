@@ -236,7 +236,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": null
   },
   {
     "id": "0xCAEF1",
@@ -262,7 +262,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": null
   },
   {
     "id": "0xCAEF2",
@@ -288,7 +288,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": null
   },
   {
     "id": "0xCAEF3",
@@ -314,7 +314,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": null
   },
   {
     "id": "0xCAEF4",
@@ -340,7 +340,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": null
   },
   {
     "id": "0xCAEF5",
@@ -366,7 +366,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": null
   },
   {
     "id": "0xCAEF6",
@@ -392,7 +392,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": null
   },
   {
     "id": "0xCAEF7",
@@ -418,7 +418,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": null
   },
   {
     "id": "0xCAEF8",
@@ -444,7 +444,7 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": null
   },
   {
     "id": "0xCAEF9",
@@ -470,6 +470,6 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": null
   }
 ]
