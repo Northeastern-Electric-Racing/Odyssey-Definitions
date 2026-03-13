@@ -3507,7 +3507,6 @@
       {
         "size": 8,
         "signed": true,
-        "endianness": "big",
         "c_type": "bool",
         "name": "brake_state",
         "sim": {
