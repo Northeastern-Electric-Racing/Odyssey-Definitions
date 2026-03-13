@@ -221,23 +221,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 0,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.1
-            ],
-            [
-              2,
-              0.1
-            ]
-          ]
-        }
+        "default": 0
       }
     ],
     "fields": [
@@ -263,23 +247,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 0,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.1
-            ],
-            [
-              2,
-              0.1
-            ]
-          ]
-        }
+        "default": 0
       }
     ],
     "fields": [
@@ -305,23 +273,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 0,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.1
-            ],
-            [
-              2,
-              0.1
-            ]
-          ]
-        }
+        "default": 0
       }
     ],
     "fields": [
@@ -347,23 +299,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 0,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.1
-            ],
-            [
-              2,
-              0.1
-            ]
-          ]
-        }
+        "default": 0
       }
     ],
     "fields": [
@@ -389,23 +325,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.1
-            ],
-            [
-              2,
-              0.1
-            ]
-          ]
-        }
+        "default": 1
       }
     ],
     "fields": [
@@ -431,23 +351,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.1
-            ],
-            [
-              2,
-              0.1
-            ]
-          ]
-        }
+        "default": 1
       }
     ],
     "fields": [
@@ -473,23 +377,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.1
-            ],
-            [
-              2,
-              0.1
-            ]
-          ]
-        }
+        "default": 1
       }
     ],
     "fields": [
@@ -515,23 +403,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 1,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.1
-            ],
-            [
-              2,
-              0.1
-            ]
-          ]
-        }
+        "default": 1
       }
     ],
     "fields": [
@@ -557,23 +429,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 0,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.1
-            ],
-            [
-              2,
-              0.1
-            ]
-          ]
-        }
+        "default": 0
       }
     ],
     "fields": [
@@ -599,23 +455,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 0,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.1
-            ],
-            [
-              2,
-              0.1
-            ]
-          ]
-        }
+        "default": 0
       }
     ],
     "fields": [
