@@ -3308,6 +3308,10 @@
           "inc_min": 0.1,
           "inc_max": 1,
           "round": false
+        },
+        "formatter": {
+          "key": "divide",
+          "arg": 100
         }
       }
     ],
