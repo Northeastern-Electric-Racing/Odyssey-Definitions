@@ -2804,5 +2804,27 @@
       }
     ],
     "sim_freq": 200
+  },
+  {
+    "id": "0x601",
+    "desc": "Precharge Status",
+    "points": [
+      {
+        "size": 1,
+        "signed": false,
+        "name": "precharge_status",
+        "c_type": "bool"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Precharge/Status",
+        "unit": "",
+        "values": [],
+        "doc": "Indicates whether Precharge is active or not",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 5000
   }
 ]
