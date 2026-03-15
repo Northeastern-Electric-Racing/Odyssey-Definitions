@@ -726,6 +726,10 @@
         "desc": "0 = Sound RTDS. 1 = Cancel RTDS. 2 = Start Reverse, 3 = Stop Reverse"
       }
     ],
-    "is_ext": true
+    "is_ext": true,
+    "key": "RTDSCommand",
+    "sim_freq": 7500,
+    "bidir_mode": "oneshot"
+
   }
 ]
