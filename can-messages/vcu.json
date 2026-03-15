@@ -3534,5 +3534,95 @@
       }
     ],
     "sim_freq": 250
+  },
+  {
+    "id": "0xD4",
+    "desc": "RTDS State Message",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "pin_state",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.9
+            ],
+            [
+              1,
+              0.1
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "sounding_state",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.9
+            ],
+            [
+              1,
+              0.1
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "reverse_state",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.9
+            ],
+            [
+              1,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/RTDS/Pin_State",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "The state of the RTDS Pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/RTDS/Sounding_State",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "Whether or not the RTDS system is attempting to sound the main continuous RTDS sound.",
+        "desc": "This is not the same as the pure RTDS pin state. This refers to whether or not the RTDS Timer is active, indicating that the car is actively trying to make the sound."
+      },
+      {
+        "name": "VCU/RTDS/Reverse_State",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "Whether or not the RTDS system is attempting to sound the reverse sound.",
+        "desc": "This is not the same as the pure RTDS pin state. This refers to whether or not the Reverse Sound Timer is active, indicating whether or not the RTDS system is trying to make the beeping sound."
+      }
+    ],
+    "sim_freq": 250
   }
 ]

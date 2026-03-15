@@ -684,5 +684,33 @@
     "is_ext": true,
     "sim_freq": 7500,
     "key": "Spare"
+  },
+  {
+    "id": "0xDB1",
+    "desc": "Triggers the RTDS Sound",
+    "points": [],
+    "fields": [],
+    "is_ext": true
+  },
+  {
+    "id": "0xDB2",
+    "desc": "Stops the RTDS sound.",
+    "points": [],
+    "fields": [],
+    "is_ext": true
+  },
+  {
+    "id": "0xDB3",
+    "desc": "Starts the RTDS Reverse Sound",
+    "points": [],
+    "fields": [],
+    "is_ext": true
+  },
+  {
+    "id": "0xDB4",
+    "desc": "Stops the RTDS Reverse Sound",
+    "points": [],
+    "fields": [],
+    "is_ext": true
   }
 ]
