@@ -3180,7 +3180,7 @@
     "points": [
       {
         "size": 16,
-        "signed": false,
+        "signed": true,
         "name": "batt_voltage",
         "c_type": "float",
         "formatter": {
@@ -3190,7 +3190,7 @@
       },
       {
         "size": 16,
-        "signed": false,
+        "signed": true,
         "name": "ts_voltage",
         "c_type": "float",
         "formatter": {
@@ -3200,13 +3200,23 @@
       },
       {
         "size": 16,
-        "signed": false,
+        "signed": true,
         "name": "shunt_temp",
         "c_type": "float",
         "formatter": {
           "key": "divide",
           "arg": 100
         }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "name": "pack_current"
       }
     ],
     "fields": [
@@ -3233,6 +3243,15 @@
         "unit": "C",
         "values": [],
         "doc": "Shunt Temperature",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Precharge/Pack_Current",
+        "unit": "A",
+        "values": [
+          4
+        ],
+        "doc": "Pack Current",
         "desc": ""
       }
     ],
