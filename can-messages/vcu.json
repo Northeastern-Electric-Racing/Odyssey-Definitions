@@ -3592,6 +3592,24 @@
             ]
           ]
         }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "error",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.9
+            ],
+            [
+              1,
+              0.1
+            ]
+          ]
+        },
+        "c_type": "bool"
       }
     ],
     "fields": [
@@ -3621,6 +3639,15 @@
         ],
         "doc": "Whether or not the RTDS system is attempting to sound the reverse sound.",
         "desc": "This is not the same as the pure RTDS pin state. This refers to whether or not the Reverse Sound Timer is active, indicating whether or not the RTDS system is trying to make the beeping sound."
+      },
+      {
+        "name": "VCU/RTDS/Error_State",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "Indicates if an error occured during reading.",
+        "desc": ""
       }
     ],
     "sim_freq": 250
