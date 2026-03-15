@@ -687,7 +687,7 @@
   },
   {
     "id": "0xDB1",
-    "desc": "RTDS Commands",
+    "desc": "RTDS Command Message",
     "points": [
       {
         "size": 8,
