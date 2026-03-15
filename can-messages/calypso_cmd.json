@@ -687,30 +687,45 @@
   },
   {
     "id": "0xDB1",
-    "desc": "Triggers the RTDS Sound",
-    "points": [],
-    "fields": [],
-    "is_ext": true
-  },
-  {
-    "id": "0xDB2",
-    "desc": "Stops the RTDS sound.",
-    "points": [],
-    "fields": [],
-    "is_ext": true
-  },
-  {
-    "id": "0xDB3",
-    "desc": "Starts the RTDS Reverse Sound",
-    "points": [],
-    "fields": [],
-    "is_ext": true
-  },
-  {
-    "id": "0xDB4",
-    "desc": "Stops the RTDS Reverse Sound",
-    "points": [],
-    "fields": [],
+    "desc": "RTDS Commands",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "command",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.25
+            ],
+            [
+              1,
+              0.25
+            ],
+            [
+              2,
+              0.25
+            ],
+            [
+              3,
+              0.25
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/RTDS",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Command for RTDS.",
+        "desc": "0 = Sound RTDS. 1 = Cancel RTDS. 2 = Start Reverse, 3 = Stop Reverse"
+      }
+    ],
     "is_ext": true
   }
 ]
