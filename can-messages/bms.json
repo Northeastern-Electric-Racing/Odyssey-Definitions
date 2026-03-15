@@ -3413,5 +3413,71 @@
       }
     ],
     "sim_freq": 5000
+  },
+  {
+    "id": "0x701",
+    "desc": "HV Plate Data",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "batt_voltage",
+        "c_type": "uint16_t",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "ts_voltage",
+        "c_type": "uint16_t",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "shunt_temp",
+        "c_type": "uint16_t",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Precharge/Batt_Voltage",
+        "unit": "V",
+        "values": [
+          1
+        ],
+        "doc": "Battery Voltage",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Precharge/TS_Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "TS Voltage",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Precharge/Shunt_Temp",
+        "unit": "C",
+        "values": [
+          3
+        ],
+        "doc": "Shunt Temperature",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 1000
   }
 ]
