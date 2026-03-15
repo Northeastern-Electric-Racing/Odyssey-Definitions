@@ -1349,246 +1349,6 @@
     "sim_freq": 700
   },
   {
-    "id": "0x100",
-    "desc": "HV Plate Diagnostics",
-    "points": [
-      {
-        "size": 12,
-        "name": "flags",
-        "c_type": "uint16_t"
-      },
-      {
-        "size": 12,
-        "name": "vreg",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "sim": {
-          "min": 55,
-          "max": 65,
-          "inc_min": 0.01,
-          "inc_max": 1
-        }
-      },
-      {
-        "size": 12,
-        "name": "tmp1",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "sim": {
-          "min": 40,
-          "max": 50,
-          "inc_min": 0.01,
-          "inc_max": 1
-        }
-      },
-      {
-        "size": 12,
-        "name": "vref1p25",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "sim": {
-          "min": 10,
-          "max": 11,
-          "inc_min": 0.01,
-          "inc_max": 1
-        }
-      },
-      {
-        "size": 16,
-        "name": "osccnt",
-        "c_type": "uint16_t"
-      }
-    ],
-    "fields": [
-      {
-        "name": "BMS/Plate/Diagnostics/Flags",
-        "unit": "",
-        "doc": "ADBMS2950 Flags",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "BMS/Plate/Diagnostics/VREG",
-        "unit": "V",
-        "doc": "VREG power supply pin",
-        "values": [
-          2
-        ]
-      },
-      {
-        "name": "BMS/Plate/Diagnostics/TMP1",
-        "unit": "C",
-        "doc": "Primary internal temperature",
-        "values": [
-          3
-        ]
-      },
-      {
-        "name": "BMS/Plate/Diagnostics/VREF1P25",
-        "unit": "V",
-        "doc": "VREF1P25 reference pin",
-        "values": [
-          4
-        ]
-      },
-      {
-        "name": "BMS/Plate/Diagnostics/OSCCNT",
-        "unit": "",
-        "doc": "Oscillator count",
-        "values": [
-          5
-        ]
-      }
-    ],
-    "sim_freq": 5
-  },
-  {
-    "id": "0x101",
-    "desc": "HV Plate Diagnostics second",
-    "points": [
-      {
-        "size": 12,
-        "name": "epad",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "sim": {
-          "min": 55,
-          "max": 65,
-          "inc_min": 0.01,
-          "inc_max": 1
-        }
-      },
-      {
-        "size": 12,
-        "name": "vdig",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "sim": {
-          "min": 3,
-          "max": 2,
-          "inc_min": 0.01,
-          "inc_max": 1
-        }
-      },
-      {
-        "size": 12,
-        "name": "vdd",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "sim": {
-          "min": 40,
-          "max": 50,
-          "inc_min": 0.01,
-          "inc_max": 1
-        }
-      },
-      {
-        "size": 12,
-        "name": "tmp2",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "sim": {
-          "min": 50,
-          "max": 60,
-          "inc_min": 0.01,
-          "inc_max": 1
-        }
-      },
-      {
-        "size": 12,
-        "name": "vdiv",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "sim": {
-          "min": 5,
-          "max": 3,
-          "inc_min": 0.01,
-          "inc_max": 1
-        }
-      },
-      {
-        "size": 4,
-        "parse": false
-      }
-    ],
-    "fields": [
-      {
-        "name": "BMS/Plate/Diagnostics/EPAD",
-        "unit": "V",
-        "doc": "Exposed pad",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "BMS/Plate/Diagnostics/VDIG",
-        "unit": "V",
-        "doc": "Internal digital 3V supply",
-        "values": [
-          2
-        ]
-      },
-      {
-        "name": "BMS/Plate/Diagnostics/VDD",
-        "unit": "V",
-        "doc": "VDD power supply pin",
-        "values": [
-          3
-        ]
-      },
-      {
-        "name": "BMS/Plate/Diagnostics/TMP2",
-        "unit": "C",
-        "doc": "Secondary internal temperature sensor",
-        "values": [
-          4
-        ]
-      },
-      {
-        "name": "BMS/Plate/Diagnostics/VDIV",
-        "unit": "V",
-        "doc": "",
-        "values": [
-          5
-        ]
-      },
-      {
-        "name": "BMS/Plate/Diagnostics/Extra",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          6
-        ]
-      }
-    ],
-    "sim_freq": 5
-  },
-  {
     "id": "0x702",
     "desc": "BMS Debug",
     "points": [
@@ -3422,7 +3182,7 @@
         "size": 16,
         "signed": false,
         "name": "batt_voltage",
-        "c_type": "uint16_t",
+        "c_type": "float",
         "formatter": {
           "key": "divide",
           "arg": 100
@@ -3432,7 +3192,7 @@
         "size": 16,
         "signed": false,
         "name": "ts_voltage",
-        "c_type": "uint16_t",
+        "c_type": "float",
         "formatter": {
           "key": "divide",
           "arg": 100
@@ -3442,7 +3202,7 @@
         "size": 16,
         "signed": false,
         "name": "shunt_temp",
-        "c_type": "uint16_t",
+        "c_type": "float",
         "formatter": {
           "key": "divide",
           "arg": 100
@@ -3471,9 +3231,7 @@
       {
         "name": "BMS/Precharge/Shunt_Temp",
         "unit": "C",
-        "values": [
-          3
-        ],
+        "values": [],
         "doc": "Shunt Temperature",
         "desc": ""
       }
