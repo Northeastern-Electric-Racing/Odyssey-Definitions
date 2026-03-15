@@ -730,6 +730,5 @@
     "key": "RTDSCommand",
     "sim_freq": 7500,
     "bidir_mode": "oneshot"
-
   }
 ]
