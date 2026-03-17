@@ -3161,6 +3161,12 @@
         "signed": false,
         "name": "precharge_status",
         "c_type": "bool"
+      },
+      {
+        "size": 7,
+        "signed": false,
+        "name": "",
+        "parse": false
       }
     ],
     "fields": [
