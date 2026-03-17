@@ -182,5 +182,454 @@
     ],
     "key": "RTDSOverride",
     "sim_freq": 750
+  },
+  {
+    "id": "0x500",
+    "desc": "Shepherd BMS Fan Percent",
+    "points": [
+      {
+        "size": 8,
+        "default": 0,
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 1,
+          "inc_max": 30,
+          "round": true
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/FanBMSPercent/A",
+        "unit": "uint8_t",
+        "doc": "Control duty cycle (%) of BMS fan",
+        "values": [
+          1
+        ]
+      }
+    ],
+    "key": "FanBMSPercent",
+    "sim_freq": 750
+  },
+  {
+    "id": "0xCAEF0",
+    "desc": "Dashboard eFuse State",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t",
+        "default": 0,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/eFuses/Dashboard",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Dashboard eFuse state.",
+        "desc": "0=ON, 1=AUTO, 2=OFF"
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 750
+  },
+  {
+    "id": "0xCAEF1",
+    "desc": "Brake eFuse State",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t",
+        "default": 0,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/eFuses/Brake",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Brake eFuse state.",
+        "desc": "0=ON, 1=AUTO, 2=OFF"
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 750
+  },
+  {
+    "id": "0xCAEF2",
+    "desc": "Shutdown eFuse State",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t",
+        "default": 0,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/eFuses/Shutdown",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Shutdown eFuse state.",
+        "desc": "0=ON, 1=AUTO, 2=OFF"
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 750
+  },
+  {
+    "id": "0xCAEF3",
+    "desc": "LV eFuse State",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t",
+        "default": 0,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/eFuses/LV",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "LV eFuse state.",
+        "desc": "0=ON, 1=AUTO, 2=OFF"
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 750
+  },
+  {
+    "id": "0xCAEF4",
+    "desc": "Radfan eFuse State",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t",
+        "default": 1,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/eFuses/Radfan",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Radfan eFuse state.",
+        "desc": "0=ON, 1=AUTO, 2=OFF"
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 750
+  },
+  {
+    "id": "0xCAEF5",
+    "desc": "Fanbatt eFuse State",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t",
+        "default": 1,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/eFuses/Fanbatt",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Fanbatt eFuse state.",
+        "desc": "0=ON, 1=AUTO, 2=OFF"
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 750
+  },
+  {
+    "id": "0xCAEF6",
+    "desc": "PumpOne eFuse State",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t",
+        "default": 1,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/eFuses/PumpOne",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "PumpOne eFuse state.",
+        "desc": "0=ON, 1=AUTO, 2=OFF"
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 750
+  },
+  {
+    "id": "0xCAEF7",
+    "desc": "PumpTwo eFuse State",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t",
+        "default": 1,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/eFuses/PumpTwo",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "PumpTwo eFuse state.",
+        "desc": "0=ON, 1=AUTO, 2=OFF"
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 750
+  },
+  {
+    "id": "0xCAEF8",
+    "desc": "Battbox eFuse State",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t",
+        "default": 0,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/eFuses/Battbox",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Battbox eFuse state.",
+        "desc": "0=ON, 1=AUTO, 2=OFF"
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 750
+  },
+  {
+    "id": "0xCAEF9",
+    "desc": "MC eFuse State",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t",
+        "default": 0,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/eFuses/MC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "MC eFuse state.",
+        "desc": "0=ON, 1=AUTO, 2=OFF"
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 750
   }
 ]
