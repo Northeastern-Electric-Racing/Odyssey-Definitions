@@ -3379,7 +3379,7 @@
     ],
     "fields": [
       {
-        "name": "VCU/LFIU/LFIU_1/ADC",
+        "name": "VCU/LFIU/LFIU_Low/ADC",
         "unit": "",
         "values": [
           1
@@ -3388,7 +3388,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/LFIU/LFIU_1/Voltage",
+        "name": "VCU/LFIU/LFIU_Low/Voltage",
         "unit": "V",
         "values": [
           2
@@ -3397,7 +3397,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/LFIU/LFIU_1/Current",
+        "name": "VCU/LFIU/LFIU_Low/Current",
         "unit": "A",
         "values": [
           3
@@ -3464,7 +3464,7 @@
     ],
     "fields": [
       {
-        "name": "VCU/LFIU/LFIU_2/ADC",
+        "name": "VCU/LFIU/LFIU_High/ADC",
         "unit": "",
         "values": [
           1
@@ -3473,7 +3473,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/LFIU/LFIU_2/Voltage",
+        "name": "VCU/LFIU/LFIU_High/Voltage",
         "unit": "V",
         "values": [
           2
@@ -3482,7 +3482,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/LFIU/LFIU_2/Current",
+        "name": "VCU/LFIU/LFIU_High/Current",
         "unit": "A",
         "values": [
           3
