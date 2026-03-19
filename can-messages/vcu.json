@@ -3325,7 +3325,7 @@
   },
   {
     "id": "0xADC1",
-    "desc": "LFIU1 Current ADC Readings",
+    "desc": "LFIU One Current ADC Readings",
     "points": [
       {
         "size": 16,
@@ -3409,7 +3409,7 @@
   },
   {
     "id": "0xADC2",
-    "desc": "LFIU2 Current ADC Readings",
+    "desc": "LFIU Two Current ADC Readings",
     "points": [
       {
         "size": 16,
