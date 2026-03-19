@@ -3859,15 +3859,11 @@
         "c_type": "uint8_t"
       },
       {
-        "size": 32,
+        "size": 23,
         "signed": false,
         "name": "six",
-        "c_type": "float",
-        "endianness": "big",
-        "formatter": {
-          "key": "divide",
-          "arg": 1000
-        }
+        "c_type": "uint32_t",
+        "endianness": "big"
       }
     ],
     "fields": [
