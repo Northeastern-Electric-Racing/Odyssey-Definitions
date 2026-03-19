@@ -3822,5 +3822,110 @@
     ],
     "is_ext": true,
     "sim_freq": 250
+  },
+  {
+    "id": "0xBAD2",
+    "desc": "Second VCU Test Message",
+    "points": [
+      {
+        "size": 14,
+        "signed": false,
+        "name": "one",
+        "c_type": "uint16_t",
+        "endianness": "big"
+      },
+      {
+        "size": 2,
+        "signed": false,
+        "name": "two",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 2,
+        "signed": false,
+        "name": "three",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "four",
+        "c_type": "bool"
+      },
+      {
+        "size": 6,
+        "signed": false,
+        "name": "five",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 32,
+        "signed": false,
+        "name": "six",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/TestTwo/one",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/TestTwo/two",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/TestTwo/three",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/TestTwo/four",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/TestTwo/five",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/TestTwo/six",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ],
+    "is_ext": true
   }
 ]
