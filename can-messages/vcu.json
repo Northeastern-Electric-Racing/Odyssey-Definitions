@@ -3322,5 +3322,174 @@
       }
     ],
     "sim_freq": 250
+  },
+  {
+    "id": "0xADC1",
+    "desc": "LFIU_1 Current ADC Readings",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "raw",
+        "c_type": "uint16_t",
+        "endianness": "big",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 1,
+          "inc_max": 200
+        }
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "voltage",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "current",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": -20,
+          "max": 20,
+          "inc_min": 0.1,
+          "inc_max": 1
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/LFIU/LFIU_1/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Readings for LFIU_1.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/LFIU/LFIU_1/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "ADC Voltage Reading for LFIU_1",
+        "desc": ""
+      },
+      {
+        "name": "VCU/LFIU/LFIU_1/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Current Reading for LFIU_1.",
+        "desc": ""
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 250
+  },
+  {
+    "id": "0xADC2",
+    "desc": "LFIU_2 Current ADC Readings",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "raw",
+        "c_type": "uint16_t",
+        "endianness": "big",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 1,
+          "inc_max": 200
+        }
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "voltage",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "current",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": -200,
+          "max": 200,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/LFIU/LFIU_2/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Readings for LFIU_2.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/LFIU/LFIU_2/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "ADC Voltage Reading for LFIU_2",
+        "desc": ""
+      },
+      {
+        "name": "VCU/LFIU/LFIU_2/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Current Reading for LFIU_2.",
+        "desc": ""
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 250
   }
 ]
