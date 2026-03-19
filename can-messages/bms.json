@@ -3285,9 +3285,9 @@
       },
       {
         "size": 23,
-        "signed": true,
+        "signed": false,
         "name": "nine",
-        "c_type": "int32_t",
+        "c_type": "uint32_t",
         "endianness": "big"
       },
       {
