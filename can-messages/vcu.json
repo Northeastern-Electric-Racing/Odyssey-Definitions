@@ -3325,7 +3325,7 @@
   },
   {
     "id": "0xADC1",
-    "desc": "LFIU One Current ADC Readings",
+    "desc": "LFIU Low Current ADC Readings",
     "points": [
       {
         "size": 16,
@@ -3337,7 +3337,8 @@
           "min": 0,
           "max": 4095,
           "inc_min": 1,
-          "inc_max": 200
+          "inc_max": 200,
+          "round": false
         }
       },
       {
@@ -3371,7 +3372,8 @@
           "min": -20,
           "max": 20,
           "inc_min": 0.1,
-          "inc_max": 1
+          "inc_max": 1,
+          "round": false
         }
       }
     ],
@@ -3409,7 +3411,7 @@
   },
   {
     "id": "0xADC2",
-    "desc": "LFIU Two Current ADC Readings",
+    "desc": "LFIU High Current ADC Readings",
     "points": [
       {
         "size": 16,
