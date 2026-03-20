@@ -3235,5 +3235,79 @@
       }
     ],
     "sim_freq": 10000
+  },
+  {
+    "id": "0x01D",
+    "desc": "BMS IMU Gyro",
+    "points": [
+      {
+        "size": 16,
+        "signed": true,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 7,
+          "inc_min": 0.01,
+          "inc_max": 0.5,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "imu_gyro_x"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 7,
+          "inc_min": 0.01,
+          "inc_max": 0.5,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "imu_gyro_y"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 7,
+          "inc_min": 0.01,
+          "inc_max": 0.5,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "imu_gyro_z"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/IMU/Gyro",
+        "unit": "mdps",
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "doc": "IMU Gyroscope Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
   }
 ]
