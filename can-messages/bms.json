@@ -2780,7 +2780,9 @@
       {
         "name": "BMS/Precharge/Status",
         "unit": "",
-        "values": [],
+        "values": [
+          1
+        ],
         "doc": "Indicates whether Precharge is active or not",
         "desc": ""
       },
@@ -2863,7 +2865,9 @@
       {
         "name": "BMS/Precharge/Shunt_Temp",
         "unit": "C",
-        "values": [],
+        "values": [
+          3
+        ],
         "doc": "Shunt Temperature",
         "desc": ""
       },
