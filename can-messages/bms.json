@@ -3178,7 +3178,7 @@
     "points": [
       {
         "size": 32,
-        "signed": false,
+        "signed": true,
         "name": "one",
         "c_type": "float",
         "endianness": "big",
