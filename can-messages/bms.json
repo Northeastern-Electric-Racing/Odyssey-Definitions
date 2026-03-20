@@ -152,18 +152,8 @@
           "min": 10,
           "max": 50,
           "inc_min": 0.01,
-          "inc_max": 0.5
-        }
-      },
-      {
-        "size": 8,
-        "name": "temp_internal",
-        "c_type": "float",
-        "sim": {
-          "min": 10,
-          "max": 50,
-          "inc_min": 1,
-          "inc_max": 1
+          "inc_max": 0.5,
+          "round": false
         }
       }
     ],
@@ -183,14 +173,6 @@
         "doc": "Average of all thermistor readings",
         "values": [
           2
-        ]
-      },
-      {
-        "name": "BMS/Status/Temp_Internal",
-        "unit": "C",
-        "doc": "Board temperature",
-        "values": [
-          3
         ]
       }
     ],
@@ -2735,7 +2717,7 @@
     ],
     "fields": [
       {
-        "name": "BMS/{1}/OnboardTemp1",
+        "name": "BMS/SegmentTemps/{1}/OnboardTemp1",
         "unit": "V",
         "doc": "Temp of onboard therm 1",
         "values": [
@@ -2743,7 +2725,7 @@
         ]
       },
       {
-        "name": "BMS/{1}/OnboardTemp2",
+        "name": "BMS/SegmentTemps/{1}/OnboardTemp2",
         "unit": "V",
         "doc": "Temp of onboard therm 2",
         "values": [
@@ -2751,7 +2733,7 @@
         ]
       },
       {
-        "name": "BMS/{1}/OnboardTemp3",
+        "name": "BMS/SegmentTemps/{1}/OnboardTemp3",
         "unit": "V",
         "doc": "Temp of onboard therm 3",
         "values": [
@@ -2780,7 +2762,9 @@
       {
         "name": "BMS/Precharge/Status",
         "unit": "",
-        "values": [],
+        "values": [
+          1
+        ],
         "doc": "Indicates whether Precharge is active or not",
         "desc": ""
       },
@@ -2863,7 +2847,9 @@
       {
         "name": "BMS/Precharge/Shunt_Temp",
         "unit": "C",
-        "values": [],
+        "values": [
+          3
+        ],
         "doc": "Shunt Temperature",
         "desc": ""
       },
@@ -3173,222 +3159,155 @@
     "sim_freq": 5
   },
   {
-    "id": "0x102",
-    "desc": "BMS Test Message One",
+    "id": "0x01B",
+    "desc": "BMS Onboard Temperature",
     "points": [
       {
-        "size": 32,
-        "signed": true,
-        "name": "one",
+        "size": 16,
+        "signed": false,
+        "name": "internal_temp",
         "c_type": "float",
-        "endianness": "big",
         "formatter": {
           "key": "divide",
-          "arg": 1000
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Peripherals/Temperature",
+        "unit": "C",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 1000
+  },
+  {
+    "id": "0x01C",
+    "desc": "BMS IMU Accelerometer",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "imu_accelerometer_x",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 4
         }
       },
       {
         "size": 16,
-        "signed": true,
-        "name": "two",
-        "c_type": "int16_t",
-        "endianness": "big"
+        "signed": false,
+        "name": "imu_accelerometer_y",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 4
+        }
       },
       {
-        "size": 8,
+        "size": 16,
         "signed": false,
-        "name": "three",
-        "c_type": "uint8_t"
+        "name": "imu_accelerometer_z",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 4
+        }
       }
     ],
     "fields": [
       {
-        "name": "BMS/Test/MessageOne/One",
-        "unit": "",
+        "name": "BMS/IMU/Accelerometer",
+        "unit": "mg",
         "values": [
-          1
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageOne/Two",
-        "unit": "",
-        "values": [
-          2
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageOne/Three",
-        "unit": "",
-        "values": [
+          1,
+          2,
           3
         ],
-        "doc": "",
+        "doc": "IMU acceleration values (x,y,z).",
         "desc": ""
       }
-    ]
+    ],
+    "sim_freq": 10000
   },
   {
-    "id": "0x103",
-    "desc": "BMS Test Message Two",
+    "id": "0x01D",
+    "desc": "BMS IMU Gyro",
     "points": [
       {
-        "size": 2,
-        "signed": false,
-        "name": "one",
-        "c_type": "uint8_t"
+        "size": 16,
+        "signed": true,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 7,
+          "inc_min": 0.01,
+          "inc_max": 0.5,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "imu_gyro_x"
       },
       {
-        "size": 1,
-        "signed": false,
-        "name": "two",
-        "c_type": "bool"
+        "size": 16,
+        "signed": true,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 7,
+          "inc_min": 0.01,
+          "inc_max": 0.5,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "imu_gyro_y"
       },
       {
-        "size": 3,
-        "signed": false,
-        "name": "three",
-        "c_type": "uint8_t"
-      },
-      {
-        "size": 6,
-        "signed": false,
-        "name": "four",
-        "c_type": "uint8_t"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "name": "five",
-        "c_type": "bool"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "name": "six",
-        "c_type": "bool"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "name": "seven",
-        "c_type": "bool"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "name": "eight",
-        "c_type": "bool"
-      },
-      {
-        "size": 23,
-        "signed": false,
-        "name": "nine",
-        "c_type": "uint32_t",
-        "endianness": "big"
-      },
-      {
-        "size": 9,
-        "signed": false,
-        "name": "ten",
-        "c_type": "uint16_t",
-        "endianness": "big"
+        "size": 16,
+        "signed": true,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 7,
+          "inc_min": 0.01,
+          "inc_max": 0.5,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "imu_gyro_z"
       }
     ],
     "fields": [
       {
-        "name": "BMS/Test/MessageTwo/One",
-        "unit": "",
+        "name": "BMS/IMU/Gyro",
+        "unit": "mdps",
         "values": [
-          1
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Two",
-        "unit": "",
-        "values": [
-          2
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Three",
-        "unit": "",
-        "values": [
+          1,
+          2,
           3
         ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Four",
-        "unit": "",
-        "values": [
-          4
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Five",
-        "unit": "",
-        "values": [
-          5
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Six",
-        "unit": "",
-        "values": [
-          6
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Seven",
-        "unit": "",
-        "values": [
-          7
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Eight",
-        "unit": "",
-        "values": [
-          8
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Nine",
-        "unit": "",
-        "values": [
-          9
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Ten",
-        "unit": "",
-        "values": [
-          10
-        ],
-        "doc": "",
+        "doc": "IMU Gyroscope Reading",
         "desc": ""
       }
-    ]
+    ],
+    "sim_freq": 250
   }
 ]
