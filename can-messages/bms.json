@@ -3188,7 +3188,7 @@
   },
   {
     "id": "0x01C",
-    "desc": "IMU Accelerometer",
+    "desc": "BMS IMU Accelerometer",
     "points": [
       {
         "size": 16,
