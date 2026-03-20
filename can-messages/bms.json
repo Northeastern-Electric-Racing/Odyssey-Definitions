@@ -3309,5 +3309,224 @@
       }
     ],
     "sim_freq": 250
+  },
+  {
+    "id": "0x102",
+    "desc": "BMS Test Message One",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "one",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "two",
+        "c_type": "int16_t",
+        "endianness": "big"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "three",
+        "c_type": "uint8_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Test/MessageOne/One",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Test/MessageOne/Two",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Test/MessageOne/Three",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "id": "0x103",
+    "desc": "BMS Test Message Two",
+    "points": [
+      {
+        "size": 2,
+        "signed": false,
+        "name": "one",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "two",
+        "c_type": "bool"
+      },
+      {
+        "size": 3,
+        "signed": false,
+        "name": "three",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 6,
+        "signed": false,
+        "name": "four",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "five",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "six",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "seven",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "eight",
+        "c_type": "bool"
+      },
+      {
+        "size": 23,
+        "signed": false,
+        "name": "nine",
+        "c_type": "uint32_t",
+        "endianness": "big"
+      },
+      {
+        "size": 9,
+        "signed": false,
+        "name": "ten",
+        "c_type": "uint16_t",
+        "endianness": "big"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Test/MessageTwo/One",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Test/MessageTwo/Two",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Test/MessageTwo/Three",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Test/MessageTwo/Four",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Test/MessageTwo/Five",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Test/MessageTwo/Six",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Test/MessageTwo/Seven",
+        "unit": "",
+        "values": [
+          7
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Test/MessageTwo/Eight",
+        "unit": "",
+        "values": [
+          8
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Test/MessageTwo/Nine",
+        "unit": "",
+        "values": [
+          9
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Test/MessageTwo/Ten",
+        "unit": "",
+        "values": [
+          10
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ]
   }
 ]
