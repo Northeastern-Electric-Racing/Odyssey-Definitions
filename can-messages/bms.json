@@ -152,18 +152,8 @@
           "min": 10,
           "max": 50,
           "inc_min": 0.01,
-          "inc_max": 0.5
-        }
-      },
-      {
-        "size": 8,
-        "name": "temp_internal",
-        "c_type": "float",
-        "sim": {
-          "min": 10,
-          "max": 50,
-          "inc_min": 1,
-          "inc_max": 1
+          "inc_max": 0.5,
+          "round": false
         }
       }
     ],
@@ -183,14 +173,6 @@
         "doc": "Average of all thermistor readings",
         "values": [
           2
-        ]
-      },
-      {
-        "name": "BMS/Status/Temp_Internal",
-        "unit": "C",
-        "doc": "Board temperature",
-        "values": [
-          3
         ]
       }
     ],
@@ -3175,5 +3157,83 @@
       }
     ],
     "sim_freq": 5
+  },
+  {
+    "id": "0x01B",
+    "desc": "BMS Onboard Temperature",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "internal_temp",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Peripherals/Temperature",
+        "unit": "C",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 1000
+  },
+  {
+    "id": "0x01C",
+    "desc": "BMS IMU Accelerometer",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "imu_accelerometer_x",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 4
+        }
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "imu_accelerometer_y",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 4
+        }
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "imu_accelerometer_z",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 4
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/IMU/Accelerometer",
+        "unit": "mg",
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "doc": "IMU acceleration values (x,y,z).",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 10000
   }
 ]
