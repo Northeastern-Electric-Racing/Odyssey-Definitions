@@ -3297,7 +3297,7 @@
     ],
     "fields": [
       {
-        "name": "VCU/IMU/Gyro",
+        "name": "BMS/IMU/Gyro",
         "unit": "mdps",
         "values": [
           1,
