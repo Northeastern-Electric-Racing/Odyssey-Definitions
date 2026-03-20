@@ -3173,7 +3173,7 @@
     "sim_freq": 5
   },
   {
-    "id": "0xBAD3",
+    "id": "0x102",
     "desc": "BMS Test Message One",
     "points": [
       {
@@ -3229,11 +3229,10 @@
         "doc": "",
         "desc": ""
       }
-    ],
-    "is_ext": true
+    ]
   },
   {
-    "id": "0xBAD4",
+    "id": "0x103",
     "desc": "BMS Test Message Two",
     "points": [
       {
@@ -3390,7 +3389,6 @@
         "doc": "",
         "desc": ""
       }
-    ],
-    "is_ext": true
+    ]
   }
 ]
