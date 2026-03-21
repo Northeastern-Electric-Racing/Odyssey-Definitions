@@ -2717,7 +2717,7 @@
     ],
     "fields": [
       {
-        "name": "BMS/{1}/OnboardTemp1",
+        "name": "BMS/SegmentTemps/{1}/OnboardTemp1",
         "unit": "V",
         "doc": "Temp of onboard therm 1",
         "values": [
@@ -2725,7 +2725,7 @@
         ]
       },
       {
-        "name": "BMS/{1}/OnboardTemp2",
+        "name": "BMS/SegmentTemps/{1}/OnboardTemp2",
         "unit": "V",
         "doc": "Temp of onboard therm 2",
         "values": [
@@ -2733,7 +2733,7 @@
         ]
       },
       {
-        "name": "BMS/{1}/OnboardTemp3",
+        "name": "BMS/SegmentTemps/{1}/OnboardTemp3",
         "unit": "V",
         "doc": "Temp of onboard therm 3",
         "values": [
