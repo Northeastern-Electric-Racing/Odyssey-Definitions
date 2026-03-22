@@ -1,121 +1,5 @@
 [
   {
-    "id": "0x80",
-    "desc": "Pack status",
-    "points": [
-      {
-        "size": 16,
-        "name": "voltage",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 10
-        },
-        "sim": {
-          "min": 400,
-          "max": 505,
-          "inc_min": 0.01,
-          "inc_max": 0.3
-        }
-      },
-      {
-        "size": 16,
-        "name": "current",
-        "c_type": "float",
-        "signed": true,
-        "formatter": {
-          "key": "divide",
-          "arg": 10
-        },
-        "sim": {
-          "min": 0,
-          "max": 50,
-          "inc_min": 0,
-          "inc_max": 3
-        }
-      },
-      {
-        "size": 16,
-        "name": "amp_hours",
-        "c_type": "float",
-        "sim": {
-          "min": 0,
-          "max": 100,
-          "inc_min": 0,
-          "inc_max": 0.1
-        }
-      },
-      {
-        "size": 8,
-        "name": "soc",
-        "c_type": "float",
-        "sim": {
-          "min": 0,
-          "max": 100,
-          "inc_min": 0.01,
-          "inc_max": 0.1
-        }
-      },
-      {
-        "size": 8,
-        "name": "health",
-        "c_type": "float",
-        "sim": {
-          "min": 0,
-          "max": 100,
-          "inc_min": 0,
-          "inc_max": 0.1
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "BMS/Pack/Voltage",
-        "unit": "V",
-        "doc": "The total pack voltage.",
-        "desc": "calculated as total of all cell voltages",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "BMS/Pack/Current",
-        "unit": "A",
-        "doc": "The total pack current",
-        "desc": "From 24A on derived from DTI, BSPD, Charger, etc.",
-        "values": [
-          2
-        ]
-      },
-      {
-        "name": "BMS/Pack/Amp-hours",
-        "unit": "Ah",
-        "doc": "Reserved",
-        "values": [
-          3
-        ]
-      },
-      {
-        "name": "BMS/Pack/SOC",
-        "unit": "%",
-        "doc": "The state of charge of the lowest cell",
-        "desc": "Derived from a fitted curve of published test data",
-        "values": [
-          4
-        ]
-      },
-      {
-        "name": "BMS/Pack/Health",
-        "unit": "%",
-        "doc": "Reserved",
-        "values": [
-          5
-        ]
-      }
-    ],
-    "sim_freq": 700
-  },
-  {
     "id": "0x81",
     "desc": "BMS Status",
     "points": [
@@ -3309,5 +3193,54 @@
       }
     ],
     "sim_freq": 250
+  },
+  {
+    "id": "0x94",
+    "desc": "Pack SoC Status",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "Pack_SoC",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "Pack_SoC_Drift",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Pack/SoC",
+        "unit": "%",
+        "values": [
+          1
+        ],
+        "doc": "Pack state of charge",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Pack/SoC_Drift",
+        "unit": "%",
+        "values": [
+          2
+        ],
+        "doc": "Pack SoC drift from OCV curve",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
   }
 ]
