@@ -213,6 +213,35 @@
     "sim_freq": 750
   },
   {
+    "id": "0x501",
+    "desc": "Shepherd BMS PWM Balancing Duty Cycle",
+    "points": [
+      {
+        "size": 8,
+        "default": 0,
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 1,
+          "inc_max": 30,
+          "round": true
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/PWMDuty/A",
+        "unit": "uint8_t",
+        "doc": "Control duty cycle (%) of PWM Balancing",
+        "values": [
+          1
+        ]
+      }
+    ],
+    "key": "PWMDuty",
+    "sim_freq": 750
+  },
+  {
     "id": "0xCAEF0",
     "desc": "Dashboard eFuse State",
     "points": [
