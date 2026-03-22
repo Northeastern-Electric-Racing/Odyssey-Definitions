@@ -213,7 +213,7 @@
     "sim_freq": 750
   },
   {
-    "id": "0x501",
+    "id": "0x503",
     "desc": "Shepherd BMS PWM Balancing Duty Cycle",
     "points": [
       {
