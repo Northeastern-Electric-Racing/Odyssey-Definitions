@@ -50,9 +50,9 @@ void receive_{{ macros.function_name(msg) }}(const can_msg_t *message, {{macros.
                     {%- endif %}
                     {%- if point.formatter is defined %}
                         {%- if point.formatter.key == 'divide' %}
-    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})((double){{ point.name }}_raw / {{ point.formatter.arg }});
+    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})({{ point.name }}_raw / {{ point.formatter.arg }});
                         {%- elif point.formatter.key == 'multiply' %}
-    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})((double){{ point.name }}_raw * {{ point.formatter.arg }});
+    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})({{ point.name }}_raw * {{ point.formatter.arg }});
                         {%- endif %}
                     {%- else %}
     {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }}){{ point.name }}_raw;
@@ -66,9 +66,9 @@ void receive_{{ macros.function_name(msg) }}(const can_msg_t *message, {{macros.
                     {%- endif %}
                     {%- if point.formatter is defined %}
                         {%- if point.formatter.key == 'divide' %}
-    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})((double){{ point.name }}_raw / {{ point.formatter.arg }});
+    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})({{ point.name }}_raw / {{ point.formatter.arg }});
                         {%- elif point.formatter.key == 'multiply' %}
-    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})((double){{ point.name }}_raw * {{ point.formatter.arg }});
+    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})({{ point.name }}_raw * {{ point.formatter.arg }});
                         {%- endif %}
                     {%- else %}
     {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }}){{ point.name }}_raw;
@@ -92,9 +92,9 @@ void receive_{{ macros.function_name(msg) }}(const can_msg_t *message, {{macros.
     {% endif %}
     {% if point.formatter is defined %}
         {% if point.formatter.key == 'divide' %}
-    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})((double)bitstream_data.{{ point.name }} / {{ point.formatter.arg }});
+    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})(bitstream_data.{{ point.name }} / {{ point.formatter.arg }});
         {% elif point.formatter.key == 'multiply' %}
-    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})((double)bitstream_data.{{ point.name }} * {{ point.formatter.arg }});
+    {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})(bitstream_data.{{ point.name }} * {{ point.formatter.arg }});
         {% endif %}
     {% else %}
     {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})bitstream_data.{{ point.name }};
