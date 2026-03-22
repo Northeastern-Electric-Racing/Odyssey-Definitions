@@ -3076,7 +3076,7 @@
     "points": [
       {
         "size": 16,
-        "signed": false,
+        "signed": true,
         "name": "imu_accelerometer_x",
         "c_type": "float",
         "formatter": {
@@ -3086,7 +3086,7 @@
       },
       {
         "size": 16,
-        "signed": false,
+        "signed": true,
         "name": "imu_accelerometer_y",
         "c_type": "float",
         "formatter": {
@@ -3096,7 +3096,7 @@
       },
       {
         "size": 16,
-        "signed": false,
+        "signed": true,
         "name": "imu_accelerometer_z",
         "c_type": "float",
         "formatter": {
@@ -3107,7 +3107,7 @@
     ],
     "fields": [
       {
-        "name": "BMS/IMU/Accelerometer",
+        "name": "BMS/Peripherals/IMU/Accelerometer",
         "unit": "mg",
         "values": [
           1,
@@ -3181,7 +3181,7 @@
     ],
     "fields": [
       {
-        "name": "BMS/IMU/Gyro",
+        "name": "BMS/Peripherals/IMU/Gyro",
         "unit": "mdps",
         "values": [
           1,
