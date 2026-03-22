@@ -1,189 +1,5 @@
 [
   {
-    "id": "0x4A1",
-    "desc": "Cerberus Fan Batt Box State",
-    "points": [
-      {
-        "size": 8,
-        "default": 0,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "Calypso/Bidir/State/FanBattBoxStatus/A",
-        "unit": "bool",
-        "doc": "Enable battery box fan",
-        "values": [
-          1
-        ]
-      }
-    ],
-    "key": "FanBattBoxStatus",
-    "sim_freq": 750
-  },
-  {
-    "id": "0x4A0",
-    "desc": "Cerberus Pump State",
-    "points": [
-      {
-        "size": 8,
-        "default": 0,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 8,
-        "default": 0,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "Calypso/Bidir/State/PumpStatus/A",
-        "unit": "bool",
-        "doc": "Enable MC pump",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "Calypso/Bidir/State/PumpStatus/B",
-        "unit": "bool",
-        "doc": "Enable motor pump",
-        "values": [
-          2
-        ]
-      }
-    ],
-    "key": "PumpStatus",
-    "sim_freq": 750
-  },
-  {
-    "id": "0x499",
-    "desc": "Cerberus Radiator Fan State",
-    "points": [
-      {
-        "size": 8,
-        "default": 0,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      },
-      {
-        "size": 8,
-        "default": 0,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "Calypso/Bidir/State/RadFanStatus/A",
-        "unit": "bool",
-        "doc": "Enable MC radiator fan",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "Calypso/Bidir/State/RadFanStatus/B",
-        "unit": "bool",
-        "doc": "Enable motor radiator fan",
-        "values": [
-          2
-        ]
-      }
-    ],
-    "key": "RadFanStatus",
-    "sim_freq": 750
-  },
-  {
-    "id": "0x49A",
-    "desc": "Cerberus RTDS Override",
-    "points": [
-      {
-        "size": 8,
-        "default": 0,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.95
-            ],
-            [
-              1,
-              0.05
-            ]
-          ]
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "Calypso/Bidir/State/RTDSOverride/A",
-        "unit": "bool",
-        "doc": "Override RTDS on",
-        "values": [
-          1
-        ]
-      }
-    ],
-    "key": "RTDSOverride",
-    "sim_freq": 750
-  },
-  {
     "id": "0x500",
     "desc": "Shepherd BMS Fan Percent",
     "points": [
@@ -252,7 +68,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": 7500,
+    "key": "Dashboard"
   },
   {
     "id": "0xCAEF1",
@@ -263,7 +80,7 @@
         "signed": false,
         "name": "state",
         "c_type": "uint8_t",
-        "default": 0,
+        "default": 1,
         "sim": {
           "options": [
             [
@@ -294,7 +111,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": 7500,
+    "key": "Brake"
   },
   {
     "id": "0xCAEF2",
@@ -336,7 +154,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": 7500,
+    "key": "Shutdown"
   },
   {
     "id": "0xCAEF3",
@@ -378,7 +197,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": 7500,
+    "key": "LV"
   },
   {
     "id": "0xCAEF4",
@@ -420,7 +240,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": 7500,
+    "key": "Radfan"
   },
   {
     "id": "0xCAEF5",
@@ -462,7 +283,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": 7500,
+    "key": "Fanbatt"
   },
   {
     "id": "0xCAEF6",
@@ -504,7 +326,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": 7500,
+    "key": "PumpOne"
   },
   {
     "id": "0xCAEF7",
@@ -546,7 +369,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": 7500,
+    "key": "PumpTwo"
   },
   {
     "id": "0xCAEF8",
@@ -588,7 +412,8 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": 7500,
+    "key": "Battbox"
   },
   {
     "id": "0xCAEF9",
@@ -630,6 +455,97 @@
       }
     ],
     "is_ext": true,
-    "sim_freq": 750
+    "sim_freq": 7500,
+    "key": "MC"
+  },
+  {
+    "id": "0xCAEFA",
+    "desc": "Spare eFuse State",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t",
+        "default": 1,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/eFuses/Spare",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Spare eFuse state.",
+        "desc": "0=ON, 1=AUTO, 2=OFF"
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 7500,
+    "key": "Spare"
+  },
+  {
+    "id": "0xDB1",
+    "desc": "RTDS Command Message",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "command",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.25
+            ],
+            [
+              1,
+              0.25
+            ],
+            [
+              2,
+              0.25
+            ],
+            [
+              3,
+              0.25
+            ]
+          ]
+        },
+        "c_type": "uint8_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/RTDS",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Command for RTDS.",
+        "desc": "0 = Sound RTDS. 1 = Cancel RTDS. 2 = Start Reverse, 3 = Stop Reverse"
+      }
+    ],
+    "is_ext": true,
+    "key": "RTDSCommand",
+    "sim_freq": 7500,
+    "bidir_mode": "oneshot"
   }
 ]
