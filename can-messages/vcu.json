@@ -55,7 +55,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "name": "is_faulted",
@@ -73,7 +73,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "sim": {
@@ -89,6 +89,28 @@
           ]
         },
         "name": "is_enabled"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "control_state",
+        "c_type": "uint8_t",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -136,6 +158,15 @@
         ],
         "doc": "The state of the Dashboard eFuse's Enable pin.",
         "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Dashboard/Control_State",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "The eFuse's control state.",
+        "desc": "This is a car command originating from Calypso, but tracked by VCU. 0=ON, 1=AUTO, 2=OFF."
       }
     ],
     "sim_freq": 250
@@ -195,7 +226,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "name": "is_faulted",
@@ -213,7 +244,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "sim": {
@@ -229,6 +260,28 @@
           ]
         },
         "name": "is_enabled"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "control_state",
+        "c_type": "uint8_t",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -276,6 +329,15 @@
         ],
         "doc": "The state of the Brake eFuse's Enable pin.",
         "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Brake/Control_State",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "The eFuse's control state.",
+        "desc": "This is a car command originating from Calypso, but tracked by VCU. 0=ON, 1=AUTO, 2=OFF."
       }
     ],
     "sim_freq": 250,
@@ -336,7 +398,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "name": "is_faulted",
@@ -354,7 +416,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "sim": {
@@ -370,6 +432,28 @@
           ]
         },
         "name": "is_enabled"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "control_state",
+        "c_type": "uint8_t",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -417,6 +501,15 @@
         ],
         "doc": "The state of the Shutdown eFuse's Enable pin.",
         "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Shutdown/Control_State",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "The eFuse's control state.",
+        "desc": "This is a car command originating from Calypso, but tracked by VCU. 0=ON, 1=AUTO, 2=OFF."
       }
     ],
     "sim_freq": 250,
@@ -477,7 +570,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "name": "is_faulted",
@@ -495,7 +588,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "sim": {
@@ -511,6 +604,28 @@
           ]
         },
         "name": "is_enabled"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "control_state",
+        "c_type": "uint8_t",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -558,6 +673,15 @@
         ],
         "doc": "The state of the LV eFuse's Enable pin.",
         "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/LV/Control_State",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "The eFuse's control state.",
+        "desc": "This is a car command originating from Calypso, but tracked by VCU. 0=ON, 1=AUTO, 2=OFF."
       }
     ],
     "sim_freq": 250,
@@ -618,7 +742,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "name": "is_faulted",
@@ -636,7 +760,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "sim": {
@@ -652,6 +776,28 @@
           ]
         },
         "name": "is_enabled"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "control_state",
+        "c_type": "uint8_t",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -699,6 +845,15 @@
         ],
         "doc": "The state of the Radfan eFuse's Enable pin.",
         "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Radfan/Control_State",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "The eFuse's control state.",
+        "desc": "This is a car command originating from Calypso, but tracked by VCU. 0=ON, 1=AUTO, 2=OFF."
       }
     ],
     "sim_freq": 250,
@@ -759,7 +914,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "name": "is_faulted",
@@ -777,7 +932,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "sim": {
@@ -793,6 +948,28 @@
           ]
         },
         "name": "is_enabled"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "control_state",
+        "c_type": "uint8_t",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -840,6 +1017,15 @@
         ],
         "doc": "The state of the Fanbatt eFuse's Enable pin.",
         "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Fanbatt/Control_State",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "The eFuse's control state.",
+        "desc": "This is a car command originating from Calypso, but tracked by VCU. 0=ON, 1=AUTO, 2=OFF."
       }
     ],
     "sim_freq": 250,
@@ -900,7 +1086,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "name": "is_faulted",
@@ -918,7 +1104,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "sim": {
@@ -934,6 +1120,28 @@
           ]
         },
         "name": "is_enabled"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "control_state",
+        "c_type": "uint8_t",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -981,6 +1189,15 @@
         ],
         "doc": "The state of the PumpOne eFuse's Enable pin.",
         "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/PumpOne/Control_State",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "The eFuse's control state.",
+        "desc": "This is a car command originating from Calypso, but tracked by VCU. 0=ON, 1=AUTO, 2=OFF."
       }
     ],
     "sim_freq": 250,
@@ -1041,7 +1258,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "name": "is_faulted",
@@ -1059,7 +1276,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "sim": {
@@ -1075,6 +1292,28 @@
           ]
         },
         "name": "is_enabled"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "control_state",
+        "c_type": "uint8_t",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -1122,6 +1361,15 @@
         ],
         "doc": "The state of the PumpTwo eFuse's Enable pin.",
         "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/PumpTwo/Control_State",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "The eFuse's control state.",
+        "desc": "This is a car command originating from Calypso, but tracked by VCU. 0=ON, 1=AUTO, 2=OFF."
       }
     ],
     "sim_freq": 250,
@@ -1182,7 +1430,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "name": "is_faulted",
@@ -1200,7 +1448,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "sim": {
@@ -1216,6 +1464,28 @@
           ]
         },
         "name": "is_enabled"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "control_state",
+        "c_type": "uint8_t",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -1263,6 +1533,15 @@
         ],
         "doc": "The state of the Battbox eFuse's Enable pin.",
         "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Battbox/Control_State",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "The eFuse's control state.",
+        "desc": "This is a car command originating from Calypso, but tracked by VCU. 0=ON, 1=AUTO, 2=OFF."
       }
     ],
     "sim_freq": 250,
@@ -1323,7 +1602,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "name": "is_faulted",
@@ -1341,7 +1620,7 @@
         }
       },
       {
-        "size": 8,
+        "size": 4,
         "signed": false,
         "c_type": "bool",
         "sim": {
@@ -1357,6 +1636,28 @@
           ]
         },
         "name": "is_enabled"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "control_state",
+        "c_type": "uint8_t",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -1404,6 +1705,15 @@
         ],
         "doc": "The state of the MC eFuse's Enable pin.",
         "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/MC/Control_State",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "The eFuse's control state.",
+        "desc": "This is a car command originating from Calypso, but tracked by VCU. 0=ON, 1=AUTO, 2=OFF."
       }
     ],
     "sim_freq": 250,
@@ -2919,5 +3229,269 @@
       }
     ],
     "is_ext": true
+  },
+  {
+    "id": "0xD0",
+    "desc": "DTI Motor Temp as reported by VCU",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "c_type": "uint16_t",
+        "name": "temp",
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 0.1,
+          "inc_max": 1
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Echo/Motor_Temp",
+        "unit": "C",
+        "values": [
+          1
+        ],
+        "doc": "DTI Motor Temp",
+        "desc": "This value is echoed by VCU from the DTI's temperature/faults message."
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xD1",
+    "desc": "DTI Controller Temp as reported by VCU",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "c_type": "uint16_t",
+        "name": "temp",
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 0.1,
+          "inc_max": 1
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Echo/Controller_Temp",
+        "unit": "C",
+        "values": [
+          1
+        ],
+        "doc": "DTI Controller Temp",
+        "desc": "This value is echoed by VCU from the DTI's temperature/faults message."
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xD2",
+    "desc": "BMS Battbox Temp as reported by VCU",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "c_type": "uint16_t",
+        "name": "temp",
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 0.1,
+          "inc_max": 1
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Echo/Battbox_Temp",
+        "unit": "C",
+        "values": [
+          1
+        ],
+        "doc": "BMS Battbox Temp",
+        "desc": "This value is echoed by VCU from the BMS's cell temps message."
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xADC1",
+    "desc": "LFIU Low Current ADC Readings",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "raw",
+        "c_type": "uint16_t",
+        "endianness": "big",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 1,
+          "inc_max": 200,
+          "round": false
+        }
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "voltage",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "current",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": -20,
+          "max": 20,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/LFIU/LFIU_Low/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Readings for LFIU_1.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/LFIU/LFIU_Low/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "ADC Voltage Reading for LFIU_1",
+        "desc": ""
+      },
+      {
+        "name": "VCU/LFIU/LFIU_Low/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Current Reading for LFIU_1.",
+        "desc": ""
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 250
+  },
+  {
+    "id": "0xADC2",
+    "desc": "LFIU High Current ADC Readings",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "raw",
+        "c_type": "uint16_t",
+        "endianness": "big",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 1,
+          "inc_max": 200
+        }
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "voltage",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "current",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": -200,
+          "max": 200,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/LFIU/LFIU_High/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Readings for LFIU_2.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/LFIU/LFIU_High/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "ADC Voltage Reading for LFIU_2",
+        "desc": ""
+      },
+      {
+        "name": "VCU/LFIU/LFIU_High/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Current Reading for LFIU_2.",
+        "desc": ""
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 250
   }
 ]

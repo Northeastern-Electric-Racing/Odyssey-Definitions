@@ -152,35 +152,8 @@
           "min": 10,
           "max": 50,
           "inc_min": 0.01,
-          "inc_max": 0.5
-        }
-      },
-      {
-        "size": 8,
-        "name": "temp_internal",
-        "c_type": "float",
-        "sim": {
-          "min": 10,
-          "max": 50,
-          "inc_min": 1,
-          "inc_max": 1
-        }
-      },
-      {
-        "size": 8,
-        "name": "balancing",
-        "c_type": "uint8_t",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.4
-            ],
-            [
-              1,
-              0.6
-            ]
-          ]
+          "inc_max": 0.5,
+          "round": false
         }
       }
     ],
@@ -189,7 +162,7 @@
         "name": "BMS/Status/State",
         "unit": "",
         "doc": "The system state",
-        "desc": "BOOT=0,READY=1,CHARGING=2,FAULTED=3",
+        "desc": "BOOT=0,READY=1,CHARGING=2,BALANCING=3,FAULTED=4",
         "values": [
           1
         ]
@@ -200,22 +173,6 @@
         "doc": "Average of all thermistor readings",
         "values": [
           2
-        ]
-      },
-      {
-        "name": "BMS/Status/Temp_Internal",
-        "unit": "C",
-        "doc": "Board temperature",
-        "values": [
-          3
-        ]
-      },
-      {
-        "name": "BMS/Status/Balancing",
-        "unit": "",
-        "doc": "Whether any cell in the pack is balancing",
-        "values": [
-          4
         ]
       }
     ],
@@ -667,7 +624,11 @@
         "c_type": "uint8_t"
       },
       {
-        "size": 8,
+        "size": 7,
+        "parse": false
+      },
+      {
+        "size": 1,
         "name": "recovery_successful",
         "c_type": "uint8_t"
       }
@@ -698,11 +659,19 @@
         ]
       },
       {
+        "name": "BMS/Segment_Comms/Extra",
+        "unit": "",
+        "doc": "Reserved",
+        "values": [
+          4
+        ]
+      },
+      {
         "name": "BMS/Segment_Comms/Recovery_Successful",
         "unit": "",
         "doc": "IsoSPI recovery completed successfully",
         "values": [
-          4
+          5
         ]
       }
     ]
@@ -712,8 +681,21 @@
     "desc": "Fault Status",
     "points": [
       {
-        "size": 14,
-        "parse": false
+        "size": 1,
+        "name": "dcl_enforce",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
       },
       {
         "size": 1,
@@ -734,7 +716,7 @@
       },
       {
         "size": 1,
-        "name": "charger_can",
+        "name": "low_cell_volt",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -751,7 +733,7 @@
       },
       {
         "size": 1,
-        "name": "battery_therm",
+        "name": "high_cell_volt",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -768,7 +750,7 @@
       },
       {
         "size": 1,
-        "name": "charger_safety",
+        "name": "high_charge_volt",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -785,7 +767,7 @@
       },
       {
         "size": 1,
-        "name": "dcl_enforce",
+        "name": "pack_hot",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -802,7 +784,7 @@
       },
       {
         "size": 1,
-        "name": "external_can",
+        "name": "die_temp_max",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -819,7 +801,7 @@
       },
       {
         "size": 1,
-        "name": "weak_pack",
+        "name": "segment_comms",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -836,7 +818,7 @@
       },
       {
         "size": 1,
-        "name": "low_cell_volts",
+        "name": "hv_plate_comms",
         "c_type": "bool",
         "sim": {
           "options": [
@@ -852,185 +834,15 @@
         }
       },
       {
-        "size": 1,
-        "name": "charge_reading",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "current_sense",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "ic_comm",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "thermal_err",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "sw_err",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "open_wire",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "pack_overheat",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "cell_uv",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "cell_ov",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "cell_not_balancing",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.5
-            ],
-            [
-              1,
-              0.5
-            ]
-          ]
-        }
-      },
-      {
-        "size": 32,
+        "size": 7,
         "parse": false
       }
     ],
     "fields": [
       {
-        "name": "BMS/Faults/Critical/Extra",
+        "name": "BMS/Faults/Critical/DCL_Enforce",
         "unit": "",
-        "doc": "Reserved",
+        "doc": "DCL not being obeyed",
         "values": [
           1
         ]
@@ -1044,139 +856,59 @@
         ]
       },
       {
-        "name": "BMS/Faults/Critical/Charger_Can",
+        "name": "BMS/Faults/Critical/Cell_Voltage_Low",
         "unit": "",
-        "doc": "Reserved",
+        "doc": "Cell voltage is low",
         "values": [
           3
         ]
       },
       {
-        "name": "BMS/Faults/Critical/Battery_Therm",
+        "name": "BMS/Faults/Critical/Cell_Voltage_High",
         "unit": "",
-        "doc": "Reserved",
+        "doc": "Cell voltage is high",
         "values": [
           4
         ]
       },
       {
-        "name": "BMS/Faults/Critical/Charger_Safety",
+        "name": "BMS/Faults/Critical/Charging_Voltage_High",
         "unit": "",
-        "doc": "Reserved",
+        "doc": "Voltage when charging is high",
         "values": [
           5
         ]
       },
       {
-        "name": "BMS/Faults/Critical/DCL_Enforce",
+        "name": "BMS/Faults/Critical/Pack_too_hot",
         "unit": "",
-        "doc": "DCL is not being obeyed",
+        "doc": "Pack is too hot",
         "values": [
           6
         ]
       },
       {
-        "name": "BMS/Faults/Critical/External_Can",
+        "name": "BMS/Faults/Critical/High_die_temp",
         "unit": "",
-        "doc": "Critical failure in CAN system",
+        "doc": "Die temp ts too high",
         "values": [
           7
         ]
       },
       {
-        "name": "BMS/Faults/Critical/Weak_Pack",
+        "name": "BMS/Faults/Non-Critical/Segment_Comms_fault",
         "unit": "",
-        "doc": "Reserved",
+        "doc": "Lost communications with segments",
         "values": [
           8
         ]
       },
       {
-        "name": "BMS/Faults/Critical/Low_Cell_Volts",
+        "name": "BMS/Faults/Non-Critical/HV_Plate_Comms_Fault",
         "unit": "",
-        "doc": "Cell voltage is below datasheet minimum",
+        "doc": "Lost communications with HV Plate",
         "values": [
           9
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Charge_Reading",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          10
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Current_Sense",
-        "unit": "",
-        "doc": "Failure to read current sensor from sensor or CAN",
-        "values": [
-          11
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/IC_Comm",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          12
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Thermal_Err",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          13
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Software",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          14
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Open_Wire",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          15
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Pack_Overheat",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          16
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Cell_Undervoltage",
-        "unit": "",
-        "doc": "A cell has gone below datasheet minimum",
-        "values": [
-          17
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Cell_Overvoltage",
-        "unit": "",
-        "doc": "A cell has gone above datasheet maximum",
-        "values": [
-          18
-        ]
-      },
-      {
-        "name": "BMS/Faults/Critical/Cells_Not_Balancing",
-        "unit": "",
-        "doc": "Reserved",
-        "values": [
-          19
         ]
       },
       {
@@ -1184,7 +916,7 @@
         "unit": "",
         "doc": "Reserved",
         "values": [
-          20
+          10
         ]
       }
     ],
@@ -1714,7 +1446,7 @@
         "name": "BMS/Fault_Timer/Start_Stop",
         "unit": "",
         "doc": "Whether the timer is starting or stopping",
-        "desc": "0=stopped,1=starting,2=faulted",
+        "desc": "0=TIMER_STOPPED,1=TIMER_STARTED,2=TIMER_EXPIRED",
         "values": [
           1
         ]
@@ -1921,41 +1653,6 @@
         "name": "BMS/PerCell/OverflowCount",
         "unit": "",
         "doc": "The number of times any overflow occured",
-        "values": [
-          2
-        ]
-      }
-    ]
-  },
-  {
-    "id": "0x6F2",
-    "desc": "PEC Error Count Notification per Chip",
-    "points": [
-      {
-        "size": 8,
-        "name": "pec_error_chip",
-        "c_type": "uint8_t"
-      },
-      {
-        "size": 16,
-        "name": "pec_error_cnt",
-        "c_type": "uint16_t"
-      }
-    ],
-    "fields": [
-      {
-        "name": "BMS/PerChip/PECErrorChip",
-        "unit": "chip_id",
-        "doc": "The chip that has experienced PEC errors",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "BMS/PerChip/PECErrorCount",
-        "unit": "",
-        "doc": "The number of times errors have occured",
-        "desc": "Broken on 24A",
         "values": [
           2
         ]
@@ -2399,56 +2096,9 @@
     "sim_freq": 25
   },
   {
-    "id": "0x6FD",
-    "desc": "Beta Chip A Debug",
+    "id": "0x6FC",
+    "desc": "Chip A Debug",
     "points": [
-      {
-        "size": 10,
-        "name": "therm_last",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 10
-        },
-        "sim": {
-          "min": 20,
-          "max": 80,
-          "inc_min": 0.01,
-          "inc_max": 0.5
-        }
-      },
-      {
-        "size": 13,
-        "name": "voltage_last",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 1000
-        },
-        "sim": {
-          "min": 2.5,
-          "max": 4.25,
-          "inc_min": 0.01,
-          "inc_max": 0.2
-        }
-      },
-      {
-        "size": 1,
-        "name": "discharging_last",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.9
-            ],
-            [
-              1,
-              0.1
-            ]
-          ]
-        }
-      },
       {
         "size": 4,
         "name": "chip_id",
@@ -2459,21 +2109,6 @@
           "inc_min": 1,
           "inc_max": 1,
           "round": true
-        }
-      },
-      {
-        "size": 10,
-        "name": "seg_temp",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 10
-        },
-        "sim": {
-          "min": 20,
-          "max": 80,
-          "inc_min": 0.01,
-          "inc_max": 0.5
         }
       },
       {
@@ -2505,135 +2140,6 @@
           "inc_min": 0.5,
           "inc_max": 2
         }
-      }
-    ],
-    "fields": [
-      {
-        "name": "BMS/PerCell/Beta/{4}/Therms/10",
-        "unit": "C",
-        "doc": "Therm temperature",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{4}/Volts/10",
-        "unit": "V",
-        "doc": "Cell voltage",
-        "values": [
-          2
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{4}/Burning/10",
-        "unit": "",
-        "doc": "Whether cell is burning",
-        "values": [
-          3
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{4}/SegTemp",
-        "unit": "C",
-        "doc": "Therm temperature of PCB therm",
-        "values": [
-          5
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{4}/DieTemp",
-        "unit": "C",
-        "doc": "Temperatue of ADBMS die",
-        "values": [
-          6
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{4}/VPV",
-        "unit": "V",
-        "doc": "Positive ADBMS voltage (across resistor)",
-        "values": [
-          7
-        ]
-      }
-    ],
-    "sim_freq": 200
-  },
-  {
-    "id": "0x6FE",
-    "desc": "Beta Chip B Debug",
-    "points": [
-      {
-        "size": 13,
-        "name": "vref2",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 1000
-        },
-        "sim": {
-          "min": 2.998,
-          "max": 3.002,
-          "inc_min": 0.001,
-          "inc_max": 0.005
-        }
-      },
-      {
-        "size": 10,
-        "name": "v_analog",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "sim": {
-          "min": 4.75,
-          "max": 5.25,
-          "inc_min": 0.1,
-          "inc_max": 0.5
-        }
-      },
-      {
-        "size": 10,
-        "name": "v_digital",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "sim": {
-          "min": 2.75,
-          "max": 3.25,
-          "inc_min": 0.1,
-          "inc_max": 0.5
-        }
-      },
-      {
-        "size": 4,
-        "name": "chip_id",
-        "c_type": "uint8_t",
-        "sim": {
-          "min": 0,
-          "max": 4,
-          "inc_min": 1,
-          "inc_max": 1,
-          "round": true
-        }
-      },
-      {
-        "size": 13,
-        "name": "v_res",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 1000
-        },
-        "sim": {
-          "min": 2.998,
-          "max": 3.002,
-          "inc_min": 0.001,
-          "inc_max": 0.005
-        }
       },
       {
         "size": 13,
@@ -2648,92 +2154,6 @@
           "max": 0.05,
           "inc_min": 0.001,
           "inc_max": 0.005
-        }
-      },
-      {
-        "size": 1,
-        "name": "cvs_last",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.9
-            ],
-            [
-              1,
-              0.1
-            ]
-          ]
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "BMS/PerCell/Beta/{4}/Vref2",
-        "unit": "V",
-        "doc": "3V reference voltage of ADBMS",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{4}/Vanalog",
-        "unit": "V",
-        "doc": "Vreg voltage of ADBMS",
-        "values": [
-          2
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{4}/Vdigital",
-        "unit": "",
-        "doc": "Digital in voltage of ADBMS",
-        "values": [
-          3
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{4}/Vres",
-        "unit": "",
-        "doc": "Vref2 of ADBMS across resistor",
-        "values": [
-          5
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{4}/VMV",
-        "unit": "",
-        "doc": "Voltage of S1N to V- of ADBMS",
-        "values": [
-          6
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{4}/CvS/10",
-        "unit": "",
-        "doc": "Whether C and S ADCs read too different",
-        "values": [
-          7
-        ]
-      }
-    ],
-    "sim_freq": 200
-  },
-  {
-    "id": "0x6F0",
-    "desc": "Beta Chip C Debug",
-    "points": [
-      {
-        "size": 4,
-        "name": "chip_id",
-        "c_type": "bool",
-        "sim": {
-          "min": 0,
-          "max": 4,
-          "inc_min": 1,
-          "inc_max": 1,
-          "round": true
         }
       },
       {
@@ -2924,427 +2344,13 @@
         }
       },
       {
-        "size": 1,
-        "name": "otp1_med",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.9
-            ],
-            [
-              1,
-              0.1
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "otp2_med",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.9
-            ],
-            [
-              1,
-              0.1
-            ]
-          ]
-        }
-      },
-      {
-        "size": 7,
+        "size": 10,
         "parse": false
       }
     ],
     "fields": [
       {
-        "name": "BMS/PerCell/Beta/{1}/Faults/VA_OV",
-        "unit": "",
-        "doc": "Whether 5V Analog rail went over",
-        "values": [
-          2
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{1}/Faults/VA_UV",
-        "unit": "",
-        "doc": "Whether 5V Analog rail went under",
-        "values": [
-          3
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{1}/Faults/VD_OV",
-        "unit": "",
-        "doc": "Whether 3V digital rail went over",
-        "values": [
-          4
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{1}/Faults/VD_UV",
-        "unit": "",
-        "doc": "Whether 3V digital rail went under",
-        "values": [
-          5
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{1}/Faults/VDE",
-        "unit": "",
-        "doc": "5V supply differed from Vreg by 0.5V+",
-        "values": [
-          6
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{1}/Faults/VDEL",
-        "unit": "",
-        "doc": "All 5V supply differed from Vreg by 0.5V+",
-        "values": [
-          7
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{1}/Faults/SPI",
-        "unit": "",
-        "doc": "Redundant SPI slave mismatch",
-        "values": [
-          8
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{1}/Faults/SLEEP",
-        "unit": "",
-        "doc": "Sleep mode previously occured",
-        "values": [
-          9
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{1}/Faults/THSD",
-        "unit": "",
-        "doc": "Thermal shutdown occured/occuring",
-        "values": [
-          10
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{1}/Faults/TMOD_CHCK",
-        "unit": "",
-        "doc": "Test mode occured/occuring",
-        "values": [
-          11
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{1}/Faults/OSC_CHCK",
-        "unit": "",
-        "doc": "Oscillator drift during ADC conversion detected",
-        "values": [
-          12
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{1}/Faults/OTP1",
-        "unit": "",
-        "doc": "Single trim error in S-NVM",
-        "values": [
-          13
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Beta/{1}/Faults/OTP2",
-        "unit": "",
-        "doc": "Multiple trim errors in S-NVM",
-        "values": [
-          14
-        ]
-      }
-    ],
-    "sim_freq": 200
-  },
-  {
-    "id": "0x6FC",
-    "desc": "Alpha Chip A Debug",
-    "points": [
-      {
-        "size": 10,
-        "name": "seg_temp",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 10
-        },
-        "sim": {
-          "min": 20,
-          "max": 80,
-          "inc_min": 0.01,
-          "inc_max": 0.5
-        }
-      },
-      {
-        "size": 4,
-        "name": "chip_id",
-        "c_type": "uint8_t",
-        "sim": {
-          "min": 0,
-          "max": 4,
-          "inc_min": 1,
-          "inc_max": 1,
-          "round": true
-        }
-      },
-      {
-        "size": 13,
-        "name": "die_temp",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "sim": {
-          "min": 20,
-          "max": 80,
-          "inc_min": 0.01,
-          "inc_max": 0.5
-        }
-      },
-      {
-        "size": 13,
-        "name": "vpv",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "sim": {
-          "min": 45,
-          "max": 52.5,
-          "inc_min": 0.5,
-          "inc_max": 2
-        }
-      },
-      {
-        "size": 13,
-        "name": "vmv",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 1000
-        },
-        "sim": {
-          "min": -0.05,
-          "max": 0.05,
-          "inc_min": 0.001,
-          "inc_max": 0.005
-        }
-      },
-      {
-        "size": 1,
-        "name": "va_ov",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.9
-            ],
-            [
-              1,
-              0.1
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "va_uv",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.9
-            ],
-            [
-              1,
-              0.1
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "vd_ov",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.9
-            ],
-            [
-              1,
-              0.1
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "vd_uv",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.9
-            ],
-            [
-              1,
-              0.1
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "vde",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.9
-            ],
-            [
-              1,
-              0.1
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "vdel",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.9
-            ],
-            [
-              1,
-              0.1
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "spiflt",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.9
-            ],
-            [
-              1,
-              0.1
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "sleep",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.9
-            ],
-            [
-              1,
-              0.1
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "thsd",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.9
-            ],
-            [
-              1,
-              0.1
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "tmodchk",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.9
-            ],
-            [
-              1,
-              0.1
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "name": "oscchk",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.9
-            ],
-            [
-              1,
-              0.1
-            ]
-          ]
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "BMS/PerCell/Alpha/{2}/SegTemp",
-        "unit": "C",
-        "doc": "Therm temperature of PCB therm",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "BMS/PerCell/Alpha/{2}/DieTemp",
+        "name": "BMS/PerCell/{1}/DieTemp",
         "unit": "C",
         "doc": "Temperatue of ADBMS die",
         "values": [
@@ -3352,7 +2358,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/VPV",
+        "name": "BMS/PerCell/{1}/VPV",
         "unit": "V",
         "doc": "Positive ADBMS voltage",
         "values": [
@@ -3360,7 +2366,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/VMV",
+        "name": "BMS/PerCell/{1}/VMV",
         "unit": "V",
         "doc": "Voltage of S1N to V- of ADBMS",
         "values": [
@@ -3368,7 +2374,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Faults/VA_OV",
+        "name": "BMS/PerCell/{1}/Faults/VA_OV",
         "unit": "",
         "doc": "Whether 5V Analog rail went over",
         "values": [
@@ -3376,7 +2382,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Faults/VA_UV",
+        "name": "BMS/PerCell/{1}/Faults/VA_UV",
         "unit": "",
         "doc": "Whether 5V Analog rail went under",
         "values": [
@@ -3384,7 +2390,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Faults/VD_OV",
+        "name": "BMS/PerCell/{1}/Faults/VD_OV",
         "unit": "",
         "doc": "Whether 3V digital rail went over",
         "values": [
@@ -3392,7 +2398,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Faults/VD_UV",
+        "name": "BMS/PerCell/{1}/Faults/VD_UV",
         "unit": "",
         "doc": "Whether 3V digital rail went under",
         "values": [
@@ -3400,7 +2406,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Faults/VDE",
+        "name": "BMS/PerCell/{1}/Faults/VDE",
         "unit": "",
         "doc": "5V supply differed from Vreg by 0.5V+",
         "values": [
@@ -3408,7 +2414,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Faults/VDEL",
+        "name": "BMS/PerCell/{1}/Faults/VDEL",
         "unit": "",
         "doc": "All 5V supply differed from Vreg by 0.5V+",
         "values": [
@@ -3416,7 +2422,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Faults/SPI",
+        "name": "BMS/PerCell/{1}/Faults/SPI",
         "unit": "",
         "doc": "Redundant SPI slave mismatch",
         "values": [
@@ -3424,7 +2430,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Faults/SLEEP",
+        "name": "BMS/PerCell/{1}/Faults/SLEEP",
         "unit": "",
         "doc": "Sleep mode previously occured",
         "values": [
@@ -3432,7 +2438,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Faults/THSD",
+        "name": "BMS/PerCell/{1}/Faults/THSD",
         "unit": "",
         "doc": "Thermal shutdown occured/occuring",
         "values": [
@@ -3440,7 +2446,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Faults/TMOD_CHCK",
+        "name": "BMS/PerCell/{1}/Faults/TMOD_CHCK",
         "unit": "",
         "doc": "Test mode occured/occuring",
         "values": [
@@ -3448,7 +2454,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Faults/OSC_CHCK",
+        "name": "BMS/PerCell/{1}/Faults/OSC_CHCK",
         "unit": "",
         "doc": "Oscillator drift during ADC conversion detected",
         "values": [
@@ -3460,7 +2466,7 @@
   },
   {
     "id": "0x6FF",
-    "desc": "Alpha Chip B Debug",
+    "desc": "Chip B Debug",
     "points": [
       {
         "size": 13,
@@ -3575,7 +2581,7 @@
     ],
     "fields": [
       {
-        "name": "BMS/PerCell/Alpha/{2}/Vres",
+        "name": "BMS/Alpha/{2}/Vres",
         "unit": "V",
         "doc": "Vref2 of ADBMS across resistor",
         "values": [
@@ -3583,7 +2589,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Vref2",
+        "name": "BMS/Alpha/{2}/Vref2",
         "unit": "V",
         "doc": "3V reference voltage of ADBMS",
         "values": [
@@ -3591,7 +2597,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Vanalog",
+        "name": "BMS/Alpha/{2}/Vanalog",
         "unit": "V",
         "doc": "Vreg voltage of ADBMS",
         "values": [
@@ -3599,7 +2605,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Vdigital",
+        "name": "BMS/Alpha/{2}/Vdigital",
         "unit": "V",
         "doc": "Digital in voltage of ADBMS",
         "values": [
@@ -3607,7 +2613,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Faults/OTP1",
+        "name": "BMS/Alpha/{2}/Faults/OTP1",
         "unit": "",
         "doc": "Single trim error in S-NVM",
         "values": [
@@ -3615,7 +2621,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{2}/Faults/OTP2",
+        "name": "BMS/Alpha/{2}/Faults/OTP2",
         "unit": "",
         "doc": "Multiple trim errors in S-NVM",
         "values": [
@@ -3624,5 +2630,684 @@
       }
     ],
     "sim_freq": 200
+  },
+  {
+    "id": "0x700",
+    "desc": "Fan duty cycle percentage",
+    "points": [
+      {
+        "size": 8,
+        "name": "fan_duty_cycle",
+        "c_type": "uint8_t",
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 1,
+          "inc_max": 50,
+          "round": true
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Control/Fan/DutyCycle",
+        "unit": "%",
+        "doc": "Duty Cycle of Fan",
+        "values": [
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "id": "0x93",
+    "desc": "Onboard Therm Temperatures",
+    "points": [
+      {
+        "size": 1,
+        "name": "chip_id",
+        "c_type": "uint8_t",
+        "sim": {
+          "min": 0,
+          "max": 1,
+          "inc_min": 1,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 2,
+        "name": "therm_temp_1",
+        "c_type": "float",
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 1,
+          "inc_max": 1,
+          "round": true
+        }
+      },
+      {
+        "size": 2,
+        "name": "therm_temp_2",
+        "c_type": "float",
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 1,
+          "inc_max": 1,
+          "round": true
+        }
+      },
+      {
+        "size": 2,
+        "name": "therm_temp_3",
+        "c_type": "float",
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 1,
+          "inc_max": 1,
+          "round": true
+        }
+      },
+      {
+        "size": 1,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/SegmentTemps/{1}/OnboardTemp1",
+        "unit": "V",
+        "doc": "Temp of onboard therm 1",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "BMS/SegmentTemps/{1}/OnboardTemp2",
+        "unit": "V",
+        "doc": "Temp of onboard therm 2",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "BMS/SegmentTemps/{1}/OnboardTemp3",
+        "unit": "V",
+        "doc": "Temp of onboard therm 3",
+        "values": [
+          4
+        ]
+      }
+    ],
+    "sim_freq": 200
+  },
+  {
+    "id": "0x601",
+    "desc": "Precharge Status",
+    "points": [
+      {
+        "size": 1,
+        "signed": false,
+        "name": "precharge_status",
+        "c_type": "bool"
+      },
+      {
+        "size": 7,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Precharge/Status",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Indicates whether Precharge is active or not",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Precharge/Status/Extra",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "Reserved",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 5000
+  },
+  {
+    "id": "0x701",
+    "desc": "HV Plate Data",
+    "points": [
+      {
+        "size": 16,
+        "signed": true,
+        "name": "batt_voltage",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "ts_voltage",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "shunt_temp",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "name": "pack_current"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Precharge/Batt_Voltage",
+        "unit": "V",
+        "values": [
+          1
+        ],
+        "doc": "Battery Voltage",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Precharge/TS_Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "TS Voltage",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Precharge/Shunt_Temp",
+        "unit": "C",
+        "values": [
+          3
+        ],
+        "doc": "Shunt Temperature",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Precharge/Pack_Current",
+        "unit": "A",
+        "values": [
+          4
+        ],
+        "doc": "Pack Current",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 1000
+  },
+  {
+    "id": "0x6F2",
+    "desc": "Segment PEC Errors",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "chip_id",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "pec_errors",
+        "c_type": "uint16_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Segment/{1}/PEC",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "PEC error count for segment communication for chip",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 1000
+  },
+  {
+    "id": "0x6F3",
+    "desc": "HV Plate PEC Errors",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "pec_errors",
+        "c_type": "uint16_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/HV_Plate/PEC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "PEC error count for communications with HV Plate",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "id": "0x100",
+    "desc": "HV Plate Diagnostics",
+    "points": [
+      {
+        "size": 12,
+        "name": "flags",
+        "c_type": "uint16_t"
+      },
+      {
+        "size": 12,
+        "name": "vreg",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 55,
+          "max": 65,
+          "inc_min": 0.01,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 12,
+        "name": "tmp1",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 40,
+          "max": 50,
+          "inc_min": 0.01,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 12,
+        "name": "vref1p25",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 10,
+          "max": 11,
+          "inc_min": 0.01,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 16,
+        "name": "osccnt",
+        "c_type": "uint16_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Plate/Diagnostics/Flags",
+        "unit": "",
+        "doc": "ADBMS2950 Flags",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "BMS/Plate/Diagnostics/VREG",
+        "unit": "V",
+        "doc": "VREG power supply pin",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "BMS/Plate/Diagnostics/TMP1",
+        "unit": "C",
+        "doc": "Primary internal temperature",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "BMS/Plate/Diagnostics/VREF1P25",
+        "unit": "V",
+        "doc": "VREF1P25 reference pin",
+        "values": [
+          4
+        ]
+      },
+      {
+        "name": "BMS/Plate/Diagnostics/OSCCNT",
+        "unit": "",
+        "doc": "Oscillator count",
+        "values": [
+          5
+        ]
+      }
+    ],
+    "sim_freq": 5
+  },
+  {
+    "id": "0x101",
+    "desc": "HV Plate Diagnostics second",
+    "points": [
+      {
+        "size": 12,
+        "name": "epad",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 55,
+          "max": 65,
+          "inc_min": 0.01,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 12,
+        "name": "vdig",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 3,
+          "max": 2,
+          "inc_min": 0.01,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 12,
+        "name": "vdd",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 40,
+          "max": 50,
+          "inc_min": 0.01,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 12,
+        "name": "tmp2",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 50,
+          "max": 60,
+          "inc_min": 0.01,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 12,
+        "name": "vdiv",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 5,
+          "max": 3,
+          "inc_min": 0.01,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 4,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Plate/Diagnostics/EPAD",
+        "unit": "V",
+        "doc": "Exposed pad",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "BMS/Plate/Diagnostics/VDIG",
+        "unit": "V",
+        "doc": "Internal digital 3V supply",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "BMS/Plate/Diagnostics/VDD",
+        "unit": "V",
+        "doc": "VDD power supply pin",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "BMS/Plate/Diagnostics/TMP2",
+        "unit": "C",
+        "doc": "Secondary internal temperature sensor",
+        "values": [
+          4
+        ]
+      },
+      {
+        "name": "BMS/Plate/Diagnostics/VDIV",
+        "unit": "V",
+        "doc": "",
+        "values": [
+          5
+        ]
+      },
+      {
+        "name": "BMS/Plate/Diagnostics/Extra",
+        "unit": "",
+        "doc": "Reserved",
+        "values": [
+          6
+        ]
+      }
+    ],
+    "sim_freq": 5
+  },
+  {
+    "id": "0x01B",
+    "desc": "BMS Onboard Temperature",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "internal_temp",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Peripherals/Temperature",
+        "unit": "C",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 1000
+  },
+  {
+    "id": "0x01C",
+    "desc": "BMS IMU Accelerometer",
+    "points": [
+      {
+        "size": 16,
+        "signed": true,
+        "name": "imu_accelerometer_x",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 4
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "imu_accelerometer_y",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 4
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "imu_accelerometer_z",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 4
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Peripherals/IMU/Accelerometer",
+        "unit": "mg",
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "doc": "IMU acceleration values (x,y,z).",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 10000
+  },
+  {
+    "id": "0x01D",
+    "desc": "BMS IMU Gyro",
+    "points": [
+      {
+        "size": 16,
+        "signed": true,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 7,
+          "inc_min": 0.01,
+          "inc_max": 0.5,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "imu_gyro_x"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 7,
+          "inc_min": 0.01,
+          "inc_max": 0.5,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "imu_gyro_y"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 0,
+          "max": 7,
+          "inc_min": 0.01,
+          "inc_max": 0.5,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "imu_gyro_z"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Peripherals/IMU/Gyro",
+        "unit": "mdps",
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "doc": "IMU Gyroscope Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
   }
 ]

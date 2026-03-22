@@ -26,45 +26,94 @@ uint8_t send_{{ macros.function_name(msg) }}
 {
     can_msg_t msg;
     msg.id = {{ msg.id }};
-    {% if (msg.is_ext is defined and msg.is_ext is true) or (msg.id | int(base=16) > 0x7FF) -%}
+    {%- if (msg.is_ext is defined and msg.is_ext is true) or (msg.id | int(base=16) > 0x7FF) %}
     msg.id_is_extended = true;
     {%- else %}
     msg.id_is_extended = false;
-    {%- endif %}
+    {% endif -%}
+    msg.len = {{ macros.msg_size(msg) }};
 
-    {% if msg.use_struct is false -%}
-    bitstream_t {{ macros.function_name(msg) }}_msg;
-	uint8_t bitstream_data[{{ macros.msg_size(msg) }}];
-	bitstream_init(&{{ macros.function_name(msg) }}_msg, bitstream_data, {{ macros.msg_size(msg) }});
-	{% for point in msg.points %}
-    {% if point.name is defined -%}
-    {%- if point.signed is true -%}
-    bitstream_add_signed(&{{ macros.function_name(msg) -}}_msg, {{ point.name -}} {{macros.point_scalar(point) -}}, {{ point.size -}});
-    {%- else -%}
-    bitstream_add(&{{ macros.function_name(msg) -}}_msg, {{ point.name -}} {{macros.point_scalar(point) -}}, {{ point.size -}});
-    {%- endif -%}
-    {%- endif -%}
-    {% endfor %}
-
-    {% if not 'overflow' in msg.desc.lower() -%}
-    handle_bitstream_overflow(&{{ macros.function_name(msg) -}}_msg, msg.id);
-    {% endif %}
-    {%- else %}
+    {% if msg.use_struct is false -%} {#- USING BITSTREAM!!!! -#}
+        {# Find size of data, either uint8_t, uint16_t, uint32_t, or uint64_t. -#}
+        {%- if macros.msg_size_bits(msg)|int <= 8 %}
+            uint8_t data = 0;
+            {%- set total_bits = 8 %}
+        {%- elif macros.msg_size_bits(msg)|int <= 16 %}
+            uint16_t data = 0;
+            {%- set total_bits = 16 %}
+        {%- elif macros.msg_size_bits(msg)|int <= 32 %}
+            uint32_t data = 0;
+            {%- set total_bits = 32%}
+        {%- else %}
+            uint64_t data = 0;
+            {%- set total_bits = 64 %}
+        {%- endif -%}
+        {#- Track bit position from MSB and pack each point -#}
+        {%- set bit_pos = namespace(value=0) %}
+        {#- LOOP THROUGH ALL THE POINTS AND MAKE BITSTREAM -#}
+        {%- for point in msg.points %}
+            {%- if point.name is defined %}
+                {%- set shift = total_bits - bit_pos.value - point.size %}
+                    {%- if point.signed is defined and point.signed %}
+                        {#- Handle signed points! -#}
+                        {%- set max_value = (2 ** (point.size - 1)) - 1 %}
+                        {%- set min_value = -(2 ** (point.size - 1)) %}
+                        int32_t {{ point.name }}_i = (int32_t)({{ point.name }}{{ macros.point_scalar(point) }});
+                        if({{ point.name }}_i > {{ max_value }}) {
+                            {#- Handle overflow -#}
+                            {{ point.name }}_i = {{ max_value }};
+                        } else if({{ point.name }}_i < {{ min_value }}) {
+                            {#- Handle underflow -#}
+                            {{ point.name }}_i = {{ min_value }};
+                        }
+                        data |= ((uint32_t)({{ point.name }}_i) & 0x{{ '%X' | format((2 ** point.size) - 1) }}ULL) << {{ shift }};
+                    {%- else %}
+                        {#- Handle unsigned points! -#}
+                        {%- set max_value = (2 ** point.size) - 1 %}
+                        uint32_t {{ point.name }}_i = (uint32_t)({{ point.name }}{{ macros.point_scalar(point) }});
+                        if({{ point.name }}_i > {{ max_value }}ULL) {
+                            {#- Handle overflow -#}
+                            {{ point.name }}_i = {{ max_value }};
+                        }
+                        data |= (({{ point.name }}_i) & 0x{{ '%X' | format((2 ** point.size) - 1) }}ULL) << {{ shift }};
+                    {%- endif %}
+                    {%- set bit_pos.value = bit_pos.value + point.size %}
+            {% endif %}
+        {%- endfor %}
+        {#- Big endian! -#}
+        {%- if macros.msg_size_bits(msg)|int <= 8 %}
+            msg.data[0] = data;
+        {%- elif macros.msg_size_bits(msg)|int <= 16 %}
+            uint16_t data_bigendian = __builtin_bswap16(data);
+            memcpy(msg.data, &data_bigendian, 2);
+        {%- elif macros.msg_size_bits(msg)|int <= 32 %}
+            uint32_t data_bigendian = __builtin_bswap32(data);
+            memcpy(msg.data, &data_bigendian, 4);
+        {%- else %}
+            uint64_t data_bigendian = __builtin_bswap64(data);
+            memcpy(msg.data, &data_bigendian, 8);
+        {%- endif %}
+        {#
+        Note: 
+        Message sizes that aren't 1, 2, 4, or 8 bytes can still exist here.
+        For example, if a message is 6 bytes, it will be constructed in a uint64_t buffer (which is 8 bytes in total).
+        But, since msg.len is still set to the actual size of the message (6 bytes), the CAN controller will only send the 6 bytes.
+        This works because the last two bytes in the uint64_t are just zeros and can be chopped off without messing with anything.
+        #}
+    {%- else -%} {#- USING STRUCTS!!!! -#}
     struct __attribute__((__packed__)) {
         {% for point in msg.points -%}
-        {{ macros.c_int_type(point.size, point.signed) }} {{ point.name -}};
+        {{ macros.c_int_type(point.size, point.signed) }} {{ point.name }};
         {% endfor %}
     } bitstream_data;
-
     {% for point in msg.points -%}
-    bitstream_data.{{ point.name }} = ({{ macros.c_int_type(point.size, point.signed) -}}) {{ point.name -}}{{macros.point_scalar(point) -}};
-    {% if point.endianness is defined and point.endianness == "big" %}
+    bitstream_data.{{ point.name }} = ({{ macros.c_int_type(point.size, point.signed) }})({{ point.name }}{{ macros.point_scalar(point) }});
+        {% if point.endianness is defined and point.endianness == "big" %}
     endian_swap(&bitstream_data.{{ point.name -}}, sizeof(bitstream_data.{{ point.name -}}));
-    {% endif %}
+        {%- endif %}
     {%- endfor %}
-    {%- endif %}
-    msg.len = sizeof(bitstream_data);
     memcpy(msg.data, &bitstream_data, sizeof(bitstream_data));
+    {%- endif %}
 
     return queue_send(&can_outgoing, &msg, TX_NO_WAIT);
 }
