@@ -1,121 +1,5 @@
 [
   {
-    "id": "0x80",
-    "desc": "Pack status",
-    "points": [
-      {
-        "size": 16,
-        "name": "voltage",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 10
-        },
-        "sim": {
-          "min": 400,
-          "max": 505,
-          "inc_min": 0.01,
-          "inc_max": 0.3
-        }
-      },
-      {
-        "size": 16,
-        "name": "current",
-        "c_type": "float",
-        "signed": true,
-        "formatter": {
-          "key": "divide",
-          "arg": 10
-        },
-        "sim": {
-          "min": 0,
-          "max": 50,
-          "inc_min": 0,
-          "inc_max": 3
-        }
-      },
-      {
-        "size": 16,
-        "name": "amp_hours",
-        "c_type": "float",
-        "sim": {
-          "min": 0,
-          "max": 100,
-          "inc_min": 0,
-          "inc_max": 0.1
-        }
-      },
-      {
-        "size": 8,
-        "name": "soc",
-        "c_type": "float",
-        "sim": {
-          "min": 0,
-          "max": 100,
-          "inc_min": 0.01,
-          "inc_max": 0.1
-        }
-      },
-      {
-        "size": 8,
-        "name": "health",
-        "c_type": "float",
-        "sim": {
-          "min": 0,
-          "max": 100,
-          "inc_min": 0,
-          "inc_max": 0.1
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "BMS/Pack/Voltage",
-        "unit": "V",
-        "doc": "The total pack voltage.",
-        "desc": "calculated as total of all cell voltages",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "BMS/Pack/Current",
-        "unit": "A",
-        "doc": "The total pack current",
-        "desc": "From 24A on derived from DTI, BSPD, Charger, etc.",
-        "values": [
-          2
-        ]
-      },
-      {
-        "name": "BMS/Pack/Amp-hours",
-        "unit": "Ah",
-        "doc": "Reserved",
-        "values": [
-          3
-        ]
-      },
-      {
-        "name": "BMS/Pack/SOC",
-        "unit": "%",
-        "doc": "The state of charge of the lowest cell",
-        "desc": "Derived from a fitted curve of published test data",
-        "values": [
-          4
-        ]
-      },
-      {
-        "name": "BMS/Pack/Health",
-        "unit": "%",
-        "doc": "Reserved",
-        "values": [
-          5
-        ]
-      }
-    ],
-    "sim_freq": 700
-  },
-  {
     "id": "0x81",
     "desc": "BMS Status",
     "points": [
@@ -3311,13 +3195,13 @@
     "sim_freq": 250
   },
   {
-    "id": "0x102",
-    "desc": "BMS Test Message One",
+    "id": "0x94",
+    "desc": "Pack SoC Status",
     "points": [
       {
-        "size": 32,
-        "signed": true,
-        "name": "one",
+        "size": 16,
+        "signed": false,
+        "name": "Pack_SoC",
         "c_type": "float",
         "endianness": "big",
         "formatter": {
@@ -3328,205 +3212,35 @@
       {
         "size": 16,
         "signed": true,
-        "name": "two",
-        "c_type": "int16_t",
-        "endianness": "big"
-      },
-      {
-        "size": 8,
-        "signed": false,
-        "name": "three",
-        "c_type": "uint8_t"
+        "name": "Pack_SoC_Drift",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        }
       }
     ],
     "fields": [
       {
-        "name": "BMS/Test/MessageOne/One",
-        "unit": "",
+        "name": "BMS/Pack/SoC",
+        "unit": "%",
         "values": [
           1
         ],
-        "doc": "",
+        "doc": "Pack state of charge",
         "desc": ""
       },
       {
-        "name": "BMS/Test/MessageOne/Two",
-        "unit": "",
+        "name": "BMS/Pack/SoC_Drift",
+        "unit": "%",
         "values": [
           2
         ],
-        "doc": "",
+        "doc": "Pack SoC drift from OCV curve",
         "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageOne/Three",
-        "unit": "",
-        "values": [
-          3
-        ],
-        "doc": "",
-        "desc": ""
-      }
-    ]
-  },
-  {
-    "id": "0x103",
-    "desc": "BMS Test Message Two",
-    "points": [
-      {
-        "size": 2,
-        "signed": false,
-        "name": "one",
-        "c_type": "uint8_t"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "name": "two",
-        "c_type": "bool"
-      },
-      {
-        "size": 3,
-        "signed": false,
-        "name": "three",
-        "c_type": "uint8_t"
-      },
-      {
-        "size": 6,
-        "signed": false,
-        "name": "four",
-        "c_type": "uint8_t"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "name": "five",
-        "c_type": "bool"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "name": "six",
-        "c_type": "bool"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "name": "seven",
-        "c_type": "bool"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "name": "eight",
-        "c_type": "bool"
-      },
-      {
-        "size": 23,
-        "signed": false,
-        "name": "nine",
-        "c_type": "uint32_t",
-        "endianness": "big"
-      },
-      {
-        "size": 9,
-        "signed": false,
-        "name": "ten",
-        "c_type": "uint16_t",
-        "endianness": "big"
       }
     ],
-    "fields": [
-      {
-        "name": "BMS/Test/MessageTwo/One",
-        "unit": "",
-        "values": [
-          1
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Two",
-        "unit": "",
-        "values": [
-          2
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Three",
-        "unit": "",
-        "values": [
-          3
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Four",
-        "unit": "",
-        "values": [
-          4
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Five",
-        "unit": "",
-        "values": [
-          5
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Six",
-        "unit": "",
-        "values": [
-          6
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Seven",
-        "unit": "",
-        "values": [
-          7
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Eight",
-        "unit": "",
-        "values": [
-          8
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Nine",
-        "unit": "",
-        "values": [
-          9
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Test/MessageTwo/Ten",
-        "unit": "",
-        "values": [
-          10
-        ],
-        "doc": "",
-        "desc": ""
-      }
-    ]
+    "sim_freq": 750
   }
 ]
