@@ -3166,13 +3166,6 @@
             ]
           ]
         }
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "parse": false,
-        "name": "EXTRA",
-        "c_type": "int"
       }
     ],
     "fields": [
