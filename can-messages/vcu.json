@@ -2321,7 +2321,7 @@
         "name": "launch_control"
       },
       {
-        "size": 4,
+        "size": 3,
         "signed": false,
         "name": "functional_state",
         "c_type": "uint8_t",
@@ -2354,6 +2354,24 @@
             [
               6,
               0.15
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "traction_control",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
             ]
           ]
         }
@@ -2440,6 +2458,15 @@
         ],
         "doc": "VCU's functional state.",
         "desc": "Check func_state_t in Cerberus-2.0 to see what each value refers to."
+      },
+      {
+        "name": "VCU/CarState/traction_control",
+        "unit": "",
+        "values": [
+          10
+        ],
+        "doc": "Whether or not traction control is enabled.",
+        "desc": "'1' = traction control is enabled, '0' = traction control is not enabled."
       }
     ],
     "sim_freq": 250,
