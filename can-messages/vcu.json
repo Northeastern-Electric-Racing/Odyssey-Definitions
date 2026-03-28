@@ -2322,7 +2322,41 @@
       },
       {
         "size": 4,
-        "parse": false
+        "signed": false,
+        "name": "functional_state",
+        "c_type": "uint8_t",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.1
+            ],
+            [
+              1,
+              0.15
+            ],
+            [
+              2,
+              0.15
+            ],
+            [
+              3,
+              0.15
+            ],
+            [
+              4,
+              0.15
+            ],
+            [
+              5,
+              0.15
+            ],
+            [
+              6,
+              0.15
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -2397,6 +2431,15 @@
         ],
         "doc": "Whether or not launch control is enabled.",
         "desc": "'1' indicates that launch control is enabled. '0' indicates that launch control is disabled."
+      },
+      {
+        "name": "VCU/CarState/functional_state",
+        "unit": "",
+        "values": [
+          9
+        ],
+        "doc": "VCU's functional state.",
+        "desc": "Check func_state_t in Cerberus-2.0 to see what each value refers to."
       }
     ],
     "sim_freq": 250,
