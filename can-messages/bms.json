@@ -3242,5 +3242,28 @@
       }
     ],
     "sim_freq": 750
+  },
+  {
+    "id": "0x95",
+    "desc": "shutdown as read by BMS",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "shutdown",
+        "c_type": "bool"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/shutdown/state",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ]
   }
 ]
