@@ -2465,7 +2465,7 @@
     ],
     "fields": [
       {
-        "name": "BMS/Alpha/{2}/Vres",
+        "name": "BMS/PerCell/{2}/Vres",
         "unit": "V",
         "doc": "Vref2 of ADBMS across resistor",
         "values": [
@@ -2473,7 +2473,7 @@
         ]
       },
       {
-        "name": "BMS/Alpha/{2}/Vref2",
+        "name": "BMS/PerCell/{2}/Vref2",
         "unit": "V",
         "doc": "3V reference voltage of ADBMS",
         "values": [
@@ -2481,7 +2481,7 @@
         ]
       },
       {
-        "name": "BMS/Alpha/{2}/Vanalog",
+        "name": "BMS/PerCell/{2}/Vanalog",
         "unit": "V",
         "doc": "Vreg voltage of ADBMS",
         "values": [
@@ -2489,7 +2489,7 @@
         ]
       },
       {
-        "name": "BMS/Alpha/{2}/Vdigital",
+        "name": "BMS/PerCell/{2}/Vdigital",
         "unit": "V",
         "doc": "Digital in voltage of ADBMS",
         "values": [
@@ -2497,7 +2497,7 @@
         ]
       },
       {
-        "name": "BMS/Alpha/{2}/Faults/OTP1",
+        "name": "BMS/PerCell/{2}/Faults/OTP1",
         "unit": "",
         "doc": "Single trim error in S-NVM",
         "values": [
@@ -2505,7 +2505,7 @@
         ]
       },
       {
-        "name": "BMS/Alpha/{2}/Faults/OTP2",
+        "name": "BMS/PerCell/{2}/Faults/OTP2",
         "unit": "",
         "doc": "Multiple trim errors in S-NVM",
         "values": [
