@@ -2029,7 +2029,6 @@
         "size": 13,
         "name": "vmv",
         "c_type": "float",
-        "signed": true,
         "formatter": {
           "key": "divide",
           "arg": 1000
@@ -2566,7 +2565,6 @@
         "size": 13,
         "name": "vmv",
         "c_type": "float",
-        "signed": true,
         "formatter": {
           "key": "divide",
           "arg": 1000
