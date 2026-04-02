@@ -2029,6 +2029,7 @@
         "size": 13,
         "name": "vmv",
         "c_type": "float",
+        "signed": true,
         "formatter": {
           "key": "divide",
           "arg": 1000
@@ -2252,7 +2253,6 @@
       {
         "name": "BMS/PerCell/Alpha/{1}/VMV",
         "unit": "V",
-        "signed": true,
         "doc": "Voltage of S1N to V- of ADBMS",
         "values": [
           4
@@ -2566,6 +2566,7 @@
         "size": 13,
         "name": "vmv",
         "c_type": "float",
+        "signed": true,
         "formatter": {
           "key": "divide",
           "arg": 1000
@@ -2789,7 +2790,6 @@
       {
         "name": "BMS/PerCell/Beta/{1}/VMV",
         "unit": "V",
-        "signed": true,
         "doc": "Voltage of S1N to V- of ADBMS",
         "values": [
           4
