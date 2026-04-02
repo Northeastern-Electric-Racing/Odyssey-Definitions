@@ -2238,7 +2238,7 @@
         "unit": "C",
         "doc": "Temperatue of ADBMS die",
         "values": [
-          3
+          2
         ]
       },
       {
@@ -2246,7 +2246,7 @@
         "unit": "V",
         "doc": "Positive ADBMS voltage",
         "values": [
-          4
+          3
         ]
       },
       {
@@ -2254,7 +2254,7 @@
         "unit": "V",
         "doc": "Voltage of S1N to V- of ADBMS",
         "values": [
-          5
+          4
         ]
       },
       {
@@ -2262,7 +2262,7 @@
         "unit": "",
         "doc": "Whether 5V Analog rail went over",
         "values": [
-          6
+          5
         ]
       },
       {
@@ -2270,7 +2270,7 @@
         "unit": "",
         "doc": "Whether 5V Analog rail went under",
         "values": [
-          7
+          6
         ]
       },
       {
@@ -2278,7 +2278,7 @@
         "unit": "",
         "doc": "Whether 3V digital rail went over",
         "values": [
-          8
+          7
         ]
       },
       {
@@ -2286,7 +2286,7 @@
         "unit": "",
         "doc": "Whether 3V digital rail went under",
         "values": [
-          9
+          8
         ]
       },
       {
@@ -2294,7 +2294,7 @@
         "unit": "",
         "doc": "5V supply differed from Vreg by 0.5V+",
         "values": [
-          10
+          9
         ]
       },
       {
@@ -2302,7 +2302,7 @@
         "unit": "",
         "doc": "All 5V supply differed from Vreg by 0.5V+",
         "values": [
-          11
+          10
         ]
       },
       {
@@ -2310,7 +2310,7 @@
         "unit": "",
         "doc": "Redundant SPI slave mismatch",
         "values": [
-          12
+          11
         ]
       },
       {
@@ -2318,7 +2318,7 @@
         "unit": "",
         "doc": "Sleep mode previously occured",
         "values": [
-          13
+          12
         ]
       },
       {
@@ -2326,7 +2326,7 @@
         "unit": "",
         "doc": "Thermal shutdown occured/occuring",
         "values": [
-          14
+          13
         ]
       },
       {
@@ -2334,7 +2334,7 @@
         "unit": "",
         "doc": "Test mode occured/occuring",
         "values": [
-          15
+          14
         ]
       },
       {
@@ -2342,7 +2342,7 @@
         "unit": "",
         "doc": "Oscillator drift during ADC conversion detected",
         "values": [
-          16
+          15
         ]
       }
     ],
@@ -2774,7 +2774,7 @@
         "unit": "C",
         "doc": "Temperatue of ADBMS die",
         "values": [
-          3
+          2
         ]
       },
       {
@@ -2782,7 +2782,7 @@
         "unit": "V",
         "doc": "Positive ADBMS voltage",
         "values": [
-          4
+          3
         ]
       },
       {
@@ -2790,7 +2790,7 @@
         "unit": "V",
         "doc": "Voltage of S1N to V- of ADBMS",
         "values": [
-          5
+          4
         ]
       },
       {
@@ -2798,7 +2798,7 @@
         "unit": "",
         "doc": "Whether 5V Analog rail went over",
         "values": [
-          6
+          5
         ]
       },
       {
@@ -2806,7 +2806,7 @@
         "unit": "",
         "doc": "Whether 5V Analog rail went under",
         "values": [
-          7
+          6
         ]
       },
       {
@@ -2814,7 +2814,7 @@
         "unit": "",
         "doc": "Whether 3V digital rail went over",
         "values": [
-          8
+          7
         ]
       },
       {
@@ -2822,7 +2822,7 @@
         "unit": "",
         "doc": "Whether 3V digital rail went under",
         "values": [
-          9
+          8
         ]
       },
       {
@@ -2830,7 +2830,7 @@
         "unit": "",
         "doc": "5V supply differed from Vreg by 0.5V+",
         "values": [
-          10
+          9
         ]
       },
       {
@@ -2838,7 +2838,7 @@
         "unit": "",
         "doc": "All 5V supply differed from Vreg by 0.5V+",
         "values": [
-          11
+          10
         ]
       },
       {
@@ -2846,7 +2846,7 @@
         "unit": "",
         "doc": "Redundant SPI slave mismatch",
         "values": [
-          12
+          11
         ]
       },
       {
@@ -2854,7 +2854,7 @@
         "unit": "",
         "doc": "Sleep mode previously occured",
         "values": [
-          13
+          12
         ]
       },
       {
@@ -2862,7 +2862,7 @@
         "unit": "",
         "doc": "Thermal shutdown occured/occuring",
         "values": [
-          14
+          13
         ]
       },
       {
@@ -2870,7 +2870,7 @@
         "unit": "",
         "doc": "Test mode occured/occuring",
         "values": [
-          15
+          14
         ]
       },
       {
@@ -2878,7 +2878,7 @@
         "unit": "",
         "doc": "Oscillator drift during ADC conversion detected",
         "values": [
-          16
+          15
         ]
       }
     ],
