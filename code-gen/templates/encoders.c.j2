@@ -31,22 +31,25 @@ uint8_t send_{{ macros.function_name(msg) }}
     {%- else %}
     msg.id_is_extended = false;
     {% endif -%}
-    msg.len = {{ macros.msg_size(msg) }};
 
     {% if msg.use_struct is false -%} {#- USING BITSTREAM!!!! -#}
         {# Find size of data, either uint8_t, uint16_t, uint32_t, or uint64_t. -#}
         {%- if macros.msg_size_bits(msg)|int <= 8 %}
             uint8_t data = 0;
             {%- set total_bits = 8 %}
+            msg.len = 1;
         {%- elif macros.msg_size_bits(msg)|int <= 16 %}
             uint16_t data = 0;
             {%- set total_bits = 16 %}
+            msg.len = 2;
         {%- elif macros.msg_size_bits(msg)|int <= 32 %}
             uint32_t data = 0;
             {%- set total_bits = 32%}
+            msg.len = 4;
         {%- else %}
             uint64_t data = 0;
             {%- set total_bits = 64 %}
+            msg.len = 8;
         {%- endif -%}
         {#- Track bit position from MSB and pack each point -#}
         {%- set bit_pos = namespace(value=0) %}
@@ -93,13 +96,6 @@ uint8_t send_{{ macros.function_name(msg) }}
             uint64_t data_bigendian = __builtin_bswap64(data);
             memcpy(msg.data, &data_bigendian, 8);
         {%- endif %}
-        {#
-        Note: 
-        Message sizes that aren't 1, 2, 4, or 8 bytes can still exist here.
-        For example, if a message is 6 bytes, it will be constructed in a uint64_t buffer (which is 8 bytes in total).
-        But, since msg.len is still set to the actual size of the message (6 bytes), the CAN controller will only send the 6 bytes.
-        This works because the last two bytes in the uint64_t are just zeros and can be chopped off without messing with anything.
-        #}
     {%- else -%} {#- USING STRUCTS!!!! -#}
     struct __attribute__((__packed__)) {
         {% for point in msg.points -%}

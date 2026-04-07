@@ -1720,6 +1720,178 @@
     "is_ext": true
   },
   {
+    "id": "0xEFA",
+    "desc": "Spare eFuse",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 0,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "uint16_t",
+        "name": "ADC"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "voltage"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "c_type": "float",
+        "name": "current",
+        "sim": {
+          "min": 0,
+          "max": 3,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      },
+      {
+        "size": 4,
+        "signed": false,
+        "c_type": "bool",
+        "name": "is_faulted",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        }
+      },
+      {
+        "size": 4,
+        "signed": false,
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        },
+        "name": "is_enabled"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "control_state",
+        "c_type": "uint8_t",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.1
+            ]
+          ]
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/eFuses/Spare/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Value.",
+        "desc": "Ranges from 0 to 4095."
+      },
+      {
+        "name": "VCU/eFuses/Spare/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "Spare eFuse Voltage",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Spare/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Spare eFuse Current.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Spare/Faulted?",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "The state of the Spare eFuse's fault pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Spare/Enabled?",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "The state of the Spare eFuse's Enable pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/eFuses/Spare/Control_State",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "The eFuse's control state.",
+        "desc": "This is a car command originating from Calypso, but tracked by VCU. 0=ON, 1=AUTO, 2=OFF."
+      }
+    ],
+    "sim_freq": 250,
+    "is_ext": true
+  },
+  {
     "id": "0x123",
     "desc": "Shutdown Pins",
     "points": [
@@ -2149,8 +2321,60 @@
         "name": "launch_control"
       },
       {
-        "size": 4,
-        "parse": false
+        "size": 3,
+        "signed": false,
+        "name": "functional_state",
+        "c_type": "uint8_t",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.1
+            ],
+            [
+              1,
+              0.15
+            ],
+            [
+              2,
+              0.15
+            ],
+            [
+              3,
+              0.15
+            ],
+            [
+              4,
+              0.15
+            ],
+            [
+              5,
+              0.15
+            ],
+            [
+              6,
+              0.15
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "traction_control",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
       }
     ],
     "fields": [
@@ -2225,6 +2449,24 @@
         ],
         "doc": "Whether or not launch control is enabled.",
         "desc": "'1' indicates that launch control is enabled. '0' indicates that launch control is disabled."
+      },
+      {
+        "name": "VCU/CarState/functional_state",
+        "unit": "",
+        "values": [
+          9
+        ],
+        "doc": "VCU's functional state.",
+        "desc": "Check func_state_t in Cerberus-2.0 to see what each value refers to."
+      },
+      {
+        "name": "VCU/CarState/traction_control",
+        "unit": "",
+        "values": [
+          10
+        ],
+        "doc": "Whether or not traction control is enabled.",
+        "desc": "'1' = traction control is enabled, '0' = traction control is not enabled."
       }
     ],
     "sim_freq": 250,
@@ -2752,6 +2994,24 @@
           ]
         },
         "c_type": "bool",
+        "name": "SHUTDOWN_FAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
         "name": "ONBOARD_TEMP_FAULT"
       },
       {
@@ -2933,18 +3193,11 @@
             ]
           ]
         }
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "parse": false,
-        "name": "EXTRA",
-        "c_type": "int"
       }
     ],
     "fields": [
       {
-        "name": "VCU/Faults/CAN_OUTGOING_FAULT",
+        "name": "VCU/Faults/Critical/CAN_OUTGOING_FAULT",
         "unit": "",
         "values": [
           1
@@ -2953,7 +3206,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/CAN_INCOMING_FAULT",
+        "name": "VCU/Faults/Critical/CAN_INCOMING_FAULT",
         "unit": "",
         "values": [
           2
@@ -2962,7 +3215,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/BMS_CAN_MONITOR_FAULT",
+        "name": "VCU/Faults/Critical/BMS_CAN_MONITOR_FAULT",
         "unit": "",
         "values": [
           3
@@ -2971,7 +3224,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/LIGHTNING_CAN_MONITOR_FAULT",
+        "name": "VCU/Faults/Critical/LIGHTNING_CAN_MONITOR_FAULT",
         "unit": "",
         "values": [
           4
@@ -2980,7 +3233,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/ONBOARD_TEMP_FAULT",
+        "name": "VCU/Faults/Critical/SHUTDOWN_FAULT",
         "unit": "",
         "values": [
           5
@@ -2989,7 +3242,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/IMU_ACCEL_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_TEMP_FAULT",
         "unit": "",
         "values": [
           6
@@ -2998,7 +3251,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/IMU_GYRO_FAULT",
+        "name": "VCU/Faults/Non-Critical/IMU_ACCEL_FAULT",
         "unit": "",
         "values": [
           7
@@ -3007,7 +3260,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/BSPD_PREFAULT",
+        "name": "VCU/Faults/Non-Critical/IMU_GYRO_FAULT",
         "unit": "",
         "values": [
           8
@@ -3016,7 +3269,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/ONBOARD_BRAKE_OPEN_CIRCUIT_FAULT",
+        "name": "VCU/Faults/Non-Critical/BSPD_PREFAULT",
         "unit": "",
         "values": [
           9
@@ -3025,7 +3278,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/ONBOARD_ACCEL_OPEN_CIRCUIT_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_BRAKE_OPEN_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           10
@@ -3034,7 +3287,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/ONBOARD_BRAKE_SHORT_CIRCUIT_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_ACCEL_OPEN_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           11
@@ -3043,7 +3296,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/ONBOARD_ACCEL_SHORT_CIRCUIT_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_BRAKE_SHORT_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           12
@@ -3052,7 +3305,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/ONBOARD_PEDAL_DIFFERENCE_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_ACCEL_SHORT_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           13
@@ -3061,7 +3314,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/RTDS_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_PEDAL_DIFFERENCE_FAULT",
         "unit": "",
         "values": [
           14
@@ -3070,10 +3323,19 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/LV_LOW_VOLTAGE_FAULT",
+        "name": "VCU/Faults/Non-Critical/RTDS_FAULT",
         "unit": "",
         "values": [
           15
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/Non-Critical/LV_LOW_VOLTAGE_FAULT",
+        "unit": "",
+        "values": [
+          16
         ],
         "doc": "",
         "desc": ""
@@ -3297,16 +3559,21 @@
     "desc": "BMS Battbox Temp as reported by VCU",
     "points": [
       {
-        "size": 16,
-        "signed": false,
+        "size": 32,
+        "signed": true,
         "endianness": "big",
-        "c_type": "uint16_t",
+        "c_type": "float",
         "name": "temp",
         "sim": {
           "min": 0,
           "max": 100,
           "inc_min": 0.1,
-          "inc_max": 1
+          "inc_max": 1,
+          "round": false
+        },
+        "formatter": {
+          "key": "divide",
+          "arg": 100
         }
       }
     ],
@@ -3319,6 +3586,158 @@
         ],
         "doc": "BMS Battbox Temp",
         "desc": "This value is echoed by VCU from the BMS's cell temps message."
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xD3",
+    "desc": "Brake State as reported by VCU",
+    "points": [
+      {
+        "size": 8,
+        "signed": true,
+        "c_type": "bool",
+        "name": "brake_state",
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        },
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Echo/Brake_State",
+        "unit": "C",
+        "values": [
+          1
+        ],
+        "doc": "Brake State",
+        "desc": "This value isn't really an echo. It's directly calculated and reported by VCU. But it's used by Argos for the eFuse page."
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xD4",
+    "desc": "RTDS State Message",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "pin_state",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.9
+            ],
+            [
+              1,
+              0.1
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "sounding_state",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.9
+            ],
+            [
+              1,
+              0.1
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "reverse_state",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.9
+            ],
+            [
+              1,
+              0.1
+            ]
+          ]
+        }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "error",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.9
+            ],
+            [
+              1,
+              0.1
+            ]
+          ]
+        },
+        "c_type": "bool"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/RTDS/Pin_State",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "The state of the RTDS Pin.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/RTDS/Sounding_State",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "Whether or not the RTDS system is attempting to sound the main continuous RTDS sound.",
+        "desc": "This is not the same as the pure RTDS pin state. This refers to whether or not the RTDS Timer is active, indicating that the car is actively trying to make the sound."
+      },
+      {
+        "name": "VCU/RTDS/Reverse_State",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "Whether or not the RTDS system is attempting to sound the reverse sound.",
+        "desc": "This is not the same as the pure RTDS pin state. This refers to whether or not the Reverse Sound Timer is active, indicating whether or not the RTDS system is trying to make the beeping sound."
+      },
+      {
+        "name": "VCU/RTDS/Error_State",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "Indicates if an error occured during reading.",
+        "desc": ""
       }
     ],
     "sim_freq": 250
@@ -3492,6 +3911,138 @@
       }
     ],
     "is_ext": true,
+    "sim_freq": 250
+  },
+  {
+    "id": "0xBAD2",
+    "desc": "Second VCU Test Message",
+    "points": [
+      {
+        "size": 14,
+        "signed": false,
+        "name": "one",
+        "c_type": "uint16_t",
+        "endianness": "big"
+      },
+      {
+        "size": 2,
+        "signed": false,
+        "name": "two",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 2,
+        "signed": false,
+        "name": "three",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "four",
+        "c_type": "bool"
+      },
+      {
+        "size": 6,
+        "signed": false,
+        "name": "five",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 23,
+        "signed": false,
+        "name": "six",
+        "c_type": "uint32_t",
+        "endianness": "big"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/TestTwo/one",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/TestTwo/two",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/TestTwo/three",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/TestTwo/four",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/TestTwo/five",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/TestTwo/six",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ],
+    "is_ext": true
+  },
+  {
+    "id": "0xD5",
+    "desc": "LV Box Fan PWM",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "c_type": "uint8_t",
+        "name": "fan_pwm_percentage",
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 1,
+          "inc_max": 5,
+          "round": true
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/LVBox/Fan_PWM",
+        "unit": "%",
+        "values": [
+          1
+        ],
+        "doc": "LV Box Fan PWM Percentage",
+        "desc": "Range from 0 to 100. This is the commanded fan PWM duty cycle in percent.(0% at 20°C and 100% at 40°C)."
+      }
+    ],
     "sim_freq": 250
   }
 ]
