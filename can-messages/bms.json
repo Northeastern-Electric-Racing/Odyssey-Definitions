@@ -3084,18 +3084,20 @@
     "desc": "Onboard Therm Temperatures",
     "points": [
       {
-        "size": 1,
+        "size": 8,
         "name": "chip_id",
         "c_type": "uint8_t",
         "sim": {
           "min": 0,
           "max": 1,
           "inc_min": 1,
-          "inc_max": 1
-        }
+          "inc_max": 1,
+          "round": false
+        },
+        "signed": false
       },
       {
-        "size": 2,
+        "size": 16,
         "name": "therm_temp_1",
         "c_type": "float",
         "sim": {
@@ -3104,10 +3106,15 @@
           "inc_min": 1,
           "inc_max": 1,
           "round": true
+        },
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 100
         }
       },
       {
-        "size": 2,
+        "size": 16,
         "name": "therm_temp_2",
         "c_type": "float",
         "sim": {
@@ -3116,10 +3123,15 @@
           "inc_min": 1,
           "inc_max": 1,
           "round": true
+        },
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 100
         }
       },
       {
-        "size": 2,
+        "size": 16,
         "name": "therm_temp_3",
         "c_type": "float",
         "sim": {
@@ -3128,17 +3140,18 @@
           "inc_min": 1,
           "inc_max": 1,
           "round": true
+        },
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 100
         }
-      },
-      {
-        "size": 1,
-        "parse": false
       }
     ],
     "fields": [
       {
         "name": "BMS/Segment_Temps/{1}/OnboardTemp1",
-        "unit": "V",
+        "unit": "C",
         "doc": "Temp of onboard therm 1",
         "values": [
           2
@@ -3146,7 +3159,7 @@
       },
       {
         "name": "BMS/Segment_Temps/{1}/OnboardTemp2",
-        "unit": "V",
+        "unit": "C",
         "doc": "Temp of onboard therm 2",
         "values": [
           3
@@ -3154,7 +3167,7 @@
       },
       {
         "name": "BMS/Segment_Temps/{1}/OnboardTemp3",
-        "unit": "V",
+        "unit": "C",
         "doc": "Temp of onboard therm 3",
         "values": [
           4
