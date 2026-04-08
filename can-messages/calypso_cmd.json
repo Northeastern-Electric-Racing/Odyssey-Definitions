@@ -29,6 +29,35 @@
     "sim_freq": 750
   },
   {
+    "id": "0x455",
+    "desc": "Shepherd BMS PWM Percent",
+    "points": [
+      {
+        "size": 8,
+        "default": 50,
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 1,
+          "inc_max": 30,
+          "round": true
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/BalancingBMSDutyCycle/A",
+        "unit": "uint8_t",
+        "doc": "Balancing duty cycle (%) of BMS globally.",
+        "values": [
+          1
+        ]
+      }
+    ],
+    "key": "BalancingBMSDutyCycle",
+    "sim_freq": 750
+  },
+  {
     "id": "0xCAEF0",
     "desc": "Dashboard eFuse State",
     "points": [
