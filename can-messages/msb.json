@@ -202,6 +202,69 @@
     "sim_freq": 500
   },
   {
+    "id": "0xBB1",
+    "desc": "Front MSB Pressure Sensor",
+    "points": [
+      {
+        "size": 32,
+        "name": "pressure",
+        "c_type": "float"
+      },
+      {
+        "size": 32,
+        "name": "temperature",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/Pressure",
+        "unit": "",
+        "doc": "Pressure Sensor readings",
+        "values": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0xBAF",
+    "desc": "Front Temperature Sensor",
+    "points": [
+      {
+        "size": 32,
+        "name": "temperature",
+        "c_type": "float"
+      },
+      {
+        "size": 32,
+        "name": "humidity",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/FR_RPM",
+        "unit": "RPM",
+        "doc": "RPM value of front right wheel",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "MSB/F/FL_RPM",
+        "unit": "RPM",
+        "doc": "RPM value of front left wheel",
+        "values": [
+          2
+        ]
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
     "id": "0xDAA",
     "desc": "Front MSB Strain One and Two",
     "points": [
@@ -307,6 +370,53 @@
         "doc": "Load Cell readings",
         "values": [
           1,
+          2
+        ]
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0xDB0",
+    "desc": "Front Wheel RPM",
+    "points": [
+      {
+        "size": 16,
+        "name": "Front Right",
+        "c_type": "uint16_t",
+        "sim": {
+          "min": 0,
+          "max": 10000,
+          "inc_min": 50,
+          "inc_max": 1500
+        }
+      },
+      {
+        "size": 16,
+        "name": "Front Left",
+        "c_type": "uint16_t",
+        "sim": {
+          "min": 0,
+          "max": 10000,
+          "inc_min": 50,
+          "inc_max": 1500
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/FR_RPM",
+        "unit": "RPM",
+        "doc": "RPM value of front right wheel",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "MSB/F/FL_RPM",
+        "unit": "RPM",
+        "doc": "RPM value of front left wheel",
+        "values": [
           2
         ]
       }
@@ -538,6 +648,69 @@
     "sim_freq": 500
   },
   {
+    "id": "0xBC5",
+    "desc": "Back MSB Pressure Sensor",
+    "points": [
+      {
+        "size": 32,
+        "name": "pressure",
+        "c_type": "float"
+      },
+      {
+        "size": 32,
+        "name": "temperature",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/Pressure",
+        "unit": "",
+        "doc": "Pressure Sensor readings",
+        "values": [
+          1,
+          2
+        ]
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0xBC3",
+    "desc": "Back Temperature Sensor",
+    "points": [
+      {
+        "size": 32,
+        "name": "temperature",
+        "c_type": "float"
+      },
+      {
+        "size": 32,
+        "name": "humidity",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/FR_RPM",
+        "unit": "RPM",
+        "doc": "RPM value of front right wheel",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "MSB/F/FL_RPM",
+        "unit": "RPM",
+        "doc": "RPM value of front left wheel",
+        "values": [
+          2
+        ]
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
     "id": "0xDBE",
     "desc": "Back MSB Strain One and Two",
     "points": [
@@ -650,6 +823,53 @@
     "sim_freq": 500
   },
   {
+    "id": "0xDB1",
+    "desc": "Rear Wheel RPM",
+    "points": [
+      {
+        "size": 16,
+        "name": "Rear Right",
+        "c_type": "uint16_t",
+        "sim": {
+          "min": 0,
+          "max": 10000,
+          "inc_min": 50,
+          "inc_max": 1500
+        }
+      },
+      {
+        "size": 16,
+        "name": "Rear Left",
+        "c_type": "uint16_t",
+        "sim": {
+          "min": 0,
+          "max": 10000,
+          "inc_min": 50,
+          "inc_max": 1500
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/RR_RPM",
+        "unit": "RPM",
+        "doc": "RPM value of rear right wheel",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "MSB/F/RL_RPM",
+        "unit": "RPM",
+        "doc": "RPM value of rear left wheel",
+        "values": [
+          2
+        ]
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
     "id": "0xDAC",
     "desc": "Back MSB Thermocouple",
     "points": [
@@ -706,100 +926,6 @@
           2,
           3,
           4
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xDB0",
-    "desc": "Front Wheel RPM",
-    "points": [
-      {
-        "size": 16,
-        "name": "Front Right",
-        "c_type": "uint16_t",
-        "sim": {
-          "min": 0,
-          "max": 10000,
-          "inc_min": 50,
-          "inc_max": 1500
-        }
-      },
-      {
-        "size": 16,
-        "name": "Front Left",
-        "c_type": "uint16_t",
-        "sim": {
-          "min": 0,
-          "max": 10000,
-          "inc_min": 50,
-          "inc_max": 1500
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/F/FR_RPM",
-        "unit": "RPM",
-        "doc": "RPM value of front right wheel",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "MSB/F/FL_RPM",
-        "unit": "RPM",
-        "doc": "RPM value of front left wheel",
-        "values": [
-          2
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0xDB1",
-    "desc": "Rear Wheel RPM",
-    "points": [
-      {
-        "size": 16,
-        "name": "Rear Right",
-        "c_type": "uint16_t",
-        "sim": {
-          "min": 0,
-          "max": 10000,
-          "inc_min": 50,
-          "inc_max": 1500
-        }
-      },
-      {
-        "size": 16,
-        "name": "Rear Left",
-        "c_type": "uint16_t",
-        "sim": {
-          "min": 0,
-          "max": 10000,
-          "inc_min": 50,
-          "inc_max": 1500
-        }
-      }
-    ],
-    "fields": [
-      {
-        "name": "MSB/F/RR_RPM",
-        "unit": "RPM",
-        "doc": "RPM value of rear right wheel",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "MSB/F/RL_RPM",
-        "unit": "RPM",
-        "doc": "RPM value of rear left wheel",
-        "values": [
-          2
         ]
       }
     ],
