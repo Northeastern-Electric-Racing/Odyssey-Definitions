@@ -6,6 +6,8 @@
       {
         "size": 8,
         "default": 0,
+        "name": "pwm_duty",
+        "c_type": "uint8_t",
         "sim": {
           "min": 0,
           "max": 100,
@@ -18,7 +20,7 @@
     "fields": [
       {
         "name": "Calypso/Bidir/State/FanBMSPercent/A",
-        "unit": "uint8_t",
+        "unit": "% (in whole number)",
         "doc": "Control duty cycle (%) of BMS fan",
         "values": [
           1
