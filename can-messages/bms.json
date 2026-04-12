@@ -3483,8 +3483,8 @@
           "arg": 100
         },
         "sim": {
-          "min": 3,
-          "max": 2,
+          "min": 2,
+          "max": 3,
           "inc_min": 0.01,
           "inc_max": 1
         }
@@ -3528,8 +3528,8 @@
           "arg": 100
         },
         "sim": {
-          "min": 5,
-          "max": 3,
+          "min": 3,
+          "max": 5,
           "inc_min": 0.01,
           "inc_max": 1
         }
