@@ -3814,5 +3814,72 @@
         "desc": ""
       }
     ]
+  },
+  {
+    "id": "0x82",
+    "desc": "HV Plate IsoSPI Communication Status",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "verification_attempts",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 7,
+        "signed": false,
+        "parse": false
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "recovery_successful",
+        "c_type": "uint8_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/HV_Plate_Comms/State",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Current IsoSPI state",
+        "desc": ""
+      },
+      {
+        "name": "BMS/HV_Plate_Comms/Verification_Attempts",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "Number of required recovery verification attempts",
+        "desc": ""
+      },
+      {
+        "name": "BMS/HV_Plate_Comms/Extra",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "Reserved",
+        "desc": ""
+      },
+      {
+        "name": "BMS/HV_Plate_Comms/Recovery_Successful",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "IsoSPI recovery completed successfully",
+        "desc": ""
+      }
+    ]
   }
 ]
