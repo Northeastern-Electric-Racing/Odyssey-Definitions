@@ -2232,7 +2232,7 @@
           "inc_max": 2,
           "round": false
         },
-        "c_type": "int32_t",
+        "c_type": "float",
         "name": "car_speed"
       },
       {
@@ -2267,7 +2267,7 @@
           "inc_max": 10,
           "round": false
         },
-        "c_type": "uint32_t",
+        "c_type": "float",
         "name": "torque_limit_percentage"
       },
       {
