@@ -3910,6 +3910,7 @@
         "doc": "If the BMS has a Critical Fault",
         "desc": ""
       }
-    ]
+    ],
+    "is_ext": true
   }
 ]
