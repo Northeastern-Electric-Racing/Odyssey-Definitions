@@ -4052,13 +4052,13 @@
       {
         "size": 8,
         "signed": false,
-        "name": "bms_shutdown",
+        "name": "bms_shutdown_as_reported_by_vcu",
         "c_type": "bool"
       }
     ],
     "fields": [
       {
-        "name": "VCU/Echo/BMS_Shutdown",
+        "name": "VCU/Echo/BMS_Shutdown_From_VCU",
         "unit": "",
         "values": [
           1
