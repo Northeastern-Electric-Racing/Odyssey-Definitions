@@ -3152,7 +3152,7 @@
     ],
     "fields": [
       {
-        "name": "BMS/Segment_Temps/{1}/OnboardTemp1",
+        "name": "BMS/Segment_Onboard_Temps/{1}/OnboardTemp1",
         "unit": "C",
         "doc": "Temp of onboard therm 1",
         "values": [
@@ -3160,7 +3160,7 @@
         ]
       },
       {
-        "name": "BMS/Segment_Temps/{1}/OnboardTemp2",
+        "name": "BMS/Segment_Onboard_Temps/{1}/OnboardTemp2",
         "unit": "C",
         "doc": "Temp of onboard therm 2",
         "values": [
@@ -3168,7 +3168,7 @@
         ]
       },
       {
-        "name": "BMS/Segment_Temps/{1}/OnboardTemp3",
+        "name": "BMS/Segment_Onboard_Temps/{1}/OnboardTemp3",
         "unit": "C",
         "doc": "Temp of onboard therm 3",
         "values": [
@@ -3880,6 +3880,34 @@
           4
         ],
         "doc": "Reserved",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "id": "0x01E",
+    "desc": "BMS Critically Faulted",
+    "points": [
+      {
+        "size": 1,
+        "signed": false,
+        "c_type": "bool",
+        "name": "critically_faulted"
+      },
+      {
+        "size": 7,
+        "signed": false,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Faults/Critically_Faulted",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "If the BMS has a Critical Fault",
         "desc": ""
       }
     ]
