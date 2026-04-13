@@ -4046,7 +4046,7 @@
     "sim_freq": 250
   },
   {
-    "id": "0xD6",
+    "id": "0xEB",
     "desc": "BMS Shutdown Status as Reported By VCU",
     "points": [
       {
