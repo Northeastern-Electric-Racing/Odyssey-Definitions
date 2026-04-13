@@ -508,13 +508,14 @@
         "c_type": "uint8_t"
       },
       {
-        "size": 7,
-        "parse": false
-      },
-      {
         "size": 1,
         "name": "recovery_successful",
         "c_type": "uint8_t"
+      },
+      {
+        "size": 7,
+        "signed": false,
+        "parse": false
       }
     ],
     "fields": [
@@ -543,20 +544,21 @@
         ]
       },
       {
-        "name": "BMS/Segment_Comms/Extra",
+        "name": "BMS/Segment_Comms/Recovery_Successful",
         "unit": "",
-        "doc": "Reserved",
+        "doc": "IsoSPI recovery completed successfully",
         "values": [
           4
         ]
       },
       {
-        "name": "BMS/Segment_Comms/Recovery_Successful",
+        "name": "BMS/Segment_Comms/Extra",
         "unit": "",
-        "doc": "IsoSPI recovery completed successfully",
         "values": [
           5
-        ]
+        ],
+        "doc": "Reserved",
+        "desc": ""
       }
     ]
   },
@@ -3832,15 +3834,15 @@
         "c_type": "uint8_t"
       },
       {
-        "size": 7,
-        "signed": false,
-        "parse": false
-      },
-      {
         "size": 1,
         "signed": false,
         "name": "recovery_successful",
         "c_type": "uint8_t"
+      },
+      {
+        "size": 7,
+        "signed": false,
+        "parse": false
       }
     ],
     "fields": [
@@ -3863,21 +3865,21 @@
         "desc": ""
       },
       {
-        "name": "BMS/HV_Plate_Comms/Extra",
+        "name": "BMS/HV_Plate_Comms/Recovery_Successful",
         "unit": "",
         "values": [
           3
         ],
-        "doc": "Reserved",
+        "doc": "IsoSPI recovery completed successfully",
         "desc": ""
       },
       {
-        "name": "BMS/HV_Plate_Comms/Recovery_Successful",
+        "name": "BMS/HV_Plate_Comms/Extra",
         "unit": "",
         "values": [
           4
         ],
-        "doc": "IsoSPI recovery completed successfully",
+        "doc": "Reserved",
         "desc": ""
       }
     ]
