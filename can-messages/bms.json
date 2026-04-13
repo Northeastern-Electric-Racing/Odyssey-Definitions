@@ -3812,8 +3812,8 @@
         "values": [
           1
         ],
-        "doc": "",
-        "desc": ""
+        "doc": "Current shutdown state",
+        "desc": "0=TS ON, 1=TS OFF"
       }
     ]
   },
