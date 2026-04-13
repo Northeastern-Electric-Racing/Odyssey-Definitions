@@ -4044,5 +4044,28 @@
       }
     ],
     "sim_freq": 250
+  },
+  {
+    "id": "0xEB",
+    "desc": "BMS Shutdown Status as Reported By VCU",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "bms_shutdown_as_reported_by_vcu",
+        "c_type": "bool"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Echo/BMS_Shutdown_From_VCU",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "BMS Shutdown Status, as tracked and reported by VCU.",
+        "desc": ""
+      }
+    ]
   }
 ]
