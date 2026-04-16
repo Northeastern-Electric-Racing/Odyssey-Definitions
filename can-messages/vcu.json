@@ -2516,7 +2516,7 @@
       },
       {
         "size": 16,
-        "signed": false,
+        "signed": true,
         "name": "brake_psi",
         "c_type": "float",
         "formatter": {
@@ -2527,7 +2527,8 @@
           "min": 0,
           "max": 5000,
           "inc_min": 0.1,
-          "inc_max": 500
+          "inc_max": 500,
+          "round": false
         }
       }
     ],
