@@ -3912,5 +3912,34 @@
       }
     ],
     "is_ext": true
+  },
+  {
+    "id": "0x01F",
+    "desc": "Precharge Floating Fault",
+    "points": [
+      {
+        "size": 1,
+        "signed": false,
+        "name": "precharge_floating_fault",
+        "c_type": "bool"
+      },
+      {
+        "size": 7,
+        "signed": false,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Precharge/Floating_Fault",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "If TS if floating under the BATT voltage Threshold",
+        "desc": ""
+      }
+    ],
+    "is_ext": true
   }
 ]
