@@ -2516,7 +2516,7 @@
       },
       {
         "size": 16,
-        "signed": false,
+        "signed": true,
         "name": "brake_psi",
         "c_type": "float",
         "formatter": {
@@ -2527,7 +2527,8 @@
           "min": 0,
           "max": 5000,
           "inc_min": 0.1,
-          "inc_max": 500
+          "inc_max": 500,
+          "round": false
         }
       }
     ],
@@ -4092,5 +4093,182 @@
         "desc": ""
       }
     ]
+  },
+  {
+    "id": "0x503",
+    "desc": "Drive Lock States",
+    "points": [
+      {
+        "size": 1,
+        "signed": false,
+        "name": "BRAKE_OC",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "BRAKE_SC",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "ACCEL_OC",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "ACCEL_SC",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "ACCEL_DIFF",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "BSPD_PREF",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
+      },
+      {
+        "size": 2,
+        "signed": false,
+        "name": "empty",
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Pedals/Drive_Locks/BRAKE_OC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/Drive_Locks/BRAKE_SC",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/Drive_Locks/ACCEL_OC",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/Drive_Locks/ACCEL_SC",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/Drive_Locks/ACCEL_DIFF",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/Drive_Locks/BSPD_PREF",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
   }
 ]
