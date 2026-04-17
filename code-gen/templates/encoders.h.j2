@@ -23,7 +23,7 @@
 */
 uint8_t send_{{ macros.function_name(msg) }}
 (
-    {%- for point in msg.points if point.name is defined -%}
+    {%- for point in msg.points if point.name is defined and (point.parse is not defined or point.parse is not false) -%}
     {{ point.c_type }} {{ point.name -}}
     {{- "," if not loop.last -}}
     {%- endfor -%}
