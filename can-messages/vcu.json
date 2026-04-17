@@ -2517,8 +2517,27 @@
       {
         "size": 16,
         "signed": true,
-        "name": "brake_psi",
+        "name": "brake_psi_brake1",
         "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "sim": {
+          "min": 0,
+          "max": 5000,
+          "inc_min": 0.1,
+          "inc_max": 500,
+          "round": false
+        },
+        "endianness": "big"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "brake_psi_brake2",
+        "c_type": "float",
+        "endianness": "big",
         "formatter": {
           "key": "divide",
           "arg": 10
@@ -2552,12 +2571,21 @@
         "desc": "'0' corresponds to 0% (pedal is not pressed down at all). '1' corresponds to 100% (pedal is pressed down as far as possible)."
       },
       {
-        "name": "VCU/Pedals/brake_psi",
+        "name": "VCU/Pedals/PSI/Brake_Front",
         "unit": "psig",
         "values": [
           3
         ],
-        "doc": "Brake Pedal, as PSI",
+        "doc": "Front Brake Sensor (BRAKE1) as PSI.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/PSI/Brake_Back",
+        "unit": "psig",
+        "values": [
+          4
+        ],
+        "doc": "Back Brake Sensor (BRAKE2) as PSI.",
         "desc": ""
       }
     ],
