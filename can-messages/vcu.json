@@ -2892,7 +2892,7 @@
         "endianness": "big",
         "formatter": {
           "key": "divide",
-          "arg": 100
+          "arg": 4
         },
         "sim": {
           "min": 0,
@@ -2910,7 +2910,7 @@
         "endianness": "big",
         "formatter": {
           "key": "divide",
-          "arg": 100
+          "arg": 4
         },
         "sim": {
           "min": 0,
@@ -2928,7 +2928,7 @@
         "endianness": "big",
         "formatter": {
           "key": "divide",
-          "arg": 100
+          "arg": 4
         },
         "sim": {
           "min": 0,
