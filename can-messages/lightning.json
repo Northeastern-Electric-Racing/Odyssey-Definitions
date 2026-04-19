@@ -268,5 +268,30 @@
       }
     ],
     "sim_freq": 1000
+  },
+  {
+    "id": "0xAAE",
+    "desc": "Lightning Pulse Message",
+    "points": [
+      {
+        "size": 32,
+        "signed": false,
+        "name": "count",
+        "c_type": "uint32_t",
+        "endianness": "big"
+      }
+    ],
+    "fields": [
+      {
+        "name": "Lightning/Pulse/Count",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Number of times the lightning pulse has been sent.",
+        "desc": ""
+      }
+    ],
+    "is_ext": true
   }
 ]
