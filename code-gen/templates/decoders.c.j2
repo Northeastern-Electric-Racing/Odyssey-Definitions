@@ -38,6 +38,7 @@ void receive_{{ macros.function_name(msg) }}(const can_msg_t *message, {{macros.
         {%- for point in msg.points %}
             {%- if point.name is defined %}
                 {%- set shift = total_bits - bit_pos.value - point.size %}
+                {%- if point.parse is not defined or point.parse is not false %}
                 {%- if point.signed is defined and point.signed %}
                     {%- if point.size >= 64 %}
     int64_t {{ point.name }}_raw = (int64_t)(data >> {{ shift }});
@@ -74,6 +75,7 @@ void receive_{{ macros.function_name(msg) }}(const can_msg_t *message, {{macros.
     {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }}){{ point.name }}_raw;
                     {%- endif %}
                 {%- endif %}
+                {%- endif %}
                 {%- set bit_pos.value = bit_pos.value + point.size %}
             {%- endif %}
         {%- endfor %}
@@ -87,6 +89,7 @@ void receive_{{ macros.function_name(msg) }}(const can_msg_t *message, {{macros.
     memcpy(&bitstream_data, message->data, sizeof(bitstream_data));
 
     {% for point in msg.points -%}
+    {% if point.parse is not defined or point.parse is not false %}
     {% if point.endianness is defined and point.endianness == "big" %}
     endian_swap(&bitstream_data.{{ point.name }}, sizeof(bitstream_data.{{ point.name }}));
     {% endif %}
@@ -98,6 +101,7 @@ void receive_{{ macros.function_name(msg) }}(const can_msg_t *message, {{macros.
         {% endif %}
     {% else %}
     {{macros.function_name(msg) -}}->{{ point.name }} = ({{ point.c_type }})bitstream_data.{{ point.name }};
+    {% endif %}
     {% endif %}
     {% endfor %}
     {%- endif %}
