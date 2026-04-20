@@ -4235,7 +4235,25 @@
         }
       },
       {
-        "size": 2,
+        "size": 1,
+        "signed": false,
+        "name": "BMS_NOT_PRECHARGED_YET",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
         "signed": false,
         "name": "empty",
         "parse": false
@@ -4292,6 +4310,15 @@
         "unit": "",
         "values": [
           6
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/Drive_Locks/BMS_NOT_PRECHARGED_YET",
+        "unit": "",
+        "values": [
+          7
         ],
         "doc": "",
         "desc": ""
