@@ -3247,6 +3247,16 @@
             ]
           ]
         }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "PRECHARGE_FLOATING_FAULT",
+        "c_type": "bool"
+      },
+      {
+        "size": 7,
+        "signed": false
       }
     ],
     "fields": [
@@ -3392,6 +3402,15 @@
           16
         ],
         "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/Critical/PRECHARGE_FLOATING_FAULT",
+        "unit": "",
+        "values": [
+          17
+        ],
+        "doc": "If TS Volts is stuck under the Batt Volts Threshold",
         "desc": ""
       }
     ],
