@@ -7,7 +7,7 @@
 {% for msg in can_msgs %}
 typedef struct {
 {% for point in msg.points -%}
-{% if point.name is defined %} {{ point.c_type }} {{ point.name }};
+{% if point.name is defined and (point.parse is not defined or point.parse is not false) %} {{ point.c_type }} {{ point.name }};
 {% endif -%}
 {% endfor -%}
 } {{ macros.function_name(msg) -}}_t;

@@ -3783,24 +3783,89 @@
   },
   {
     "id": "0x95",
-    "desc": "shutdown as read by BMS",
+    "desc": "Shutdown as read by BMS",
     "points": [
       {
-        "size": 8,
+        "size": 1,
         "signed": false,
-        "name": "shutdown",
+        "name": "shutdown_state",
         "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "shutdown_ts_minus_sense",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "shutdown_ts_plus_sense",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "shutdown_acc_sense",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "shutdown_tsip_sense",
+        "c_type": "bool"
+      },
+      {
+        "size": 3,
+        "signed": false,
+        "parse": false
       }
     ],
     "fields": [
       {
-        "name": "BMS/shutdown/state",
+        "name": "BMS/Shutdown/State",
         "unit": "",
         "values": [
           1
         ],
         "doc": "Current shutdown state",
         "desc": "0=TS ON, 1=TS OFF"
+      },
+      {
+        "name": "BMS/Shutdown/TS_Minus_Sense",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Shutdown/TS_Plus_Sense",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Shutdown/Acc_Sense",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Shutdown/TSIP_Sense",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "",
+        "desc": ""
       }
     ]
   },
