@@ -3364,7 +3364,7 @@
     ],
     "fields": [
       {
-        "name": "BMS/Plate/Diagnostics/Flags",
+        "name": "BMS/HV_Plate/Diagnostics/Flags",
         "unit": "",
         "doc": "ADBMS2950 Flags",
         "values": [
@@ -3372,7 +3372,7 @@
         ]
       },
       {
-        "name": "BMS/Plate/Diagnostics/VREG",
+        "name": "BMS/HV_Plate/Diagnostics/VREG",
         "unit": "V",
         "doc": "VREG power supply pin",
         "values": [
@@ -3380,7 +3380,7 @@
         ]
       },
       {
-        "name": "BMS/Plate/Diagnostics/TMP1",
+        "name": "BMS/HV_Plate/Diagnostics/TMP1",
         "unit": "C",
         "doc": "Primary internal temperature",
         "values": [
@@ -3388,7 +3388,7 @@
         ]
       },
       {
-        "name": "BMS/Plate/Diagnostics/VREF1P25",
+        "name": "BMS/HV_Plate/Diagnostics/VREF1P25",
         "unit": "V",
         "doc": "VREF1P25 reference pin",
         "values": [
@@ -3396,7 +3396,7 @@
         ]
       },
       {
-        "name": "BMS/Plate/Diagnostics/OSCCNT",
+        "name": "BMS/HV_Plate/Diagnostics/OSCCNT",
         "unit": "",
         "doc": "Oscillator count",
         "values": [
@@ -3955,7 +3955,7 @@
         "desc": ""
       },
       {
-        "name": "BMS/Precharge/Shunt_Temp",
+        "name": "BMS/HV_Plate/Shunt_Temp",
         "unit": "C",
         "values": [
           2
