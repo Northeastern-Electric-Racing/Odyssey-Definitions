@@ -3204,7 +3204,7 @@
   },
   {
     "id": "0x701",
-    "desc": "HV Plate Data",
+    "desc": "HV Plate Voltages",
     "points": [
       {
         "size": 32,
