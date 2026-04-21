@@ -3935,13 +3935,21 @@
         "size": 32,
         "signed": true,
         "c_type": "float",
-        "name": "pack_current"
+        "name": "pack_current",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
       },
       {
         "size": 32,
         "signed": false,
         "c_type": "float",
-        "name": "shunt_temp"
+        "name": "shunt_temp",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
       }
     ],
     "fields": [
