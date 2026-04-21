@@ -3191,7 +3191,7 @@
     ],
     "fields": [
       {
-        "name": "BMS/Precharge/Status",
+        "name": "BMS/HV_Plate/Precharge",
         "unit": "",
         "values": [
           1
@@ -3207,7 +3207,7 @@
     "desc": "HV Plate Data",
     "points": [
       {
-        "size": 16,
+        "size": 32,
         "signed": true,
         "name": "batt_voltage",
         "c_type": "float",
@@ -3217,7 +3217,7 @@
         }
       },
       {
-        "size": 16,
+        "size": 32,
         "signed": true,
         "name": "ts_voltage",
         "c_type": "float",
@@ -3225,36 +3225,16 @@
           "key": "divide",
           "arg": 100
         }
-      },
-      {
-        "size": 16,
-        "signed": true,
-        "name": "shunt_temp",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        }
-      },
-      {
-        "size": 16,
-        "signed": true,
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "name": "pack_current"
       }
     ],
     "fields": [
       {
-        "name": "BMS/Precharge/Batt_Voltage",
+        "name": "BMS/HV_Plate/Batt_Voltage",
         "unit": "V",
         "values": [
           1
         ],
-        "doc": "Battery Voltage",
+        "doc": "Batt Voltage",
         "desc": ""
       },
       {
@@ -3264,24 +3244,6 @@
           2
         ],
         "doc": "TS Voltage",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Precharge/Shunt_Temp",
-        "unit": "C",
-        "values": [
-          3
-        ],
-        "doc": "Shunt Temperature",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Precharge/Pack_Current",
-        "unit": "A",
-        "values": [
-          4
-        ],
-        "doc": "Pack Current",
         "desc": ""
       }
     ],
@@ -3964,5 +3926,43 @@
       }
     ],
     "is_ext": true
+  },
+  {
+    "id": "0x703",
+    "desc": "Pack Current and Shunt Temp",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "c_type": "float",
+        "name": "pack_current"
+      },
+      {
+        "size": 32,
+        "signed": false,
+        "c_type": "float",
+        "name": "shunt_temp"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/HV_Plate/Pack_Current",
+        "unit": "A",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Precharge/Shunt_Temp",
+        "unit": "C",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ]
   }
 ]
