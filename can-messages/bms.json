@@ -3191,7 +3191,7 @@
     ],
     "fields": [
       {
-        "name": "BMS/Precharge/Status",
+        "name": "BMS/HV_Plate/Precharge",
         "unit": "",
         "values": [
           1
@@ -3204,10 +3204,10 @@
   },
   {
     "id": "0x701",
-    "desc": "HV Plate Data",
+    "desc": "HV Plate Voltages",
     "points": [
       {
-        "size": 16,
+        "size": 32,
         "signed": true,
         "name": "batt_voltage",
         "c_type": "float",
@@ -3217,7 +3217,7 @@
         }
       },
       {
-        "size": 16,
+        "size": 32,
         "signed": true,
         "name": "ts_voltage",
         "c_type": "float",
@@ -3225,36 +3225,16 @@
           "key": "divide",
           "arg": 100
         }
-      },
-      {
-        "size": 16,
-        "signed": true,
-        "name": "shunt_temp",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        }
-      },
-      {
-        "size": 16,
-        "signed": true,
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "name": "pack_current"
       }
     ],
     "fields": [
       {
-        "name": "BMS/Precharge/Batt_Voltage",
+        "name": "BMS/HV_Plate/Batt_Voltage",
         "unit": "V",
         "values": [
           1
         ],
-        "doc": "Battery Voltage",
+        "doc": "Batt Voltage",
         "desc": ""
       },
       {
@@ -3264,24 +3244,6 @@
           2
         ],
         "doc": "TS Voltage",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Precharge/Shunt_Temp",
-        "unit": "C",
-        "values": [
-          3
-        ],
-        "doc": "Shunt Temperature",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Precharge/Pack_Current",
-        "unit": "A",
-        "values": [
-          4
-        ],
-        "doc": "Pack Current",
         "desc": ""
       }
     ],
@@ -3402,7 +3364,7 @@
     ],
     "fields": [
       {
-        "name": "BMS/Plate/Diagnostics/Flags",
+        "name": "BMS/HV_Plate/Diagnostics/Flags",
         "unit": "",
         "doc": "ADBMS2950 Flags",
         "values": [
@@ -3410,7 +3372,7 @@
         ]
       },
       {
-        "name": "BMS/Plate/Diagnostics/VREG",
+        "name": "BMS/HV_Plate/Diagnostics/VREG",
         "unit": "V",
         "doc": "VREG power supply pin",
         "values": [
@@ -3418,7 +3380,7 @@
         ]
       },
       {
-        "name": "BMS/Plate/Diagnostics/TMP1",
+        "name": "BMS/HV_Plate/Diagnostics/TMP1",
         "unit": "C",
         "doc": "Primary internal temperature",
         "values": [
@@ -3426,7 +3388,7 @@
         ]
       },
       {
-        "name": "BMS/Plate/Diagnostics/VREF1P25",
+        "name": "BMS/HV_Plate/Diagnostics/VREF1P25",
         "unit": "V",
         "doc": "VREF1P25 reference pin",
         "values": [
@@ -3434,7 +3396,7 @@
         ]
       },
       {
-        "name": "BMS/Plate/Diagnostics/OSCCNT",
+        "name": "BMS/HV_Plate/Diagnostics/OSCCNT",
         "unit": "",
         "doc": "Oscillator count",
         "values": [
@@ -3964,5 +3926,51 @@
       }
     ],
     "is_ext": true
+  },
+  {
+    "id": "0x703",
+    "desc": "Pack Current and Shunt Temp",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "c_type": "float",
+        "name": "pack_current",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      },
+      {
+        "size": 32,
+        "signed": false,
+        "c_type": "float",
+        "name": "shunt_temp",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/HV_Plate/Pack_Current",
+        "unit": "A",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/HV_Plate/Shunt_Temp",
+        "unit": "C",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ]
   }
 ]
