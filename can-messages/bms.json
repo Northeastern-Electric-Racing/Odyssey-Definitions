@@ -3975,7 +3975,7 @@
   },
   {
     "id": "0x704",
-    "desc": "HV Plate Voltages ADBMS2950",
+    "desc": "HV Plate Voltages ADBMS",
     "points": [
       {
         "size": 32,
@@ -4021,7 +4021,7 @@
   },
   {
     "id": "0x705",
-    "desc": "HV Plate Pack Current and Shunt Temp ADBMS2950",
+    "desc": "HV Plate Pack Current and Shunt Temp ADBMS",
     "points": [
       {
         "size": 32,
