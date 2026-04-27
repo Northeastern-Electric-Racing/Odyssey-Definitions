@@ -3972,5 +3972,95 @@
         "desc": ""
       }
     ]
+  },
+  {
+    "id": "0x704",
+    "desc": "HV Plate Voltages ADBMS2950",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "c_type": "float",
+        "name": "batt_volts",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      },
+      {
+        "size": 32,
+        "signed": true,
+        "c_type": "float",
+        "name": "ts_volts",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/HV_Plate/ADBMS2950/Batt_Volts",
+        "unit": "V",
+        "values": [
+          1
+        ],
+        "doc": "Batt volts reported from the ADBMS2950",
+        "desc": ""
+      },
+      {
+        "name": "BMS/HV_Plate/ADBMS2950/TS_Volts",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "TS volts reported from the ADBMS2950",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "id": "0x705",
+    "desc": "HV Plate Pack Current and Shunt Temp ADBMS2950",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "pack_current",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      },
+      {
+        "size": 32,
+        "signed": true,
+        "name": "shunt_temp",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/HV_Plate/ADBMS2950/Pack_Current",
+        "unit": "A",
+        "values": [
+          1
+        ],
+        "doc": "Pack Current Reported from ADBMS2950",
+        "desc": ""
+      },
+      {
+        "name": "BMS/HV_Plate/ADBMS2950/Shunt_Temp",
+        "unit": "A",
+        "values": [
+          2
+        ],
+        "doc": "Shunt Temp Reported from ADBMS2950",
+        "desc": ""
+      }
+    ]
   }
 ]
