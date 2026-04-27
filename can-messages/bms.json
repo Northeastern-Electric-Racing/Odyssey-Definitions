@@ -4021,7 +4021,7 @@
   },
   {
     "id": "0x705",
-    "desc": "HV Plate Pack Current and Shunt Temp ADBMS",
+    "desc": "Pack Current and Shunt Temp ADBMS",
     "points": [
       {
         "size": 32,
@@ -4030,7 +4030,8 @@
         "formatter": {
           "key": "divide",
           "arg": 100
-        }
+        },
+        "c_type": "float"
       },
       {
         "size": 32,
@@ -4039,7 +4040,8 @@
         "formatter": {
           "key": "divide",
           "arg": 100
-        }
+        },
+        "c_type": "float"
       }
     ],
     "fields": [
