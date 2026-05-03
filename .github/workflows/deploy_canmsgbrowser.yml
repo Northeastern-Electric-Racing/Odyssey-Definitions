@@ -58,7 +58,7 @@ jobs:
           pip install jinja2
       - name: Generate static browser
         run: |
-          python ./codge-gen/pdfgen.py --output can_spec_static.html
+          python ../codge-gen/pdfgen.py --output can_spec_static.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
