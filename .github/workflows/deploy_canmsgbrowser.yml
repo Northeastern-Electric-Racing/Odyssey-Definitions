@@ -12,7 +12,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -48,7 +48,17 @@ jobs:
 
       - name: Build with Next.js
         run: npx next build
-
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install jinja2
+      - name: Generate static browser
+        run: |
+          python ./codge-gen/pdfgen.py --output can_spec_static.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:

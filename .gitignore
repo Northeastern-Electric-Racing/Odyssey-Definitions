@@ -208,3 +208,5 @@ __marimo__/
 
 # Code Generation
 code-gen/cgen
+
+*.html

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CAN Message Specification</title>
+  <style>
+    /* ── Print / PDF settings ─────────────────────────────── */
+    @page {
+      size: A4;
+      margin: 20mm 18mm 22mm 18mm;
+    }
+    @media print {
+      .page-break { page-break-before: always; }
+      header { display: none; }
+    }
+
+    /* ── Base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 10pt;
+      color: #1a1a2e;
+      line-height: 1.5;
+      background: #fff;
+    }
+
+    /* ── Cover page ───────────────────────────────────────── */
+    .cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 80vh;
+      padding: 40px 0 20px;
+      border-bottom: 3px solid #e63946;
+    }
+    .cover .tag {
+      font-size: 8pt;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #e63946;
+      margin-bottom: 12px;
+    }
+    .cover h1 {
+      font-size: 28pt;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #1a1a2e;
+    }
+    .cover .subtitle {
+      margin-top: 10px;
+      font-size: 11pt;
+      color: #555;
+    }
+    .cover .meta {
+      margin-top: 32px;
+      font-size: 9pt;
+      color: #888;
+    }
+
+    /* ── Table of Contents ────────────────────────────────── */
+    .toc { margin: 40px 0 20px; }
+    .toc h2 { font-size: 14pt; margin-bottom: 14px; color: #e63946; }
+    .toc-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 4px 0;
+      border-bottom: 1px dotted #ccc;
+      font-size: 9.5pt;
+    }
+    .toc-entry .toc-id {
+      font-family: "Courier New", monospace;
+      font-size: 8.5pt;
+      color: #e63946;
+      min-width: 90px;
+    }
+    .toc-entry .toc-desc { flex: 1; margin: 0 10px; }
+
+    /* ── Section heading ──────────────────────────────────── */
+    .msg-section { margin-top: 36px; }
+    .msg-header {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 4px 4px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .msg-header h2 { font-size: 11pt; font-weight: 700; }
+    .msg-header .can-id {
+      font-family: "Courier New", monospace;
+      font-size: 9.5pt;
+      background: #e63946;
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+    .msg-body {
+      border: 1px solid #ddd;
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+      padding: 14px;
+    }
+    .msg-meta {
+      font-size: 8.5pt;
+      color: #666;
+      margin-bottom: 12px;
+    }
+    .msg-meta span { margin-right: 18px; }
+    .msg-meta .badge {
+      display: inline-block;
+      background: #f0f4ff;
+      border: 1px solid #b0c4ff;
+      color: #3050cc;
+      border-radius: 3px;
+      padding: 0 6px;
+      font-size: 7.5pt;
+    }
+
+    /* ── MQTT Fields table ────────────────────────────────── */
+    .section-label {
+      font-size: 8pt;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #e63946;
+      font-weight: 700;
+      margin: 14px 0 6px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9pt;
+      margin-bottom: 10px;
+    }
+    thead tr { background: #f4f4f8; }
+    th {
+      text-align: left;
+      padding: 6px 8px;
+      font-weight: 600;
+      border-bottom: 2px solid #ddd;
+      font-size: 8.5pt;
+    }
+    td {
+      padding: 5px 8px;
+      border-bottom: 1px solid #ebebeb;
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    .topic {
+      font-family: "Courier New", monospace;
+      font-size: 8pt;
+      color: #1a1a2e;
+      background: #f7f7fb;
+      padding: 1px 4px;
+      border-radius: 2px;
+    }
+    .unit {
+      font-family: "Courier New", monospace;
+      font-size: 8pt;
+      color: #3050cc;
+    }
+    .warn { color: #c0392b; font-size: 8pt; font-style: italic; }
+    .note { color: #555; font-size: 8pt; font-style: italic; }
+
+    /* ── Points table ─────────────────────────────────────── */
+    .point-idx {
+      font-family: "Courier New", monospace;
+      font-size: 8pt;
+      color: #888;
+      width: 28px;
+    }
+    .ctype {
+      font-family: "Courier New", monospace;
+      font-size: 8pt;
+      color: #2d6a4f;
+    }
+    .formatter {
+      font-family: "Courier New", monospace;
+      font-size: 8pt;
+      color: #7b2d8b;
+    }
+    .skip-row td { background: #fafafa; color: #aaa; font-style: italic; }
+
+    /* ── Sim info ─────────────────────────────────────────── */
+    .sim-pill {
+      display: inline-block;
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      color: #7a5c00;
+      border-radius: 10px;
+      padding: 0 7px;
+      font-size: 7.5pt;
+      margin-left: 4px;
+    }
+
+    /* ── Footer ───────────────────────────────────────────── */
+    footer {
+      margin-top: 48px;
+      border-top: 1px solid #eee;
+      padding-top: 8px;
+      font-size: 7.5pt;
+      color: #aaa;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+
+{# ════════════════════════════════════════════════════════════
+   COVER PAGE
+   ════════════════════════════════════════════════════════════ #}
+<div class="cover">
+  {% if logo_uri %}
+  <img src="{{ logo_uri }}" alt="Logo" style="height:208px; margin-bottom:28px; object-fit:contain; object-position:left;">
+  {% endif %}
+  <div class="tag">Northeastern Electric Racing | Odyssey Telemetry System</div>
+  <h1>CAN Message<br>Specification</h1>
+  <div class="subtitle">
+    MQTT topic reference, signal definitions, and simulation parameters
+  </div>
+  <div class="meta">
+    Generated {{ generation_date | default("—") }} &nbsp;|&nbsp;
+    {{ messages | length }} message(s) defined &nbsp;|&nbsp;
+    <span style="font-family:'Courier New',monospace;">git:{{ git_hash | default("unknown") }}</span>
+  </div>
+</div>
+
+{# ════════════════════════════════════════════════════════════
+   TABLE OF CONTENTS
+   ════════════════════════════════════════════════════════════ #}
+<div class="toc page-break">
+  <h2>Contents</h2>
+  {% for msg in messages %}
+  <div class="toc-entry">
+    <span class="toc-id">{{ msg.id }}</span>
+    <span class="toc-desc">{{ msg.desc }}</span>
+    <span style="color:#aaa; font-size:8pt;">
+      {{ msg.fields | length }} field(s) &nbsp;·&nbsp;
+      {{ msg.points | selectattr("parse", "ne", false) | list | length }} active point(s)
+    </span>
+  </div>
+  {% endfor %}
+</div>
+
+{# ════════════════════════════════════════════════════════════
+   ONE SECTION PER CAN MESSAGE
+   ════════════════════════════════════════════════════════════ #}
+{% for msg in messages %}
+<div class="msg-section {% if loop.first %}page-break{% endif %}">
+
+  {# ── Header bar ── #}
+  <div class="msg-header">
+    <h2>{{ msg.desc }}</h2>
+    <span class="can-id">{{ msg.id }}</span>
+  </div>
+
+  <div class="msg-body">
+
+    {# ── Quick-glance metadata ── #}
+    <div class="msg-meta">
+      <span>
+        <strong>CAN ID:</strong>
+        <code>{{ msg.id }}</code>
+        {% if msg.is_ext is defined %}
+          <span class="badge">{{ "Extended" if msg.is_ext else "Standard" }}</span>
+        {% else %}
+          <span class="badge">Extended (default)</span>
+        {% endif %}
+      </span>
+      {% if msg.sim_freq is defined %}
+      <span><strong>Sim freq:</strong> {{ msg.sim_freq }} ms</span>
+      {% endif %}
+      {% if msg.key is defined %}
+      <span>
+        <strong>Encodable key:</strong>
+        <code>{{ msg.key }}</code>
+        &nbsp;<span class="badge">{{ msg.bidir_mode | default("broadcast") }}</span>
+      </span>
+      {% endif %}
+      {% if msg.clients is defined %}
+      <span><strong>Extra MQTT ports:</strong> {{ msg.clients | join(", ") }}</span>
+      {% endif %}
+    </div>
+
+    {# ════════════════════════════════
+       MQTT FIELDS (NetFields)
+       ════════════════════════════════ #}
+    <div class="section-label">MQTT Topics / Net Fields</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:34%">Topic</th>
+          <th style="width:8%">Unit</th>
+          <th style="width:30%">Description</th>
+          <th style="width:14%">Notes / Warnings</th>
+          <th style="width:14%">Mapped Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for field in msg.fields %}
+        <tr>
+          {# Topic — highlight any embedded runtime indices like {1} #}
+          <td>
+            <span class="topic">
+              {{ field['name'] | replace("{", "<em style='color:#e63946'>{") | replace("}", "}</em>") }}
+            </span>
+          </td>
+
+          {# Unit #}
+          <td>
+            <span class="unit">{{ field['unit'] if field['unit'] else "—" }}</span>
+          </td>
+
+          {# Primary doc string #}
+          <td>{{ field.get('doc', '—') }}</td>
+
+          {# Optional extended desc / warnings #}
+          <td>
+            {% if 'desc' in field %}
+              <span class="warn">⚠ {{ field['desc'] }}</span>
+            {% else %}
+              <span class="note">—</span>
+            {% endif %}
+          </td>
+
+          {# Which CANPoints feed this field (1-indexed) #}
+          <td>
+            {% for v in field.get('values', []) %}
+              {# Look up the referenced point for a brief inline summary #}
+              {% set pt = msg.points[v - 1] %}
+              <span class="point-idx">#{{ v }}</span>
+              <span style="font-size:7.5pt;color:#555;">
+                ({{ pt.size }}b
+                {%- if pt.c_type is defined %}, {{ pt.c_type }}{% endif -%}
+                {%- if pt.formatter is defined %}
+                  , ÷{{ pt.formatter.arg if pt.formatter.key == "divide" else pt.formatter.key }}
+                {%- endif -%}
+                )
+              </span>
+              {% if not loop.last %}<br>{% endif %}
+            {% endfor %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {# ════════════════════════════════
+       CAN POINTS (raw bit layout)
+       ════════════════════════════════ #}
+    <div class="section-label">CAN Point Layout</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:5%">#</th>
+          <th style="width:10%">Bits</th>
+          <th style="width:12%">Name</th>
+          <th style="width:10%">C Type</th>
+          <th style="width:12%">Endian</th>
+          <th style="width:13%">Formatter</th>
+          <th style="width:9%">Signed</th>
+          <th style="width:29%">Simulation</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pt in msg.points %}
+
+        {# ── Padding / unparse point ── #}
+        {% if pt.parse is defined and pt.parse == false %}
+        <tr class="skip-row">
+          <td class="point-idx">{{ loop.index }}</td>
+          <td>{{ pt.size }}</td>
+          <td colspan="6">— padding / reserved (not decoded) —</td>
+        </tr>
+
+        {# ── Active point ── #}
+        {% else %}
+        <tr>
+          <td class="point-idx">{{ loop.index }}</td>
+
+          {# Size in bits #}
+          <td><strong>{{ pt.size }}</strong> bit{{ "s" if pt.size != 1 else "" }}</td>
+
+          {# Optional name #}
+          <td>{{ pt.name | default("—") }}</td>
+
+          {# C type #}
+          <td class="ctype">{{ pt.c_type | default("—") }}</td>
+
+          {# Endianness #}
+          <td>{{ pt.endianness | default("big") }}</td>
+
+          {# Formatter #}
+          <td class="formatter">
+            {% if pt.formatter is defined %}
+              {{ pt.formatter.key }}
+              {% if pt.formatter.arg is defined %}({{ pt.formatter.arg }}){% endif %}
+            {% elif pt.format is defined %}
+              {{ pt.format }}
+            {% elif pt.ieee754_f32 is defined and pt.ieee754_f32 %}
+              IEEE 754 f32
+            {% else %}
+              —
+            {% endif %}
+          </td>
+
+          {# Signed #}
+          <td>{{ "Yes" if pt.signed is defined and pt.signed else "No" }}</td>
+
+          {# Sim description #}
+          <td>
+            {% if pt.sim is defined %}
+              {% if pt.sim.options is defined %}
+                {# Enum sim #}
+                <span class="sim-pill">enum</span>
+                <br>
+                {% for opt in pt.sim.options %}
+                  <span style="font-size:7.5pt;">
+                    <code>{{ opt[0] }}</code> → {{ (opt[1] * 100) | round(0) | int }}%
+                  </span>
+                  {% if not loop.last %}&nbsp; {% endif %}
+                {% endfor %}
+              {% else %}
+                {# Sweep sim #}
+                <span class="sim-pill">sweep</span>
+                <span style="font-size:7.5pt;">
+                  [{{ pt.sim.min }}, {{ pt.sim.max }}]
+                  Δ [{{ pt.sim.inc_min }}, {{ pt.sim.inc_max }}]
+                  {% if pt.sim.round is defined and pt.sim.round %} · rounded{% endif %}
+                </span>
+              {% endif %}
+            {% else %}
+              <span class="note">—</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endif %}
+
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {# ── Encodable default values (if any) ── #}
+    {% set ns = namespace(has_defaults=false) %}
+    {% for pt in msg.get('points', []) %}
+      {% if 'default_value' in pt %}{% set ns.has_defaults = true %}{% endif %}
+    {% endfor %}
+    {% if ns.has_defaults %}
+    <div class="section-label">Encodable Default Values</div>
+    <table>
+      <thead><tr><th>#</th><th>Name</th><th>Default Value</th></tr></thead>
+      <tbody>
+        {% for pt in msg.get('points', []) %}
+        {% if 'default_value' in pt %}
+        <tr>
+          <td class="point-idx">{{ loop.index }}</td>
+          <td>{{ pt.name | default("—") }}</td>
+          <td class="ctype">{{ pt.default_value }}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+  </div>{# /msg-body #}
+</div>{# /msg-section #}
+{% endfor %}
+
+{# ════════════════════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════════════════════ #}
+<footer>
+  <span>Northeastern Electric Racing | Odyssey Telemetry System · Auto-generated specification</span>
+  <span>{{ generation_date | default("") }} &nbsp;·&nbsp; <span style="font-family:'Courier New',monospace;">git:{{ git_hash | default("unknown") }}</span></span>
+</footer>
+
+</body>
+</html>
