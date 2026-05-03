@@ -508,13 +508,14 @@
         "c_type": "uint8_t"
       },
       {
-        "size": 7,
-        "parse": false
-      },
-      {
         "size": 1,
         "name": "recovery_successful",
         "c_type": "uint8_t"
+      },
+      {
+        "size": 7,
+        "signed": false,
+        "parse": false
       }
     ],
     "fields": [
@@ -543,20 +544,21 @@
         ]
       },
       {
-        "name": "BMS/Segment_Comms/Extra",
+        "name": "BMS/Segment_Comms/Recovery_Successful",
         "unit": "",
-        "doc": "Reserved",
+        "doc": "IsoSPI recovery completed successfully",
         "values": [
           4
         ]
       },
       {
-        "name": "BMS/Segment_Comms/Recovery_Successful",
+        "name": "BMS/Segment_Comms/Extra",
         "unit": "",
-        "doc": "IsoSPI recovery completed successfully",
         "values": [
           5
-        ]
+        ],
+        "doc": "Reserved",
+        "desc": ""
       }
     ]
   },
@@ -3084,18 +3086,20 @@
     "desc": "Onboard Therm Temperatures",
     "points": [
       {
-        "size": 1,
+        "size": 8,
         "name": "chip_id",
         "c_type": "uint8_t",
         "sim": {
           "min": 0,
           "max": 1,
           "inc_min": 1,
-          "inc_max": 1
-        }
+          "inc_max": 1,
+          "round": false
+        },
+        "signed": false
       },
       {
-        "size": 2,
+        "size": 16,
         "name": "therm_temp_1",
         "c_type": "float",
         "sim": {
@@ -3104,10 +3108,15 @@
           "inc_min": 1,
           "inc_max": 1,
           "round": true
+        },
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 100
         }
       },
       {
-        "size": 2,
+        "size": 16,
         "name": "therm_temp_2",
         "c_type": "float",
         "sim": {
@@ -3116,10 +3125,15 @@
           "inc_min": 1,
           "inc_max": 1,
           "round": true
+        },
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 100
         }
       },
       {
-        "size": 2,
+        "size": 16,
         "name": "therm_temp_3",
         "c_type": "float",
         "sim": {
@@ -3128,33 +3142,34 @@
           "inc_min": 1,
           "inc_max": 1,
           "round": true
+        },
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 100
         }
-      },
-      {
-        "size": 1,
-        "parse": false
       }
     ],
     "fields": [
       {
-        "name": "BMS/Segment_Temps/{1}/OnboardTemp1",
-        "unit": "V",
+        "name": "BMS/Segment_Onboard_Temps/{1}/OnboardTemp1",
+        "unit": "C",
         "doc": "Temp of onboard therm 1",
         "values": [
           2
         ]
       },
       {
-        "name": "BMS/Segment_Temps/{1}/OnboardTemp2",
-        "unit": "V",
+        "name": "BMS/Segment_Onboard_Temps/{1}/OnboardTemp2",
+        "unit": "C",
         "doc": "Temp of onboard therm 2",
         "values": [
           3
         ]
       },
       {
-        "name": "BMS/Segment_Temps/{1}/OnboardTemp3",
-        "unit": "V",
+        "name": "BMS/Segment_Onboard_Temps/{1}/OnboardTemp3",
+        "unit": "C",
         "doc": "Temp of onboard therm 3",
         "values": [
           4
@@ -3168,33 +3183,20 @@
     "desc": "Precharge Status",
     "points": [
       {
-        "size": 1,
+        "size": 8,
         "signed": false,
         "name": "precharge_status",
-        "c_type": "bool"
-      },
-      {
-        "size": 7,
-        "parse": false
+        "c_type": "uint8_t"
       }
     ],
     "fields": [
       {
-        "name": "BMS/Precharge/Status",
+        "name": "BMS/HV_Plate/Precharge",
         "unit": "",
         "values": [
           1
         ],
         "doc": "Indicates whether Precharge is active or not",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Precharge/Status/Extra",
-        "unit": "",
-        "values": [
-          2
-        ],
-        "doc": "Reserved",
         "desc": ""
       }
     ],
@@ -3202,10 +3204,10 @@
   },
   {
     "id": "0x701",
-    "desc": "HV Plate Data",
+    "desc": "HV Plate Voltages",
     "points": [
       {
-        "size": 16,
+        "size": 32,
         "signed": true,
         "name": "batt_voltage",
         "c_type": "float",
@@ -3215,7 +3217,7 @@
         }
       },
       {
-        "size": 16,
+        "size": 32,
         "signed": true,
         "name": "ts_voltage",
         "c_type": "float",
@@ -3223,36 +3225,16 @@
           "key": "divide",
           "arg": 100
         }
-      },
-      {
-        "size": 16,
-        "signed": true,
-        "name": "shunt_temp",
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        }
-      },
-      {
-        "size": 16,
-        "signed": true,
-        "c_type": "float",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "name": "pack_current"
       }
     ],
     "fields": [
       {
-        "name": "BMS/Precharge/Batt_Voltage",
+        "name": "BMS/HV_Plate/Batt_Voltage",
         "unit": "V",
         "values": [
           1
         ],
-        "doc": "Battery Voltage",
+        "doc": "Batt Voltage",
         "desc": ""
       },
       {
@@ -3262,24 +3244,6 @@
           2
         ],
         "doc": "TS Voltage",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Precharge/Shunt_Temp",
-        "unit": "C",
-        "values": [
-          3
-        ],
-        "doc": "Shunt Temperature",
-        "desc": ""
-      },
-      {
-        "name": "BMS/Precharge/Pack_Current",
-        "unit": "A",
-        "values": [
-          4
-        ],
-        "doc": "Pack Current",
         "desc": ""
       }
     ],
@@ -3400,7 +3364,7 @@
     ],
     "fields": [
       {
-        "name": "BMS/Plate/Diagnostics/Flags",
+        "name": "BMS/HV_Plate/Diagnostics/Flags",
         "unit": "",
         "doc": "ADBMS2950 Flags",
         "values": [
@@ -3408,7 +3372,7 @@
         ]
       },
       {
-        "name": "BMS/Plate/Diagnostics/VREG",
+        "name": "BMS/HV_Plate/Diagnostics/VREG",
         "unit": "V",
         "doc": "VREG power supply pin",
         "values": [
@@ -3416,7 +3380,7 @@
         ]
       },
       {
-        "name": "BMS/Plate/Diagnostics/TMP1",
+        "name": "BMS/HV_Plate/Diagnostics/TMP1",
         "unit": "C",
         "doc": "Primary internal temperature",
         "values": [
@@ -3424,7 +3388,7 @@
         ]
       },
       {
-        "name": "BMS/Plate/Diagnostics/VREF1P25",
+        "name": "BMS/HV_Plate/Diagnostics/VREF1P25",
         "unit": "V",
         "doc": "VREF1P25 reference pin",
         "values": [
@@ -3432,7 +3396,7 @@
         ]
       },
       {
-        "name": "BMS/Plate/Diagnostics/OSCCNT",
+        "name": "BMS/HV_Plate/Diagnostics/OSCCNT",
         "unit": "",
         "doc": "Oscillator count",
         "values": [
@@ -3470,8 +3434,8 @@
           "arg": 100
         },
         "sim": {
-          "min": 3,
-          "max": 2,
+          "min": 2,
+          "max": 3,
           "inc_min": 0.01,
           "inc_max": 1
         }
@@ -3515,8 +3479,8 @@
           "arg": 100
         },
         "sim": {
-          "min": 5,
-          "max": 3,
+          "min": 3,
+          "max": 5,
           "inc_min": 0.01,
           "inc_max": 1
         }
@@ -3781,23 +3745,322 @@
   },
   {
     "id": "0x95",
-    "desc": "shutdown as read by BMS",
+    "desc": "Shutdown as read by BMS",
     "points": [
       {
-        "size": 8,
+        "size": 1,
         "signed": false,
-        "name": "shutdown",
+        "name": "shutdown_state",
         "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "shutdown_ts_minus_sense",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "shutdown_ts_plus_sense",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "shutdown_acc_sense",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "shutdown_tsip_sense",
+        "c_type": "bool"
+      },
+      {
+        "size": 3,
+        "signed": false,
+        "parse": false
       }
     ],
     "fields": [
       {
-        "name": "BMS/shutdown/state",
+        "name": "BMS/Shutdown/State",
         "unit": "",
         "values": [
           1
         ],
+        "doc": "Current shutdown state",
+        "desc": "0=TS ON, 1=TS OFF"
+      },
+      {
+        "name": "BMS/Shutdown/TS_Minus_Sense",
+        "unit": "",
+        "values": [
+          2
+        ],
         "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Shutdown/TS_Plus_Sense",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Shutdown/Acc_Sense",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/Shutdown/TSIP_Sense",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "id": "0x82",
+    "desc": "HV Plate IsoSPI Communication Status",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "verification_attempts",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "recovery_successful",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 7,
+        "signed": false,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/HV_Plate_Comms/State",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Current IsoSPI state",
+        "desc": ""
+      },
+      {
+        "name": "BMS/HV_Plate_Comms/Verification_Attempts",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "Number of required recovery verification attempts",
+        "desc": ""
+      },
+      {
+        "name": "BMS/HV_Plate_Comms/Recovery_Successful",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "IsoSPI recovery completed successfully",
+        "desc": ""
+      },
+      {
+        "name": "BMS/HV_Plate_Comms/Extra",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "Reserved",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "id": "0x01E",
+    "desc": "BMS Critically Faulted",
+    "points": [
+      {
+        "size": 1,
+        "signed": false,
+        "c_type": "bool",
+        "name": "critically_faulted"
+      },
+      {
+        "size": 7,
+        "signed": false,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Faults/Critically_Faulted",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "If the BMS has a Critical Fault",
+        "desc": ""
+      }
+    ],
+    "is_ext": true
+  },
+  {
+    "id": "0x703",
+    "desc": "Pack Current and Shunt Temp",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "c_type": "float",
+        "name": "pack_current",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      },
+      {
+        "size": 32,
+        "signed": false,
+        "c_type": "float",
+        "name": "shunt_temp",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/HV_Plate/Pack_Current",
+        "unit": "A",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "BMS/HV_Plate/Shunt_Temp",
+        "unit": "C",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "id": "0x704",
+    "desc": "HV Plate Voltages ADBMS",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "c_type": "float",
+        "name": "batt_volts",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      },
+      {
+        "size": 32,
+        "signed": true,
+        "c_type": "float",
+        "name": "ts_volts",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/HV_Plate/ADBMS2950/Batt_Volts",
+        "unit": "V",
+        "values": [
+          1
+        ],
+        "doc": "Batt volts reported from the ADBMS2950",
+        "desc": ""
+      },
+      {
+        "name": "BMS/HV_Plate/ADBMS2950/TS_Volts",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "TS volts reported from the ADBMS2950",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "id": "0x705",
+    "desc": "Pack Current and Shunt Temp ADBMS",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "pack_current",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "c_type": "float"
+      },
+      {
+        "size": 32,
+        "signed": true,
+        "name": "shunt_temp",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/HV_Plate/ADBMS2950/Pack_Current",
+        "unit": "A",
+        "values": [
+          1
+        ],
+        "doc": "Pack Current Reported from ADBMS2950",
+        "desc": ""
+      },
+      {
+        "name": "BMS/HV_Plate/ADBMS2950/Shunt_Temp",
+        "unit": "A",
+        "values": [
+          2
+        ],
+        "doc": "Shunt Temp Reported from ADBMS2950",
         "desc": ""
       }
     ]

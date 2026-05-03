@@ -5,53 +5,106 @@
     "points": [
       {
         "size": 16,
-        "endianness": "little"
-      },
-      {
-        "size": 8
-      },
-      {
-        "size": 8
-      },
-      {
-        "size": 1
-      },
-      {
-        "size": 1
-      },
-      {
-        "size": 1
-      },
-      {
-        "size": 1
-      },
-      {
-        "size": 1
-      },
-      {
-        "size": 1
-      },
-      {
-        "size": 1
-      },
-      {
-        "size": 1
-      },
-      {
-        "size": 1
-      },
-      {
-        "size": 1
-      },
-      {
-        "size": 6,
-        "parse": false
-      },
-      {
-        "size": 8
+        "endianness": "little",
+        "signed": false,
+        "name": "R_iso_corrected",
+        "c_type": "uint16_t"
       },
       {
         "size": 8,
+        "signed": false,
+        "name": "R_iso_status",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "Iso_measurement_counter",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "device_error",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "name": "HV_pos_conn_fail",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "name": "HV_neg_conn_fail",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "name": "Earth_conn_fail",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "Iso_alarm",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "iso_warning",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "iso_outdated",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "name": "Unbalance_alarm",
+        "c_type": "bool",
+        "signed": false
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "Undervoltage_alarm",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "Unsafe_to_start",
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "parse": false,
+        "signed": false,
+        "name": "Earthlift_Open",
+        "c_type": "bool"
+      },
+      {
+        "size": 5,
+        "signed": false,
+        "name": "warnings_and_alarms_unused_bits",
+        "c_type": "uint8_t",
+        "parse": false
+      },
+      {
+        "size": 8,
+        "parse": false,
+        "signed": false,
+        "name": "Device_Activity",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "Not_Applicable",
+        "c_type": "uint8_t",
         "parse": false
       }
     ],
@@ -122,15 +175,15 @@
         ]
       },
       {
-        "name": "IMD/Info/General/Warnings_and_Alarms/Iso_outdated",
+        "name": "IMD/Info/General/Warnings_and_Alarms/Iso_warning",
         "unit": "",
-        "doc": "value time elapsed since last measurement >= measurement timeout",
+        "doc": "(Iso value below threshold warning)",
         "values": [
           9
         ]
       },
       {
-        "name": "IMD/Info/General/Warnings_and_Alarms/Unbalance_alarm",
+        "name": "IMD/Info/General/Warnings_and_Alarms/iso_outdated",
         "unit": "",
         "doc": "Unbalance value below threshold",
         "values": [
@@ -138,7 +191,7 @@
         ]
       },
       {
-        "name": "IMD/Info/General/Warnings_and_Alarms/Undervoltage_alarm",
+        "name": "IMD/Info/General/Warnings_and_Alarms/Unbalance_Alarm",
         "unit": "",
         "doc": "Undervoltage alarm",
         "values": [
@@ -146,17 +199,26 @@
         ]
       },
       {
-        "name": "IMD/Info/General/Warnings_and_Alarms/Unsafe_to_start",
+        "name": "IMD/Info/General/Warnings_and_Alarms/Undervoltage_Alarm",
         "unit": "",
-        "doc": "Unsafe to start",
+        "doc": "Undervoltage_Alarm",
         "values": [
           12
         ]
       },
       {
-        "name": "IMD/Info/General/Warnings_and_Alarms/Earthlift_open",
+        "name": "IMD/Info/General/Warnings_and_Alarms/Unsafe_to_Start",
         "unit": "",
         "doc": "Earthlift Open",
+        "values": [
+          13
+        ]
+      },
+      {
+        "name": "IMD/Info/General/Warnings_and_Alarms/Earthlift_Open",
+        "unit": "",
+        "doc": "Status",
+        "desc": "0: Initialization\n1: Normal operation\n2: Self test",
         "values": [
           14
         ]
@@ -164,11 +226,11 @@
       {
         "name": "IMD/Info/General/Device_Activity",
         "unit": "",
-        "doc": "Status",
-        "desc": "0: Initialization\n1: Normal operation\n2: Self test",
         "values": [
-          15
-        ]
+          16
+        ],
+        "doc": "",
+        "desc": ""
       }
     ]
   },

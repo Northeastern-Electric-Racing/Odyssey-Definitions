@@ -6,6 +6,8 @@
       {
         "size": 8,
         "default": 0,
+        "name": "pwm_duty",
+        "c_type": "uint8_t",
         "sim": {
           "min": 0,
           "max": 100,
@@ -18,7 +20,7 @@
     "fields": [
       {
         "name": "Calypso/Bidir/State/FanBMSPercent/A",
-        "unit": "uint8_t",
+        "unit": "% (in whole number)",
         "doc": "Control duty cycle (%) of BMS fan",
         "values": [
           1
@@ -26,6 +28,35 @@
       }
     ],
     "key": "FanBMSPercent",
+    "sim_freq": 750
+  },
+  {
+    "id": "0x455",
+    "desc": "Shepherd BMS PWM Percent",
+    "points": [
+      {
+        "size": 8,
+        "default": 50,
+        "sim": {
+          "min": 0,
+          "max": 100,
+          "inc_min": 1,
+          "inc_max": 30,
+          "round": true
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/BalancingBMSDutyCycle/A",
+        "unit": "uint8_t",
+        "doc": "Balancing duty cycle (%) of BMS globally.",
+        "values": [
+          1
+        ]
+      }
+    ],
+    "key": "BalancingBMSDutyCycle",
     "sim_freq": 750
   },
   {

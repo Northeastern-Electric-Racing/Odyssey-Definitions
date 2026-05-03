@@ -2232,7 +2232,7 @@
           "inc_max": 2,
           "round": false
         },
-        "c_type": "int32_t",
+        "c_type": "float",
         "name": "car_speed"
       },
       {
@@ -2267,7 +2267,7 @@
           "inc_max": 10,
           "round": false
         },
-        "c_type": "uint32_t",
+        "c_type": "float",
         "name": "torque_limit_percentage"
       },
       {
@@ -2513,6 +2513,42 @@
         },
         "c_type": "float",
         "name": "brake_norm"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "brake_psi_brake1",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "sim": {
+          "min": 0,
+          "max": 5000,
+          "inc_min": 0.1,
+          "inc_max": 500,
+          "round": false
+        },
+        "endianness": "big"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "brake_psi_brake2",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "sim": {
+          "min": 0,
+          "max": 5000,
+          "inc_min": 0.1,
+          "inc_max": 500,
+          "round": false
+        }
       }
     ],
     "fields": [
@@ -2533,6 +2569,24 @@
         ],
         "doc": "How far the brake pedal is pressed, ranging from 0 to 1.",
         "desc": "'0' corresponds to 0% (pedal is not pressed down at all). '1' corresponds to 100% (pedal is pressed down as far as possible)."
+      },
+      {
+        "name": "VCU/Pedals/PSI/Brake_Front",
+        "unit": "psig",
+        "values": [
+          3
+        ],
+        "doc": "Front Brake Sensor (BRAKE1) as PSI.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/PSI/Brake_Back",
+        "unit": "psig",
+        "values": [
+          4
+        ],
+        "doc": "Back Brake Sensor (BRAKE2) as PSI.",
+        "desc": ""
       }
     ],
     "sim_freq": 250
@@ -2838,7 +2892,7 @@
         "endianness": "big",
         "formatter": {
           "key": "divide",
-          "arg": 100
+          "arg": 4
         },
         "sim": {
           "min": 0,
@@ -2856,7 +2910,7 @@
         "endianness": "big",
         "formatter": {
           "key": "divide",
-          "arg": 100
+          "arg": 4
         },
         "sim": {
           "min": 0,
@@ -2874,7 +2928,7 @@
         "endianness": "big",
         "formatter": {
           "key": "divide",
-          "arg": 100
+          "arg": 4
         },
         "sim": {
           "min": 0,
@@ -2977,24 +3031,6 @@
         },
         "c_type": "bool",
         "name": "LIGHTNING_CAN_MONITOR_FAULT"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
-        "name": "SHUTDOWN_FAULT"
       },
       {
         "size": 1,
@@ -3193,6 +3229,47 @@
             ]
           ]
         }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "PRECHARGE_FLOATING_FAULT",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "LATCHING_ACTIVE_FAULT",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              0,
+              0.2
+            ]
+          ]
+        }
+      },
+      {
+        "size": 7,
+        "signed": false,
+        "parse": false
       }
     ],
     "fields": [
@@ -3233,7 +3310,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Critical/SHUTDOWN_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_TEMP_FAULT",
         "unit": "",
         "values": [
           5
@@ -3242,7 +3319,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/ONBOARD_TEMP_FAULT",
+        "name": "VCU/Faults/Non-Critical/IMU_ACCEL_FAULT",
         "unit": "",
         "values": [
           6
@@ -3251,7 +3328,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/IMU_ACCEL_FAULT",
+        "name": "VCU/Faults/Non-Critical/IMU_GYRO_FAULT",
         "unit": "",
         "values": [
           7
@@ -3260,7 +3337,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/IMU_GYRO_FAULT",
+        "name": "VCU/Faults/Non-Critical/BSPD_PREFAULT",
         "unit": "",
         "values": [
           8
@@ -3269,7 +3346,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/BSPD_PREFAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_BRAKE_OPEN_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           9
@@ -3278,7 +3355,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/ONBOARD_BRAKE_OPEN_CIRCUIT_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_ACCEL_OPEN_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           10
@@ -3287,7 +3364,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/ONBOARD_ACCEL_OPEN_CIRCUIT_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_BRAKE_SHORT_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           11
@@ -3296,7 +3373,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/ONBOARD_BRAKE_SHORT_CIRCUIT_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_ACCEL_SHORT_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           12
@@ -3305,7 +3382,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/ONBOARD_ACCEL_SHORT_CIRCUIT_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_PEDAL_DIFFERENCE_FAULT",
         "unit": "",
         "values": [
           13
@@ -3314,7 +3391,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/ONBOARD_PEDAL_DIFFERENCE_FAULT",
+        "name": "VCU/Faults/Non-Critical/RTDS_FAULT",
         "unit": "",
         "values": [
           14
@@ -3323,7 +3400,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/RTDS_FAULT",
+        "name": "VCU/Faults/Non-Critical/LV_LOW_VOLTAGE_FAULT",
         "unit": "",
         "values": [
           15
@@ -3332,10 +3409,19 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/LV_LOW_VOLTAGE_FAULT",
+        "name": "VCU/Faults/Critical/PRECHARGE_FLOATING_FAULT",
         "unit": "",
         "values": [
           16
+        ],
+        "doc": "If TS Volts is stuck under the Batt Volts Threshold",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/Critical/LATCHING_ACTIVE_FAULT",
+        "unit": "",
+        "values": [
+          17
         ],
         "doc": "",
         "desc": ""
@@ -4041,6 +4127,233 @@
         ],
         "doc": "LV Box Fan PWM Percentage",
         "desc": "Range from 0 to 100. This is the commanded fan PWM duty cycle in percent.(0% at 20°C and 100% at 40°C)."
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0xEB",
+    "desc": "BMS Shutdown Status as Reported By VCU",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "bms_shutdown_as_reported_by_vcu",
+        "c_type": "bool"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Echo/BMS_Shutdown_From_VCU",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "BMS Shutdown Status, as tracked and reported by VCU.",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "id": "0x503",
+    "desc": "Drive Lock States",
+    "points": [
+      {
+        "size": 1,
+        "signed": false,
+        "name": "BRAKE_OC",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "BRAKE_SC",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "ACCEL_OC",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "ACCEL_SC",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "ACCEL_DIFF",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "BSPD_PREF",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "BMS_NOT_PRECHARGED_YET",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "empty",
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Pedals/Drive_Locks/BRAKE_OC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/Drive_Locks/BRAKE_SC",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/Drive_Locks/ACCEL_OC",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/Drive_Locks/ACCEL_SC",
+        "unit": "",
+        "values": [
+          4
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/Drive_Locks/ACCEL_DIFF",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/Drive_Locks/BSPD_PREF",
+        "unit": "",
+        "values": [
+          6
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Pedals/Drive_Locks/BMS_NOT_PRECHARGED_YET",
+        "unit": "",
+        "values": [
+          7
+        ],
+        "doc": "",
+        "desc": ""
       }
     ],
     "sim_freq": 250
