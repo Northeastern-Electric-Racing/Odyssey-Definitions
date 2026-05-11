@@ -1,14 +1,11 @@
 "use client"
 
-import { useSearchParams } from "next/navigation" // Import useSearchParams
 import * as React from "react"
 import { ChevronRight, File, Folder, Search } from "lucide-react"
-import Link from "next/link"
-import { useState, createContext, useContext, useEffect } from "react"
-import { GlobalDataContext, defaultSections, GlobalStateContext, GlobalState } from "@/app/data"
-import { RenderPageEnum } from "@/app/data"
+import { useState, useContext } from "react"
+import { GlobalDataContext, GlobalStateContext, GlobalState, matchesQuery } from "@/app/data"
 import { fetchGitHubContentV3 } from "@/app/data"
-import { CanMsgJsonFileV2, DEFAULT_BRANCH, SourceMode } from "@/types/datatypes"
+import { CanMsgJsonFileV2, CanMsgV2, DEFAULT_BRANCH, SourceMode } from "@/types/datatypes"
 
 import {
   Collapsible,
@@ -32,11 +29,13 @@ import { Label } from "@/components/ui/label"
 
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-import { cn } from "@/lib/utils"
-
-export function SearchForm({ ...props }: React.ComponentProps<"form">) {
+export function SearchForm({
+  value,
+  onChange,
+  ...props
+}: Omit<React.ComponentProps<"form">, "onChange"> & { value: string; onChange: (v: string) => void }) {
   return (
-    <form {...props}>
+    <form {...props} onSubmit={(e) => e.preventDefault()}>
       <SidebarGroup className="py-0">
         <SidebarGroupContent className="relative">
           <Label htmlFor="search" className="sr-only">
@@ -44,8 +43,10 @@ export function SearchForm({ ...props }: React.ComponentProps<"form">) {
           </Label>
           <SidebarInput
             id="search"
-            placeholder="Search files..."
+            placeholder="Search id, desc, fields, docs..."
             className="pl-8 border-none"
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
           />
           <Search className="pointer-events-none absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 select-none opacity-50" />
         </SidebarGroupContent>
@@ -54,9 +55,6 @@ export function SearchForm({ ...props }: React.ComponentProps<"form">) {
   )
 }
 
-
-
-// Extracted DataSourcePanel component
 function DataSourcePanel({
   sourceMode,
   selectedBranch,
@@ -107,37 +105,16 @@ function DataSourcePanel({
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const searchParams = useSearchParams()
-  const branchParam = searchParams.get("branch") || "main"
   const { globalData, setGlobalData } = useContext(GlobalDataContext)
   const { globalState, setGlobalState } = useContext(GlobalStateContext)
-  const [isLoading, setIsLoading] = useState(false) // Add loading state
-  const [error, setError] = useState<string | null>(null) // Add error state
-
-  const handleFileSelect = async (event: any) => {
-    const files = event.target.files as FileList
-    const newAllFiles: CanMsgJsonFileV2[] = []
-
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i]
-      const filename = file.name
-      const text = await file.text()
-      const json = JSON.parse(text)
-      // Assuming json fits CanMsgJsonFileV2 structure
-      const fileObject: CanMsgJsonFileV2 = { filename, content: json, is_dirty: false }
-      newAllFiles.push(fileObject)
-    }
-    setGlobalData(newAllFiles) // Update globalData
-
-    // Use the newAllFiles array directly to log filenames
-    console.log(newAllFiles.map((msg) => [msg.filename]))
-  }
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleFetchFromGitHub = async () => {
     setIsLoading(true)
     setError(null)
     try {
-      const data = await fetchGitHubContentV3(globalState.selectedBranch ?? DEFAULT_BRANCH) as CanMsgJsonFileV2[] // Use globalState.selectedBranch
+      const data = await fetchGitHubContentV3(globalState.selectedBranch ?? DEFAULT_BRANCH) as CanMsgJsonFileV2[]
       setGlobalData(data)
     } catch (err) {
       setError("Failed to fetch GitHub content.")
@@ -151,7 +128,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     setGlobalState(prev => ({
       ...prev,
       selectedBranch: newBranch,
-      dataSource: SourceMode.GitHub, // Reset dataSource to GitHub on branch change
+      dataSource: SourceMode.GitHub,
     }))
   }
 
@@ -177,7 +154,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <DataSourcePanel
                 sourceMode={globalState.dataSource}
                 selectedBranch={globalState.selectedBranch}
-                setSelectedBranch={handleBranchChange} // Update globalState
+                setSelectedBranch={handleBranchChange}
                 handleFetchFromGitHub={handleFetchFromGitHub}
                 setGlobalState={setGlobalState}
                 isLoading={isLoading}
@@ -189,34 +166,20 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarGroup>
 
         <SidebarGroup>
-          <SidebarGroupLabel>Sections</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {defaultSections.sections.map((link, index) => (
-                <SidebarMenuItem key={index}>
-                  <SidebarMenuButton onClick={() => {
-                    setGlobalState(prev => ({
-                      ...prev,
-                      activePage: link.name as RenderPageEnum
-                    }))
-                  }}>
-                    <File className="h-4 w-4" />
-                    {link.name}
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-        <SidebarGroup>
           <SidebarGroupLabel>Files</SidebarGroupLabel>
           <SearchForm
             className="w-full p-2 mb-2 rounded"
+            value={globalState.searchQuery}
+            onChange={(v) => setGlobalState(prev => ({ ...prev, searchQuery: v }))}
           />
           <SidebarGroupContent>
             <SidebarMenu>
               {globalData.map((item, index) => (
-                <Tree key={index} item={item} setGlobalState={setGlobalState} /> // Pass setGlobalState
+                <Tree
+                  key={index}
+                  item={item}
+                  searchQuery={globalState.searchQuery}
+                />
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
@@ -228,47 +191,44 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   )
 }
 
+const scrollToAnchor = (anchor: string) => {
+  const el = document.getElementById(anchor);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  history.replaceState(null, "", `#${anchor}`);
+};
 
-
-function Tree({ item, setGlobalState }: { item: CanMsgJsonFileV2, setGlobalState: React.Dispatch<React.SetStateAction<GlobalState>> }) {
+function Tree({
+  item,
+  searchQuery,
+}: {
+  item: CanMsgJsonFileV2,
+  searchQuery: string,
+}) {
   const { filename, content } = item
 
-  // Handles click on a JSON file
-  const handleFileClick = () => {
-    setGlobalState(prev => ({
-      ...prev,
-      activeFile: item,
-      activePage: RenderPageEnum.Details,
-    }));
-  };
-
-  // Handles click for a specific Can ID
-  const handleItemClick = (item: CanMsgJsonFileV2, a: any) => {
-    setGlobalState(prev => ({
-      ...prev,
-      activeFile: item,
-      activePage: RenderPageEnum.Details,
-    }));
-    window.location.hash = `msg-${a.id}`
-  }
-
-  // Ensure content is an array
   const contentArray = Array.isArray(content) ? content : [];
+  if (!contentArray.length) return null;
 
-  console.log("Content:", content);
-  console.log("Content Array:", contentArray);
-  if (!contentArray.length) {
-    console.error("Error: Content is not an array or is empty:", typeof content, content);
-    throw new Error(`Invalid content: ${typeof content} - ${JSON.stringify(content)}`);
-  } else {
-    console.log("Content array is not empty, length:", contentArray.length);
-  }
+  const q = searchQuery.trim();
+  const filenameMatches = filename.toLowerCase().includes(q.toLowerCase());
+  const visibleMessages = q
+    ? contentArray.filter((m: CanMsgV2) => filenameMatches || matchesQuery(m, q))
+    : contentArray;
+
+  if (q && visibleMessages.length === 0 && !filenameMatches) return null;
+
+  const handleFileClick = () => scrollToAnchor(`file-${filename}`);
+  const handleMsgClick = (msg: CanMsgV2, idx: number) =>
+    scrollToAnchor(`msg-${filename}-${msg.id ?? idx}`);
 
   return (
     <SidebarMenuItem>
       <Collapsible
         className="group/collapsible [&[data-state=open]>button>svg:first-child]:rotate-90"
-        defaultOpen={false}
+        defaultOpen={q.length > 0}
+        open={q.length > 0 ? true : undefined}
       >
         <CollapsibleTrigger asChild>
           <SidebarMenuButton onClick={handleFileClick}>
@@ -279,12 +239,20 @@ function Tree({ item, setGlobalState }: { item: CanMsgJsonFileV2, setGlobalState
         </CollapsibleTrigger>
         <CollapsibleContent>
           <SidebarMenuSub>
-            {contentArray.map((a, index) => (
-              <SidebarMenuButton onClick={() => {handleItemClick(item, a)}} key={index} className="truncate" title={`${a.id} - ${a.desc}`}>
-                <File />
-                <span className="truncate">{a.id} - {a.desc}</span>
-              </SidebarMenuButton>
-            ))}
+            {visibleMessages.map((a: CanMsgV2, index: number) => {
+              const label = a.id ? `${a.id} - ${a.desc}` : a.desc;
+              return (
+                <SidebarMenuButton
+                  onClick={() => handleMsgClick(a, index)}
+                  key={index}
+                  className="truncate"
+                  title={label}
+                >
+                  <File />
+                  <span className="truncate">{label}</span>
+                </SidebarMenuButton>
+              );
+            })}
           </SidebarMenuSub>
         </CollapsibleContent>
       </Collapsible>
