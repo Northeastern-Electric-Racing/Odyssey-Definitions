@@ -1,56 +1,56 @@
 import { createContext } from "react";
-import { CanMsgJsonFileV2 } from "@/types/datatypes";
+import { CanMsgJsonFileV2, CanMsgV2 } from "@/types/datatypes";
 import { SourceMode } from "@/types/datatypes";
 
-export enum RenderPageEnum {
-    Overview = "Overview",
-    Settings = "Settings",
-    Profile = "Profile",
-    Details = "Details",
-}
+/**
+ * Returns true if any human-readable field on a CanMsg (id, desc, key,
+ * bidir_mode, net field name/unit/doc/desc, can point name/c_type/format)
+ * contains the given query.
+ */
+export const matchesQuery = (msg: CanMsgV2, query: string): boolean => {
+    if (!query) return true;
+    const q = query.toLowerCase();
+    const fields = msg.fields ?? [];
+    const points = msg.points ?? [];
+    const haystacks: (string | number | undefined)[] = [
+        msg.id,
+        msg.desc,
+        msg.key,
+        msg.bidir_mode,
+        ...(msg.clients ?? []),
+        ...fields.flatMap(f => [f.name, f.unit, f.doc, f.desc]),
+        ...points.flatMap(p => [p.name, p.c_type, p.format, p.formatter?.key]),
+    ];
+    return haystacks.some(v => v !== undefined && String(v).toLowerCase().includes(q));
+};
 
 export const GlobalDataContext = createContext<{
     globalData: CanMsgJsonFileV2[],
     setGlobalData: React.Dispatch<React.SetStateAction<CanMsgJsonFileV2[]>>
 }>({
-    globalData: [], // Your initial global data
-    setGlobalData: () => { } // Function to update the data
+    globalData: [],
+    setGlobalData: () => { }
 });
 
 export interface GlobalState {
-    activePage: RenderPageEnum;
-    activeFile: CanMsgJsonFileV2 | null;
     dataSource: SourceMode;
     selectedBranch: string | null;
+    searchQuery: string;
 }
-
-
 
 export const GlobalStateContext = createContext<{
     globalState: GlobalState,
     setGlobalState: React.Dispatch<React.SetStateAction<GlobalState>>
 }>({
     globalState: {
-        activePage: RenderPageEnum.Overview,
-        activeFile: null,
         dataSource: SourceMode.GitHub,
         selectedBranch: null,
+        searchQuery: "",
     },
     setGlobalState: (state) => {
         console.log("Default setGlobalState called with:", state);
     }
 });
-
-export const defaultSections = {
-  sections: [
-    {
-      name: RenderPageEnum.Overview,
-      path: "/overview",
-    },
-  ],
-};
-
-
 
 export const fetchGitHubContentV3 = async (branch: string) => {
     try {
@@ -79,7 +79,7 @@ export const fetchGitHubContentV3 = async (branch: string) => {
         const newCanMsgJsonFiles: CanMsgJsonFileV2[] = fetchedFileContents.map(file => {
             return {
                 filename: file.name,
-                content: file.rawContent, // Assuming rawContent is in the format of CanMsgV2[]
+                content: file.rawContent,
                 is_dirty: false
             } as CanMsgJsonFileV2;
         });
