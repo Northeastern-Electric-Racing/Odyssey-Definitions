@@ -3048,6 +3048,42 @@
           ]
         },
         "c_type": "bool",
+        "name": "MOTOR_TEMP_SENSOR_FAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
+        "name": "SHUTDOWN_FAULT"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        },
+        "c_type": "bool",
         "name": "ONBOARD_TEMP_FAULT"
       },
       {
@@ -3231,44 +3267,7 @@
         }
       },
       {
-        "size": 1,
-        "signed": false,
-        "name": "PRECHARGE_FLOATING_FAULT",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        }
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "name": "LATCHING_ACTIVE_FAULT",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              0,
-              0.2
-            ]
-          ]
-        }
-      },
-      {
-        "size": 7,
-        "signed": false,
+        "size":7,
         "parse": false
       }
     ],
@@ -3310,7 +3309,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/ONBOARD_TEMP_FAULT",
+        "name": "VCU/Faults/Critical/MOTOR_TEMP_SENSOR_FAULT",
         "unit": "",
         "values": [
           5
@@ -3319,7 +3318,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/IMU_ACCEL_FAULT",
+        "name": "VCU/Faults/Critical/SHUTDOWN_FAULT",
         "unit": "",
         "values": [
           6
@@ -3328,7 +3327,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/IMU_GYRO_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_TEMP_FAULT",
         "unit": "",
         "values": [
           7
@@ -3337,7 +3336,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/BSPD_PREFAULT",
+        "name": "VCU/Faults/Non-Critical/IMU_ACCEL_FAULT",
         "unit": "",
         "values": [
           8
@@ -3346,7 +3345,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/ONBOARD_BRAKE_OPEN_CIRCUIT_FAULT",
+        "name": "VCU/Faults/Non-Critical/IMU_GYRO_FAULT",
         "unit": "",
         "values": [
           9
@@ -3355,7 +3354,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/ONBOARD_ACCEL_OPEN_CIRCUIT_FAULT",
+        "name": "VCU/Faults/Non-Critical/BSPD_PREFAULT",
         "unit": "",
         "values": [
           10
@@ -3364,7 +3363,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/ONBOARD_BRAKE_SHORT_CIRCUIT_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_BRAKE_OPEN_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           11
@@ -3373,7 +3372,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/ONBOARD_ACCEL_SHORT_CIRCUIT_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_ACCEL_OPEN_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           12
@@ -3382,7 +3381,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/ONBOARD_PEDAL_DIFFERENCE_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_BRAKE_SHORT_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           13
@@ -3391,7 +3390,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/RTDS_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_ACCEL_SHORT_CIRCUIT_FAULT",
         "unit": "",
         "values": [
           14
@@ -3400,7 +3399,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Non-Critical/LV_LOW_VOLTAGE_FAULT",
+        "name": "VCU/Faults/Non-Critical/ONBOARD_PEDAL_DIFFERENCE_FAULT",
         "unit": "",
         "values": [
           15
@@ -3409,16 +3408,16 @@
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Critical/PRECHARGE_FLOATING_FAULT",
+        "name": "VCU/Faults/Non-Critical/RTDS_FAULT",
         "unit": "",
         "values": [
           16
         ],
-        "doc": "If TS Volts is stuck under the Batt Volts Threshold",
+        "doc": "",
         "desc": ""
       },
       {
-        "name": "VCU/Faults/Critical/LATCHING_ACTIVE_FAULT",
+        "name": "VCU/Faults/Non-Critical/LV_LOW_VOLTAGE_FAULT",
         "unit": "",
         "values": [
           17
