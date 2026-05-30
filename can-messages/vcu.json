@@ -1947,24 +1947,6 @@
           ]
         },
         "c_type": "bool",
-        "name": "spare_gpio"
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        },
-        "c_type": "bool",
         "name": "bspd_gpio"
       },
       {
@@ -2076,7 +2058,7 @@
         "name": "tsms_gpio"
       },
       {
-        "size": 6,
+        "size": 7,
         "signed": false,
         "parse": false,
         "name": "UNUSED",
@@ -2103,7 +2085,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Shutdown/SPARE_GPIO",
+        "name": "VCU/Shutdown/BSPD_GPIO",
         "unit": "",
         "values": [
           3
@@ -2112,7 +2094,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Shutdown/BSPD_GPIO",
+        "name": "VCU/Shutdown/HV_C_GPIO",
         "unit": "",
         "values": [
           4
@@ -2121,7 +2103,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Shutdown/HV_C_GPIO",
+        "name": "VCU/Shutdown/HVD_GPIO",
         "unit": "",
         "values": [
           5
@@ -2130,7 +2112,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Shutdown/HVD_GPIO",
+        "name": "VCU/Shutdown/IMD_GPIO",
         "unit": "",
         "values": [
           6
@@ -2139,7 +2121,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Shutdown/IMD_GPIO",
+        "name": "VCU/Shutdown/CKPT_GPIO",
         "unit": "",
         "values": [
           7
@@ -2148,7 +2130,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/Shutdown/CKPT_GPIO",
+        "name": "VCU/Shutdown/INERTIA_SW_GPIO",
         "unit": "",
         "values": [
           8
@@ -2157,19 +2139,10 @@
         "desc": ""
       },
       {
-        "name": "VCU/Shutdown/INERTIA_SW_GPIO",
-        "unit": "",
-        "values": [
-          9
-        ],
-        "doc": "",
-        "desc": ""
-      },
-      {
         "name": "VCU/Shutdown/TSMS_GPIO",
         "unit": "",
         "values": [
-          10
+          9
         ],
         "doc": "",
         "desc": ""
@@ -4357,5 +4330,35 @@
       }
     ],
     "sim_freq": 250
+  },
+  {
+    "id": "0x510",
+    "desc": "Reset Latching Fault",
+    "points": [
+      {
+        "size": 1,
+        "signed": false,
+        "name": "reset_latching",
+        "c_type": "bool"
+      },
+      {
+        "size": 7,
+        "signed": false,
+        "name": "",
+        "c_type": "",
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/Lightning/Reset_Latching_Faults",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Tells Lightning to Reset Latching Faults",
+        "desc": ""
+      }
+    ]
   }
 ]
