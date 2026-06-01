@@ -1,5 +1,122 @@
 [
   {
+    "id": "0x3F6",
+    "desc": "Control_mode_motor_stat_iq",
+    "points": [
+      {
+        "size": 8,
+        "sim": {
+          "options": [
+            [
+              1,
+              0.1
+            ],
+            [
+              2,
+              0.5
+            ],
+            [
+              3,
+              0.1
+            ],
+            [
+              4,
+              0.1
+            ],
+            [
+              7,
+              0.2
+            ]
+          ]
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "sim": {
+          "min": -550,
+          "max": 550,
+          "inc_min": 1,
+          "inc_max": 50
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "sim": {
+          "min": 0,
+          "max": 359,
+          "inc_min": 0.1,
+          "inc_max": 359
+        }
+      },
+      {
+        "size": 8,
+        "sim": {
+          "options": [
+            [
+              0,
+              0.2
+            ],
+            [
+              1,
+              0.8
+            ]
+          ]
+        }
+      },
+      {
+        "size": 16,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "DTI/Control/Mode",
+        "unit": "#",
+        "doc": "Describes the control mode of the inverter. Mainly used in multi-controller configurations for internal communication.",
+        "desc": "1: CONTROL_MODE_SPEED\n2: CONTROL_MODE_CURRENT\n3: CONTROL_MODE_CURRENT_BRAKE\n4: CONTROL_MODE_POS\n7: CONTROL_MODE_NONE",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "DTI/Control/TargetIq",
+        "unit": "Apk",
+        "doc": "The value represent how much Iq current the inverter is targeted to reach.",
+        "desc": "This value excludes limits. For ex. if the target Iq is 50 A and temperature limit is hit, the values keep 50 A in any case, not including the deration of the temp. limit. This is useful in multi-inverter configuration to let know the secondary inverter the target Iq.",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "DTI/Control/MotorPosition",
+        "unit": "degree",
+        "doc": "Motor position expressed in degrees.",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "DTI/Control/IsMotorStill",
+        "unit": "degree",
+        "doc": "Represents if the motor in still position or not.",
+        "desc": "1=still, 0=moving",
+        "values": [
+          4
+        ]
+      }
+    ]
+  },
+  {
     "id": "0x416",
     "desc": "ERPM_Duty_Input_Voltage_Status",
     "points": [
@@ -7,8 +124,8 @@
         "size": 32,
         "signed": true,
         "sim": {
-          "min": -1000000,
-          "max": 1000000,
+          "min": -120000,
+          "max": 120000,
           "inc_min": 1,
           "inc_max": 1
         }
@@ -21,8 +138,8 @@
           "arg": 10
         },
         "sim": {
-          "min": -4000,
-          "max": 4000,
+          "min": -100,
+          "max": 100,
           "inc_min": 1,
           "inc_max": 1
         }
@@ -32,7 +149,7 @@
         "signed": true,
         "sim": {
           "min": 0,
-          "max": 505,
+          "max": 546,
           "inc_min": 0.01,
           "inc_max": 10
         }
@@ -80,8 +197,8 @@
           "arg": 10
         },
         "sim": {
-          "min": -125,
-          "max": 250,
+          "min": -550,
+          "max": 550,
           "inc_min": 0.01,
           "inc_max": 20
         }
@@ -108,7 +225,7 @@
     "fields": [
       {
         "name": "DTI/Power/AC_Current",
-        "unit": "A",
+        "unit": "Apk",
         "doc": "The motor current",
         "desc": "The sign of this value represents whether the motor is running(positive) current or regenerating (negative) current",
         "values": [
@@ -117,7 +234,7 @@
       },
       {
         "name": "DTI/Power/DC_Current",
-        "unit": "A",
+        "unit": "Adc",
         "doc": "Current on the DC side",
         "desc": "The sign of this value represents whether the motor is running(positive) current or regenerating (negative) current. ",
         "values": [
@@ -256,8 +373,8 @@
           "arg": 100
         },
         "sim": {
-          "min": -1000000,
-          "max": 1000000,
+          "min": -550,
+          "max": 550,
           "inc_min": 1,
           "inc_max": 1
         }
@@ -270,8 +387,8 @@
           "arg": 100
         },
         "sim": {
-          "min": -1000000,
-          "max": 1000000,
+          "min": -550,
+          "max": 550,
           "inc_min": 1,
           "inc_max": 1
         }
@@ -280,7 +397,7 @@
     "fields": [
       {
         "name": "DTI/FOC/Component_Id",
-        "unit": "A",
+        "unit": "Apk",
         "doc": "FOC algorithm component Id",
         "values": [
           1
@@ -288,7 +405,7 @@
       },
       {
         "name": "DTI/FOC/Component_Iq",
-        "unit": "A",
+        "unit": "Apk",
         "doc": "FOC algorithm component Iq",
         "values": [
           2
@@ -848,6 +965,198 @@
       }
     ],
     "sim_freq": 25
+  },
+  {
+    "id": "0x4B6",
+    "desc": "Configured_and_available_ac_currents",
+    "points": [
+      {
+        "size": 16,
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "sim": {
+          "min": 0,
+          "max": 550,
+          "inc_min": 1,
+          "inc_max": 50
+        }
+      },
+      {
+        "size": 16,
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "sim": {
+          "min": 0,
+          "max": 550,
+          "inc_min": 1,
+          "inc_max": 50
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "sim": {
+          "min": -550,
+          "max": 0,
+          "inc_min": 1,
+          "inc_max": 50
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "sim": {
+          "min": -550,
+          "max": 0,
+          "inc_min": 1,
+          "inc_max": 50
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "DTI/AC_Current/Max",
+        "unit": "Apk",
+        "doc": "Max AC current configured with the DTI CAN tool.",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "DTI/AC_Current/Available_Max",
+        "unit": "Apk",
+        "doc": "Available max AC current.",
+        "desc": "This value affected by the limitation functions (igbt temp, motortemp etc.) Defines how much current available from the configured one",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "DTI/AC_Current/Min",
+        "unit": "Apk",
+        "doc": "Min AC current configured with the DTI CAN tool.",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "DTI/AC_Current/Available_Min",
+        "unit": "Apk",
+        "doc": "Available min AC current.",
+        "desc": "This value affected by the limitation functions (igbt temp, motortemp etc.) Defines how much current available from the configured one.",
+        "values": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "0x4D6",
+    "desc": "Configured_and_available_dc_currents",
+    "points": [
+      {
+        "size": 16,
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "sim": {
+          "min": 0,
+          "max": 550,
+          "inc_min": 1,
+          "inc_max": 50
+        }
+      },
+      {
+        "size": 16,
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "sim": {
+          "min": 0,
+          "max": 550,
+          "inc_min": 1,
+          "inc_max": 50
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "sim": {
+          "min": -550,
+          "max": 0,
+          "inc_min": 1,
+          "inc_max": 50
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "sim": {
+          "min": -550,
+          "max": 0,
+          "inc_min": 1,
+          "inc_max": 50
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "DTI/DC_Current/Max",
+        "unit": "Adc",
+        "doc": "Max DC current configured with the DTI CAN tool.",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "DTI/DC_Current/Available_Max",
+        "unit": "Adc",
+        "doc": "Available max DC current.",
+        "desc": "This value affected by the limitation functions (igbt temp, motortemp etc.) Defines how much current available from the configured one",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "DTI/DC_Current/Min",
+        "unit": "Adc",
+        "doc": "Min DC current configured with the DTI CAN tool.",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "DTI/DC_Current/Available_Min",
+        "unit": "Adc",
+        "doc": "Available min DC current.",
+        "desc": "This value affected by the limitation functions (igbt temp, motortemp etc.) Defines how much current available from the configured one.",
+        "values": [
+          4
+        ]
+      }
+    ]
   },
   {
     "id": "0x036",
