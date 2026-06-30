@@ -578,5 +578,263 @@
     "key": "RTDSCommand",
     "sim_freq": 7500,
     "bidir_mode": "oneshot"
+  },
+  {
+    "id": "0x456",
+    "desc": "Shepherd BMS Alpha Emulated Cell Data",
+    "points": [
+      {
+        "size": 10,
+        "signed": false,
+        "name": "therm",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "sim": {
+          "min": 20,
+          "max": 80,
+          "inc_min": 0.01,
+          "inc_max": 0.5,
+          "round": false
+        }
+      },
+      {
+        "size": 13,
+        "signed": false,
+        "name": "voltage_a",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 2.5,
+          "max": 4.25,
+          "inc_min": 0.01,
+          "inc_max": 0.2,
+          "round": false
+        }
+      },
+      {
+        "size": 13,
+        "signed": false,
+        "name": "voltage_b",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 2.5,
+          "max": 4.25,
+          "inc_min": 0.01,
+          "inc_max": 0.2
+        }
+      },
+      {
+        "size": 4,
+        "signed": false,
+        "name": "chip_id",
+        "c_type": "uint8_t",
+        "sim": {
+          "min": 0,
+          "max": 4,
+          "inc_min": 1,
+          "inc_max": 1,
+          "round": true
+        }
+      },
+      {
+        "size": 4,
+        "signed": false,
+        "name": "cell_a",
+        "c_type": "uint8_t",
+        "sim": {
+          "min": 0,
+          "max": 6,
+          "inc_min": 1,
+          "inc_max": 1,
+          "round": true
+        }
+      },
+      {
+        "size": 4,
+        "signed": false,
+        "name": "cell_b",
+        "c_type": "uint8_t",
+        "sim": {
+          "min": 0,
+          "max": 13,
+          "inc_min": 1,
+          "inc_max": 1,
+          "round": true
+        }
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/BMSAlphaEmulatedCellData/{4}/Therms/{5}",
+        "unit": "C",
+        "values": [
+          1
+        ],
+        "doc": "Current emulated thermistor temperature"
+      },
+      {
+        "name": "Calypso/Bidir/State/BMSAlphaEmulatedCellData/{4}/Volts/{5}",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "Current emulated cell voltage"
+      },
+      {
+        "name": "Calypso/Bidir/State/BMSAlphaEmulatedCellData/{4}/Volts/{6}",
+        "unit": "V",
+        "values": [
+          3
+        ],
+        "doc": "Current emulated cell voltage"
+      }
+    ],
+    "key": "BMSBetaEmulatedCellData",
+    "bidir_mode": "broadcast",
+    "sim_freq": 500
+  },
+  {
+    "id": "0x457",
+    "desc": "Shepherd BMS Beta Emulated Cell Data",
+    "points": [
+      {
+        "size": 10,
+        "signed": false,
+        "name": "therm",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "sim": {
+          "min": 20,
+          "max": 80,
+          "inc_min": 0.01,
+          "inc_max": 0.5,
+          "round": false
+        }
+      },
+      {
+        "size": 13,
+        "signed": false,
+        "name": "voltage_a",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 2.5,
+          "max": 4.25,
+          "inc_min": 0.01,
+          "inc_max": 0.2,
+          "round": false
+        }
+      },
+      {
+        "size": 13,
+        "signed": false,
+        "name": "voltage_b",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 2.5,
+          "max": 4.25,
+          "inc_min": 0.01,
+          "inc_max": 0.2
+        }
+      },
+      {
+        "size": 4,
+        "signed": false,
+        "name": "chip_id",
+        "c_type": "uint8_t",
+        "sim": {
+          "min": 0,
+          "max": 4,
+          "inc_min": 1,
+          "inc_max": 1,
+          "round": true
+        }
+      },
+      {
+        "size": 4,
+        "signed": false,
+        "name": "cell_a",
+        "c_type": "uint8_t",
+        "sim": {
+          "min": 0,
+          "max": 5,
+          "inc_min": 1,
+          "inc_max": 1,
+          "round": true
+        }
+      },
+      {
+        "size": 4,
+        "signed": false,
+        "name": "cell_b",
+        "c_type": "uint8_t",
+        "sim": {
+          "min": 0,
+          "max": 10,
+          "inc_min": 1,
+          "inc_max": 1,
+          "round": true
+        }
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "Calypso/Bidir/State/BMSBetaEmulatedCellData/{4}/Therms/{5}",
+        "unit": "C",
+        "values": [
+          1
+        ],
+        "doc": "Current emulated thermistor temperature"
+      },
+      {
+        "name": "Calypso/Bidir/State/BMSBetaEmulatedCellData/{4}/Volts/{5}",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "Current emulated cell voltage"
+      },
+      {
+        "name": "Calypso/Bidir/State/BMSBetaEmulatedCellData/{4}/Volts/{6}",
+        "unit": "V",
+        "values": [
+          3
+        ],
+        "doc": "Current emulated cell voltage"
+      }
+    ],
+    "key": "BMSBetaEmulatedCellData",
+    "bidir_mode": "broadcast",
+    "sim_freq": 500
   }
 ]
