@@ -580,7 +580,7 @@
     "bidir_mode": "oneshot"
   },
   {
-    "id": "0x456",
+    "id": "0x451",
     "desc": "Shepherd BMS Alpha Emulated Cell Data",
     "points": [
       {
@@ -709,7 +709,7 @@
     "sim_freq": 500
   },
   {
-    "id": "0x457",
+    "id": "0x452",
     "desc": "Shepherd BMS Beta Emulated Cell Data",
     "points": [
       {
