@@ -704,7 +704,7 @@
         "doc": "Current emulated cell voltage"
       }
     ],
-    "key": "BMSBetaEmulatedCellData",
+    "key": "BMSAlphaEmulatedCellData",
     "bidir_mode": "broadcast",
     "sim_freq": 500
   },
