@@ -581,7 +581,7 @@
   },
   {
     "id": "0x451",
-    "desc": "Shepherd BMS Alpha Emulated Cell Data",
+    "desc": "Shepherd BMS Emulated Alpha Cell Data",
     "points": [
       {
         "size": 10,
@@ -680,7 +680,7 @@
     ],
     "fields": [
       {
-        "name": "Calypso/Bidir/State/BMSAlphaEmulatedCellData/{4}/Therms/{5}",
+        "name": "Calypso/Bidir/State/BMSEmulatedAlphaCellData/{4}/Therms/{5}",
         "unit": "C",
         "values": [
           1
@@ -688,7 +688,7 @@
         "doc": "Current emulated thermistor temperature"
       },
       {
-        "name": "Calypso/Bidir/State/BMSAlphaEmulatedCellData/{4}/Volts/{5}",
+        "name": "Calypso/Bidir/State/BMSEmulatedAlphaCellData/{4}/Volts/{5}",
         "unit": "V",
         "values": [
           2
@@ -696,7 +696,7 @@
         "doc": "Current emulated cell voltage"
       },
       {
-        "name": "Calypso/Bidir/State/BMSAlphaEmulatedCellData/{4}/Volts/{6}",
+        "name": "Calypso/Bidir/State/BMSEmulatedAlphaCellData/{4}/Volts/{6}",
         "unit": "V",
         "values": [
           3
@@ -704,13 +704,13 @@
         "doc": "Current emulated cell voltage"
       }
     ],
-    "key": "BMSAlphaEmulatedCellData",
+    "key": "BMSEmulatedAlphaCellData",
     "bidir_mode": "broadcast",
     "sim_freq": 500
   },
   {
     "id": "0x452",
-    "desc": "Shepherd BMS Beta Emulated Cell Data",
+    "desc": "Shepherd BMS Emulated Beta Cell Data",
     "points": [
       {
         "size": 10,
@@ -809,7 +809,7 @@
     ],
     "fields": [
       {
-        "name": "Calypso/Bidir/State/BMSBetaEmulatedCellData/{4}/Therms/{5}",
+        "name": "Calypso/Bidir/State/BMSEmulatedBetaCellData/{4}/Therms/{5}",
         "unit": "C",
         "values": [
           1
@@ -817,7 +817,7 @@
         "doc": "Current emulated thermistor temperature"
       },
       {
-        "name": "Calypso/Bidir/State/BMSBetaEmulatedCellData/{4}/Volts/{5}",
+        "name": "Calypso/Bidir/State/BMSEmulatedBetaCellData/{4}/Volts/{5}",
         "unit": "V",
         "values": [
           2
@@ -825,7 +825,7 @@
         "doc": "Current emulated cell voltage"
       },
       {
-        "name": "Calypso/Bidir/State/BMSBetaEmulatedCellData/{4}/Volts/{6}",
+        "name": "Calypso/Bidir/State/BMSEmulatedBetaCellData/{4}/Volts/{6}",
         "unit": "V",
         "values": [
           3
@@ -833,7 +833,7 @@
         "doc": "Current emulated cell voltage"
       }
     ],
-    "key": "BMSBetaEmulatedCellData",
+    "key": "BMSEmulatedBetaCellData",
     "bidir_mode": "broadcast",
     "sim_freq": 500
   }
