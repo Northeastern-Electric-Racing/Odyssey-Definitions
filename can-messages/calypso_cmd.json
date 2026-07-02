@@ -590,7 +590,7 @@
         "c_type": "float",
         "formatter": {
           "key": "divide",
-          "arg": 10
+          "arg": 10.0
         },
         "sim": {
           "min": 20,
@@ -607,7 +607,7 @@
         "c_type": "float",
         "formatter": {
           "key": "divide",
-          "arg": 1000
+          "arg": 1000.0
         },
         "sim": {
           "min": 2.5,
@@ -624,7 +624,7 @@
         "c_type": "float",
         "formatter": {
           "key": "divide",
-          "arg": 1000
+          "arg": 1000.0
         },
         "sim": {
           "min": 2.5,
@@ -719,7 +719,7 @@
         "c_type": "float",
         "formatter": {
           "key": "divide",
-          "arg": 10
+          "arg": 10.0
         },
         "sim": {
           "min": 20,
@@ -736,7 +736,7 @@
         "c_type": "float",
         "formatter": {
           "key": "divide",
-          "arg": 1000
+          "arg": 1000.0
         },
         "sim": {
           "min": 2.5,
@@ -753,7 +753,7 @@
         "c_type": "float",
         "formatter": {
           "key": "divide",
-          "arg": 1000
+          "arg": 1000.0
         },
         "sim": {
           "min": 2.5,
