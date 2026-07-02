@@ -653,9 +653,9 @@
         "c_type": "uint8_t",
         "sim": {
           "min": 0,
-          "max": 6,
-          "inc_min": 1,
-          "inc_max": 1,
+          "max": 12,
+          "inc_min": 2,
+          "inc_max": 2,
           "round": true
         }
       },
@@ -665,10 +665,10 @@
         "name": "cell_b",
         "c_type": "uint8_t",
         "sim": {
-          "min": 0,
+          "min": 1,
           "max": 13,
-          "inc_min": 1,
-          "inc_max": 1,
+          "inc_min": 2,
+          "inc_max": 2,
           "round": true
         }
       },
@@ -782,9 +782,9 @@
         "c_type": "uint8_t",
         "sim": {
           "min": 0,
-          "max": 5,
-          "inc_min": 1,
-          "inc_max": 1,
+          "max": 12,
+          "inc_min": 2,
+          "inc_max": 2,
           "round": true
         }
       },
@@ -794,10 +794,10 @@
         "name": "cell_b",
         "c_type": "uint8_t",
         "sim": {
-          "min": 0,
-          "max": 10,
-          "inc_min": 1,
-          "inc_max": 1,
+          "min": 1,
+          "max": 13,
+          "inc_min": 2,
+          "inc_max": 2,
           "round": true
         }
       },
