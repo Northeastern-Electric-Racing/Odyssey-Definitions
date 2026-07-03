@@ -2348,6 +2348,12 @@
             ]
           ]
         }
+      },
+      {
+        "size": 8,
+        "signed": false,
+        "name": "state_transition_error",
+        "c_type": "uint8_t"
       }
     ],
     "fields": [
@@ -2440,6 +2446,15 @@
         ],
         "doc": "Whether or not traction control is enabled.",
         "desc": "'1' = traction control is enabled, '0' = traction control is not enabled."
+      },
+      {
+        "name": "VCU/CarState/state_rejection_error",
+        "unit": "",
+        "values": [
+          11
+        ],
+        "doc": "Bitmask of the most recent state-transition rejection reason(s). 0 = OK.",
+        "desc": "Bits map to state_transition_error_t in u_statemachine.h: REVERSE_DISABLED=1, DRIVE_FROM_FAULT=2, ENTER_DRIVE_DISABLED=4, ENTER_DRIVE_SHUTDOWN_OPEN=8, ENTER_DRIVE_BREAKS_NOT_ENGAGED=16, ENTER_GAMES_SHUTDOWN_CLOSED=32, ENTER_GAMES_WHILE_MOVING=64, CHANGE_STATE_ACCEL_PRESSED=128."
       }
     ],
     "sim_freq": 250,
