@@ -58,9 +58,9 @@ impl quote::ToTokens for BidirMode {
     fn to_tokens(&self, tokens: &mut TokenStream) {
         let path: TokenStream = match self {
             BidirMode::Broadcast => {
-                quote!(::calypso_cangen::can_types::BidirMode::Broadcast)
+                quote!(::definition_rs::BidirMode::Broadcast)
             }
-            BidirMode::Oneshot => quote!(::calypso_cangen::can_types::BidirMode::Oneshot),
+            BidirMode::Oneshot => quote!(::definition_rs::BidirMode::Oneshot),
             BidirMode::Configuration => {
                 panic!("Configuration sendable message is not available yet")
             }
