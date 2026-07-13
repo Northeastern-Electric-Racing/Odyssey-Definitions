@@ -142,7 +142,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Dashboard/Faulted?",
+        "name": "VCU/eFuses/Dashboard/Faulted",
         "unit": "",
         "values": [
           4
@@ -151,7 +151,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Dashboard/Enabled?",
+        "name": "VCU/eFuses/Dashboard/Enabled",
         "unit": "",
         "values": [
           5
@@ -313,7 +313,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Brake/Faulted?",
+        "name": "VCU/eFuses/Brake/Faulted",
         "unit": "",
         "values": [
           4
@@ -322,7 +322,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Brake/Enabled?",
+        "name": "VCU/eFuses/Brake/Enabled",
         "unit": "",
         "values": [
           5
@@ -485,7 +485,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Shutdown/Faulted?",
+        "name": "VCU/eFuses/Shutdown/Faulted",
         "unit": "",
         "values": [
           4
@@ -494,7 +494,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Shutdown/Enabled?",
+        "name": "VCU/eFuses/Shutdown/Enabled",
         "unit": "",
         "values": [
           5
@@ -657,7 +657,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/LV/Faulted?",
+        "name": "VCU/eFuses/LV/Faulted",
         "unit": "",
         "values": [
           4
@@ -666,7 +666,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/LV/Enabled?",
+        "name": "VCU/eFuses/LV/Enabled",
         "unit": "",
         "values": [
           5
@@ -829,7 +829,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Radfan/Faulted?",
+        "name": "VCU/eFuses/Radfan/Faulted",
         "unit": "",
         "values": [
           4
@@ -838,7 +838,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Radfan/Enabled?",
+        "name": "VCU/eFuses/Radfan/Enabled",
         "unit": "",
         "values": [
           5
@@ -1001,7 +1001,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Fanbatt/Faulted?",
+        "name": "VCU/eFuses/Fanbatt/Faulted",
         "unit": "",
         "values": [
           4
@@ -1010,7 +1010,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Fanbatt/Enabled?",
+        "name": "VCU/eFuses/Fanbatt/Enabled",
         "unit": "",
         "values": [
           5
@@ -1173,7 +1173,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/PumpOne/Faulted?",
+        "name": "VCU/eFuses/PumpOne/Faulted",
         "unit": "",
         "values": [
           4
@@ -1182,7 +1182,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/PumpOne/Enabled?",
+        "name": "VCU/eFuses/PumpOne/Enabled",
         "unit": "",
         "values": [
           5
@@ -1345,7 +1345,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/PumpTwo/Faulted?",
+        "name": "VCU/eFuses/PumpTwo/Faulted",
         "unit": "",
         "values": [
           4
@@ -1354,7 +1354,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/PumpTwo/Enabled?",
+        "name": "VCU/eFuses/PumpTwo/Enabled",
         "unit": "",
         "values": [
           5
@@ -1517,7 +1517,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Battbox/Faulted?",
+        "name": "VCU/eFuses/Battbox/Faulted",
         "unit": "",
         "values": [
           4
@@ -1526,7 +1526,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Battbox/Enabled?",
+        "name": "VCU/eFuses/Battbox/Enabled",
         "unit": "",
         "values": [
           5
@@ -1689,7 +1689,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/MC/Faulted?",
+        "name": "VCU/eFuses/MC/Faulted",
         "unit": "",
         "values": [
           4
@@ -1698,7 +1698,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/MC/Enabled?",
+        "name": "VCU/eFuses/MC/Enabled",
         "unit": "",
         "values": [
           5
@@ -1861,7 +1861,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Spare/Faulted?",
+        "name": "VCU/eFuses/Spare/Faulted",
         "unit": "",
         "values": [
           4
@@ -1870,7 +1870,7 @@
         "desc": ""
       },
       {
-        "name": "VCU/eFuses/Spare/Enabled?",
+        "name": "VCU/eFuses/Spare/Enabled",
         "unit": "",
         "values": [
           5
