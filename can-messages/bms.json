@@ -2120,6 +2120,196 @@
     "sim_freq": 25
   },
   {
+    "id": "0x6F4",
+    "desc": "Alpha Cell S ADC Data",
+    "points": [
+      {
+        "size": 13,
+        "name": "s_voltage_a",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 2.5,
+          "max": 4.25,
+          "inc_min": 0.01,
+          "inc_max": 0.2
+        }
+      },
+      {
+        "size": 13,
+        "name": "s_voltage_b",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 2.5,
+          "max": 4.25,
+          "inc_min": 0.01,
+          "inc_max": 0.2
+        }
+      },
+      {
+        "size": 4,
+        "name": "chip_id",
+        "c_type": "uint8_t",
+        "sim": {
+          "min": 0,
+          "max": 4,
+          "inc_min": 1,
+          "inc_max": 1,
+          "round": true
+        }
+      },
+      {
+        "size": 4,
+        "name": "cell_a",
+        "c_type": "uint8_t",
+        "sim": {
+          "min": 0,
+          "max": 6,
+          "inc_min": 1,
+          "inc_max": 1,
+          "round": true
+        }
+      },
+      {
+        "size": 4,
+        "name": "cell_b",
+        "c_type": "uint8_t",
+        "sim": {
+          "min": 0,
+          "max": 13,
+          "inc_min": 1,
+          "inc_max": 1,
+          "round": true
+        }
+      },
+      {
+        "size": 2,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/PerCell/Alpha/{3}/SADCVolts/{4}",
+        "unit": "V",
+        "doc": "S ADC cell voltage",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "BMS/PerCell/Alpha/{3}/SADCVolts/{5}",
+        "unit": "V",
+        "doc": "S ADC cell voltage",
+        "values": [
+          2
+        ]
+      }
+    ],
+    "sim_freq": 35
+  },
+  {
+    "id": "0x6F5",
+    "desc": "Beta Cell S ADC Data",
+    "points": [
+      {
+        "size": 13,
+        "name": "s_voltage_a",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 2.5,
+          "max": 4.25,
+          "inc_min": 0.01,
+          "inc_max": 0.2
+        }
+      },
+      {
+        "size": 13,
+        "name": "s_voltage_b",
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 2.5,
+          "max": 4.25,
+          "inc_min": 0.01,
+          "inc_max": 0.2
+        }
+      },
+      {
+        "size": 4,
+        "name": "chip_id",
+        "c_type": "uint8_t",
+        "sim": {
+          "min": 0,
+          "max": 4,
+          "inc_min": 1,
+          "inc_max": 1,
+          "round": true
+        }
+      },
+      {
+        "size": 4,
+        "name": "cell_a",
+        "c_type": "uint8_t",
+        "sim": {
+          "min": 0,
+          "max": 5,
+          "inc_min": 1,
+          "inc_max": 1,
+          "round": true
+        }
+      },
+      {
+        "size": 4,
+        "name": "cell_b",
+        "c_type": "uint8_t",
+        "sim": {
+          "min": 0,
+          "max": 10,
+          "inc_min": 1,
+          "inc_max": 1,
+          "round": true
+        }
+      },
+      {
+        "size": 2,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/PerCell/Beta/{3}/SADCVolts/{4}",
+        "unit": "V",
+        "doc": "S ADC cell voltage",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "BMS/PerCell/Beta/{3}/SADCVolts/{5}",
+        "unit": "V",
+        "doc": "S ADC cell voltage",
+        "values": [
+          2
+        ]
+      }
+    ],
+    "sim_freq": 25
+  },
+  {
     "id": "0x6FC",
     "desc": "Alpha Chip A Debug",
     "points": [
