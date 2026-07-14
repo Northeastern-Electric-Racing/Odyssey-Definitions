@@ -720,7 +720,26 @@
         }
       },
       {
-        "size": 7,
+        "size": 1,
+        "signed": false,
+        "name": "cell_open_wire",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.5
+            ],
+            [
+              1,
+              0.5
+            ]
+          ]
+        }
+      },
+      {
+        "size": 6,
+        "signed": false,
         "parse": false
       }
     ],
@@ -798,12 +817,21 @@
         ]
       },
       {
-        "name": "BMS/Faults/Non-Critical/Extra",
+        "name": "BMS/Faults/Non-Critical/Cell_open_wire",
         "unit": "",
-        "doc": "Reserved",
+        "doc": "Open wire detected on one or more cells",
         "values": [
           10
         ]
+      },
+      {
+        "name": "BMS/Faults/Non-Critical/Extra",
+        "unit": "",
+        "values": [
+          11
+        ],
+        "doc": "Reserved",
+        "desc": ""
       }
     ],
     "sim_freq": 700
