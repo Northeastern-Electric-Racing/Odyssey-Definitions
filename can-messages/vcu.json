@@ -3235,31 +3235,6 @@
             ]
           ]
         }
-      },
-      {
-        "size": 1,
-        "signed": false,
-        "name": "LATCHING_ACTIVE_FAULT",
-        "c_type": "bool",
-        "sim": {
-          "options": [
-            [
-              0,
-              0.8
-            ],
-            [
-              1,
-              0.2
-            ]
-          ]
-        }
-      },
-      {
-        "size": 15,
-        "signed": false,
-        "parse": false,
-        "name": "UNUSED",
-        "c_type": "uint16_t"
       }
     ],
     "fields": [
@@ -3405,15 +3380,6 @@
           16
         ],
         "doc": "If TS Volts is stuck under the Batt Volts Threshold",
-        "desc": ""
-      },
-      {
-        "name": "VCU/Faults/Critical/LATCHING_ACTIVE_FAULT",
-        "unit": "",
-        "values": [
-          17
-        ],
-        "doc": "",
         "desc": ""
       }
     ],
