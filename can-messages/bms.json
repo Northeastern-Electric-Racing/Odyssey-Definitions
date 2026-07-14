@@ -1699,7 +1699,44 @@
         }
       },
       {
-        "size": 4,
+        "size": 1,
+        "signed": false,
+        "name": "ow_a",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.9
+            ],
+            [
+              1,
+              0.1
+            ]
+          ]
+        },
+        "c_type": "bool"
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "ow_b",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.9
+            ],
+            [
+              1,
+              0.1
+            ]
+          ]
+        }
+      },
+      {
+        "size": 2,
+        "signed": false,
         "parse": false
       }
     ],
@@ -1759,6 +1796,24 @@
         "values": [
           10
         ]
+      },
+      {
+        "name": "BMS/PerCell/Alpha/{4}/OW/{5}",
+        "unit": "",
+        "values": [
+          11
+        ],
+        "doc": "Whether an open wire is detected on the cell",
+        "desc": ""
+      },
+      {
+        "name": "BMS/PerCell/Alpha/{4}/OW/{6}",
+        "unit": "",
+        "values": [
+          12
+        ],
+        "doc": "Whether an open wire is detected on the cell",
+        "desc": ""
       }
     ],
     "sim_freq": 35
@@ -1917,7 +1972,44 @@
         }
       },
       {
-        "size": 4,
+        "size": 1,
+        "signed": false,
+        "name": "ow_a",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.9
+            ],
+            [
+              1,
+              0.1
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "ow_b",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.9
+            ],
+            [
+              1,
+              0.1
+            ]
+          ]
+        }
+      },
+      {
+        "size": 2,
+        "signed": false,
         "parse": false
       }
     ],
@@ -1977,6 +2069,24 @@
         "values": [
           10
         ]
+      },
+      {
+        "name": "BMS/PerCell/Beta/{4}/OW/{5}",
+        "unit": "",
+        "values": [
+          11
+        ],
+        "doc": "Whether an open wire is detected on the cell",
+        "desc": ""
+      },
+      {
+        "name": "BMS/PerCell/Beta/{4}/OW/{6}",
+        "unit": "",
+        "values": [
+          12
+        ],
+        "doc": "Whether an open wire is detected on the cell",
+        "desc": ""
       }
     ],
     "sim_freq": 25
