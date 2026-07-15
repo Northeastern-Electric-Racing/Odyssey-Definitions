@@ -2196,7 +2196,7 @@
     ],
     "fields": [
       {
-        "name": "BMS/PerCell/Alpha/{3}/SADCVolts/{4}",
+        "name": "BMS/PerCell/Alpha/{3}/S_Volts/{4}",
         "unit": "V",
         "doc": "S ADC cell voltage",
         "values": [
@@ -2204,7 +2204,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Alpha/{3}/SADCVolts/{5}",
+        "name": "BMS/PerCell/Alpha/{3}/S_Volts/{5}",
         "unit": "V",
         "doc": "S ADC cell voltage",
         "values": [
@@ -2291,7 +2291,7 @@
     ],
     "fields": [
       {
-        "name": "BMS/PerCell/Beta/{3}/SADCVolts/{4}",
+        "name": "BMS/PerCell/Beta/{3}/S_Volts/{4}",
         "unit": "V",
         "doc": "S ADC cell voltage",
         "values": [
@@ -2299,7 +2299,7 @@
         ]
       },
       {
-        "name": "BMS/PerCell/Beta/{3}/SADCVolts/{5}",
+        "name": "BMS/PerCell/Beta/{3}/S_Volts/{5}",
         "unit": "V",
         "doc": "S ADC cell voltage",
         "values": [
