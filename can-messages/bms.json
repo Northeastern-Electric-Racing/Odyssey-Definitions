@@ -4392,5 +4392,26 @@
         "desc": ""
       }
     ]
+  },
+  {
+    "id": "0x97",
+    "desc": "Current Cell Balancing PWM Duty Cycle",
+    "points": [
+      {
+        "size": 8,
+        "name": "balancing_pwm_duty_cycle",
+        "c_type": "uint8_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Control/CellBalancing/PWMDutyCycle",
+        "unit": "%",
+        "doc": "Current cell balancing PWM duty cycle",
+        "values": [
+          1
+        ]
+      }
+    ]
   }
 ]
