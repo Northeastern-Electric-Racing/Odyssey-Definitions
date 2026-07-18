@@ -4398,9 +4398,13 @@
     "desc": "Current Cell Balancing PWM Duty Cycle",
     "points": [
       {
-        "size": 8,
+        "size": 10,
         "name": "balancing_pwm_duty_cycle",
-        "c_type": "uint8_t"
+        "c_type": "float",
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        }
       }
     ],
     "fields": [
