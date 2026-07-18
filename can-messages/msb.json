@@ -730,5 +730,52 @@
       }
     ],
     "sim_freq": 500
+  },
+  {
+    "id": "0x630",
+    "desc": "Load Cell CAN Message",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "load_cell_1",
+        "c_type": "uint16_t",
+        "formatter": {
+          "key": "multiply",
+          "arg": 100
+        }
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "load_cell_2",
+        "c_type": "uint16_t",
+        "formatter": {
+          "key": "multiply",
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/LoadCell1",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Load Cell 1 Data",
+        "desc": ""
+      },
+      {
+        "name": "MSB/LoadCell2",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "Load Cell 2 Data",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
   }
 ]
