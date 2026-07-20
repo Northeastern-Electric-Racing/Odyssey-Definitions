@@ -2,6 +2,7 @@
   {
     "id": "0x1806E5F4",
     "desc": "BMS Charge Message Send",
+    "is_ext": true,
     "points": [
       {
         "size": 16,
@@ -95,6 +96,7 @@
   {
     "id": "0x18FF50E5",
     "desc": "Charger Box Status",
+    "is_ext": true,
     "points": [
       {
         "size": 16,

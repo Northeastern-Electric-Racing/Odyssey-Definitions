@@ -210,3 +210,5 @@ __marimo__/
 code-gen/cgen
 
 *.html
+
+Cargo.lock
