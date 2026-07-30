@@ -206,11 +206,11 @@
   },
   {
     "id": "0x606",
-    "desc": "Front Shockpots",
+    "desc": "Front Left Shockpot",
     "points": [
       {
         "size": 32,
-        "name": "shock1",
+        "name": "shock_left",
         "c_type": "float",
         "ieee754_f32": true,
         "sim": {
@@ -221,15 +221,15 @@
         }
       },
       {
-        "size": 32,
-        "name": "shock2",
-        "c_type": "float",
-        "ieee754_f32": true,
+        "size": 16,
+        "name": "shock_left_raw",
+        "c_type": "uint16_t",
+        "endianness": "little",
         "sim": {
           "min": 0,
-          "max": 3,
-          "inc_min": 0.01,
-          "inc_max": 0.5
+          "max": 4095,
+          "inc_min": 1,
+          "inc_max": 20
         }
       }
     ],
@@ -237,64 +237,15 @@
       {
         "name": "MSB/F/ShockLeft",
         "unit": "in",
-        "doc": "Front-left shock deflection",
+        "doc": "Shock deflection",
         "values": [
           1
         ]
       },
-      {
-        "name": "MSB/F/ShockRight",
-        "unit": "in",
-        "doc": "Front-right shock deflection",
-        "values": [
-          2
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0x60A",
-    "desc": "Front Shockpots Raw",
-    "points": [
-      {
-        "size": 16,
-        "name": "shock1_raw",
-        "c_type": "uint16_t",
-        "endianness": "little",
-        "sim": {
-          "min": 0,
-          "max": 4095,
-          "inc_min": 1,
-          "inc_max": 20
-        }
-      },
-      {
-        "size": 16,
-        "name": "shock2_raw",
-        "c_type": "uint16_t",
-        "endianness": "little",
-        "sim": {
-          "min": 0,
-          "max": 4095,
-          "inc_min": 1,
-          "inc_max": 20
-        }
-      }
-    ],
-    "fields": [
       {
         "name": "MSB/F/ShockRawLeft",
         "unit": "",
-        "doc": "Raw front-left shock value",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "MSB/F/ShockRawRight",
-        "unit": "",
-        "doc": "Raw front-right shock value",
+        "doc": "Raw shock value",
         "values": [
           2
         ]
@@ -409,6 +360,55 @@
           1,
           2,
           3
+        ]
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x60A",
+    "desc": "Front Right Shockpot",
+    "points": [
+      {
+        "size": 32,
+        "name": "shock_right",
+        "c_type": "float",
+        "ieee754_f32": true,
+        "sim": {
+          "min": 0,
+          "max": 3,
+          "inc_min": 0.01,
+          "inc_max": 0.5
+        }
+      },
+      {
+        "size": 16,
+        "name": "shock_right_raw",
+        "c_type": "uint16_t",
+        "endianness": "little",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 1,
+          "inc_max": 20
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/ShockRight",
+        "unit": "in",
+        "doc": "Shock deflection",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "MSB/F/ShockRawRight",
+        "unit": "",
+        "doc": "Raw shock value",
+        "values": [
+          2
         ]
       }
     ],
@@ -621,11 +621,11 @@
   },
   {
     "id": "0x626",
-    "desc": "Back Shockpots",
+    "desc": "Back Left Shockpot",
     "points": [
       {
         "size": 32,
-        "name": "shock1",
+        "name": "shock_left",
         "c_type": "float",
         "ieee754_f32": true,
         "sim": {
@@ -636,15 +636,15 @@
         }
       },
       {
-        "size": 32,
-        "name": "shock2",
-        "c_type": "float",
-        "ieee754_f32": true,
+        "size": 16,
+        "name": "shock_left_raw",
+        "c_type": "uint16_t",
+        "endianness": "little",
         "sim": {
           "min": 0,
-          "max": 3,
-          "inc_min": 0.01,
-          "inc_max": 0.5
+          "max": 4095,
+          "inc_min": 1,
+          "inc_max": 20
         }
       }
     ],
@@ -652,64 +652,15 @@
       {
         "name": "MSB/B/ShockLeft",
         "unit": "in",
-        "doc": "Back-left shock deflection",
+        "doc": "Shock deflection",
         "values": [
           1
         ]
       },
-      {
-        "name": "MSB/B/ShockRight",
-        "unit": "in",
-        "doc": "Back-right shock deflection",
-        "values": [
-          2
-        ]
-      }
-    ],
-    "sim_freq": 500
-  },
-  {
-    "id": "0x62A",
-    "desc": "Back Shockpots Raw",
-    "points": [
-      {
-        "size": 16,
-        "name": "shock1_raw",
-        "c_type": "uint16_t",
-        "endianness": "little",
-        "sim": {
-          "min": 0,
-          "max": 4095,
-          "inc_min": 1,
-          "inc_max": 20
-        }
-      },
-      {
-        "size": 16,
-        "name": "shock2_raw",
-        "c_type": "uint16_t",
-        "endianness": "little",
-        "sim": {
-          "min": 0,
-          "max": 4095,
-          "inc_min": 1,
-          "inc_max": 20
-        }
-      }
-    ],
-    "fields": [
       {
         "name": "MSB/B/ShockRawLeft",
         "unit": "",
-        "doc": "Raw back-left shock value",
-        "values": [
-          1
-        ]
-      },
-      {
-        "name": "MSB/B/ShockRawRight",
-        "unit": "",
-        "doc": "Raw back-right shock value",
+        "doc": "Raw shock value",
         "values": [
           2
         ]
@@ -824,6 +775,55 @@
           1,
           2,
           3
+        ]
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x62A",
+    "desc": "Back Right Shockpot",
+    "points": [
+      {
+        "size": 32,
+        "name": "shock_right",
+        "c_type": "float",
+        "ieee754_f32": true,
+        "sim": {
+          "min": 0,
+          "max": 3,
+          "inc_min": 0.01,
+          "inc_max": 0.5
+        }
+      },
+      {
+        "size": 16,
+        "name": "shock_right_raw",
+        "c_type": "uint16_t",
+        "endianness": "little",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 1,
+          "inc_max": 20
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/B/ShockRight",
+        "unit": "in",
+        "doc": "Shock deflection",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "MSB/B/ShockRawRight",
+        "unit": "",
+        "doc": "Raw shock value",
+        "values": [
+          2
         ]
       }
     ],
