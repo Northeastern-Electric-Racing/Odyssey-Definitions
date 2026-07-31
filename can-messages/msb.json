@@ -730,5 +730,51 @@
       }
     ],
     "sim_freq": 500
+  },
+  {
+    "id": "0x630",
+    "desc": "Wheel Speed",
+    "points": [
+      {
+        "size": 32,
+        "signed": false,
+        "name": "wheel_speed_mph",
+        "c_type": "uint32_t",
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        }
+      },
+      {
+        "size": 32,
+        "signed": false,
+        "name": "wheel_speed_rpm",
+        "c_type": "uint32_t",
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/WheelSpeedMPH",
+        "unit": "mph",
+        "values": [
+          1
+        ],
+        "doc": "MPH Calculated from Wheel Speed",
+        "desc": ""
+      },
+      {
+        "name": "MSB/F/WheelSpeedRPM",
+        "unit": "rpm",
+        "values": [
+          2
+        ],
+        "doc": "RPM Calculated from Wheel Speed",
+        "desc": ""
+      }
+    ]
   }
 ]
