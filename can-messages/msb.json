@@ -777,5 +777,44 @@
       }
     ],
     "sim_freq": 250
+  },
+  {
+    "id": "0x631",
+    "desc": "Wheel Speed",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "left_rpm",
+        "c_type": "uint16_t"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "right_rpm",
+        "c_type": "uint16_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/WheelSpeedLeft",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Left Wheel Speed Data",
+        "desc": ""
+      },
+      {
+        "name": "MSB/WheelSpeedRight",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "Right Wheel Speed Data",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
   }
 ]
