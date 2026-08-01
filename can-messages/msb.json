@@ -30,7 +30,8 @@
           "min": 20,
           "max": 80,
           "inc_min": 1,
-          "inc_max": 2.5
+          "inc_max": 2.5,
+          "round": false
         }
       }
     ],
@@ -812,6 +813,140 @@
           2
         ],
         "doc": "Right Wheel Speed Data",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0x632",
+    "desc": "Steering Angle",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "steering_angle_1",
+        "c_type": "int32_t",
+        "formatter": {
+          "key": "multiply",
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/SteeringAngle",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Steering Angle Data",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0x633",
+    "desc": "Thermocouple",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "thermocouple1",
+        "c_type": "int32_t",
+        "formatter": {
+          "key": "multiply",
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/Thermocouple1",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Thermocouple 1 Data",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0x610",
+    "desc": "Front MSB SSC",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "c_type": "float",
+        "name": "pressure"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "c_type": "float",
+        "name": "temp"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/SSCPressure",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Front SSC Pressure Reading",
+        "desc": ""
+      },
+      {
+        "name": "MSB/F/SSCTemp",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "Front SSC Temperature Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0x634",
+    "desc": "Back MSB SSC",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "pressure",
+        "c_type": "float"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "temp",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/B/SSCPressure",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Back SSC Pressure Reading",
+        "desc": ""
+      },
+      {
+        "name": "MSB/B/SSCTemp",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "Back SSC Temperature Reading",
         "desc": ""
       }
     ],
