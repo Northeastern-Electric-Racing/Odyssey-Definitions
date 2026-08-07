@@ -828,8 +828,8 @@
         "name": "steering_angle_1",
         "c_type": "int32_t",
         "formatter": {
-          "key": "multiply",
-          "arg": 100
+          "key": "divide",
+          "arg": 10
         }
       }
     ],
