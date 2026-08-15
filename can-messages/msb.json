@@ -206,13 +206,16 @@
   },
   {
     "id": "0x606",
-    "desc": "Front Shockpot",
+    "desc": "Front Left Shockpot",
     "points": [
       {
         "size": 32,
-        "name": "shock1",
+        "name": "shock_left",
         "c_type": "float",
-        "ieee754_f32": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 0,
           "max": 3,
@@ -221,10 +224,9 @@
         }
       },
       {
-        "size": 16,
-        "name": "shock1_raw",
-        "c_type": "uint16_t",
-        "endianness": "little",
+        "size": 32,
+        "name": "shock_left_raw",
+        "c_type": "uint32_t",
         "sim": {
           "min": 0,
           "max": 4095,
@@ -235,15 +237,15 @@
     ],
     "fields": [
       {
-        "name": "MSB/F/Shock",
+        "name": "MSB/F/ShockLeft",
         "unit": "in",
-        "doc": "Shuck deflection",
+        "doc": "Front-left shock deflection",
         "values": [
           1
         ]
       },
       {
-        "name": "MSB/F/ShockRaw",
+        "name": "MSB/F/ShockRawLeft",
         "unit": "",
         "doc": "Raw shock value",
         "values": [
@@ -572,13 +574,16 @@
   },
   {
     "id": "0x626",
-    "desc": "Back Shockpot",
+    "desc": "Back Left Shockpot",
     "points": [
       {
         "size": 32,
-        "name": "shock1",
+        "name": "shock_left",
         "c_type": "float",
-        "ieee754_f32": true,
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
         "sim": {
           "min": 0,
           "max": 3,
@@ -587,10 +592,9 @@
         }
       },
       {
-        "size": 16,
-        "name": "shock1_raw",
-        "c_type": "uint16_t",
-        "endianness": "little",
+        "size": 32,
+        "name": "shock_left_raw",
+        "c_type": "uint32_t",
         "sim": {
           "min": 0,
           "max": 4095,
@@ -601,15 +605,15 @@
     ],
     "fields": [
       {
-        "name": "MSB/B/Shock",
+        "name": "MSB/B/ShockLeft",
         "unit": "in",
-        "doc": "Shuck deflection",
+        "doc": "Back-left shock deflection",
         "values": [
           1
         ]
       },
       {
-        "name": "MSB/B/ShockRaw",
+        "name": "MSB/B/ShockRawLeft",
         "unit": "",
         "doc": "Raw shock value",
         "values": [
@@ -732,49 +736,42 @@
     "sim_freq": 500
   },
   {
-    "id": "0x630",
+    "id": "0x631",
     "desc": "Wheel Speed",
     "points": [
       {
-        "size": 32,
+        "size": 16,
         "signed": false,
-        "name": "wheel_speed_mph",
-        "c_type": "uint32_t",
-        "formatter": {
-          "key": "divide",
-          "arg": 10
-        }
+        "name": "left_rpm",
+        "c_type": "uint16_t"
       },
       {
-        "size": 32,
+        "size": 16,
         "signed": false,
-        "name": "wheel_speed_rpm",
-        "c_type": "uint32_t",
-        "formatter": {
-          "key": "divide",
-          "arg": 10
-        }
+        "name": "right_rpm",
+        "c_type": "uint16_t"
       }
     ],
     "fields": [
       {
-        "name": "MSB/F/WheelSpeedMPH",
-        "unit": "mph",
+        "name": "MSB/WheelSpeedLeft",
+        "unit": "rpm",
         "values": [
           1
         ],
-        "doc": "MPH Calculated from Wheel Speed",
+        "doc": "Left wheel speed",
         "desc": ""
       },
       {
-        "name": "MSB/F/WheelSpeedRPM",
+        "name": "MSB/WheelSpeedRight",
         "unit": "rpm",
         "values": [
           2
         ],
-        "doc": "RPM Calculated from Wheel Speed",
+        "doc": "Right wheel speed",
         "desc": ""
       }
-    ]
+    ],
+    "sim_freq": 250
   }
 ]
