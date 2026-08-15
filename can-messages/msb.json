@@ -574,11 +574,11 @@
   },
   {
     "id": "0x626",
-    "desc": "Back Left Shockpot",
+    "desc": "Front Right Shockpot",
     "points": [
       {
         "size": 32,
-        "name": "shock_left",
+        "name": "shock_right",
         "c_type": "float",
         "formatter": {
           "key": "divide",
@@ -593,7 +593,7 @@
       },
       {
         "size": 32,
-        "name": "shock_left_raw",
+        "name": "shock_right_raw",
         "c_type": "uint32_t",
         "sim": {
           "min": 0,
@@ -605,17 +605,17 @@
     ],
     "fields": [
       {
-        "name": "MSB/B/ShockLeft",
+        "name": "MSB/F/ShockRight",
         "unit": "in",
-        "doc": "Back-left shock deflection",
+        "doc": "Front-right shock deflection",
         "values": [
           1
         ]
       },
       {
-        "name": "MSB/B/ShockRawLeft",
+        "name": "MSB/F/ShockRawRight",
         "unit": "",
-        "doc": "Raw shock value",
+        "doc": "Raw front-right shock value",
         "values": [
           2
         ]
