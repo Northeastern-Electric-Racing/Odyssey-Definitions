@@ -737,7 +737,7 @@
   },
   {
     "id": "0x631",
-    "desc": "Wheel Speed",
+    "desc": "Front Wheel RPM",
     "points": [
       {
         "size": 16,
@@ -754,21 +754,21 @@
     ],
     "fields": [
       {
-        "name": "MSB/WheelSpeedLeft",
+        "name": "MSB/F/WheelRPMLeft",
         "unit": "rpm",
         "values": [
           1
         ],
-        "doc": "Left wheel speed",
+        "doc": "Front-left wheel RPM",
         "desc": ""
       },
       {
-        "name": "MSB/WheelSpeedRight",
+        "name": "MSB/F/WheelRPMRight",
         "unit": "rpm",
         "values": [
           2
         ],
-        "doc": "Right wheel speed",
+        "doc": "Front-right wheel RPM",
         "desc": ""
       }
     ],
