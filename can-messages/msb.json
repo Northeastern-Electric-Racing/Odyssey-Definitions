@@ -207,7 +207,7 @@
   },
   {
     "id": "0x606",
-    "desc": "Front Shockpot",
+    "desc": "Right Shockpot",
     "points": [
       {
         "size": 32,
@@ -218,25 +218,33 @@
           "min": 0,
           "max": 3,
           "inc_min": 0.01,
-          "inc_max": 0.5
-        }
+          "inc_max": 0.5,
+          "round": false
+        },
+        "signed": false
       },
       {
-        "size": 16,
-        "name": "shock1_raw",
-        "c_type": "uint16_t",
+        "size": 32,
+        "name": "shock1_volts",
+        "c_type": "float",
         "endianness": "little",
         "sim": {
           "min": 0,
           "max": 4095,
           "inc_min": 1,
-          "inc_max": 20
-        }
+          "inc_max": 20,
+          "round": false
+        },
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        },
+        "signed": false
       }
     ],
     "fields": [
       {
-        "name": "MSB/F/Shock",
+        "name": "MSB/Right/Shock",
         "unit": "in",
         "doc": "Shuck deflection",
         "values": [
@@ -244,7 +252,7 @@
         ]
       },
       {
-        "name": "MSB/F/ShockRaw",
+        "name": "MSB/Right/ShockVolts",
         "unit": "",
         "doc": "Raw shock value",
         "values": [
@@ -573,7 +581,7 @@
   },
   {
     "id": "0x626",
-    "desc": "Back Shockpot",
+    "desc": "Left Shockpot",
     "points": [
       {
         "size": 32,
@@ -588,9 +596,9 @@
         }
       },
       {
-        "size": 16,
-        "name": "shock1_raw",
-        "c_type": "uint16_t",
+        "size": 32,
+        "name": "shock1_volts",
+        "c_type": "float",
         "endianness": "little",
         "sim": {
           "min": 0,
@@ -602,7 +610,7 @@
     ],
     "fields": [
       {
-        "name": "MSB/B/Shock",
+        "name": "MSB/Left/Shock",
         "unit": "in",
         "doc": "Shuck deflection",
         "values": [
@@ -610,7 +618,7 @@
         ]
       },
       {
-        "name": "MSB/B/ShockRaw",
+        "name": "MSB/Left/ShockVolts",
         "unit": "",
         "doc": "Raw shock value",
         "values": [
