@@ -252,7 +252,7 @@
       {
         "name": "Charger/Box/F_WrongBatConnection",
         "unit": "bool",
-        "doc": "Battery not detected and charger stays turned off",
+        "doc": "Battery polarity incorrect/open",
         "values": [
           5
         ]
