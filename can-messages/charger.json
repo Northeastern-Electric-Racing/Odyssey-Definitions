@@ -100,6 +100,8 @@
     "points": [
       {
         "size": 16,
+        "name": "voltage",
+        "c_type": "float",
         "formatter": {
           "key": "divide",
           "arg": 10
@@ -113,6 +115,8 @@
       },
       {
         "size": 16,
+        "name": "current",
+        "c_type": "float",
         "signed": true,
         "formatter": {
           "key": "divide",
@@ -126,7 +130,14 @@
         }
       },
       {
+        "size": 3,
+        "name": "reserved_status",
+        "c_type": "uint8_t"
+      },
+      {
         "size": 1,
+        "name": "comm_timeout",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -142,6 +153,8 @@
       },
       {
         "size": 1,
+        "name": "battery_not_detected",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -157,6 +170,8 @@
       },
       {
         "size": 1,
+        "name": "voltage_wrong",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -172,6 +187,8 @@
       },
       {
         "size": 1,
+        "name": "over_temp",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -187,6 +204,8 @@
       },
       {
         "size": 1,
+        "name": "hardware_failure",
+        "c_type": "bool",
         "sim": {
           "options": [
             [
@@ -201,7 +220,7 @@
         }
       },
       {
-        "size": 27,
+        "size": 24,
         "parse": false
       }
     ],
@@ -227,7 +246,7 @@
         "unit": "bool",
         "doc": "Communications timeout occured",
         "values": [
-          7
+          4
         ]
       },
       {
@@ -235,7 +254,7 @@
         "unit": "bool",
         "doc": "Battery polarity incorrect/open",
         "values": [
-          6
+          5
         ]
       },
       {
@@ -243,7 +262,7 @@
         "unit": "bool",
         "doc": "Detected voltage out of range",
         "values": [
-          5
+          6
         ]
       },
       {
@@ -251,7 +270,7 @@
         "unit": "bool",
         "doc": "Carger overtemperature",
         "values": [
-          4
+          7
         ]
       },
       {
@@ -259,7 +278,7 @@
         "unit": "bool",
         "doc": "Charger hardware failure",
         "values": [
-          3
+          8
         ]
       },
       {
@@ -267,7 +286,7 @@
         "unit": "",
         "doc": "Reserved",
         "values": [
-          8
+          9
         ]
       }
     ],
