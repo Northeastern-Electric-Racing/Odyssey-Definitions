@@ -4355,6 +4355,11 @@
         "c_type": "bool"
       },
       {
+        "size": 7,
+        "signed": false,
+        "name": "pad"
+      },
+      {
         "size": 8,
         "signed": false,
         "name": "test_mode_index",
@@ -4371,11 +4376,6 @@
           "key": "divide",
           "arg": 10
         }
-      },
-      {
-        "size": 7,
-        "signed": false,
-        "name": "pad"
       }
     ],
     "fields": [
@@ -4392,7 +4392,7 @@
         "name": "VCU/TestModes/test_mode_index",
         "unit": "",
         "values": [
-          2
+          3
         ],
         "doc": "The index of the current active test mode",
         "desc": ""
@@ -4401,7 +4401,7 @@
         "name": "VCU/TestModes/speed_setpoint",
         "unit": "mph",
         "values": [
-          3
+          4
         ],
         "doc": "The speed that the cruise control algorithm is targeting",
         "desc": ""
