@@ -167,36 +167,40 @@
   },
   {
     "id": "0x605",
-    "desc": "Front MSB Strain",
+    "desc": "Front MSB Strain 1-2",
     "points": [
       {
         "size": 32,
         "name": "strain1",
-        "c_type": "uint32_t",
+        "c_type": "float",
         "sim": {
           "min": 0,
           "max": 10,
           "inc_min": 0.001,
-          "inc_max": 0.02
-        }
+          "inc_max": 0.02,
+          "round": false
+        },
+        "signed": true
       },
       {
         "size": 32,
         "name": "strain2",
-        "c_type": "uint32_t",
+        "c_type": "float",
         "sim": {
           "min": 0,
           "max": 10,
           "inc_min": 0.001,
-          "inc_max": 0.02
-        }
+          "inc_max": 0.02,
+          "round": false
+        },
+        "signed": true
       }
     ],
     "fields": [
       {
-        "name": "MSB/F/Strain",
+        "name": "MSB/F/Strain12",
         "unit": "",
-        "doc": "Strain readings",
+        "doc": "Front Strain readings (gauges 1 & 2)",
         "values": [
           1,
           2
@@ -541,36 +545,40 @@
   },
   {
     "id": "0x625",
-    "desc": "Back MSB Strain",
+    "desc": "Back MSB Strain 1-2",
     "points": [
       {
         "size": 32,
         "name": "strain1",
-        "c_type": "uint32_t",
+        "c_type": "float",
         "sim": {
           "min": 0,
           "max": 10,
           "inc_min": 0.001,
-          "inc_max": 0.02
-        }
+          "inc_max": 0.02,
+          "round": false
+        },
+        "signed": true
       },
       {
         "size": 32,
         "name": "strain2",
-        "c_type": "uint32_t",
+        "c_type": "float",
         "sim": {
           "min": 0,
           "max": 10,
           "inc_min": 0.001,
-          "inc_max": 0.02
-        }
+          "inc_max": 0.02,
+          "round": false
+        },
+        "signed": true
       }
     ],
     "fields": [
       {
-        "name": "MSB/B/Strain",
+        "name": "MSB/B/Strain12",
         "unit": "",
-        "doc": "Strain readings",
+        "doc": "Back Strain readings (gauges 1 & 2)",
         "values": [
           1,
           2
@@ -959,5 +967,332 @@
       }
     ],
     "sim_freq": 250
+  },
+  {
+    "id": "0x611",
+    "desc": "Front MSB Mag",
+    "points": [
+      {
+        "size": 16,
+        "signed": true,
+        "name": "x_mgauss",
+        "c_type": "float"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "y_mgauss",
+        "c_type": "float"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "z_mgauss",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/Magnetometer",
+        "unit": "",
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "doc": "Front Magnetometer Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x635",
+    "desc": "Back MSB Mag",
+    "points": [
+      {
+        "size": 16,
+        "signed": true,
+        "name": "x_mgauss",
+        "c_type": "float"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "y_mgauss",
+        "c_type": "float"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "z_mgauss",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/B/Magnetometer",
+        "unit": "",
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "doc": "Back Magnetometer Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x612",
+    "desc": "Front MSB Strain 3-4",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "strain3",
+        "c_type": "float"
+      },
+      {
+        "size": 32,
+        "signed": true,
+        "name": "strain4",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/Strain34",
+        "unit": "",
+        "values": [
+          1,
+          2
+        ],
+        "doc": "Front Strain Reading (gauges 3 & 4)",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x636",
+    "desc": "Back MSB Strain 3-4",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "strain3",
+        "c_type": "float"
+      },
+      {
+        "size": 32,
+        "signed": true,
+        "name": "strain4",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/B/Strain34",
+        "unit": "",
+        "values": [
+          1,
+          2
+        ],
+        "doc": "Back Strain Readings (gauges 3 & 4)",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x613",
+    "desc": "Front MSB Misc ADC 1",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "data",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/MiscADC1",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Front Misc ADC1 Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x614",
+    "desc": "Front MSB Misc ADC 2",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "data",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/MiscADC2",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Front Misc ADC2 Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x615",
+    "desc": "Front MSB Misc ADC 3",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "data",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/MiscADC3",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Front Misc ADC3 Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x637",
+    "desc": "Back MSB Misc ADC 1",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "data",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/B/MiscADC1",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Back Misc ADC1 Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x638",
+    "desc": "Back MSB Misc ADC 2",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "data",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/B/MiscADC2",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Back Misc ADC2 Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x639",
+    "desc": "Back MSB Misc ADC 3",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "data",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/B/MiscADC3",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Back Misc ADC3 Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x616",
+    "desc": "MSB VL53L7CX",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "distance0",
+        "c_type": "uint16_t"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "distance1",
+        "c_type": "uint16_t"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "distance2",
+        "c_type": "uint16_t"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "distance3",
+        "c_type": "uint16_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/VL53L7CX",
+        "unit": "",
+        "values": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "doc": "VL53L7CX Reading ",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
   }
 ]
