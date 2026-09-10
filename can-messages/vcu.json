@@ -4371,6 +4371,11 @@
           "key": "divide",
           "arg": 10
         }
+      },
+      {
+        "size": 7,
+        "signed": false,
+        "name": "pad"
       }
     ],
     "fields": [
@@ -4398,7 +4403,7 @@
         "values": [
           3
         ],
-        "doc": "The speed that the cruise control algorithm is targetting",
+        "doc": "The speed that the cruise control algorithm is targeting",
         "desc": ""
       }
     ],
