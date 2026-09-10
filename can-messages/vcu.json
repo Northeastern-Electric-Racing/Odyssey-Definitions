@@ -4357,7 +4357,9 @@
       {
         "size": 7,
         "signed": false,
-        "name": "pad"
+        "name": "",
+        "c_type": "",
+        "parse": false
       },
       {
         "size": 8,
