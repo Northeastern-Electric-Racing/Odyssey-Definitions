@@ -4359,6 +4359,7 @@
         "signed": true,
         "name": "speed_setpoint",
         "c_type": "float",
+        "endianness": "big",
         "formatter": {
           "key": "divide",
           "arg": 10
