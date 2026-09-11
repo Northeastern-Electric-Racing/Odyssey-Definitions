@@ -4352,15 +4352,13 @@
         "size": 8,
         "signed": false,
         "name": "test_mode_index",
-        "c_type": "uint8_t",
-        "endianness": "big"
+        "c_type": "uint8_t"
       },
       {
         "size": 16,
         "signed": true,
         "name": "speed_setpoint",
         "c_type": "float",
-        "endianness": "big",
         "formatter": {
           "key": "divide",
           "arg": 10
