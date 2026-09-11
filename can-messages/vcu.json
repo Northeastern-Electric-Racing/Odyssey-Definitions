@@ -4349,19 +4349,6 @@
     "desc": "Test Modes",
     "points": [
       {
-        "size": 1,
-        "signed": false,
-        "name": "test_modes_enabled",
-        "c_type": "bool"
-      },
-      {
-        "size": 7,
-        "signed": false,
-        "name": "",
-        "c_type": "",
-        "parse": false
-      },
-      {
         "size": 8,
         "signed": false,
         "name": "test_mode_index",
@@ -4378,23 +4365,25 @@
           "key": "divide",
           "arg": 10
         }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "test_modes_enabled",
+        "c_type": "bool"
+      },
+      {
+        "size": 7,
+        "signed": false,
+        "parse": false
       }
     ],
     "fields": [
       {
-        "name": "VCU/TestModes/test_modes_enabled",
-        "unit": "",
-        "values": [
-          1
-        ],
-        "doc": "Whether the test modes are able to be used",
-        "desc": "Controlled by flag in u_statemachine.c"
-      },
-      {
         "name": "VCU/TestModes/test_mode_index",
         "unit": "",
         "values": [
-          3
+          1
         ],
         "doc": "The index of the current active test mode",
         "desc": ""
@@ -4403,9 +4392,18 @@
         "name": "VCU/TestModes/speed_setpoint",
         "unit": "mph",
         "values": [
-          4
+          2
         ],
         "doc": "The speed that the cruise control algorithm is targeting",
+        "desc": ""
+      },
+      {
+        "name": "VCU/TestModes/test_modes_enabled",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "Whether Test Drive Modes are Enabled",
         "desc": ""
       }
     ],
