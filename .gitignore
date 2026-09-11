@@ -212,3 +212,4 @@ code-gen/cgen
 *.html
 
 Cargo.lock
+.DS_Store

@@ -4343,5 +4343,69 @@
         "desc": ""
       }
     ]
+  },
+  {
+    "id": "0x511",
+    "desc": "Test Modes",
+    "points": [
+      {
+        "size": 8,
+        "signed": false,
+        "name": "test_mode_index",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "speed_setpoint",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "test_modes_enabled",
+        "c_type": "bool"
+      },
+      {
+        "size": 7,
+        "signed": false,
+        "parse": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/TestModes/test_mode_index",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "The index of the current active test mode",
+        "desc": ""
+      },
+      {
+        "name": "VCU/TestModes/speed_setpoint",
+        "unit": "mph",
+        "values": [
+          2
+        ],
+        "doc": "The speed that the cruise control algorithm is targeting",
+        "desc": ""
+      },
+      {
+        "name": "VCU/TestModes/test_modes_enabled",
+        "unit": "",
+        "values": [
+          3
+        ],
+        "doc": "Whether Test Drive Modes are Enabled",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
   }
 ]
