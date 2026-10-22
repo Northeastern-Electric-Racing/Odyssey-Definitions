@@ -4417,5 +4417,20 @@
         ]
       }
     ]
+  },
+  {
+    "id": "0x013",
+    "desc": "BMS Boot Request",
+    "is_ext": false,
+    "points": [
+      {
+        "size": 32,
+        "name": "boot_request_data",
+        "c_type": "uint32_t",
+        "signed": false,
+        "endianness": "big"
+      }
+    ],
+    "fields": []
   }
 ]

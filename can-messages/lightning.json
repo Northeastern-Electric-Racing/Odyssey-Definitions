@@ -297,5 +297,20 @@
         "desc": ""
       }
     ]
+  },
+  {
+    "id": "0x043",
+    "desc": "Lightning Boot Request",
+    "is_ext": false,
+    "points": [
+      {
+        "size": 32,
+        "name": "boot_request_data",
+        "c_type": "uint32_t",
+        "signed": false,
+        "endianness": "big"
+      }
+    ],
+    "fields": []
   }
 ]

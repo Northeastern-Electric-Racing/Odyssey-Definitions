@@ -773,5 +773,35 @@
       }
     ],
     "sim_freq": 250
+  },
+  {
+    "id": "0x047",
+    "desc": "MSB Front Boot Request",
+    "is_ext": false,
+    "points": [
+      {
+        "size": 32,
+        "name": "boot_request_data",
+        "c_type": "uint32_t",
+        "signed": false,
+        "endianness": "big"
+      }
+    ],
+    "fields": []
+  },
+  {
+    "id": "0x04B",
+    "desc": "MSB Back Boot Request",
+    "is_ext": false,
+    "points": [
+      {
+        "size": 32,
+        "name": "boot_request_data",
+        "c_type": "uint32_t",
+        "signed": false,
+        "endianness": "big"
+      }
+    ],
+    "fields": []
   }
 ]
