@@ -1,0 +1,29 @@
+name: Validate reserved CAN IDs
+
+on:
+  push:
+    paths:
+      - 'can-messages/**'
+      - 'scripts/check_reserved_ids.py'
+      - '.github/workflows/validate_reserved_ids.yml'
+  pull_request:
+    paths:
+      - 'can-messages/**'
+      - 'scripts/check_reserved_ids.py'
+      - '.github/workflows/validate_reserved_ids.yml'
+
+concurrency:
+  group: reserved-can-ids-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v7
+      - name: Validate reserved CAN IDs
+        run: python3 scripts/check_reserved_ids.py
