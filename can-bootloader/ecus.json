@@ -1,0 +1,57 @@
+{
+  "schema_version": 2,
+  "can_line_bitrate": 500000,
+  "application_boot_request_data": [
+    "0xB0",
+    "0x07",
+    "0x10",
+    "0xAD"
+  ],
+  "ecus": {
+    "bms": {
+      "label": "Battery Management System",
+      "can": {
+        "request_id": {"id": "0x010", "is_ext": false},
+        "response_id": {"id": "0x011", "is_ext": false},
+        "write_data_id": {"id": "0x012", "is_ext": false},
+        "boot_request_id": {"id": "0x013", "is_ext": false}
+      }
+    },
+    "vcu": {
+      "label": "Vehicle Control Unit",
+      "can": {
+        "request_id": {"id": "0x014", "is_ext": false},
+        "response_id": {"id": "0x015", "is_ext": false},
+        "write_data_id": {"id": "0x016", "is_ext": false},
+        "boot_request_id": {"id": "0x017", "is_ext": false}
+      }
+    },
+    "lightning": {
+      "label": "Lightning",
+      "can": {
+        "request_id": {"id": "0x040", "is_ext": false},
+        "response_id": {"id": "0x041", "is_ext": false},
+        "write_data_id": {"id": "0x042", "is_ext": false},
+        "boot_request_id": {"id": "0x043", "is_ext": false}
+      }
+    },
+    "msb_front": {
+      "label": "MSB Front",
+      "can": {
+        "request_id": {"id": "0x044", "is_ext": false},
+        "response_id": {"id": "0x045", "is_ext": false},
+        "write_data_id": {"id": "0x046", "is_ext": false},
+        "boot_request_id": {"id": "0x047", "is_ext": false}
+      }
+    },
+    "msb_back": {
+      "label": "MSB Back",
+      "can": {
+        "request_id": {"id": "0x048", "is_ext": false},
+        "response_id": {"id": "0x049", "is_ext": false},
+        "write_data_id": {"id": "0x04A", "is_ext": false},
+        "boot_request_id": {"id": "0x04B", "is_ext": false}
+      }
+    }
+  }
+}

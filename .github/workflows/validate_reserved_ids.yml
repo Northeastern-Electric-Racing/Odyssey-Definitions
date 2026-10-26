@@ -4,11 +4,13 @@ on:
   push:
     paths:
       - 'can-messages/**'
+      - 'can-bootloader/ecus.json'
       - 'scripts/check_reserved_ids.py'
       - '.github/workflows/validate_reserved_ids.yml'
   pull_request:
     paths:
       - 'can-messages/**'
+      - 'can-bootloader/ecus.json'
       - 'scripts/check_reserved_ids.py'
       - '.github/workflows/validate_reserved_ids.yml'
 

@@ -3,56 +3,62 @@ from pathlib import Path
 import sys
 
 
-BOOTLOADER_IDS = {
-    "BMS": {"is_ext": False, "request_id": 0x010, "response_id": 0x011, "write_data_id": 0x012, "boot_request_id": 0x013},
-    "VCU": {"is_ext": False, "request_id": 0x014, "response_id": 0x015, "write_data_id": 0x016, "boot_request_id": 0x017},
-    "Lightning": {"is_ext": False, "request_id": 0x040, "response_id": 0x041, "write_data_id": 0x042, "boot_request_id": 0x043},
-    "MSB Front": {"is_ext": False, "request_id": 0x044, "response_id": 0x045, "write_data_id": 0x046, "boot_request_id": 0x047},
-    "MSB Back": {"is_ext": False, "request_id": 0x048, "response_id": 0x049, "write_data_id": 0x04A, "boot_request_id": 0x04B},
-}
+ID_FIELDS = ("request_id", "response_id", "write_data_id", "boot_request_id")
 
 
-RESERVED_IDS = {
-    (config["is_ext"], config[role]): (ecu, role == "boot_request_id")
-    for ecu, config in BOOTLOADER_IDS.items()
-    for role in ("request_id", "response_id", "write_data_id", "boot_request_id")
-}
+def can_id(value):
+    return (value["is_ext"], int(value["id"], 16) if isinstance(value["id"], str) else value["id"])
 
 
-def validate(directory):
+def validate(directory, config_path):
     errors = []
+    try:
+        config = json.loads(config_path.read_text())
+    except (OSError, json.JSONDecodeError) as error:
+        return [f"{config_path.name}: Could not read reserved IDs: {error}"]
+    reserved = {}
+    boot_entries = {}
+    for name, ecu in config["ecus"].items():
+        # Descriptions use spaces; ECU keys use underscores.
+        description = f"{name.replace('_', ' ')} Boot Request".casefold()
+        for role in ID_FIELDS:
+            key = can_id(ecu["can"][role])
+            if key in reserved:
+                errors.append(f"{config_path.name}: Duplicate reserved CAN ID 0x{key[1]:03X} for {name}")
+            else:
+                reserved[key] = (name, role)
+            if role == "boot_request_id":
+                boot_entries[description] = key
     for path in sorted(directory.glob("*.json")):
         try:
             messages = json.loads(path.read_text())
-        except (OSError, ValueError) as error:
+        except (OSError, json.JSONDecodeError) as error:
             errors.append(f"{path.name}: Could not check reserved IDs: {error}")
             continue
         for message in messages:
             if "id" not in message:
                 continue
-            can_id = int(message["id"], 16)
+            key = (message.get("is_ext", False), int(message["id"], 16))
             description = message["desc"]
             location = f"{path.name}: {description}"
-            extended = message.get("is_ext", False)
-            reservation = RESERVED_IDS.get((extended, can_id))
+            expected = boot_entries.get(description.casefold()) if path.name == "ajax.json" else None
+            if expected is not None and key != expected:
+                errors.append(f"{location}: Boot request ID or frame format does not match ecus.json")
+            reservation = reserved.get(key)
             if reservation:
-                ecu, boot_entry = reservation
-                allowed = (
-                    boot_entry
-                    and path.name == "ajax.json"
-                    and description == f"{ecu} Boot Request"
-                )
+                name, role = reservation
+                allowed = expected == key and role == "boot_request_id"
                 if not allowed:
-                    frame = "Extended" if extended else "Standard"
+                    frame = "Extended" if key[0] else "Standard"
                     errors.append(
-                        f"{location}: {frame} CAN ID 0x{can_id:03X} is reserved for {ecu} bootloader traffic."
+                        f"{location}: {frame} CAN ID 0x{key[1]:03X} is reserved for {name} bootloader traffic."
                     )
     return errors
 
 
 def main():
-    directory = Path(__file__).resolve().parents[1] / "can-messages"
-    errors = validate(directory)
+    root = Path(__file__).resolve().parents[1]
+    errors = validate(root / "can-messages", root / "can-bootloader/ecus.json")
     if errors:
         print("Reserved CAN ID check failed:\n" + "\n".join(errors), file=sys.stderr)
     else:
