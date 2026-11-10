@@ -1,0 +1,84 @@
+[
+  {
+    "id": "0x42",
+    "desc": "APPS",
+    "points": [
+      {
+        "size": 32,
+        "signed": false,
+        "name": "apps_1",
+        "c_type": "float",
+        "ieee754_f32": true
+      },
+      {
+        "size": 32,
+        "signed": false,
+        "name": "apps_2",
+        "c_type": "float",
+        "ieee754_f32": true
+      }
+    ],
+    "fields": [
+      {
+        "name": "SmartBSPD/APPS/1",
+        "unit": "V",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "SmartBSPD/APPS/2",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 200
+  },
+  {
+    "id": "0x41",
+    "desc": "BSPD",
+    "points": [
+      {
+        "size": 32,
+        "signed": false,
+        "name": "bspd_1",
+        "c_type": "float",
+        "ieee754_f32": true
+      },
+      {
+        "size": 32,
+        "signed": false,
+        "name": "bspd_2",
+        "c_type": "float",
+        "ieee754_f32": true
+      }
+    ],
+    "fields": [
+      {
+        "name": "SmartBSPD/BSPD/1",
+        "unit": "V",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "SmartBSPD/BSPD/2",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 200
+  }
+]
