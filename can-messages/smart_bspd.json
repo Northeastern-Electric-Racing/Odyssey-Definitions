@@ -1,6 +1,6 @@
 [
   {
-    "id": "0x42",
+    "id": "0x50",
     "desc": "APPS",
     "points": [
       {
@@ -41,7 +41,7 @@
     "sim_freq": 200
   },
   {
-    "id": "0x41",
+    "id": "0x51",
     "desc": "BSPD",
     "points": [
       {
