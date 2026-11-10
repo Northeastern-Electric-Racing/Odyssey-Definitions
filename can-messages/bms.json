@@ -1595,8 +1595,8 @@
       {
         "name": "BMS/Crash/Detail",
         "unit": "",
-        "doc": "PC for a HardFault, or a hash of the source file path for a panic",
-        "desc": "The file hash is FNV-1a of a path like shepherd-3/src/can.rs",
+        "doc": "Program Counter (PC) for a HardFault, or a hash of the source file path for a panic",
+        "desc": "The file hash is FNV-1a of a filepath (ex. shepherd-3/src/can.rs)",
         "values": [
           4
         ]
