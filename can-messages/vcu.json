@@ -2580,123 +2580,6 @@
     "sim_freq": 250
   },
   {
-    "id": "0x504",
-    "desc": "Pedal Sensor Voltages",
-    "points": [
-      {
-        "size": 16,
-        "signed": false,
-        "endianness": "big",
-        "sim": {
-          "min": 50,
-          "max": 150,
-          "inc_min": 1,
-          "inc_max": 10,
-          "round": false
-        },
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "c_type": "float",
-        "name": "accel1_volts"
-      },
-      {
-        "size": 16,
-        "signed": false,
-        "endianness": "big",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "sim": {
-          "min": 50,
-          "max": 150,
-          "inc_min": 1,
-          "inc_max": 10,
-          "round": false
-        },
-        "c_type": "float",
-        "name": "accel2_volts"
-      },
-      {
-        "size": 16,
-        "signed": false,
-        "endianness": "big",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "sim": {
-          "min": 10,
-          "max": 150,
-          "inc_min": 1,
-          "inc_max": 10,
-          "round": false
-        },
-        "c_type": "float",
-        "name": "brake1_volts"
-      },
-      {
-        "size": 16,
-        "signed": false,
-        "endianness": "big",
-        "formatter": {
-          "key": "divide",
-          "arg": 100
-        },
-        "sim": {
-          "min": 50,
-          "max": 150,
-          "inc_min": 1,
-          "inc_max": 10,
-          "round": false
-        },
-        "c_type": "float",
-        "name": "brake2_volts"
-      }
-    ],
-    "fields": [
-      {
-        "name": "VCU/Pedals/Voltages/accel_1",
-        "unit": "V",
-        "values": [
-          1
-        ],
-        "doc": "Voltage reading from Acceleration Pedal Sensor 1",
-        "desc": ""
-      },
-      {
-        "name": "VCU/Pedals/Voltages/accel_2",
-        "unit": "V",
-        "values": [
-          2
-        ],
-        "doc": "Voltage reading from Acceleration Pedal Sensor 2",
-        "desc": ""
-      },
-      {
-        "name": "VCU/Pedals/Voltages/brake_1",
-        "unit": "V",
-        "values": [
-          3
-        ],
-        "doc": "Voltage reading from Brake Pedal Sensor 1",
-        "desc": ""
-      },
-      {
-        "name": "VCU/Pedals/Voltages/brake_2",
-        "unit": "V",
-        "values": [
-          4
-        ],
-        "doc": "Voltage reading from Brake Pedal Sensor 2",
-        "desc": ""
-      }
-    ],
-    "sim_freq": 250
-  },
-  {
     "id": "0xCA",
     "desc": "Lightning Board Light Status",
     "points": [
@@ -3023,6 +2906,24 @@
       {
         "size": 1,
         "signed": false,
+        "name": "MOTOR_TEMP_SENSOR_FAULT",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        }
+      },
+      {
+        "size": 1,
+        "signed": false,
         "sim": {
           "options": [
             [
@@ -3235,6 +3136,10 @@
             ]
           ]
         }
+      },
+      {
+        "size": 7,
+        "parse": false
       }
     ],
     "fields": [
@@ -3278,7 +3183,7 @@
         "name": "VCU/Faults/Non-Critical/ONBOARD_TEMP_FAULT",
         "unit": "",
         "values": [
-          5
+          6
         ],
         "doc": "",
         "desc": ""
@@ -3287,7 +3192,7 @@
         "name": "VCU/Faults/Non-Critical/IMU_ACCEL_FAULT",
         "unit": "",
         "values": [
-          6
+          7
         ],
         "doc": "",
         "desc": ""
@@ -3296,7 +3201,7 @@
         "name": "VCU/Faults/Non-Critical/IMU_GYRO_FAULT",
         "unit": "",
         "values": [
-          7
+          8
         ],
         "doc": "",
         "desc": ""
@@ -3305,7 +3210,7 @@
         "name": "VCU/Faults/Non-Critical/BSPD_PREFAULT",
         "unit": "",
         "values": [
-          8
+          9
         ],
         "doc": "",
         "desc": ""
@@ -3314,7 +3219,7 @@
         "name": "VCU/Faults/Non-Critical/ONBOARD_BRAKE_OPEN_CIRCUIT_FAULT",
         "unit": "",
         "values": [
-          9
+          10
         ],
         "doc": "",
         "desc": ""
@@ -3323,7 +3228,7 @@
         "name": "VCU/Faults/Non-Critical/ONBOARD_ACCEL_OPEN_CIRCUIT_FAULT",
         "unit": "",
         "values": [
-          10
+          11
         ],
         "doc": "",
         "desc": ""
@@ -3332,7 +3237,7 @@
         "name": "VCU/Faults/Non-Critical/ONBOARD_BRAKE_SHORT_CIRCUIT_FAULT",
         "unit": "",
         "values": [
-          11
+          12
         ],
         "doc": "",
         "desc": ""
@@ -3341,7 +3246,7 @@
         "name": "VCU/Faults/Non-Critical/ONBOARD_ACCEL_SHORT_CIRCUIT_FAULT",
         "unit": "",
         "values": [
-          12
+          13
         ],
         "doc": "",
         "desc": ""
@@ -3350,7 +3255,7 @@
         "name": "VCU/Faults/Non-Critical/ONBOARD_PEDAL_DIFFERENCE_FAULT",
         "unit": "",
         "values": [
-          13
+          14
         ],
         "doc": "",
         "desc": ""
@@ -3359,7 +3264,7 @@
         "name": "VCU/Faults/Non-Critical/RTDS_FAULT",
         "unit": "",
         "values": [
-          14
+          15
         ],
         "doc": "",
         "desc": ""
@@ -3368,7 +3273,7 @@
         "name": "VCU/Faults/Non-Critical/LV_LOW_VOLTAGE_FAULT",
         "unit": "",
         "values": [
-          15
+          16
         ],
         "doc": "",
         "desc": ""
@@ -3377,9 +3282,18 @@
         "name": "VCU/Faults/Critical/PRECHARGE_FLOATING_FAULT",
         "unit": "",
         "values": [
-          16
+          17
         ],
         "doc": "If TS Volts is stuck under the Batt Volts Threshold",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/MOTOR_TEMP_SENSOR_FAULT",
+        "unit": "",
+        "values": [
+          5
+        ],
+        "doc": "",
         "desc": ""
       }
     ],

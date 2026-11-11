@@ -1,84 +1,119 @@
 [
   {
     "id": "0x50",
-    "desc": "APPS",
+    "desc": "Pedal Sensor Voltages",
     "points": [
       {
-        "size": 32,
+        "size": 16,
         "signed": false,
-        "name": "apps_1",
+        "endianness": "big",
+        "sim": {
+          "min": 50,
+          "max": 150,
+          "inc_min": 1,
+          "inc_max": 10,
+          "round": false
+        },
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
         "c_type": "float",
-        "ieee754_f32": true
+        "name": "accel1_volts"
       },
       {
-        "size": 32,
+        "size": 16,
         "signed": false,
-        "name": "apps_2",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 50,
+          "max": 150,
+          "inc_min": 1,
+          "inc_max": 10,
+          "round": false
+        },
         "c_type": "float",
-        "ieee754_f32": true
+        "name": "accel2_volts"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 10,
+          "max": 150,
+          "inc_min": 1,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "brake1_volts"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 50,
+          "max": 150,
+          "inc_min": 1,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "brake2_volts"
       }
     ],
     "fields": [
       {
-        "name": "SmartBSPD/APPS/1",
+        "name": "BSPD/Pedals/Voltages/accel_1",
         "unit": "V",
         "values": [
           1
         ],
-        "doc": "",
+        "doc": "Voltage reading from Acceleration Pedal Sensor 1",
         "desc": ""
       },
       {
-        "name": "SmartBSPD/APPS/2",
+        "name": "BSPD/Pedals/Voltages/accel_2",
         "unit": "V",
         "values": [
           2
         ],
-        "doc": "",
-        "desc": ""
-      }
-    ],
-    "sim_freq": 200
-  },
-  {
-    "id": "0x51",
-    "desc": "BSPD",
-    "points": [
-      {
-        "size": 32,
-        "signed": false,
-        "name": "bspd_1",
-        "c_type": "float",
-        "ieee754_f32": true
-      },
-      {
-        "size": 32,
-        "signed": false,
-        "name": "bspd_2",
-        "c_type": "float",
-        "ieee754_f32": true
-      }
-    ],
-    "fields": [
-      {
-        "name": "SmartBSPD/BSPD/1",
-        "unit": "V",
-        "values": [
-          1
-        ],
-        "doc": "",
+        "doc": "Voltage reading from Acceleration Pedal Sensor 2",
         "desc": ""
       },
       {
-        "name": "SmartBSPD/BSPD/2",
+        "name": "BSPD/Pedals/Voltages/brake_1",
         "unit": "V",
         "values": [
-          2
+          3
         ],
-        "doc": "",
+        "doc": "Voltage reading from Brake Pedal Sensor 1",
+        "desc": ""
+      },
+      {
+        "name": "BSPD/Pedals/Voltages/brake_2",
+        "unit": "V",
+        "values": [
+          4
+        ],
+        "doc": "Voltage reading from Brake Pedal Sensor 2",
         "desc": ""
       }
     ],
-    "sim_freq": 200
+    "sim_freq": 250
   }
 ]
