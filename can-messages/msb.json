@@ -1110,7 +1110,7 @@
   },
   {
     "id": "0x613",
-    "desc": "Front MSB Misc ADC 1",
+    "desc": "Front MSB Misc ADC One",
     "points": [
       {
         "size": 32,
@@ -1134,7 +1134,7 @@
   },
   {
     "id": "0x614",
-    "desc": "Front MSB Misc ADC 2",
+    "desc": "Front MSB Misc ADC Two",
     "points": [
       {
         "size": 32,
@@ -1158,7 +1158,7 @@
   },
   {
     "id": "0x615",
-    "desc": "Front MSB Misc ADC 3",
+    "desc": "Front MSB Misc ADC Three",
     "points": [
       {
         "size": 32,
@@ -1182,7 +1182,7 @@
   },
   {
     "id": "0x637",
-    "desc": "Back MSB Misc ADC 1",
+    "desc": "Back MSB Misc ADC One",
     "points": [
       {
         "size": 32,
@@ -1206,7 +1206,7 @@
   },
   {
     "id": "0x638",
-    "desc": "Back MSB Misc ADC 2",
+    "desc": "Back MSB Misc ADC Two",
     "points": [
       {
         "size": 32,
@@ -1230,7 +1230,7 @@
   },
   {
     "id": "0x639",
-    "desc": "Back MSB Misc ADC 3",
+    "desc": "Back MSB Misc ADC Three",
     "points": [
       {
         "size": 32,
@@ -1254,7 +1254,7 @@
   },
   {
     "id": "0x616",
-    "desc": "MSB VL53L7CX",
+    "desc": "MSB Time Of Flight",
     "points": [
       {
         "size": 16,
@@ -1283,7 +1283,7 @@
     ],
     "fields": [
       {
-        "name": "MSB/VL53L7CX",
+        "name": "MSB/TimeOfFlight",
         "unit": "",
         "values": [
           1,
