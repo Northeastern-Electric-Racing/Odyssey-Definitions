@@ -122,6 +122,7 @@
     "points": [
       {
         "size": 32,
+        "name": "erpm",
         "signed": true,
         "sim": {
           "min": -120000,
@@ -132,6 +133,7 @@
       },
       {
         "size": 16,
+        "name": "duty_cycle",
         "signed": true,
         "formatter": {
           "key": "divide",
@@ -146,6 +148,7 @@
       },
       {
         "size": 16,
+        "name": "input_voltage",
         "signed": true,
         "sim": {
           "min": 0,
@@ -191,6 +194,7 @@
     "points": [
       {
         "size": 16,
+        "name": "ac_current",
         "signed": true,
         "formatter": {
           "key": "divide",
@@ -205,6 +209,7 @@
       },
       {
         "size": 16,
+        "name": "dc_current",
         "signed": true,
         "formatter": {
           "key": "divide",
