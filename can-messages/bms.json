@@ -1540,6 +1540,70 @@
     "sim_freq": 1000
   },
   {
+    "id": "0x69C",
+    "desc": "Shepherd Crash Report",
+    "points": [
+      {
+        "size": 8,
+        "name": "kind",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 8,
+        "name": "count",
+        "c_type": "uint8_t"
+      },
+      {
+        "size": 16,
+        "name": "line",
+        "c_type": "uint16_t"
+      },
+      {
+        "size": 32,
+        "name": "detail",
+        "c_type": "uint32_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BMS/Crash/Kind",
+        "unit": "",
+        "doc": "What caused the last crash",
+        "desc": "HARDFAULT=1,PANIC=2,DEFMT_PANIC=3",
+        "values": [
+          1
+        ]
+      },
+      {
+        "name": "BMS/Crash/Count",
+        "unit": "",
+        "doc": "Crashes since the BMS last ran 10 s without crashing",
+        "desc": "Goes up during a boot loop. Saturates at 255",
+        "values": [
+          2
+        ]
+      },
+      {
+        "name": "BMS/Crash/Line",
+        "unit": "",
+        "doc": "Source line of the panic",
+        "desc": "0 for a HardFault or a defmt panic",
+        "values": [
+          3
+        ]
+      },
+      {
+        "name": "BMS/Crash/Detail",
+        "unit": "",
+        "doc": "Program Counter (PC) for a HardFault, or a hash of the source file path for a panic",
+        "desc": "The file hash is FNV-1a of a filepath (ex. shepherd-3/src/can.rs)",
+        "values": [
+          4
+        ]
+      }
+    ]
+  },
+  {
     "id": "0x6F1",
     "desc": "Overflow Notification for PerCell",
     "points": [
