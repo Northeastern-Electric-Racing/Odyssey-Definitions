@@ -167,12 +167,12 @@
   },
   {
     "id": "0x605",
-    "desc": "Front MSB Strain 1 2",
+    "desc": "Front MSB Strain One Two",
     "points": [
       {
         "size": 32,
         "name": "strain1",
-        "c_type": "float",
+        "c_type": "uint32_t",
         "sim": {
           "min": 0,
           "max": 10,
@@ -180,12 +180,12 @@
           "inc_max": 0.02,
           "round": false
         },
-        "signed": true
+        "signed": false
       },
       {
         "size": 32,
         "name": "strain2",
-        "c_type": "float",
+        "c_type": "uint32_t",
         "sim": {
           "min": 0,
           "max": 10,
@@ -193,7 +193,7 @@
           "inc_max": 0.02,
           "round": false
         },
-        "signed": true
+        "signed": false
       }
     ],
     "fields": [
@@ -211,7 +211,7 @@
   },
   {
     "id": "0x606",
-    "desc": "Right Shockpot",
+    "desc": "Front Left Shockpot",
     "points": [
       {
         "size": 32,
@@ -232,9 +232,8 @@
       },
       {
         "size": 32,
-        "name": "shock1_volts",
-        "c_type": "float",
-        "endianness": "little",
+        "name": "shock_left_raw",
+        "c_type": "uint32_t",
         "sim": {
           "min": 0,
           "max": 4095,
@@ -242,16 +241,12 @@
           "inc_max": 20,
           "round": false
         },
-        "formatter": {
-          "key": "divide",
-          "arg": 10
-        },
         "signed": false
       }
     ],
     "fields": [
       {
-        "name": "MSB/Right/Shock",
+        "name": "MSB/F/ShockLeft",
         "unit": "in",
         "doc": "Front-left shock deflection",
         "values": [
@@ -259,7 +254,7 @@
         ]
       },
       {
-        "name": "MSB/Right/ShockVolts",
+        "name": "MSB/F/ShockRawLeft",
         "unit": "",
         "doc": "Raw shock value",
         "values": [
@@ -548,12 +543,12 @@
   },
   {
     "id": "0x625",
-    "desc": "Back MSB Strain 1-2",
+    "desc": "Back MSB Strain One Two",
     "points": [
       {
         "size": 32,
         "name": "strain1",
-        "c_type": "float",
+        "c_type": "uint32_t",
         "sim": {
           "min": 0,
           "max": 10,
@@ -561,12 +556,12 @@
           "inc_max": 0.02,
           "round": false
         },
-        "signed": true
+        "signed": false
       },
       {
         "size": 32,
         "name": "strain2",
-        "c_type": "float",
+        "c_type": "uint32_t",
         "sim": {
           "min": 0,
           "max": 10,
@@ -574,7 +569,7 @@
           "inc_max": 0.02,
           "round": false
         },
-        "signed": true
+        "signed": false
       }
     ],
     "fields": [
@@ -592,7 +587,7 @@
   },
   {
     "id": "0x626",
-    "desc": "Left Shockpot",
+    "desc": "Front Right Shockpot",
     "points": [
       {
         "size": 32,
@@ -606,25 +601,26 @@
           "min": 0,
           "max": 3,
           "inc_min": 0.01,
-          "inc_max": 0.5
+          "inc_max": 0.5,
+          "round": false
         }
       },
       {
         "size": 32,
-        "name": "shock1_volts",
-        "c_type": "float",
-        "endianness": "little",
+        "name": "shock_right_raw",
+        "c_type": "uint32_t",
         "sim": {
           "min": 0,
           "max": 4095,
           "inc_min": 1,
-          "inc_max": 20
+          "inc_max": 20,
+          "round": false
         }
       }
     ],
     "fields": [
       {
-        "name": "MSB/Left/Shock",
+        "name": "MSB/F/ShockRight",
         "unit": "in",
         "doc": "Front-right shock deflection",
         "values": [
@@ -632,7 +628,7 @@
         ]
       },
       {
-        "name": "MSB/Left/ShockVolts",
+        "name": "MSB/F/ShockRawRight",
         "unit": "",
         "doc": "Raw front-right shock value",
         "values": [
@@ -750,6 +746,553 @@
           2,
           3
         ]
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x630",
+    "desc": "Load Cell CAN Message",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "load_cell_1",
+        "c_type": "uint16_t",
+        "formatter": {
+          "key": "multiply",
+          "arg": 100
+        }
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "load_cell_2",
+        "c_type": "uint16_t",
+        "formatter": {
+          "key": "multiply",
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/LoadCell1",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Load Cell 1 Data",
+        "desc": ""
+      },
+      {
+        "name": "MSB/LoadCell2",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "Load Cell 2 Data",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0x631",
+    "desc": "Front Wheel RPM",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "left_rpm",
+        "c_type": "uint16_t"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "right_rpm",
+        "c_type": "uint16_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/WheelSpeedLeft",
+        "unit": "rpm",
+        "values": [
+          1
+        ],
+        "doc": "Left Wheel Speed Data",
+        "desc": ""
+      },
+      {
+        "name": "MSB/WheelSpeedRight",
+        "unit": "rpm",
+        "values": [
+          2
+        ],
+        "doc": "Right Wheel Speed Data",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0x632",
+    "desc": "Steering Angle",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "steering_angle_1",
+        "c_type": "int32_t",
+        "formatter": {
+          "key": "divide",
+          "arg": 10
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/SteeringAngle",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Steering Angle Data",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0x633",
+    "desc": "Thermocouple",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "thermocouple1",
+        "c_type": "int32_t",
+        "formatter": {
+          "key": "multiply",
+          "arg": 100
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/Thermocouple1",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Thermocouple 1 Data",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0x610",
+    "desc": "Front MSB SSC",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "c_type": "float",
+        "name": "pressure"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "c_type": "float",
+        "name": "temp"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/SSCPressure",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Front SSC Pressure Reading",
+        "desc": ""
+      },
+      {
+        "name": "MSB/F/SSCTemp",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "Front SSC Temperature Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0x634",
+    "desc": "Back MSB SSC",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "pressure",
+        "c_type": "float"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "temp",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/B/SSCPressure",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Back SSC Pressure Reading",
+        "desc": ""
+      },
+      {
+        "name": "MSB/B/SSCTemp",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "Back SSC Temperature Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0x611",
+    "desc": "Front MSB Mag",
+    "points": [
+      {
+        "size": 16,
+        "signed": true,
+        "name": "x_mgauss",
+        "c_type": "float"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "y_mgauss",
+        "c_type": "float"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "z_mgauss",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/Magnetometer",
+        "unit": "",
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "doc": "Front Magnetometer Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x635",
+    "desc": "Back MSB Mag",
+    "points": [
+      {
+        "size": 16,
+        "signed": true,
+        "name": "x_mgauss",
+        "c_type": "float"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "y_mgauss",
+        "c_type": "float"
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "z_mgauss",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/B/Magnetometer",
+        "unit": "",
+        "values": [
+          1,
+          2,
+          3
+        ],
+        "doc": "Back Magnetometer Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x612",
+    "desc": "Front MSB Strain Three Four",
+    "points": [
+      {
+        "size": 32,
+        "signed": false,
+        "name": "strain3",
+        "c_type": "uint32_t"
+      },
+      {
+        "size": 32,
+        "signed": false,
+        "name": "strain4",
+        "c_type": "uint32_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/Strain34",
+        "unit": "",
+        "values": [
+          1,
+          2
+        ],
+        "doc": "Front Strain Reading (gauges 3 & 4)",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x636",
+    "desc": "Back MSB Strain Three Four",
+    "points": [
+      {
+        "size": 32,
+        "signed": false,
+        "name": "strain3",
+        "c_type": "uint32_t"
+      },
+      {
+        "size": 32,
+        "signed": false,
+        "name": "strain4",
+        "c_type": "uint32_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/B/Strain34",
+        "unit": "",
+        "values": [
+          1,
+          2
+        ],
+        "doc": "Back Strain Readings (gauges 3 & 4)",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x613",
+    "desc": "Front MSB Misc ADC 1",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "data",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/MiscADC1",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Front Misc ADC1 Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x614",
+    "desc": "Front MSB Misc ADC 2",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "data",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/MiscADC2",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Front Misc ADC2 Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x615",
+    "desc": "Front MSB Misc ADC 3",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "data",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/F/MiscADC3",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Front Misc ADC3 Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x637",
+    "desc": "Back MSB Misc ADC 1",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "data",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/B/MiscADC1",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Back Misc ADC1 Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x638",
+    "desc": "Back MSB Misc ADC 2",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "data",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/B/MiscADC2",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Back Misc ADC2 Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x639",
+    "desc": "Back MSB Misc ADC 3",
+    "points": [
+      {
+        "size": 32,
+        "signed": true,
+        "name": "data",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/B/MiscADC3",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Back Misc ADC3 Reading",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 500
+  },
+  {
+    "id": "0x616",
+    "desc": "MSB VL53L7CX",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "distance0",
+        "c_type": "uint16_t"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "distance1",
+        "c_type": "uint16_t"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "distance2",
+        "c_type": "uint16_t"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "distance3",
+        "c_type": "uint16_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "MSB/VL53L7CX",
+        "unit": "",
+        "values": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "doc": "VL53L7CX Reading ",
+        "desc": ""
       }
     ],
     "sim_freq": 500
