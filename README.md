@@ -162,9 +162,10 @@ The script format.sh will format the files in place.  It requires moreutils and 
 
 Work must be done in both Calypso and here.
 
-1. In Calypso, edit the can_types.rs and nerdbc.rs file to reflect your change
+1. In `definition-rs`, edit `lib.rs` to show the new types.
 2. In here, migrate the JSON files to suite your needs.
 3. Optionally, migrate the code-gen files appropriately
+4. Fix any compile errors in Calypso when the submodule is updated
 
 ## Code gen
 

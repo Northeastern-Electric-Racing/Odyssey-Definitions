@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "can_line_bitrate": 500000,
+  "application_boot_request_data": [
+    "0xB0",
+    "0x07",
+    "0x10",
+    "0xAD"
+  ],
+  "platforms": {
+    "stm32h563": {
+      "flash": {"address": "0x08010000", "size": "0xF0000"},
+      "ram": {"address": "0x20000000", "size": "0xA0000"}
+    }
+  },
+  "ecus": {
+    "bms": {
+      "label": "Battery Management System",
+      "platform": "stm32h563",
+      "can": {
+        "request_id": {"id": "0x010", "is_ext": false},
+        "response_id": {"id": "0x011", "is_ext": false},
+        "write_data_id": {"id": "0x012", "is_ext": false},
+        "boot_request_id": {"id": "0x013", "is_ext": false}
+      }
+    },
+    "vcu": {
+      "label": "Vehicle Control Unit",
+      "platform": "stm32h563",
+      "can": {
+        "request_id": {"id": "0x014", "is_ext": false},
+        "response_id": {"id": "0x015", "is_ext": false},
+        "write_data_id": {"id": "0x016", "is_ext": false},
+        "boot_request_id": {"id": "0x017", "is_ext": false}
+      }
+    },
+    "lightning": {
+      "label": "Lightning",
+      "platform": "stm32h563",
+      "can": {
+        "request_id": {"id": "0x040", "is_ext": false},
+        "response_id": {"id": "0x041", "is_ext": false},
+        "write_data_id": {"id": "0x042", "is_ext": false},
+        "boot_request_id": {"id": "0x043", "is_ext": false}
+      }
+    },
+    "msb_front": {
+      "label": "MSB Front",
+      "platform": "stm32h563",
+      "can": {
+        "request_id": {"id": "0x044", "is_ext": false},
+        "response_id": {"id": "0x045", "is_ext": false},
+        "write_data_id": {"id": "0x046", "is_ext": false},
+        "boot_request_id": {"id": "0x047", "is_ext": false}
+      }
+    },
+    "msb_back": {
+      "label": "MSB Back",
+      "platform": "stm32h563",
+      "can": {
+        "request_id": {"id": "0x048", "is_ext": false},
+        "response_id": {"id": "0x049", "is_ext": false},
+        "write_data_id": {"id": "0x04A", "is_ext": false},
+        "boot_request_id": {"id": "0x04B", "is_ext": false}
+      }
+    }
+  }
+}

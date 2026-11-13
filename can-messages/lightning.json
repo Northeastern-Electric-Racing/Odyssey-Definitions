@@ -2,6 +2,7 @@
   {
     "id": "0xAAA",
     "desc": "Lightning Board IMU Acceleration Data",
+    "is_ext": true,
     "points": [
       {
         "size": 16,
@@ -70,6 +71,7 @@
   {
     "id": "0xAAB",
     "desc": "Lightning Board IMU Gyro Data",
+    "is_ext": true,
     "points": [
       {
         "size": 16,
@@ -138,6 +140,7 @@
   {
     "id": "0xAAC",
     "desc": "Lightning Board Lightning Sensor Information",
+    "is_ext": true,
     "points": [
       {
         "size": 8,
@@ -204,6 +207,7 @@
   {
     "id": "0xAAD",
     "desc": "Lightning Board Magnometer Sensor Information",
+    "is_ext": true,
     "points": [
       {
         "size": 16,
@@ -272,6 +276,7 @@
   {
     "id": "0xAAE",
     "desc": "Lightning Pulse Message",
+    "is_ext": true,
     "points": [
       {
         "size": 32,
@@ -291,7 +296,6 @@
         "doc": "Number of times the lightning pulse has been sent.",
         "desc": ""
       }
-    ],
-    "is_ext": true
+    ]
   }
 ]
