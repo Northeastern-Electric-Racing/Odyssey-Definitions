@@ -82,8 +82,8 @@
     ]
   },
   {
-    "id": "0x60D",
-    "desc": "Energy Meter Temperature",
+    "id": "0x60E",
+    "desc": "Energy Meter Temperature Legacy",
     "points": [
       {
         "size": 3,
@@ -211,6 +211,60 @@
         ]
       }
     ]
+  },
+  {
+    "id": "0x60D",
+    "desc": "Energy Meter Temperature Message",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "max_cell_temp",
+        "c_type": "uint16_t"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "min_cell_temp",
+        "c_type": "uint16_t"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "avg_cell_temp",
+        "c_type": "uint16_t"
+      }
+    ],
+    "fields": [
+      {
+        "name": "EM/NewMessage/MaxCellTemp",
+        "unit": "deg C = raw * 0.1",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": "Sanitized maximum cell temperature sent to energy meter"
+      },
+      {
+        "name": "EM/NewMessage/MinCellTemp",
+        "unit": "deg C = raw * 0.1",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": "Sanitized minimum cell temperature sent to energy meter"
+      },
+      {
+        "name": "EM/NewMessage/AvgCellTemp",
+        "unit": "deg C = raw * 0.1",
+        "values": [
+          3
+        ],
+        "doc": "",
+        "desc": "Sanatized average cell temperature sent to energy meter"
+      }
+    ],
+    "sim_freq": 250
   },
   {
     "id": "0x30D",
