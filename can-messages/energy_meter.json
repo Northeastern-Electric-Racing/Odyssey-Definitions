@@ -220,19 +220,22 @@
         "size": 16,
         "signed": false,
         "name": "max_cell_temp",
-        "c_type": "uint16_t"
+        "c_type": "uint16_t",
+        "endianness": "little"
       },
       {
         "size": 16,
         "signed": false,
         "name": "min_cell_temp",
-        "c_type": "uint16_t"
+        "c_type": "uint16_t",
+        "endianness": "little"
       },
       {
         "size": 16,
         "signed": false,
         "name": "avg_cell_temp",
-        "c_type": "uint16_t"
+        "c_type": "uint16_t",
+        "endianness": "little"
       }
     ],
     "fields": [
