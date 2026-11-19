@@ -1,0 +1,290 @@
+[
+  {
+    "id": "0x50",
+    "desc": "Pedal Sensor Voltages",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "sim": {
+          "min": 50,
+          "max": 150,
+          "inc_min": 1,
+          "inc_max": 10,
+          "round": false
+        },
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "c_type": "float",
+        "name": "accel1_volts"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 50,
+          "max": 150,
+          "inc_min": 1,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "accel2_volts"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 10,
+          "max": 150,
+          "inc_min": 1,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "brake1_volts"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": 50,
+          "max": 150,
+          "inc_min": 1,
+          "inc_max": 10,
+          "round": false
+        },
+        "c_type": "float",
+        "name": "brake2_volts"
+      }
+    ],
+    "fields": [
+      {
+        "name": "BSPD/Pedals/Voltages/accel_1",
+        "unit": "V",
+        "values": [
+          1
+        ],
+        "doc": "Voltage reading from Acceleration Pedal Sensor 1",
+        "desc": ""
+      },
+      {
+        "name": "BSPD/Pedals/Voltages/accel_2",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "Voltage reading from Acceleration Pedal Sensor 2",
+        "desc": ""
+      },
+      {
+        "name": "BSPD/Pedals/Voltages/brake_1",
+        "unit": "V",
+        "values": [
+          3
+        ],
+        "doc": "Voltage reading from Brake Pedal Sensor 1",
+        "desc": ""
+      },
+      {
+        "name": "BSPD/Pedals/Voltages/brake_2",
+        "unit": "V",
+        "values": [
+          4
+        ],
+        "doc": "Voltage reading from Brake Pedal Sensor 2",
+        "desc": ""
+      }
+    ],
+    "sim_freq": 250
+  },
+  {
+    "id": "0x51",
+    "desc": "LFIU High Current ADC Readings",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "raw",
+        "c_type": "uint16_t",
+        "endianness": "big",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 1,
+          "inc_max": 200
+        }
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "voltage",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "current",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 100
+        },
+        "sim": {
+          "min": -200,
+          "max": 200,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/LFIU/LFIU_High/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Readings for LFIU_2.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/LFIU/LFIU_High/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "ADC Voltage Reading for LFIU_2",
+        "desc": ""
+      },
+      {
+        "name": "VCU/LFIU/LFIU_High/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Current Reading for LFIU_2.",
+        "desc": ""
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 250
+  },
+  {
+    "id": "0x52",
+    "desc": "LFIU Low Current ADC Readings",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "raw",
+        "c_type": "uint16_t",
+        "endianness": "big",
+        "sim": {
+          "min": 0,
+          "max": 4095,
+          "inc_min": 1,
+          "inc_max": 200,
+          "round": false
+        }
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "voltage",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": 0,
+          "max": 3.3,
+          "inc_min": 0.1,
+          "inc_max": 1
+        }
+      },
+      {
+        "size": 16,
+        "signed": true,
+        "name": "current",
+        "c_type": "float",
+        "endianness": "big",
+        "formatter": {
+          "key": "divide",
+          "arg": 1000
+        },
+        "sim": {
+          "min": -20,
+          "max": 20,
+          "inc_min": 0.1,
+          "inc_max": 1,
+          "round": false
+        }
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/LFIU/LFIU_Low/ADC",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "Raw ADC Readings for LFIU_1.",
+        "desc": ""
+      },
+      {
+        "name": "VCU/LFIU/LFIU_Low/Voltage",
+        "unit": "V",
+        "values": [
+          2
+        ],
+        "doc": "ADC Voltage Reading for LFIU_1",
+        "desc": ""
+      },
+      {
+        "name": "VCU/LFIU/LFIU_Low/Current",
+        "unit": "A",
+        "values": [
+          3
+        ],
+        "doc": "Current Reading for LFIU_1.",
+        "desc": ""
+      }
+    ],
+    "is_ext": true,
+    "sim_freq": 250
+  }
+]
