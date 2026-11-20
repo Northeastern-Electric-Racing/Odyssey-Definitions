@@ -3235,6 +3235,28 @@
             ]
           ]
         }
+      },
+      {
+        "size": 1,
+        "signed": false,
+        "name": "EFUSE_FAULT",
+        "c_type": "bool",
+        "sim": {
+          "options": [
+            [
+              0,
+              0.8
+            ],
+            [
+              1,
+              0.2
+            ]
+          ]
+        }
+      },
+      {
+        "size": 7,
+        "parse": false
       }
     ],
     "fields": [
@@ -3380,6 +3402,15 @@
           16
         ],
         "doc": "If TS Volts is stuck under the Batt Volts Threshold",
+        "desc": ""
+      },
+      {
+        "name": "VCU/Faults/Non-Critical/EFUSE_FAULT",
+        "unit": "",
+        "values": [
+          17
+        ],
+        "doc": "",
         "desc": ""
       }
     ],
