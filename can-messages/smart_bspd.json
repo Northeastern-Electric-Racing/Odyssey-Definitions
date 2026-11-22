@@ -286,5 +286,50 @@
     ],
     "is_ext": true,
     "sim_freq": 250
+  },
+  {
+    "id": "0x53",
+    "desc": "Brake Windows",
+    "points": [
+      {
+        "size": 16,
+        "signed": false,
+        "name": "window_min",
+        "c_type": "float"
+      },
+      {
+        "size": 16,
+        "signed": false,
+        "name": "window_max",
+        "c_type": "float"
+      }
+    ],
+    "fields": [
+      {
+        "name": "VCU/NewMessage/value",
+        "unit": "",
+        "values": [],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/NewMessage/window_max",
+        "unit": "",
+        "values": [
+          2
+        ],
+        "doc": "",
+        "desc": ""
+      },
+      {
+        "name": "VCU/NewMessage/window_min",
+        "unit": "",
+        "values": [
+          1
+        ],
+        "doc": "",
+        "desc": ""
+      }
+    ]
   }
 ]
